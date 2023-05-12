@@ -1,0 +1,2006 @@
+@media (max-width: 1919px) {
+    /* 1. ГЛОБАЛЬНЫЕ СТИЛИ */
+    /* 1.2 Постоянные значения */
+
+    :root {
+        /* Цвета: */
+        /* --background-color */
+        --background-nav: rgba(0, 0, 0, 0.9);
+        --background-search: #000;
+        --background-button-3: #000;
+
+        /* Отступы: */
+        /* --gap */
+        --header-container-gap: 0;
+        --header-box-gap: 111px;
+        --header-anchor-gap: 0px;
+        --gallery-swiper-list-gap: 34px;
+        --catalog-country-box-gap: 43px;
+        --catalog-button-list-gap: 66px;
+        --events-list-gap: 27px;
+        --events-information-gap: 25px;
+        --editions-box-gap: 12px;
+        --contacts-social-links-gap: 30px;
+        --footer-links-gap: 30px;
+
+        /* --margin */
+        --preview-title-margin: 11px;
+        --preview-text-margin: 134px;
+        --events-list-margin: 50px;
+        --editions-navigation-gap: 18px;
+        --editions-image-margin: 13px;
+        --editions-subject-margin: 3px;
+        --editions-information-margin: 19px;
+    }
+
+    html {
+        font-size: calc(1px + 1 * ((100vw - 1024px) / 1024));
+    }
+
+    /* 1.5. Особые состояния */
+    .container {
+        margin: 0 auto;
+        max-width: 1919px;
+        padding: 0 50px;
+    }
+
+    /* 1.10. Прочее */
+    .slide-1 {
+        background-image: url(../img/header-1024_image-1.jpg);
+    }
+
+    .slide-2 {
+        background-image: url(../img/header-1024_image-2.jpg);
+    }
+
+    .slide-3 {
+        background-image: url(../img/header-1024_image-3.jpg);
+    }
+
+    .size-partners01 {
+        width: min(54.973%, 244px);
+        height: min(54.973%, 63px);
+    }
+
+    .size-partners02 {
+        width: min(74.083%, 330px);
+        height: min(74.083%, 59px);
+    }
+
+    .size-partners03 {
+        width: min(59.947%, 229px);
+        height: min(59.947%, 54px);
+    }
+
+    .size-partners04 {
+        width: min(27.476%, 123px);
+        height: min(27.476%, 85px);
+    }
+
+    .size-partners05 {
+        width: min(38.646%, 173px);
+        height: min(38.646%, 85px);
+    }
+
+    .size-partners06 {
+        width: min(56.293%, 252px);
+        height: min(56.293%, 70px);
+    }
+
+    .size-partners07 {
+        width: min(63.887%, 286px);
+        height: min(63.887%, 69px);
+    }
+
+    .size-partners08 {
+        width: min(41.327%, 185px);
+        height: min(41.327%, 81px);
+    }
+
+    .size-partners09 {
+        width: min(51.209%, 229px);
+        height: min(51.209%, 62px);
+    }
+
+    .simplebar-track-menu {
+        display: block;
+        width: 2px;
+        background-color: #b7b7b7;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .simplebar-scrollbar-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 28px;
+        width: 2px;
+    }
+
+    .simplebar-scrollbar-menu::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 1;
+        background-color: #fff;
+    }
+
+    .simplebar-content {
+        height: 100%;
+    }
+
+    /*  2. HEADER 
+    ==========================================================================  */
+
+    /**
+     * ИЗМЕНЕНИЕ - ВЕРХНИЙ КОНТЕЙНЕР
+     * Изменено расположение внутренних блоков, а также верхнего и нижнего внутренних отступов.
+     */
+
+    .header__container-top {
+        /* Блочная модель */
+        justify-content: space-between;
+        padding-top: 29px;
+        padding-bottom: 29px;
+    }
+
+    /**
+     * ИЗМЕНЕНИЕ - БУРГЕР-КНОПКА
+     * БУРГЕР КНОПКА доступна для взаимодействия, так как ГЛАВНОЕ МЕНЮ сайта перешло в режим БУРГЕР-ОКНО.
+     * Установлен постоянный размер БУРГЕР-КНОПКИ, поскольку какие-либо изменения в ней не предусмотрены.
+     * БУРГЕР-КНОПКА имеет два состояния: активное и пассивное (управляются при помощи замены модификатора через JS-скрипт у БУРГЕР-ЛИНИЙ).
+     * Указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент. Также требуется для абсолютного позиционирования БУРГЕР-ЛИНИЙ.
+     * Значение Z-INDEX необходимо для корректной работы КНОПКИ при открывании БУРГЕР-ОКНА.
+     */
+
+    .header__burger {
+        /* Позиционирование */
+        position: relative;
+        z-index: 3;
+        /* Блочная модель */
+        display: block;
+        width: 36px;
+        height: 28px;
+        /* Анимации */
+        transform: translateY(1px);
+        transition: transform 0.2s ease-in-out 0.1s;
+    }
+
+    /**
+     * БУРГЕР-КНОПКА (FOCUS-VISIBLE)
+     * Псевдоэлемент, в котором указаны стили БУРГЕР-КНОПКИ в состоянии FOCUS-VISIBLE.
+     * Сейчас стили не видны, поскольку отображаются только при наведении на БУРГЕР-КНОПКУ фокуса с клавиатуры.
+     */
+
+    .header__burger::after {
+        content: '';
+        /* Позиционирование */
+        position: absolute;
+        z-index: -1;
+        top: -8px;
+        left: -8px;
+        bottom: -8px;
+        right: -8px;
+        /* Оформление */
+        border: 2px solid var(--focus-border-5);
+        opacity: 0;
+        /* Анимации */
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    /**
+     * БУРГЕР-ЛИНИЯ
+     * Указаны основные стили для каждой БУРГЕР-ЛИНИИ: размеры, цвет.
+     * Это общие стили и в процессе перехода БУРГЕР-КНОПКИ из одного состояния в другое никогда не меняются.
+     * Каждая линия имеет позицию ABSOLUTE для желаемого расположения внутри кнопки. Для каждой линии будут указываться свои значения расположения и размера, в зависимости от состояния БУРГЕР-КНОПКИ.
+     */
+
+    .header__line {
+        /* Позиционирование */
+        position: absolute;
+        top: 12.16px;
+        left: 0;
+        /* Блочная модель */
+        display: block;
+        height: 13%;
+        width: 78%;
+        /* Оформление */
+        background-color: var(--border-1);
+    }
+
+    /**
+     * БУРГЕР-КНОПКА : FOCUS-VISIBLE
+     * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры БУРГЕР-КНОПКИ.
+     * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
+     * Всегда работает при любом состоянии БУРГЕР-КНОПКИ.
+     */
+
+    .header__burger:focus-visible:not(:hover):not(:active)::after {
+        /* Оформление */
+        opacity: 1;
+    }
+
+    /**
+     * БУРГЕР-КНОПКА : HOVER
+     * Псевдокласс HOVER, который меняет цвет линии при наведении на БУРГЕР-КНОПКУ мышкой.
+     * Всегда работает при любом состоянии БУРГЕР-КНОПКИ.
+     */
+
+    .header__burger:hover .header__line {
+        /* Оформление */
+        background-color: var(--hover-2);
+    }
+
+    /**
+     * БУРГЕР-КНОПКА : ACTIVE
+     * Псевдокласс ACTIVE, который меняет цвет линии у БУРГЕР-КНОПКИ при клике (клавишей или мышкой).
+     * Всегда работает при любом состоянии БУРГЕР-КНОПКИ.
+     */
+
+    .header__burger:active .header__line {
+        /* Оформление */
+        background-color: var(--active-1);
+    }
+
+    /**
+     * ПАССИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ)
+     * Общий модификатор БУРГЕР-ЛИНИЙ с анимацией перехода в пассивный режим.
+     *
+     */
+
+    .header__line--passive {
+        /* Анимации */
+        transition: top 0.2s ease-in-out 0.1s, left 0.2s ease-in-out, transform 0.2s ease-in-out,
+            width 0.2s ease-in-out 0.1s;
+    }
+
+    /**
+     * ПАССИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 1)
+     * Положение первой БУРГЕР-ЛИНИИ в пассивном состоянии.
+     */
+
+    .header__line--passive:nth-child(1) {
+        /* Позиционирование */
+        top: 0;
+        /* Блочная модель */
+        width: 100%;
+    }
+
+    /**
+     * ПАССИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 2)
+     * Положение второй БУРГЕР-ЛИНИИ в пассивном состоянии.
+     */
+
+    .header__line--passive:nth-child(2) {
+        /* Позиционирование */
+        top: 12.16px;
+        /* Блочная модель */
+        width: 78%;
+    }
+
+    /**
+     * ПАССИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 3)
+     * Положение третьей БУРГЕР-ЛИНИИ в пассивном состоянии.
+     */
+
+    .header__line--passive:nth-child(3) {
+        /* Позиционирование */
+        bottom: 12.16px;
+        /* Блочная модель */
+        width: 78%;
+    }
+
+    /**
+     * ПАССИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 4)
+     * Положение четвертой БУРГЕР-ЛИНИИ в пассивном состоянии.
+     */
+
+    .header__line--passive:nth-child(4) {
+        /* Позиционирование */
+        top: 24.35px;
+        /* Блочная модель */
+        width: 65%;
+    }
+
+    /**
+     * АКТИВНАЯ БУРГЕР-КНОПКА
+     * В этом селекторе указывается перемещение КНОПКИ во время перехода из одного режима в другое (требуется по PIXEL PERFECT).
+     * Анимация плавного перемещения работает в обе стороны.
+     */
+
+    .header__burger--open {
+        /* Анимации */
+        transform: translateX(-4px) translateY(1px);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /**
+     * АКТИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ)
+     * Общий модификатор БУРГЕР-ЛИНИЙ с анимацией перехода в активный режим.
+     */
+
+    .header__line--active {
+        /* Позиционирование */
+        top: 12.16px;
+        left: 3.4px;
+        /* Блочная модель */
+        width: 103%;
+        /* Анимации */
+        transform-origin: center center;
+        transition: top 0.2s ease-in-out, left 0.2s ease-in-out 0.1s, transform 0.2s ease-in-out 0.1s,
+            width 0.2s ease-in-out;
+    }
+
+    /**
+     * АКТИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 1)
+     * Положение первой БУРГЕР-ЛИНИИ в активном состоянии.
+     */
+
+    .header__line--active:nth-child(1) {
+        /* Анимации */
+        transform: translateX(-3px) translateY(0.5px) rotate(45deg);
+    }
+
+    /**
+     * АКТИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 2)
+     * Положение второй БУРГЕР-ЛИНИИ в активном состоянии.
+     */
+
+    .header__line--active:nth-child(2) {
+        /* Анимации */
+        transform: translateX(-3px) translateY(0.5px) rotate(45deg);
+    }
+
+    /**
+     * АКТИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 3)
+     * Положение третьей БУРГЕР-ЛИНИИ в активном состоянии.
+     */
+
+    .header__line--active:nth-child(3) {
+        /* Анимации */
+        transform: translateX(-3px) translateY(0.5px) rotate(-45deg);
+    }
+
+    /**
+     * АКТИВНАЯ БУРГЕР-КНОПКА (БУРГЕР-ЛИНИЯ 4)
+     * Положение четвертой БУРГЕР-ЛИНИИ в активном состоянии.
+     */
+
+    .header__line--active:nth-child(4) {
+        /* Анимации */
+        transform: translateX(-3px) translateY(0.5px) rotate(-45deg);
+    }
+
+    /**
+     * ИЗМЕНЕНИЕ - ССЫЛКА НА ГЛАВНУЮ
+     * Изменены размеры ЛОГОТИПА сайта. К ссылке добавлен правый отступ, чтобы картинка ЛОГОТИПА выполняла требование PIXEL PERFECT.
+     */
+
+    .header__link {
+        /* Блочная модель */
+        margin-right: 7px;
+        width: 187.6px;
+        height: 42px;
+    }
+
+    .header__box {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        margin: 0px;
+        padding-top: 100px;
+        padding-right: 25px;
+        padding-bottom: 51px;
+        padding-left: 48px;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+        background-color: var(--background-nav);
+        transition: opacity 0.15s ease-in-out, visibility 0.15s;
+    }
+
+    .header__box--active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header__scroll-box {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-left: 0;
+        padding-right: 40px;
+        margin-top: -3px;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+
+    .header__list-anchor {
+        padding-bottom: 0;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .header__link-anchor {
+        font-size: 24px;
+        line-height: 64px;
+        text-align: left;
+    }
+
+    .header__button-login {
+        margin-left: 2px;
+        padding: 17px 83px;
+        padding-left: 72px;
+        min-width: 257px;
+        max-width: 400px;
+        background-color: var(--background-button-3);
+        border: 2px solid var(--border-4);
+        border-radius: 100px;
+    }
+
+    .header__animation-login {
+        left: 80px;
+    }
+
+    .header__search-open {
+        position: relative;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(1px) translateY(0.8px);
+        transition: opacity 0.15s ease-in-out 0.15s, visibility 0.3s;
+    }
+
+    .header__search-open::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -8px;
+        left: -8px;
+        bottom: -8px;
+        right: -8px;
+        border: 2px solid var(--focus-border-5);
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    .header__svg-open {
+        display: block;
+        width: 29.45px;
+        height: 28.82px;
+        fill: var(--svg-1);
+        transition: fill 0.15s ease-in-out;
+    }
+
+    .header__search-open:focus-visible:not(:hover):not(:active)::after {
+        opacity: 1;
+    }
+
+    .header__search-open:hover svg {
+        fill: var(--hover-2);
+    }
+
+    .header__search-open:active svg {
+        fill: var(--active-1);
+    }
+
+    .header__search-open--active {
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    .header__search-box {
+        position: absolute;
+        z-index: 4;
+        top: 35px;
+        right: 50px;
+        bottom: 29px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding-right: 7px;
+        width: 311px;
+        background-color: var(--background-search);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out, visibility 0.15s;
+    }
+
+    .header__search-box--active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.15s ease-in-out 0.15s;
+    }
+
+    .header__form-search {
+        padding-bottom: 4px;
+    }
+
+    .header__button-search {
+        /* Блочная модель */
+        width: 29.45px;
+        height: 28.82px;
+    }
+
+    .header__svg-search {
+        width: 29.45px;
+        height: 28.82px;
+    }
+
+    .header__search-form {
+        padding-bottom: 1px;
+    }
+
+    .header__input-search::placeholder {
+        color: transparent;
+    }
+
+    .header__search-close {
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .header__search-close::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -8px;
+        left: -8px;
+        bottom: -8px;
+        right: -8px;
+        border: 2px solid var(--focus-border-5);
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+    .header__svg-close {
+        display: block;
+        width: 23px;
+        height: 23px;
+        fill: var(--svg-1);
+        transition: fill 0.15s ease-in-out;
+    }
+
+    .header__search-close:focus-visible:not(:hover):not(:active)::after {
+        opacity: 1;
+    }
+
+    .header__search-close:hover svg {
+        fill: var(--hover-2);
+    }
+
+    .header__search-close:active svg {
+        fill: var(--active-1);
+    }
+
+    .header__background-bottom {
+        display: none;
+    }
+
+    /*  3. PREVIEW
+    ==========================================================================  */
+
+    .preview__content {
+        padding-top: 113px;
+        padding-bottom: 115px;
+    }
+
+    .preview__information {
+        max-width: 661px;
+    }
+
+    .preview__text {
+        max-width: 670px;
+    }
+
+    /* 5. GALLERY */
+    .gallery__background {
+        background-image: url(../img/gallery-1024-background.jpg);
+    }
+
+    .gallery__left {
+        width: calc(280 / 924 * 100%);
+        gap: 366px;
+    }
+
+    .gallery__pictures {
+        width: calc(594 / 924 * 100%);
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+
+    .gallery__navigation {
+        padding-left: 1px;
+    }
+
+    .gallery__number {
+        padding-right: 1px;
+    }
+
+    .gallery__swiper {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        height: 594rem;
+    }
+
+    .gallery__item {
+        height: calc((100% - 34px) / 2);
+    }
+
+    .gallery__modal {
+        width: calc(594 / 1024 * 100%);
+        height: clamp(250px, 95vh, 594px);
+    }
+
+    .gallery__modal-picture {
+        width: calc(264 / 594 * 100%);
+    }
+
+    .gallery__modal-information {
+        padding-top: 122px;
+        padding-right: 30px;
+        padding-bottom: 70px;
+        padding-left: 50px;
+    }
+
+    /* 6. BIG */
+
+    /* 6.1. CATALOG */
+    .catalog__heading {
+        padding-left: 1px;
+    }
+
+    .catalog__coundtry-box {
+        margin-left: 0;
+    }
+
+    .catalog__country-list {
+        padding-top: 18px;
+    }
+
+    .catalog__box-left {
+        width: calc(437 / 924 * 100%);
+    }
+
+    .catalog__box-right {
+        width: calc(437 / 924 * 100%);
+    }
+
+    .catalog__button-list {
+        column-count: 2;
+        margin-right: -70px;
+    }
+
+    .catalog__button-plug {
+        display: none;
+    }
+
+    .catalog__figure-img {
+        width: 189px;
+        height: 130px;
+    }
+
+    .catalog__img {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* 6.2 EVENTS */
+    .events__img {
+        max-height: 300px;
+    }
+
+    .events__information {
+        padding-top: 15px;
+        padding-right: 18px;
+        padding-bottom: 48px;
+        padding-left: 34px;
+    }
+
+    .events__button {
+        padding-bottom: 16px;
+    }
+
+    /* 7. EDITIONS */
+    .editions__background {
+        background-image: url(../img/editions-1024-background.jpg);
+    }
+
+    .editions__left {
+        width: 29.978%;
+    }
+
+    .editions__cost {
+        max-width: 350px;
+    }
+
+    .editions__content {
+        padding-bottom: 80px;
+    }
+
+    .editions__products {
+        width: 69.048%;
+    }
+
+    .editions__swiper {
+        height: 100%;
+    }
+
+    .editions__navigation {
+        padding-top: 33px;
+        padding-bottom: 29px;
+    }
+
+    .editions__number {
+        padding-right: 1px;
+    }
+
+    /* 8. PROJECTS */
+    .projects__swiper {
+        margin: 0 23px;
+    }
+
+    .projects__link-page {
+        min-height: 126px;
+    }
+
+    /* 9. CONTACTS */
+    .contacts__heading {
+        padding-left: 50px;
+    }
+
+    .contacts__content {
+        padding-right: 101px;
+        padding-bottom: 102px;
+        padding-left: 49px;
+    }
+
+    .contacts__input {
+        min-width: 335px;
+    }
+
+    .contacts__button {
+        padding-right: 33px;
+        padding-bottom: 16px;
+    }
+
+    .contacts__social-link {
+        width: 60px;
+        height: 60px;
+        background-size: 60px 60px;
+    }
+
+    /* 10. FOOTER */
+    .footer__box {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer__logo {
+        padding-left: 1px;
+    }
+
+    .footer__link {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer__svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1023px) {
+    /* 1. ГЛОБАЛЬНЫЕ СТИЛИ */
+    /* 1.2 Постоянные значения */
+
+    :root {
+        /* Цвета: */
+        /* --background-color */
+        --background-button-3: #000;
+
+        /* Отступы: */
+        /* --gap */
+        --gallery-box-gap: 25px;
+        --catalog-country-box-gap: 40px;
+        --catalog-country-list-gap: 54px;
+        --catalog-accordion-gap: 35px;
+        --events-list-gap: 34px;
+        --events-information-gap: 59px;
+
+        /* --margin */
+        --catalog-text-margin: 20px;
+        --events-subject-margin: 2px;
+        --events-list-margin: 50px;
+        --editions-check-margin: 25px;
+        --editions-box-gap: 16px;
+        --projects-information-margin: 26px;
+        --projects-subject-margin: 29px;
+        --contacts-subject-links-margin: 15px;
+    }
+
+    html {
+        font-size: calc(1px + 1 * ((100vw - 768px) / 768));
+    }
+
+    /* 1.10. Прочее */
+    .slide-1 {
+        background-image: url(../img/header-768_image-1.jpg);
+    }
+
+    .slide-2 {
+        background-image: url(../img/header-768_image-2.jpg);
+    }
+
+    .slide-3 {
+        background-image: url(../img/header-768_image-3.jpg);
+    }
+
+    .size-partners01 {
+        width: min(80.091%, 210px);
+        height: min(80.091%, 52px);
+    }
+
+    .size-partners02 {
+        width: min(82.763%, 283px);
+        height: min(82.763%, 49px);
+    }
+
+    .size-partners03 {
+        width: min(74.427%, 229px);
+        height: min(74.427%, 54px);
+    }
+
+    .size-partners04 {
+        width: min(40.061%, 104.96px);
+        height: min(40.061%, 72.53px);
+    }
+
+    .size-partners05 {
+        width: min(46.183%, 147.63px);
+        height: min(46.183%, 72.53px);
+    }
+
+    .size-partners06 {
+        width: min(67.175%, 215.04px);
+        height: min(67.175%, 59.73px);
+    }
+
+    .size-partners07 {
+        width: min(74.045%, 244.05px);
+        height: min(74.045%, 58.88px);
+    }
+
+    .size-partners08 {
+        width: min(54.58%, 157.87px);
+        height: min(54.58%, 69.12px);
+    }
+
+    .size-partners09 {
+        width: min(69.465%, 195.62px);
+        height: min(69.465%, 52.96px);
+    }
+
+    /* 2. HEADER */
+    .header__burger {
+        transform: translateY(0.5px);
+    }
+
+    .header__burger--open {
+        transform: translateX(-2.8px) translateY(1px);
+    }
+
+    .header__line--active:nth-child(1) {
+        transform: translateX(-3.2px) translateY(0.5px) rotate(45deg);
+    }
+
+    .header__line--active:nth-child(2) {
+        transform: translateX(-3.2px) translateY(0.5px) rotate(45deg);
+    }
+
+    .header__line--active:nth-child(3) {
+        transform: translateX(-3.2px) translateY(0.5px) rotate(-45deg);
+    }
+
+    .header__line--active:nth-child(4) {
+        transform: translateX(-3.2px) translateY(0.5px) rotate(-45deg);
+    }
+
+    .header__logo {
+        margin-right: 9px;
+    }
+
+    .header__search-open {
+        transform: translateX(0.7px) translateY(0px);
+    }
+
+    .header__svg-open {
+        width: 27px;
+        height: 27px;
+    }
+
+    .header__box {
+        padding-left: 49px;
+    }
+
+    .header__search-box {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        gap: 23.1px;
+        padding-top: 29px;
+        padding-right: 50px;
+        padding-bottom: 29px;
+        padding-left: 50px;
+        width: 100%;
+        background-position: left 51px top 36px;
+    }
+
+    .header__form-search {
+        padding-left: 1px;
+        padding-bottom: 0;
+        width: 100%;
+        min-height: 30px;
+    }
+
+    .header__input-search {
+        width: 100%;
+    }
+
+    .header__search-close {
+        margin-bottom: 3px;
+    }
+
+    .header__svg-close {
+        width: 29px;
+        height: 29px;
+    }
+
+    /* 5. GALLERY */
+    .gallery__background {
+        background-image: url(../img/gallery-768-background.jpg);
+    }
+
+    .gallery__content {
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 0;
+    }
+
+    .gallery__left {
+        width: 41.9%;
+    }
+
+    .gallery__pictures {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .gallery__swiper {
+        width: 100%;
+    }
+
+    .gallery__navigation {
+        padding-left: 0;
+    }
+
+    .gallery__number {
+        padding-right: 2px;
+    }
+
+    .gallery__span {
+        display: none;
+    }
+
+    .gallery__span-adaptive {
+        display: block;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .gallery__modal {
+        width: calc(668 / 768 * 100%);
+        height: clamp(300px, 95vh, 594px);
+    }
+
+    .gallery__modal-picture {
+        width: calc(301 / 668 * 100%);
+    }
+
+    /* 6. BIG */
+    .big-section__events {
+        padding-top: 70px;
+    }
+
+    /* 6.1. CATALOG */
+    .catalog__country-list {
+        padding-top: 4px;
+    }
+
+    .catalog__accordion {
+        flex-direction: column;
+    }
+
+    .catalog__box-left {
+        padding-top: 15px;
+        width: 100%;
+    }
+
+    .catalog__box-right {
+        width: 100%;
+    }
+
+    .catalog__button-list {
+        column-count: 3;
+        margin-right: -54px;
+    }
+
+    .catalog__button-plug {
+        display: block;
+    }
+
+    .catalog__figure-img {
+        width: 275px;
+        height: 189px;
+    }
+
+    /* 6.2 EVENTS */
+    .events__item {
+        width: calc((100% - var(--events-list-gap)) / 2);
+    }
+
+    .events__item--hidden-768 {
+        display: none;
+    }
+
+    .events__information {
+        padding-bottom: 47px;
+        padding-right: 17px;
+    }
+
+    /* 7. EDITIONS */
+    .editions__background {
+        background-image: url(../img/editions-768-background.jpg);
+    }
+
+    .editions__content {
+        flex-direction: column;
+        padding-top: 84px;
+        padding-bottom: 73px;
+    }
+
+    .editions__left {
+        width: 100%;
+    }
+
+    .editions__list-checkbox {
+        display: block;
+        columns: 3;
+    }
+
+    .editions__navigation {
+        padding-top: 32px;
+        padding-bottom: 25px;
+        padding-left: 0;
+    }
+
+    .editions__number {
+        padding-right: 2px;
+    }
+
+    .editions__cost {
+        width: 41.5%;
+    }
+
+    .editions__products {
+        width: 100%;
+    }
+
+    .editions__swiper {
+        padding-left: 27px;
+        padding-right: 27px;
+        width: 100%;
+    }
+
+    /* PROJECTS */
+    .projects__text {
+        width: 99%;
+    }
+
+    .projects__link-page {
+        min-height: 104px;
+    }
+
+    /* CONTACTS */
+    .contacts__content {
+        padding-right: 44px;
+        padding-bottom: 103px;
+    }
+
+    .contacts__subject--links {
+        margin-bottom: var(--contacts-subject-links-margin);
+    }
+}
+
+@media (max-width: 767px) {
+    /* 1. ГЛОБАЛЬНЫЕ СТИЛИ */
+    /* 1.2 Постоянные значения */
+
+    :root {
+        /* Цвета: */
+        /* --background-color */
+        --background-search: rgba(0, 0, 0, 0.9);
+        --background-button-3: #000;
+        --background-pagination-passive: #ececec;
+        --background-pagination-active: #666;
+
+        /* active */
+        --active-6: #c283f3;
+
+        --border-5: rgba(255, 255, 255, 0.5);
+
+        /* Отступы: */
+        /* --gap */
+        --header-box-gap: 18px;
+        --header-button-login-gap: 0;
+        --catalog-country-box-gap: 12px;
+        --catalog-country-list-gap: 32px;
+        --gallery-box-gap: 19px;
+        --gallery-pictures-gap: 19px;
+        --gallery-navigation-gap: 14px;
+        --events-information-gap: 25px;
+        --events-pagination-gap: 15px;
+        --editions-list-row-gap: 50px;
+        --editions-list-column-gap: 30px;
+        --editions-box-gap: 50px;
+        --editions-information-gap: 2px;
+        --contacts-form-gap: 20px;
+        --contacts-input-container-gap: 5px;
+        --contacts-social-links-gap: 20px;
+        --footer-container-gap: 20px;
+
+        /* --margin */
+        --heading-margin: 12px;
+        --preview-title-margin: 13px;
+        --preview-text-margin: 41px;
+        --gallery-filter-title-margin: 5px;
+        --catalog-img-margin: 20px;
+        --catalog-subject-margin: 14px;
+        --events-swiper-margin: 20px;
+        --events-list-margin: 0px;
+        --events-subject-margin: 3px;
+        --editions-check-margin: 0;
+        --editions-checked-margin: 18px;
+        --editions-image-margin: 10px;
+        --editions-subject-margin: 0;
+        --editions-information-margin: 11px;
+        --projects-information-margin: 10px;
+        --projects-subject-margin: 11px;
+        --contacts-address-box-margin: 5px;
+        --contacts-address-subject-margin: 2px;
+        --contacts-subject-form-margin: 2px;
+        --contacts-subject-links-margin: 7px;
+        --contacts-form-box-margin: 20px;
+    }
+
+    html {
+        font-size: calc(1px + 1 * ((100vw - 320px) / 320));
+    }
+
+    .content {
+        padding: 50px 0;
+    }
+
+    /* H1 */
+    .title {
+        font-size: 32px;
+        line-height: 37px;
+    }
+
+    /* H2 */
+    .heading {
+        margin-bottom: var(--heading-margin);
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    /* H3 */
+    .subject {
+        font-size: 18px;
+    }
+
+    .subject-alternative {
+        font-size: 18px;
+    }
+
+    .button-big {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .logo__link::before {
+        top: -7px;
+        right: -7px;
+        bottom: -7px;
+        left: -7px;
+    }
+
+    /* 1.5. Особые состояния */
+    .container {
+        margin: 0 auto;
+        max-width: 767px;
+        padding: 0 15px;
+    }
+
+    /* 1.10. Прочее */
+    .slide-1 {
+        background-image: url(../img/header-320_image-1.jpg);
+    }
+
+    .slide-2 {
+        background-image: url(../img/header-320_image-2.jpg);
+    }
+
+    .slide-3 {
+        background-image: url(../img/header-320_image-3.jpg);
+    }
+
+    .size-partners01 {
+        width: min(54.269%, 177.69px);
+        height: min(54.269%, 44px);
+    }
+
+    .size-partners02 {
+        width: min(73.134%, 217px);
+        height: min(73.134%, 38px);
+    }
+
+    .size-partners03 {
+        width: min(60.471%, 195px);
+        height: min(60.471%, 45px);
+    }
+
+    .size-partners04 {
+        width: min(27.616%, 72.35px);
+        height: min(27.616%, 50px);
+    }
+
+    .size-partners05 {
+        width: min(38.844%, 102.54px);
+        height: min(38.844%, 50px);
+    }
+
+    .size-partners06 {
+        width: min(56.58%, 176px);
+        height: min(56.58%, 48px);
+    }
+
+    .size-partners07 {
+        width: min(64.212%, 194px);
+        height: min(64.212%, 47px);
+    }
+
+    .size-partners08 {
+        width: min(41.538%, 126.85px);
+        height: min(41.538%, 55px);
+    }
+
+    .size-partners09 {
+        width: min(51.414%, 182px);
+        height: min(51.414%, 49px);
+    }
+
+    /* 2. HEADER */
+    .header__background-top {
+        min-height: 45px;
+    }
+
+    .header__container-top {
+        padding-top: 12px;
+        padding-bottom: 11.35px;
+    }
+
+    .header__burger {
+        width: 25px;
+        height: 18px;
+        transform: translateY(-1px);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .header__burger::after {
+        top: -6px;
+        right: -6px;
+        bottom: -6px;
+        left: -6px;
+    }
+
+    .header__line {
+        height: 11%;
+        width: 73%;
+        top: 8px;
+        left: 0;
+    }
+
+    .header__line--passive:nth-child(1) {
+        top: 0;
+        width: 100%;
+    }
+
+    .header__line--passive:nth-child(2) {
+        top: 8px;
+        width: 64%;
+    }
+
+    .header__line--passive:nth-child(3) {
+        bottom: 8px;
+        width: 64%;
+    }
+
+    .header__line--passive:nth-child(4) {
+        top: 16px;
+        width: 40%;
+    }
+
+    .header__burger--open {
+        transform: translateX(-4.5px) translateY(-1px);
+        transition: transform 0.2s ease-in-out 0.1s;
+    }
+
+    .header__line--active:nth-child(1) {
+        transform: translateX(3.5px) translateY(0.5px) rotate(45deg);
+    }
+
+    .header__line--active:nth-child(2) {
+        transform: translateX(3.5px) translateY(0.5px) rotate(45deg);
+    }
+
+    .header__line--active:nth-child(3) {
+        transform: translateX(3.5px) translateY(0.5px) rotate(-45deg);
+    }
+
+    .header__line--active:nth-child(4) {
+        transform: translateX(3.5px) translateY(0.5px) rotate(-45deg);
+    }
+
+    .header__link {
+        margin-right: 6px;
+        width: 96.8px;
+        height: 21.67px;
+    }
+
+    .header__box {
+        padding-top: 46px;
+        padding-right: 15px;
+        padding-bottom: 9px;
+        padding-left: 15px;
+    }
+
+    .header__scroll-box {
+        margin-top: 0;
+    }
+
+    .header__link-anchor {
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    .header__animation-login {
+        left: 24px;
+    }
+
+    .header__button-login {
+        margin-left: 0;
+        padding-left: 22px;
+        padding-right: 32px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        min-width: 100px;
+        max-width: 180px;
+    }
+
+    .header__box-login {
+        padding-top: 0;
+        padding-bottom: 1px;
+    }
+
+    .header__svg-login {
+        margin-right: 1px;
+        width: 14px;
+        height: 9px;
+    }
+
+    .header__span-login {
+        font-size: 12px;
+        line-height: 16px;
+        min-height: 0;
+    }
+
+    .header__search-open {
+        transform: translateX(0.5px) translateY(-1.2px);
+    }
+
+    .header__search-open::after {
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+    }
+
+    .header__svg-open {
+        width: 18px;
+        height: 18px;
+    }
+
+    .header__search-box {
+        bottom: -30px;
+        align-items: flex-end;
+        gap: 34px;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-bottom: 19px;
+        padding-left: 57px;
+        width: 100%;
+        background-size: 16px 16px;
+        background-position: left 57px top 40px;
+    }
+
+    .header__form-search {
+        padding-left: 0;
+        min-height: 16px;
+        gap: 3px;
+    }
+
+    .header__button-search {
+        /* Блочная модель */
+        width: 16px;
+        height: 16px;
+    }
+
+    .header__svg-search {
+        /* Блочная модель */
+        width: 16px;
+        height: 16px;
+    }
+
+    .header__input-search {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .header__search-close {
+        margin-bottom: 0;
+        align-self: flex-start;
+    }
+
+    .header__search-close::after {
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+    }
+
+    .header__svg-close {
+        width: 15px;
+        height: 15px;
+    }
+
+    /* PREVIEW */
+    .preview__content {
+        padding-top: 33px;
+        padding-bottom: 45px;
+    }
+
+    .preview__information {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 500px;
+    }
+
+    .preview__title {
+        max-width: none;
+    }
+
+    .preview__text {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+
+    .preview__button {
+        padding-top: 8px;
+        padding-right: 14.13px;
+        padding-bottom: 9px;
+        padding-left: 16.14px;
+        min-width: 70px;
+        max-width: 200px;
+    }
+
+    /* ABOUT-US */
+    .about-us__content {
+        padding-bottom: 41px;
+    }
+
+    .about-us__text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    /* GALLERY */
+    .gallery__background {
+        background-image: url(../img/gallery-320-background.jpg);
+    }
+
+    .gallery__content {
+        padding-bottom: 40px;
+    }
+
+    .gallery__left {
+        width: min(100%, 400px);
+    }
+
+    .gallery__pictures {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 0;
+        padding-top: 21px;
+    }
+
+    .gallery__navigation {
+        min-height: 0;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .gallery__number {
+        padding-right: 1px;
+    }
+
+    .gallery__swiper {
+        width: min(100%, 450px);
+        height: min(367rem, 600px);
+    }
+
+    .gallery__item {
+        height: 100%;
+    }
+
+    .gallery__modal {
+        width: calc(290 / 320 * 100%);
+        height: clamp(300px, 95vh, 600px);
+    }
+
+    .gallery__modal-content {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .gallery__modal-picture {
+        width: 100%;
+        height: calc(200 / 600 * 100%);
+    }
+
+    .gallery__modal-information {
+        height: calc(100% - 200 / 600 * 100%);
+        padding-top: 17px;
+        padding-right: 10px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+    }
+
+    /* BIG */
+    .big-section__events {
+        padding-top: 51px;
+    }
+
+    /* CATALOG */
+    .catalog__country-box {
+        flex-wrap: wrap;
+    }
+
+    .catalog__country-box {
+        padding-left: 1px;
+    }
+
+    .catalog__heading {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .catalog__country-list {
+        padding-top: 0;
+    }
+
+    .catalog__country-item:nth-child(n + 3):not(:last-child) {
+        padding-left: 1px;
+    }
+
+    .catalog__country-link {
+        width: 32px;
+        height: 32px;
+        background-size: 32px 32px;
+    }
+
+    .catalog__country-link::before {
+        top: -8px;
+        right: -8px;
+        bottom: -8px;
+        left: -8px;
+    }
+
+    .catalog__country-step {
+        width: 32px;
+        height: 32px;
+        background-size: 32px 32px;
+    }
+
+    .catalog__country-step::before {
+        top: -8px;
+        right: -8px;
+        bottom: -8px;
+        left: -8px;
+    }
+
+    .catalog__text {
+        display: none;
+    }
+
+    .catalog__button {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .catalog__time-item:nth-child(n + 4) .catalog__button {
+        padding-top: 19px;
+        padding-bottom: 21px;
+    }
+
+    .catalog__button-circle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .catalog__button-svg {
+        width: 12px;
+        height: 7px;
+    }
+
+    .catalog__button-list {
+        columns: auto 210px;
+        padding-top: 20px;
+        padding-bottom: 21px;
+        margin-right: 0;
+    }
+
+    .catalog__button-plug {
+        display: none;
+    }
+
+    .catalog__subject {
+        font-size: 24px;
+    }
+
+    .catalog__null-text {
+        font-size: 18px;
+    }
+
+    .catalog__figure-img {
+        width: 90px;
+        height: 130px;
+    }
+
+    .catalog__img {
+        height: 181rem;
+    }
+
+    /* EVENTS */
+    .events__item--hidden {
+        display: flex;
+    }
+
+    .events__item--hidden-768 {
+        display: flex;
+    }
+
+    .events__swiper {
+        margin-bottom: var(--events-swiper-margin);
+    }
+
+    .events__item {
+        width: 100%;
+        height: auto;
+    }
+
+    .events__card {
+        width: 100%;
+    }
+
+    .events__information {
+        padding-top: 15px;
+        padding-right: 10px;
+        padding-bottom: 49px;
+        padding-left: 28px;
+    }
+
+    .events__subject {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .events__pagination {
+        gap: var(--events-pagination-gap);
+        justify-content: center;
+    }
+
+    .events__circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: var(--background-pagination-passive);
+    }
+
+    .events__circle--active {
+        background-color: var(--background-pagination-active);
+    }
+
+    .events__button {
+        display: none;
+    }
+
+    /* EDITIONS */
+    .editions__background {
+        background-image: url(../img/editions-320-background.jpg);
+        background-repeat: repeat;
+        background-size: 100%;
+    }
+
+    .editions__content {
+        padding-bottom: 44px;
+        min-height: 0;
+    }
+
+    .editions__button-filter {
+        cursor: pointer;
+        pointer-events: all;
+        justify-content: space-between;
+        height: 40px;
+        border-top: 1px solid var(--border-5);
+        border-bottom: 1px solid var(--border-5);
+    }
+
+    .editions__svg-filter {
+        display: block;
+        width: 12px;
+        height: 8px;
+        stroke: var(--svg-1);
+        transition: transform 0.25s ease-in-out;
+    }
+
+    .editions__button-filter--active svg {
+        transform: rotate(-180deg);
+    }
+
+    .editions__list-checkbox {
+        display: flex;
+        columns: 1;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .editions__list-checked {
+        flex-direction: column;
+        margin-bottom: var(--editions-checked-margin);
+        padding-left: 1px;
+    }
+
+    .editions__item-checkbox {
+        flex-shrink: 0;
+        align-items: center;
+        border-bottom: 1px solid var(--border-5);
+        height: 39px;
+    }
+
+    .editions__label-checkbox {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .editions__svg-checkbox {
+        display: none;
+        width: 12px;
+        height: 12px;
+        fill: var(--active-6);
+    }
+
+    .editions__list-checked .editions__svg-checkbox {
+        display: block;
+    }
+
+    .editions__cost {
+        width: min(95.5%, 350px);
+    }
+
+    .editions__swiper {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .editions__null--active {
+        position: static;
+        height: 254rem;
+    }
+
+    .editions__navigation {
+        display: none;
+    }
+
+    .editions__list {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: var(--editions-list-row-gap);
+        column-gap: var(--editions-list-column-gap);
+    }
+
+    .editions__item {
+        width: calc((100% - 30px) / 2);
+    }
+
+    .editions__information {
+        flex-direction: column;
+        gap: var(--editions-information-gap);
+    }
+
+    .editions__top {
+        width: 100%;
+    }
+
+    .editions__subject {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .editions__author {
+        font-size: 12px;
+    }
+
+    .editions__price {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .editions__button {
+        padding-right: 34px;
+        padding-left: 34px;
+        padding-bottom: 12px;
+    }
+
+    /* PROJECTS */
+    .projects__text {
+        width: 100%;
+    }
+
+    .projects__swiper {
+        margin: 0 17px;
+        margin-right: 18px;
+    }
+
+    .projects__link-page {
+        min-height: 63px;
+    }
+
+    /* CONTACTS */
+    .contacts__heading {
+        padding-left: 15px;
+    }
+
+    .contacts__box {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contacts__left {
+        position: static;
+        border: none;
+    }
+
+    .contacts__address-box {
+        display: none;
+        padding: 0 15px;
+    }
+
+    .contacts__address-box--320 {
+        display: block;
+    }
+
+    .contacts__address-subject {
+        line-height: 24px;
+    }
+
+    .contacts__address {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .contacts__content {
+        padding-top: 20px;
+        padding-right: 15px;
+        padding-bottom: 30px;
+        padding-left: 15px;
+    }
+
+    .contacts__right {
+        width: 100%;
+        height: 320px;
+    }
+
+    .contacts__input {
+        padding: 3px 23px;
+        min-width: 0;
+        width: min(100%, 400px);
+        border: 1px solid #333;
+    }
+
+    .contacts__button {
+        padding-top: 10px;
+        padding-right: 33px;
+        padding-bottom: 9px;
+        padding-left: 33px;
+    }
+
+    .contacts__subject:last-child {
+        margin-bottom: 10px;
+    }
+
+    .contacts__social-link {
+        width: 50px;
+        height: 50px;
+        background-size: 50px 50px;
+    }
+
+    /* FOOTER */
+    .footer__box {
+        padding-top: 20px;
+        padding-bottom: 20.33px;
+    }
+
+    .footer__container {
+        gap: var(--footer-container-gap);
+        flex-direction: column-reverse;
+        padding: 0 55px;
+    }
+
+    .footer__logo {
+        padding-top: 0;
+    }
+
+    .footer__link {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer__svg {
+        width: 50px;
+        height: 50px;
+    }
+}

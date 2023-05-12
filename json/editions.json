@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "img1920": "./img/editions-1920-product01.jpg",
+        "img768": "./img/editions-768-product01.jpg",
+        "img320": "./img/editions-320-product01.jpg",
+        "name": "Искусство цвета",
+        "cost": 620,
+        "authors": "Иттен, Иоханнес",
+        "category": "design"
+    },
+
+    {
+        "id": 2,
+        "img1920": "./img/editions-1920-product02.jpg",
+        "img768": "./img/editions-768-product02.jpg",
+        "img320": "./img/editions-320-product02.jpg",
+        "name": "Типографика",
+        "cost": 2450,
+        "authors": "Рудер, Эмиль",
+        "category": "design"
+    },
+
+    {
+        "id": 3,
+        "img1920": "./img/editions-1920-product03.jpg",
+        "img768": "./img/editions-768-product03.jpg",
+        "img320": "./img/editions-320-product03.jpg",
+        "name": "Книга про буквы",
+        "cost": 2200,
+        "authors": "Гордон, Юрий",
+        "category": "design"
+    },
+
+    {
+        "id": 4,
+        "img1920": "./img/editions-1920-product04.jpg",
+        "img768": "./img/editions-768-product04.jpg",
+        "img320": "./img/editions-320-product04.jpg",
+        "name": "Николай Ильин",
+        "cost": 1100,
+        "authors": "Кричевский, Владимир",
+        "category": "design"
+    },
+
+    {
+        "id": 5,
+        "img1920": "./img/editions-1920-product05.jpg",
+        "img768": "./img/editions-768-product05.jpg",
+        "img320": "./img/editions-320-product05.jpg",
+        "name": "Модульные сетки в графическом дизайне",
+        "cost": 1450,
+        "authors": "Мюллер-Брокманн, Йозеф",
+        "category": "design"
+    },
+
+    {
+        "id": 6,
+        "img1920": "./img/editions-1920-product06.jpg",
+        "img768": "./img/editions-768-product06.jpg",
+        "img320": "./img/editions-320-product06.jpg",
+        "name": "Эволюция графических стилей",
+        "cost": 3200,
+        "authors": "Хеллер, Чваст",
+        "category": "design"
+    },
+
+    {
+        "id": 7,
+        "img1920": "./img/editions-1920-product07.jpg",
+        "img768": "./img/editions-768-product07.jpg",
+        "img320": "./img/editions-320-product07.jpg",
+        "name": "Искусство и визуальное восприятие",
+        "cost": 2200,
+        "authors": "Арнхейм, Рудольф",
+        "category": "design"
+    }
+]

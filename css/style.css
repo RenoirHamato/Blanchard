@@ -1,0 +1,3589 @@
+html {
+    box-sizing: border-box;
+    font-size: calc(1px + 1 * ((100vw - 1920px) / 1920));
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* 1. ГЛОБАЛЬНЫЕ СТИЛИ */
+/* 1.1. Шрифты */
+@font-face {
+    font-family: 'OpenSans';
+    src: local('OpenSansRegular'), url('../fonts/OpenSansRegular.woff2') format('woff2'),
+        url('../fonts/OpenSansRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: local('OpenSansSemiBold'), url('../fonts/OpenSansSemiBold.woff2') format('woff2'),
+        url('../fonts/OpenSansSemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: local('OpenSansBold'), url('../fonts/OpenSansBold.woff2') format('woff2'),
+        url('../fonts/OpenSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 1.2. Постоянные значения */
+:root {
+    /* Цвета: */
+    /* --background-color */
+    --background-site: #fff;
+    --background-box: #000;
+    --background-box-alternative: rgba(0, 0, 0, 0.5);
+    --background-static: #4b4b4b;
+    --background-static-2: rgba(0, 0, 0, 0.6);
+    --background-button-big: transparent;
+    --background-button-preview: #9d5cd0;
+    --background-button-1: #666;
+    --background-button-2: #ececec;
+    --background-gallery-overlay: rgba(0, 0, 0, 0.6);
+    --background-modal-information: #fff;
+    --background-tooltip: #9d5cd0;
+
+    /* --text-color */
+    --text-light: #fff;
+    --text-dark: #333;
+    --text-gray: #999;
+    --text-alternative-1: #9d5cd0;
+    --text-alternative-2: #c283f3;
+
+    /* --focus-color */
+    --focus-1: #9d5cd0;
+    --focus-2: #7943a4;
+    --focus-3: #c283f3;
+    --focus-4: #d1a9f0;
+    --focus-5: #666;
+    --focus-6: #ececec;
+    --focus-7: #fff;
+    --focus-border-1: #9d5cd0;
+    --focus-border-2: #c283f3;
+    --focus-border-3: #000;
+    --focus-border-4: #fff;
+    --focus-border-5: #7943a4;
+
+    /* --hover-color */
+    --hover-1: #9d5cd0;
+    --hover-2: #c283f3;
+    --hover-3: #d1a9f0;
+    --hover-4: #7943a4;
+    --hover-5: rgba(0, 0, 0, 0.5);
+    --hover-6: #fff;
+    --hover-7: #ececec;
+    --hover-border-1: #9d5cd0;
+    --hover-border-2: #c283f3;
+    --hover-border-3: #d1a9f0;
+    --hover-border-4: #7943a4;
+
+    /* --active-color */
+    --active-1: #7943a4;
+    --active-2: #9d5cd0;
+    --active-3: #d1a9f0;
+    --active-4: #fff;
+    --active-5: #000;
+    --active-border-1: #9d5cd0;
+    --active-border-2: #d1a9f0;
+    --active-border-3: #000;
+    --active-border-4: #7943a4;
+    --active-gradient-1: rgba(194, 131, 243, 0.4);
+
+    /* --checked-color */
+    --checked-1: #c283f3;
+
+    /* --disable-color */
+    --disabled-color-1: rgba(102, 102, 102, 0.5);
+    --disabled-color-2: #ececec;
+    --disabled-arrow-color-1: #fff;
+    --disabled-arrow-color-2: #bbb;
+
+    /* --details-color */
+    --border-1: #fff;
+    --border-2: #cacaca;
+    --border-3: #999;
+    --border-4: #9d5cd0;
+    --border-button-big: #9d5cd0;
+    --caret: #fff;
+    --placeholder-1: rgba(255, 255, 255, 0.85);
+    --placeholder-2: #999;
+    --svg-1: #fff;
+    --svg-2: #000;
+    --svg-3: #cacaca;
+
+    /* Отступы: */
+    /* --gap */
+    --header-container-gap: 179px;
+    --header-box-gap: 179px;
+    --header-anchor-gap: 62.4px;
+    --header-button-login-gap: 6px;
+    --header-select-gap: 95.5px;
+    --header-form-search-gap: 9px;
+    --gallery-box-gap: 50px;
+    --gallery-pictures-gap: 3px;
+    --gallery-navigation-gap: 18px;
+    --gallery-swiper-list-gap: 50px;
+    --catalog-country-box-gap: 41px;
+    --catalog-country-list-gap: 50px;
+    --catalog-accordion-gap: 50px;
+    --catalog-button-list-gap: 61.5px;
+    --catalog-null-gap: 24px;
+    --events-list-gap: 50px;
+    --events-information-gap: 81px;
+    --editions-box-gap: 167px;
+    --editions-navigation-gap: 19px;
+    --editions-swiper-list-gap: 50px;
+    --projects-swiper-list-gap: 50px;
+    --contacts-form-gap: 23px;
+    --contacts-input-container-gap: 8px;
+    --contacts-social-links-gap: 20px;
+    --footer-links-gap: 20px;
+
+    /* --margin */
+    --heading-margin: 16px;
+    --header-item-page-margin: 20px;
+    --preview-title-margin: 19px;
+    --preview-text-margin: 93px;
+    --gallery-filter-title-margin: 10px;
+    --catalog-text-margin: 39px;
+    --catalog-country-box-margin: 16px;
+    --catalog-img-margin: 31px;
+    --catalog-subject-margin: 9px;
+    --catalog-date-margin: 6px;
+    --catalog-null-text-margin: 5px;
+    --catalog-null-span-margin: 5px;
+    --events-list-margin: 51px;
+    --events-span-margin: 3px;
+    --events-subject-margin: 3px;
+    --editions-check-margin: 27px;
+    --editions-style-checkbox-margin: 12px;
+    --editions-price-title-margin: 7px;
+    --editions-image-margin: 23px;
+    --editions-information-margin: 17px;
+    --editions-subject-margin: 4px;
+    --projects-information-margin: 20px;
+    --projects-subject-margin: 23px;
+    --contacts-address-box-margin: 27px;
+    --contacts-address-subject-margin: 4px;
+    --contacts-form-box-margin: 38px;
+    --contacts-subject-form-margin: 0px;
+    --contacts-subject-links-margin: 16px;
+    --contacts-subject-alternative-margin: 6px;
+}
+
+/* 1.3. body */
+body {
+    min-width: 320px;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 400;
+    background-color: var(--background-site);
+}
+
+/* 1.4. Сброс стилей */
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.button-reset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 1.5. Особые состояния */
+.display-off {
+    display: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1630px;
+    padding: 0 15px;
+}
+
+.content {
+    padding: 80px 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.visually-hidden {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    transform: scale(0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.stop-scroll {
+    overflow: hidden;
+}
+
+/* 1.6. Логотип: HEADER и FOOTER */
+/* 1.6.1. Ссылка */
+.link {
+    /* Позиционирование */
+    position: relative;
+    /* Блочная модель */
+    display: block;
+}
+
+/* Стили для focus-visible */
+.link::before {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: 2;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    /* Оформление */
+    border: 2px solid var(--focus-border-5);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/* Рабочее состояние Focus-visible */
+.link:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+/* 1.7. Параграфы */
+/* H1 */
+.title {
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 83px;
+    color: var(--text-light);
+}
+
+/* H2 */
+.heading {
+    margin: 0;
+    max-width: 50%;
+    margin-bottom: var(--heading-margin);
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 65px;
+    color: var(--text-dark);
+}
+
+/* H3 */
+.subject {
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--text-dark);
+}
+
+.subject-alternative {
+    margin: 0;
+    margin-bottom: 19px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--text-dark);
+}
+
+/* 1.8. Текст */
+/* Обычный текст */
+.text {
+    margin: 0;
+    max-width: 1080px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--text-dark);
+}
+
+/* Стили комментариев, подписей, авторов */
+.span-big {
+    display: block;
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--text-light);
+}
+
+.span-normal {
+    display: block;
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--text-light);
+}
+
+.span-little {
+    display: block;
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--text-light);
+}
+
+.span-gray {
+    display: block;
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--text-gray);
+}
+
+/* 1.9. Кнопки */
+/* Большие кнопки */
+.button-big {
+    position: relative;
+    padding: 15px 33px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    background-color: var(--background-button-big);
+    color: var(--text-alternative-1);
+    border: 2px solid var(--border-button-big);
+    border-radius: 100px;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.button-big::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    border: 2px solid var(--focus-3);
+    border-radius: 100px;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.button-big:focus-visible:not(:hover):not(:active)::after {
+    opacity: 1;
+}
+
+.button-big:hover {
+    background-color: var(--hover-1);
+    border-color: var(--hover-border-1);
+    color: var(--text-light);
+}
+
+.button-big:active {
+    background-color: var(--active-1);
+    border-color: var(--active-border-2);
+    color: var(--text-light);
+}
+
+/* Кнопки управления */
+.buttondark {
+    position: relative;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--background-button-1);
+    border-radius: 100%;
+    background-size: 7px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.buttondark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid var(--focus-border-3);
+    border-radius: 100%;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.buttondark-svg {
+    stroke: var(--svg-1);
+    transition: stroke 0.15s ease-in-out;
+}
+
+.buttondark:focus-visible:not(:hover)::before {
+    opacity: 1;
+}
+
+.buttondark:hover {
+    background-color: var(--hover-1);
+}
+
+.buttondark:active {
+    background-color: var(--active-1);
+}
+
+.buttondark:active::before {
+    opacity: 1;
+}
+
+.buttondark--disabled {
+    pointer-events: none;
+    background-color: var(--disabled-color-1);
+}
+
+.buttondark--lock {
+    display: block;
+}
+
+.buttondark--disabled svg {
+    stroke: var(--disabled-arrow-color-1);
+}
+
+/* 1.10. Прочее */
+@keyframes animation-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animation-scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.tintoretto {
+    background-image: url(../img/tintoretto.jpg);
+}
+
+.friedrich {
+    background-image: url(../img/friedrich.jpg);
+}
+
+.leonardo {
+    background-image: url(../img/leonardo.jpg);
+}
+
+.verrocchio {
+    background-image: url(../img/verrocchio.jpg);
+}
+
+.monet {
+    background-image: url(../img/monet.jpg);
+}
+
+.sisley {
+    background-image: url(../img/sisley.jpg);
+}
+
+.mane {
+    background-image: url(../img/mane.jpg);
+}
+
+.renoir {
+    background-image: url(../img/renoir.jpg);
+}
+
+.van-gogh {
+    background-image: url(../img/van-gogh.jpg);
+}
+
+.cezanne {
+    background-image: url(../img/cezanne.jpg);
+}
+
+.gauguin {
+    background-image: url(../img/gauguin.jpg);
+}
+
+.seurat {
+    background-image: url(../img/seurat.jpg);
+}
+
+.kandinsky {
+    background-image: url(../img/kandinsky.jpg);
+}
+
+.marinetti {
+    background-image: url(../img/marinetti.jpg);
+}
+
+.malevich {
+    background-image: url(../img/malevich.jpg);
+}
+
+.picasso {
+    background-image: url(../img/picasso.jpg);
+}
+
+.carra {
+    background-image: url(../img/carra.jpg);
+}
+
+.pratella {
+    background-image: url(../img/pratella.jpg);
+}
+
+.severini {
+    background-image: url(../img/severini.jpg);
+}
+
+.balla {
+    background-image: url(../img/balla.jpg);
+}
+
+.bochonni {
+    background-image: url(../img/bochonni.jpg);
+}
+
+.france {
+    background-image: url(../img/catalog-france.svg);
+}
+
+.germany {
+    background-image: url(../img/catalog-germany.svg);
+}
+
+.italy {
+    background-image: url(../img/catalog-italy.svg);
+}
+
+.russia {
+    background-image: url(../img/catalog-russia.svg);
+}
+
+.belgium {
+    background-image: url(../img/catalog-belgium.svg);
+}
+
+.slide-1 {
+    background-image: url(../img/header-1920_image-1.jpg);
+}
+
+.slide-2 {
+    background-image: url(../img/header-1920_image-2.jpg);
+}
+
+.slide-3 {
+    background-image: url(../img/header-1920_image-3.jpg);
+}
+
+.size-partners01 {
+    width: 244px;
+    height: 63px;
+}
+
+.size-partners02 {
+    width: 330px;
+    height: 59px;
+}
+
+.size-partners03 {
+    width: 229px;
+    height: 54px;
+}
+
+.size-partners04 {
+    width: 123px;
+    height: 85px;
+}
+
+.size-partners05 {
+    width: 173px;
+    height: 85px;
+}
+
+.size-partners06 {
+    width: 252px;
+    height: 70px;
+}
+
+.size-partners07 {
+    width: 286px;
+    height: 69px;
+}
+
+.size-partners08 {
+    width: 185px;
+    height: 81px;
+}
+
+.size-partners09 {
+    width: 229px;
+    height: 62px;
+}
+
+.whatsapp {
+    background-image: url(../img/contacts-social-whatsapp.svg);
+}
+
+.telegram {
+    background-image: url(../img/contacts-social-telegram.svg);
+}
+
+.simplebar-track-menu {
+    display: none;
+}
+
+.simplebar-track-select {
+    width: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.simplebar-scrollbar-select {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 28px;
+    width: 2px;
+}
+
+.simplebar-scrollbar-select::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-color: #fff;
+}
+
+/*  2. HEADER 
+    ==========================================================================  */
+
+/**
+ * HEADER
+ * Блок с вводным контентом.
+ * Для HEADER указана позиция RELATIVE для адаптивности SWIPER. 
+ */
+
+.header {
+    /* Позиционирование */
+    position: relative;
+}
+
+/**
+ * БЛОК ВЕРХНЕГО ФОНА
+ * Специальный блок, относительно которого в специальном псевдоэлементе устанавливается фон ВЕРХНЕГО КОНТЕЙНЕРА.
+ * Также блоку задается минимальная высота, чтобы при отсутствии контента верхний контейнер оставался видимым и не нарушал общий вид сайта.
+ */
+
+.header__background-top {
+    /* Позиционирование */
+    position: relative;
+    /* Блочная модель */
+    min-height: 100px;
+}
+
+/**
+ * ПСЕВДОЭЛЕМЕНТ ВЕРХНЕГО БЛОКА
+ * Псевдоэлемент, в котором задается фон верхнего контейнера HEADER. Чтобы изменить фон, воспользуйтесь root.
+ */
+
+.header__background-top::after {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Оформление */
+    background-color: var(--background-box);
+}
+
+/**
+ * ВЕРХНИЙ КОНТЕЙНЕР
+ * Главный контейнер, в котором распологаются другие блоки: логотип, навигация, кнопка ВХОД и другое. Указаны стили для мониторов с разрешением экрана 1920px и более.
+ * В зависимости от размера экрана содержимое может менять свои положение и свойства.
+ * Также установлена позиция RELATIVE с Z-INDEX параметром для установки главного контейнера выше псевдоэлемента с фоном. 
+ */
+
+.header__container-top {
+    /* Позиционирование */
+    position: relative;
+    z-index: 1;
+    /* Блочная модель */
+    gap: var(--header-container-gap);
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/**
+ * БУРГЕР-КНОПКА
+ * Кнопка используется на адаптиве, когда ГЛАВНОЕ МЕНЮ сайта переходит в режим БУРГЕР-ОКНО.
+ * В данный момент кнопка скрыта, поскольку на мониторах с разрешением 1920px и выше БУРГЕР-ОКНО полностью отображается в HEADER.
+ */
+
+.header__burger {
+    /* Блочная модель */
+    display: none;
+}
+
+/**
+ * ССЫЛКА НА ГЛАВНУЮ
+ * Блок с ГЛАВНОЙ ССЫЛКОЙ и ЛОГОТИПОМ сайта.
+ * Указаны свойства блочной модели для верного расположения. 
+ * В данный момент ссылка не работает, поскольку отсутствует атрибут href. Для включения ссылки обратитесь к соответствующему тегу и добавьте атрибут href.
+ */
+
+.header__link {
+    /* Блочная модель */
+    flex-shrink: 0;
+    height: 40px;
+}
+
+/**
+ * БУРГЕР-ОКНО
+ * Блок, который в зависимости от разрешения экрана работает в 2 разных режимах: в ПРОСТОМ режиме при разрешении экрана 1920px и более или режиме БУРГЕР-ОКНО при экране с разрешением менее 1920px.
+ * Сейчас блок работает в ПРОСТОМ режиме.
+ */
+
+.header__box {
+    /* Блочная модель */
+    width: 100%;
+    height: 100%;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+/**
+ * SCROLL
+ * Специальный блок для включения плагина SIMPLEBAR. Установлены максимальная ширина и высота для корректной работы.
+ * Если высоты экрана нехватает для полного размещения навигации и кнопки в режиме БУРГЕР-ОКНА, то запускается кастомный scrollbar.
+ */
+
+.header__scroll {
+    /* Блочная модель */
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ * БЛОК-SCROLL
+ * Окно для scroll-контента, которое будет скроллиться в случае нехватка места по высоте.
+ * В блоке указаны свойства для верного отображения согласно дизайну на странице с экранами 1920px и более, а также отключен scrollbar.
+ */
+
+.header__scroll-box {
+    /* Блочная модель */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--header-box-gap);
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    /* Оформление */
+    overflow: hidden;
+}
+
+/**
+ * ГЛАВНОЕ МЕНЮ
+ * Блок для обозначения содержимого в виде основных навигационных ссылок.
+ * Указан автоматический отступ справа, чтобы меню занимало все свободное доступное пространство в БУРГЕР-ОКНе (если такое пространство имеется).
+ */
+
+.header__menu-anchor {
+    /* Блочная модель */
+    margin-right: auto;
+}
+
+/**
+ * СПИСОК ГЛАВНОГО МЕНЮ
+ * Селектор, свойства которого указывают на поведение элементов СПИСКА ГЛАВНОГО МЕНЮ в различных ситуациях, например, в случае увеличение числа этих элементов.
+ * Требуется для прохождения теста на переполнение.
+ */
+
+.header__list-anchor {
+    /* Блочная модель */
+    flex-wrap: wrap;
+    gap: var(--header-anchor-gap);
+}
+
+/**
+ * ЯКОРНЫЕ ССЫЛКИ
+ * Главные навигационные ЯКОРНЫЕ ССЫЛКИ, необходимые для быстрого перемещения с одной части сайта на другую.
+ * В селекторе указаны параметры блочной модели, типографика для текста внутри ссылок, некоторые декоративные стили, а также свойство анимации.
+ * Также указана позиция RELATIVE для верного отображения сотояния FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
+ */
+
+.header__link-anchor {
+    /* Позиционирование */
+    position: relative;
+    z-index: 0;
+    /* Блочная модель*/
+    display: block;
+    min-height: 24px;
+    /* Типографика */
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    /* Оформление */
+    color: var(--text-light);
+    outline: none;
+    /* Анимации */
+    transition: color 0.15s ease-in-out;
+}
+
+/**
+ * ЯКОРНЫЕ ССЫЛКИ (FOCUS-VISIBLE) 
+ * Псевдоэлемент, в котором указаны альтернативные стили ЯКОРНЫХ ССЫЛОК в состоянии FOCUS-VISIBLE.
+ * В данный момент стили не видны, поскольку они скрыты через определенное CSS-правило.
+ */
+
+.header__link-anchor::after {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -5px;
+    bottom: -2px;
+    left: -5px;
+    /* Оформление */
+    background-color: var(--focus-2);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/**
+ * ЯКОРНЫЕ ССЫЛКИ : FOCUS-VISIBLE
+ * Псевдокласс FOCUS-VISIBLE, который отменяется прозрачность псевдоэлемента ЯКОРНОЙ ССЫЛКИ.
+ * Для отображения стилей псевдоэлемента необходимо при помощи клавиатуры навести фокус на ЯКОРНУЮ ССЫЛКУ.
+ * FOCUS-VISIBLE не работает совместо с состояниями HOVER или ACTIVE для корректного отображения стилей.
+ */
+
+.header__link-anchor:focus-visible:not(:hover):not(:active)::after {
+    /* Оформление */
+    opacity: 1;
+}
+
+/**
+ * ЯКОРНЫЕ ССЫЛКИ : HOVER
+ * Псевдокласс HOVER, который задает альтернативный цвет текста ЯКОРНОЙ ССЫЛКЕ при наведении на нее курсора мышки.
+ */
+
+.header__link-anchor:hover {
+    /* Оформление */
+    color: var(--hover-2);
+}
+
+/**
+ * ЯКОРНЫЕ ССЫЛКИ : ACTIVE
+ * Псевдокласс ACTIVE, который задает альтернативный цвет текста ЯКОРНОЙ ССЫЛКЕ в момент, когда она активируется пользователем (время между нажатием и отпусканием пользователем кнопки мыши).
+ */
+
+.header__link-anchor:active {
+    /* Оформление */
+    color: var(--active-1);
+}
+
+/**
+ * КНОПКА ВХОДА
+ * Данная кнопка необходима для открытия отдельного блока с формой входа. Пока такая функция не предусмотрена макетом, поэтому кнопка существует как задел.
+ * В селекторе указаны параметры блочной модели для верного поведения КНОПКИ ВХОДА при экранах с разрешением 1920px и более.
+ * Также указана позиция RELATIVE для верного отображения сотояния FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
+ * В КНОПКЕ содержится текст и блок с анимированным декоративным элементом, стили которых задаются своими классами.
+ */
+
+.header__button-login {
+    /* Позиционирование */
+    position: relative;
+    /* Блочная модель */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--header-button-login-gap);
+    margin-right: -1px;
+    padding-bottom: 1px;
+}
+
+/**
+ * КНОПКА ВХОДА (FOCUS-VISIBLE)
+ * Псевдоэлемент, в котором указаны альтернативные стили КНОПКИ ВХОДА в состоянии FOCUS-VISIBLE.
+ * В данный момент стили не видны, поскольку они скрыты через определенное CSS-правило.
+ */
+
+.header__button-login::after {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -5px;
+    bottom: -2px;
+    left: -3px;
+    /* Оформление */
+    background-color: var(--focus-2);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/**
+ * КНОПКИ ВХОДА (БЛОК С ДЕКОРАЦИЯМИ)
+ * Объединяющий блок КНОПКИ ВХОДА, необходимый для верного отображения декораций и корректной работы анимации. 
+ */
+
+.header__box-login {
+    /* Блочная модель */
+    align-items: center;
+    padding-top: 2px;
+}
+
+/** 
+ * КНОПКА ВХОДА (АНИМИРОВАННАЯ ЛИНИЯ)
+ * SVG-линия, которая удлиняет стрелочку внутри декоративной картинки в состояниях HOVER или ACTIVE.
+ * В данный момент линия скрыта и имеет свой исходный цвет.
+ */
+
+.header__animation-login {
+    /* Блочная модель */
+    display: block;
+    /* Оформление */
+    fill: var(--svg-1);
+    /* Анимации */
+    transform: translateX(6px);
+    transition: transform 0.15s ease-in-out, fill 0.15s ease-in-out;
+}
+
+/**
+ * КНОПКА ВХОДА (ДЕКОРАТИВНАЯ КАРТИНКА)
+ * Стили по умолчанию для декоративной SVG-картинки.
+ */
+
+.header__svg-login {
+    /* Блочная модель */
+    display: block;
+    /* Оформление */
+    fill: var(--svg-1);
+    /* Анимации */
+    transition: fill 0.15s ease-in-out;
+}
+
+/**
+ * КНОПКА ВХОДА (ПОДПИСЬ)
+ * 
+ * В селекторе указаны параметры блочной модели, типографика, некоторые декоративные стили, а также свойство анимации.
+ */
+
+.header__span-login {
+    /* Блочная модель */
+    display: block;
+    min-height: 24px;
+    /* Типографика */
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    /* Оформление */
+    color: var(--text-light);
+    /* Анимации */
+    transition: color 0.15s ease-in-out;
+}
+
+/**
+ * КНОПКА ВХОДА : FOCUS-VISIBLE
+ * Псевдокласс FOCUS-VISIBLE, который отменяется прозрачность псевдоэлемента КНОПКИ ВХОДА.
+ * Для отображения стилей псевдоэлемента необходимо при помощи клавиатуры навести фокус на КНОПКУ ВХОДА.
+ * FOCUS-VISIBLE не работает совместо с состояниями HOVER или ACTIVE для корректного отображения стилей.
+ */
+
+.header__button-login:focus-visible:not(:hover):not(:active)::after {
+    /* Оформление */
+    opacity: 1;
+}
+
+/**
+ * КНОПКА ВХОДА (АНИМИРОВАННАЯ ЛИНИЯ) : HOVER
+ * При активации состояния HOVER у КНОПКИ ВХОДА, линия плавно выдвигается и меняет цвет согласно этому селектору.
+ */
+
+.header__button-login:hover .header__animation-login {
+    /* Оформление */
+    fill: var(--hover-2);
+    /* Анимации */
+    transform: translateX(2px);
+}
+
+/**
+ * КНОПКА ВХОДА (ДЕКОРАТИВНАЯ КАРТИНКА) : HOVER
+ * При активации состояния HOVER у КНОПКИ ВХОДА, декоративная картинка меняет цвет согласно этому селектору.
+ */
+
+.header__button-login:hover .header__svg-login {
+    /* Оформление */
+    fill: var(--hover-2);
+}
+
+/**
+ * КНОПКА ВХОДА (ПОДПИСЬ) : HOVER
+ * При активации состояния HOVER у КНОПКИ ВХОДА, надпись плавно меняет цвет согласно этому селектору.
+ */
+
+.header__button-login:hover .header__span-login {
+    /* Оформление */
+    color: var(--hover-2);
+}
+
+/**
+ * КНОПКА ВХОДА (АНИМИРОВАННАЯ ЛИНИЯ) : ACTIVE
+ * При активации состояния ACTIVE у КНОПКИ ВХОДА, ЛИНИЯ плавно меняет цвет согласно этому селектору, а также остается на месте, если активация была с мышки или клавиатуры.
+ */
+
+.header__button-login:active .header__animation-login {
+    /* Оформление */
+    fill: var(--active-1);
+    /* Анимации */
+    transform: translateX(2px);
+}
+
+/**
+ * КНОПКА ВХОДА (ДЕКОРАТИВНАЯ КАРТИНКА) : ACTIVE
+ * При активации состояния ACTIVE у КНОПКИ ВХОДА, ДЕКОРАТИВНАЯ КАРТИНКА плавно меняет цвет согласно этому селектору.
+ */
+
+.header__button-login:active .header__svg-login {
+    /* Оформление */
+    fill: var(--active-1);
+}
+
+/**
+ * КНОПКА ВХОДА (ПОДПИСЬ) : ACTIVE
+ * При активации состоянияACTIVE у КНОПКИ ВХОДА, надпись плавно меняет цвет согласно этому селектору.
+ */
+
+.header__button-login:active .header__span-login {
+    /* Оформление */
+    color: var(--active-1);
+}
+
+/**
+ * КНОПКА АКТИВАЦИИ ПОЛЯ ПОИСКА
+ * Кнопка, при нажатии на которую, появляется форма с полем для поиска по сайту.
+ * В данный момент КНОПКА скрыта, поскольку она нужна только на устройствах с разрешением экрана меньше 1920px.
+ */
+
+.header__search-open {
+    display: none;
+}
+
+/**
+ * БЛОК ФОРМЫ ПОИСКА
+ * Блок, который содержит ФОРМУ ПОИСКА, а также кнопку для закрытия этой ФОРМЫ. 
+ * Данный блок становится доступным по нажатию КНОПКИ АКТИВАЦИИ ПОЛЯ ПОИСКА.
+ */
+
+.header__search-box {
+    display: none;
+}
+
+/**
+ * БЛОК НИЖНЕГО ФОНА
+ * Специальный блок, относительно которого устанавливается фон НИЖНЕГО КОНТЕЙНЕРА через псевдоэлемент (указана позиция RELATIVE).
+ * Также для блока задается минимальная высота, чтобы при отсутствии контента нижний контейнер (как и верхний) оставался видимым и не нарушал общий вид сайта.
+ */
+
+.header__background-bottom {
+    /* Позиционирование */
+    position: relative;
+    top: 0;
+    /* Блочная модель */
+    min-height: 70px;
+}
+
+/**
+ * ПСЕВДОЭЛЕМЕНТ НИЖНЕГО БЛОКА
+ * Псевдоэлемент, в котором задается фон нижнего контейнера HEADER. Чтобы изменить фон, воспользуйтесь root.
+ */
+
+.header__background-bottom::after {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Оформление */
+    background-color: var(--background-box-alternative);
+}
+
+/**
+ * НИЖНИЙ КОНТЕЙНЕР
+ * Дополнительный контейнер, в котором распологаются дополнительные блоки, такие как форма поиска и список из выпадающих списков.
+ * Блок виден только на устройствах с разрешением экрана 1920px и более. На иных устройствах, блок полностью исчезает и становится недоступным для взаимодействия.
+ * Также установлена позиция RELATIVE с Z-INDEX параметром для установки дополнительного контейнера выше псевдоэлемента с фоном. 
+ */
+
+.header__container-bottom {
+    /* Позиционирование */
+    position: relative;
+    z-index: 1;
+    /* Блочная модель */
+    gap: var(--header-container-gap);
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+/**
+ * ДОПОЛНИТЕЛЬНОЕ МЕНЮ
+ * Класс дополнительного меню. В нем указан отступ слева для соответствия макету.
+ */
+
+.header__menu-select {
+    /* Блочная модель */
+    margin-left: -2px;
+}
+
+/**
+ * СПИСОК ГЛАВНОГО МЕНЮ
+ * Селектор, свойства которого указывают на поведение элементов списка в различных ситуациях, например, увеличение числа этих элементов.
+ * Требуется для прохождения теста на переполнение.
+ */
+
+.header__list-select {
+    /* Блочная модель */
+    flex-wrap: wrap;
+    gap: var(--header-select-gap);
+}
+
+/**
+ * SELECT-КНОПКА
+ * В селекторе указаны основные стили для SELECT-КНОПКИ.
+ * В кнопке содержится текст с анимированным декоративным элементом, стили которых задаются своими классами.
+ * Также указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
+ */
+
+.header__button-select {
+    /* Позиционирование */
+    position: relative;
+    /* Типографика */
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    /* Оформление */
+    color: var(--text-light);
+    /* Анимации */
+    transition: color 0.15s ease-in-out;
+}
+
+/**
+ * SELECT-КНОПКА (FOCUS-VISIBLE)
+ * Псевдоэлемент, в котором указаны стили состояния FOCUS-VISIBLE у SELECT-КНОПКИ.
+ * Сейчас стили не видны, поскольку отображаются только при наведении на SELECT-КНОПКУ фокуса с клавиатуры.
+ */
+
+.header__button-select::before {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -5px;
+    bottom: -2px;
+    left: -5px;
+    /* Оформление */
+    background-color: var(--focus-2);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/**
+ * SELECT-КНОПКА (ТЕКСТ)
+ * Корректировочные стили для текста внутри кнопки. Задается отступ справа для сооответствия текста макету.
+ */
+
+.header__span-select {
+    /* Блочная модель */
+    margin-right: 1px;
+}
+
+/**
+ * SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА)
+ * Стили по умолчанию для декоративной стрелки SELECT-КНОПКИ.
+ * Задано анимированное поведение при активации различных состояний SELECT-КНОПКИ.
+ */
+
+.header__svg-select {
+    /* Блочная модель */
+    padding-bottom: 2px;
+    width: 12px;
+    height: 9px;
+    /* Оформление */
+    stroke: var(--svg-1);
+    /* Анимации */
+    transition: stroke 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+/**
+ * SELECT-КНОПКА : FOCUS-VISIBLE
+ * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры SELECT-КНОПКИ.
+ * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
+ */
+
+.header__button-select:focus-visible:not(:hover):not(:active)::before {
+    /* Оформление */
+    opacity: 1;
+}
+
+/**
+ * SELECT-КНОПКА : HOVER
+ * Псевдокласс HOVER, который меняет цвет текста при наведении на SELECT-КНОПКУ мышкой.
+ */
+
+.header__button-select:hover {
+    /* Оформление */
+    color: var(--hover-1);
+}
+
+/**
+ * SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА) : HOVER
+ * При активации состояния HOVER у SELECT-КНОПКИ, декоративная стрелка меняет цвет согласно этому селектору.
+ */
+
+.header__button-select:hover .header__svg-select {
+    /* Оформление */
+    stroke: var(--hover-1);
+}
+
+/**
+ * SELECT-КНОПКА : ACTIVE
+ * Псевдокласс ACTIVE, который меняет цвет текста у SELECT-КНОПКИ при клике (клавишей или мышкой).
+ */
+
+.header__button-select:active {
+    /* Оформление */
+    color: var(--active-1);
+}
+
+/**
+ * SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА) : ACTIVE
+ * При активации состояния ACTIVE у SELECT-КНОПКИ, ДЕКОРАТИВНАЯ СТРЕЛКА плавно меняет цвет согласно этому селектору.
+ */
+
+.header__button-select:active .header__svg-select {
+    /* Оформление */
+    stroke: var(--active-1);
+}
+
+/**
+ * АКТИВНАЯ SELECT-КНОПКА
+ * Класс, который задает цвет ТЕКСТА у SELECT-КНОПКИ, пока SELECT-ОКНО доступно для пользователя.
+ * Цвет ТЕКСТА заменяется на цвет FOCUS-VISIBLE при его активации.
+ */
+
+.header__button-select--open:not(:focus-visible) {
+    /* Оформление */
+    color: var(--active-1);
+}
+
+/**
+ * АКТИВНАЯ SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА)
+ * Класс, который задает цвет ДЕКОРАТИВНОЙ СТРЕЛКЕ у SELECT-КНОПКИ, пока SELECT-ОКНО доступно для пользователя.
+ * Цвет ДЕКОРАТИВНОЙ СТРЕЛИ заменяется на цвет FOCUS-VISIBLE при его активации на SELECT-КНОПКЕ.
+ */
+
+.header__button-select--open:not(:focus-visible) .header__svg-select {
+    /* Оформление */
+    stroke: var(--active-1);
+}
+
+/**
+ * АКТИВНАЯ SELECT-КНОПКА (ТРАНСФОРМАЦИЯ СТРЕЛКИ)
+ * При одновременном нажатии на SELECT-КНОПКУ стрелка поворачивается и фиксируется. 
+ * Направление поворота зависит от открытия или закрытия SELECT-ОКНА.
+ */
+
+.header__button-select--open .header__svg-select {
+    /* Анимации */
+    transform: translateY(-2px) rotate(-180deg);
+}
+
+/**
+ * SELECT-ОКНО
+ * В этом классе задаются основные стили для SELECT-ОКНА.
+ * ОКНА имеют позицию ABSOLUTE и выстраиваются относительно ближайшего родителя с позицией RELATIVE. Требуется для корректного отображения при тесте на переполнение.
+ * Сейчас ОКНА невидимы и появляются по нажатию на соответствующую SELECT-КНОПКУ.
+ */
+
+.header__box-select {
+    /* Позиционирование */
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    /* Блочная модель */
+    padding: 40px;
+    padding-right: 19px;
+    width: 300px;
+    height: 300px;
+    /* Оформление */
+    background-color: var(--background-box-alternative);
+    visibility: hidden;
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out, visibility 0.15s;
+}
+
+/**
+ * АКТИВНОЕ SELECT-ОКНО
+ * Стили для появления SELECT-ОКНА на сайте при его вызове соответствующей SELECT-КНОПКОЙ.
+ */
+
+.header__box-select--active {
+    /* Оформление */
+    visibility: visible;
+    opacity: 1;
+}
+
+/**
+ * SELECT-SCROLL
+ * Специальный блок для подключения плагина SIMPLEBAR. Установлены максимальные ширина и высота для размещение 4 КЛАССИЧЕСКИХ ССЫЛОК.
+ * Если список состоит из более 4 элементов, то активируется кастомный scroll.
+ */
+
+.header__scroll-select {
+    /* Блочная модель */
+    width: 100%;
+    max-height: 220px;
+}
+
+/**
+ * ЭЛЕМЕНТЫ СПИСКА SELECT-ОКНА
+ * В этом селекторе указывается поведение элементов списка относительно друг друга.
+ * Для равномерного расположения ссылок по вертикали в SELECT-ОКНЕ каждому элементу (кроме последнего) задан отступ снизу.
+ */
+
+.header__item-page:not(:last-child) {
+    /* Блочная модель */
+    margin-bottom: var(--header-item-page-margin);
+}
+
+/**
+ * КЛАССИЧЕСКИЕ ССЫЛКИ
+ * В селекторе указаны основные стили для классических ссылок в дополнительной навигации сайта.
+ * Также указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
+ */
+
+.header__link-page {
+    /* Позиционирование */
+    position: relative;
+    /* Блочная модель */
+    display: block;
+    margin: 0;
+    margin-right: auto;
+    width: 216px;
+    min-height: 36px;
+    /* Оформление */
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    color: var(--text-light);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Анимации */
+    transition: outline-color 0.15s ease-in-out;
+}
+
+/*
+ * КЛАССИЧЕСКИЕ ССЫЛКИ (ACTIVE)
+ * Псевдоэлемент, в котором указаны стили состояния ACTIVE у КЛАССИЧЕСКИХ ССЫЛОК.
+ * Сейчас стили не видны, поскольку отображаются в момент клика по ссылке.
+ */
+
+.header__link-page::before {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Блочная модель */
+    width: 100%;
+    height: 100%;
+    /* Оформление */
+    background-color: var(--active-gradient-1);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/*
+ * КЛАССИЧЕСКИЕ ССЫЛКИ (FOCUS-VISIBLE)
+ * Псевдоэлемент, в котором указаны стили состояния FOCUS-VISIBLE у КЛАССИЧЕСКИХ ССЫЛОК.
+ * Сейчас стили не видны, поскольку отображаются только при наведении на КЛАССИЧЕСКУЮ ССЫЛКУ фокуса с клавиатуры.
+ */
+
+.header__link-page::after {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Оформление */
+    border: 2px solid var(--focus-1);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/*
+ * КЛАССИЧЕСКИЕ ССЫЛКИ (НАДПИСЬ)
+ * В селекторе указаны основные стили для НАДПИСИ ССЫЛКИ.
+ * Также установлена позиция RELATIVE с Z-INDEX параметром для установки текста выше всех псевдоэлементов КЛАССИЧЕСКОЙ ССЫЛКИ, чтобы эффекты HOVER и ACTIVE срабатывали под надписью согласно макету.
+ */
+
+.header__span-link {
+    /* Позиционирование */
+    position: relative;
+    z-index: 1;
+    /* Блочная модель */
+    display: block;
+    padding-top: 9px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    /* Типографика */
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+/*
+ * КЛАССИЧЕСКИЕ ССЫЛКИ : FOCUS-VISIBLE
+ * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры КЛАССИЧЕСКОЙ ССЫЛКИ.
+ * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
+ */
+
+.header__link-page:focus-visible:not(:hover):not(:active)::after {
+    /* Оформление */
+    opacity: 1;
+}
+
+/*
+ * КЛАССИЧЕСКИЕ ССЫЛКИ : HOVER
+ * Псевдокласс HOVER, который заменяет цвет OUTLINE рамки при наведении на КЛАССИЧЕСКУЮ ССЫЛКУ мышкой.
+ */
+
+.header__link-page:hover {
+    /* Оформление */
+    outline-color: var(--hover-1);
+}
+
+/*
+ * КЛАССИЧЕСКИЕ ССЫЛКИ : ACTIVE
+ * Псевдокласс ACTIVE, который задает всей КЛАССИЧЕСКОЙ ССЫЛКЕ градиент при клике (клавишей или мышкой).
+ */
+
+.header__link-page:active::before {
+    /* Оформление */
+    opacity: 1;
+}
+
+/*
+ * ФОРМА ПОИСКА
+ * Блок формы с указанием минимальной высоты. Также в блоке указаны свойства для правильного расположения кнопки и поля ввода текста внутри формы.
+ * Также установлена позиция RELATIVE с Z-INDEX параметром для установки ФОРМЫ ПОИСКА выше псевдоэлемента с фоном. 
+ */
+
+.header__form-search {
+    /* Позиционирование */
+    position: relative;
+    z-index: 2;
+    /* Блочная модель */
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: var(--header-form-search-gap);
+    min-height: 26px;
+}
+
+/*
+ * КНОПКА ПОИСКА
+ * Селектор, в котором указаны основные стили для КНОПКИ ПОИСКА.
+ * Также указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
+ */
+
+.header__button-search {
+    /* Позиционирование */
+    position: relative;
+    /* Блочная модель */
+    flex-shrink: 0;
+    width: 22.1px;
+    height: 21.62px;
+}
+
+/*
+ * КНОПКА ПОИСКА (ДЕКОРАТИВНАЯ КАРТИНКА)
+ * Основные стили для декоративной картинки КНОПКИ ПОИСКА.
+ */
+
+.header__svg-search {
+    /* Блочная модель */
+    display: block;
+    width: 22.1px;
+    height: 21.62px;
+    /* Оформление */
+    fill: var(--svg-1);
+    /* Анимации */
+    transition: fill 0.15s ease-in-out;
+}
+
+/*
+ * КНОПКА ПОИСКА (FOCUS-VISIBLE)
+ * Псевдоэлемент, в котором указаны стили состояния FOCUS-VISIBLE у КНОПКИ ПОИСКА.
+ * Сейчас стили не видны, поскольку отображаются только при наведении на КНОПКУ ПОИСКА фокуса с клавиатуры.
+ */
+
+.header__button-search::before {
+    content: '';
+    /* Позиционирование */
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px;
+    /* Оформление */
+    border: 2px solid var(--focus-border-5);
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 0.15s ease-in-out;
+}
+
+/*
+ * КНОПКА ПОИСКА : FOCUS-VISIBLE
+ * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры КНОПКИ ПОИСКА.
+ * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
+ */
+
+.header__button-search:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+/*
+ * КНОПКА ПОИСКА : HOVER
+ * Псевдокласс HOVER, который заменяет цвет декоративной картинки при наведении на КНОПКУ ПОИСКА мышкой.
+ */
+
+.header__button-search:hover .header__svg-search {
+    fill: var(--hover-2);
+}
+
+/*
+ * КНОПКА ПОИСКА : ACTIVE
+ * Псевдокласс ACTIVE, который заменяет цвет декоративной картинки при клике (клавишей или мышкой).
+ */
+
+.header__button-search:active .header__svg-search {
+    fill: var(--active-1);
+}
+
+/*
+ * ПОЛЕ ПОИСКА
+ * В селекторе указаны основные стили для ПОЛЯ ПОИСКА.
+ */
+
+.header__input-search {
+    /* Блочная модель */
+    padding: 0;
+    width: 219px;
+    /* Типографика */
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    /* Оформление */
+    caret-color: var(--caret);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border-1);
+    outline: none;
+    /* Анимации */
+    transition: border-color 0.15s ease-in-out;
+}
+
+/*
+ * ПОЛЕ ПОИСКА : FOCUS-VISIBLE
+ * Псевдокласс FOCUS-VISIBLE, который заменяет цвет нижней линии у сфокусируемого с клавиатуры ПОЛЯ ПОИСКА.
+ * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
+ */
+
+.header__input-search:focus-visible:not(:hover):not(:active) {
+    /* Оформление */
+    border-color: var(--focus-border-2);
+}
+
+/*
+ * ПОЛЕ ПОИСКА : HOVER
+ * Псевдокласс HOVER, который заменяет цвет нижней линии при наведении на ПОЛЕ ПОИСКА мышкой.
+ */
+
+.header__input-search:hover {
+    /* Оформление */
+    border-color: var(--hover-border-2);
+}
+
+/*
+ * ПОЛЕ ПОИСКА : ACTIVE
+ * Псевдокласс ACTIVE, который заменяет цвет нижней линии ПОЛЯ ПОИСКА при клике (клавишей или мышкой). 
+ */
+
+.header__input-search:active {
+    /* Оформление */
+    border-color: var(--active-border-4);
+}
+
+/*
+ * ПОЛЕ ПОИСКА : PLACEHOLDER
+ * Псевдокласс, который заменяет цвет видимой подписи внутри ПОЛЯ ПОИСКА. 
+ */
+
+.header__input-search::placeholder {
+    /* Оформление */
+    color: var(--placeholder-1);
+}
+
+/*
+ * SWIPER ДЛЯ PREVIEW
+ * Селектор, который устанавливает позицию ABSOLUTE относительно всего HEADER. В таком состоянии блок SWIPER-а растягивается или уменьшается в случае изменения контента в HEADER.
+ * Для верной работы первой анимации контейнера установлен OVERFLOW блоку SWIPER. Также SWIPER-у задан фон, чтобы в случае отстутсвия слайдов, белый текст PREVIEW оставался читабельным (не смешивался с белым фоном BODY).
+ * Для изменения фона SWIPER-а по умолчанию на другой, воспользуйтесь ROOT.
+ */
+
+.header__swiper {
+    /* Позиционирование */
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Оформление */
+    overflow: hidden;
+    background-color: var(--background-static-1);
+}
+
+/*
+ * КОНТЕЙНЕР SWIPER
+ * Специальный контейнер для реализации первой анимации: последовательное уменьшение и увеличение слайдов SWIPER-а. Контейнер занимает всю доступную ширину и высоту согласно текущим размерам SWIPER.
+ * Также установлена позиция RELATIVE, чтобы реализовать дополнительную анимацию ввиде плавного появления нового слайда поверх старого.
+ */
+
+.header__wrapper {
+    /* Позиционирование */
+    position: relative;
+    /* Блочная модель */
+    width: 100%;
+    height: 100%;
+    /* Анимации */
+    animation-name: animation-scale;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/*
+ * СЛАЙДЫ
+ * Селектор, который устанавливает параметры для фона слайда. Путь к картинкам, что должны окрашивать слайды указаны в отдельных дополнительных селекторах.
+ * Каждому слайду задается дополнительная анимация, а также позиция ABSOLUTE относительно контейнера SWIPER-а, которая учавствует в реализации дополнительной анимации.
+ */
+
+.header__picture {
+    /* Позиционирование */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Оформление */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    /* Анимации */
+    transition: opacity 1s ease-in-out;
+}
+
+/*
+ * АКТИВНЫЙ СЛАЙД
+ * Данный модификатор присваивается тому слайду, который должен быть виден в данный момент.
+ */
+
+.header__picture--active {
+    /* Оформление */
+    opacity: 1;
+}
+
+/*
+ * ЗАКОЛЬЦОВЫВАНИЕ
+ * Специальный модификатор, который убирает некорректную работу дополнительной анимации при смене последнего слайда на первый.
+ */
+
+.header__picture--return {
+    /* Позиционирование */
+    z-index: -1;
+}
+
+/*  3. PREVIEW
+    ==========================================================================  */
+
+/*
+ * КОНТЕЙНЕР КОНТЕНТА PREVIEW
+ * Специальный селектор для указания собственных внутренних отступов сверху и снизу, отличных от отступов предусмотренных для тега SECTION селектором CONTENT.
+ * Указана минимальная высота КОНТЕЙНЕРА, чтобы при отсутствии контента PREVIEW не нарушал PIXEL PERFECT.
+ */
+
+.preview__content {
+    /* Блочная модель */
+    padding-top: 71px;
+    padding-bottom: 122px;
+}
+
+/*
+ * БЛОК ИНФОРМАЦИИ
+ * В селекторе указана максимальная ширина, чтобы любой контент, заключенный внутри, не выходил за пределы собственного КОНТЕЙНЕРА. Требуется для теста на переполнение.
+ * Данное свойство выделено в отдельный селектор для гибкости настройки и адаптивности.
+ */
+
+.preview__information {
+    max-width: 579px;
+    min-height: 100px;
+}
+
+/*
+ * ЗАГОЛОВОК
+ * В селекторе не прописаны стили для типографики, поскольку свойствами заголовков 2 уровня управляет общий селектор HEADING.
+ * Указан отступ снизу, чтобы верстка оставалась гибкой (при изменении количества контента структура сайта не ломается). 
+ * Для изменения значения отступа снизу, воспользуйтесь ROOT.
+ */
+
+.preview__title {
+    /* Блочная модель */
+    margin-bottom: var(--preview-title-margin);
+}
+
+/*
+ * ТЕКСТ
+ * В селекторе указаны основные стили для ТЕКСТА preview.
+ * Указан отступ снизу, чтобы верстка оставалась гибкой (при изменении количества контента структура сайта не ломается). 
+ * Для изменения значения отступа снизу, воспользуйтесь ROOT.
+ */
+
+.preview__text {
+    /* Блочная модель */
+    margin-bottom: var(--preview-text-margin);
+    /* Типографика */
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    /* Оформление */
+    color: var(--text-light);
+}
+
+/*
+ * КНОПКА
+ * Указаны корректировочные стили для КНОПКИ preview, отличной от дизайна других БОЛЬШИХ КНОПОК. Стили БОЛЬШИХ КНОПОК прописаны в селекторе BUTTON-BIG.
+ */
+
+.preview__button {
+    /* Блочная модель */
+    padding: 19.5px 32px;
+    min-width: 310px;
+    max-width: 450px;
+    /* Оформление */
+    background-color: var(--background-button-preview);
+    color: var(--text-light);
+    border: 3px solid var(--border-button-big);
+}
+
+/*
+ * КНОПКА : HOVER
+ * Псевдокласс HOVER, который заменяет цвет нижней линии при наведении на КНОПКУ preview мышкой.
+ * Стили являются корректировочными, поскольку заменяют основные стили псевдоэлемента HOVER для БОЛЬШИХ КНОПОК согласно макету.
+ */
+
+.preview__button:hover {
+    /* Оформление */
+    border-color: var(--hover-border-3);
+}
+
+/*  4. ABOUT-US
+    ==========================================================================  */
+
+/*
+ * КОНТЕЙНЕР КОНТЕНТА ABOUT-US
+ * Специальный селектор для указания собственного внутреннего отступа снизу, отличного от отступа предусмотренного для тега SECTION селектором CONTENT.
+ * Указана минимальная высота КОНТЕЙНЕРА, чтобы при отсутствии контента ABOUT-US не нарушал требование PIXEL PERFECT.
+ */
+
+.about-us__content {
+    padding-bottom: 70px;
+    min-height: 295px;
+}
+
+/*
+ * ТЕКСТ
+ * 
+ */
+
+.about-us__text {
+    max-width: 1090px;
+}
+
+/*  5. GALLERY
+    ==========================================================================  */
+
+.gallery__background {
+    background-color: var(--background-static-1);
+    background-image: url(../img/gallery-1920-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery__content {
+    justify-content: space-between;
+    gap: var(--gallery-box-gap);
+    padding-bottom: 70px;
+    width: 100%;
+}
+
+.gallery__left {
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 554px;
+    width: calc(400 / 1600 * 100%);
+}
+
+.gallery__heading {
+    max-width: 90%;
+    color: var(--text-light);
+}
+
+.gallery__filter-title {
+    display: block;
+    margin-bottom: var(--gallery-filter-title-margin);
+    max-width: 70%;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--text-light);
+}
+
+.gallery__filter-select {
+    padding-left: 9px;
+    min-height: 40px;
+    width: 100%;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--text-light);
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+.gallery__filter-select option {
+    background-color: #000;
+    color: #999;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.gallery__filter-select option:checked {
+    display: none;
+}
+
+.gallery__pictures {
+    width: calc(1150 / 1600 * 100%);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gallery-pictures-gap);
+    padding-bottom: 10px;
+}
+
+.gallery__navigation {
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 82px;
+    gap: var(--gallery-navigation-gap);
+    padding-top: 24px;
+    padding-right: 3px;
+    padding-bottom: 26px;
+    padding-left: 3px;
+}
+
+.gallery__number {
+    padding-right: 2px;
+    color: var(--text-light);
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.gallery__pagination--lock {
+    display: block;
+}
+
+.gallery__swiper {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+
+.gallery__item {
+    animation: animation-opacity 0.4s 1;
+    height: calc((100% - 50px) / 2);
+    background-color: var(--background-static-2);
+}
+
+.gallery__card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery__card::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    border: 3px solid var(--focus-2);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.gallery__card::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 25px;
+    bottom: 30px;
+    left: 25px;
+    background-color: var(--hover-5);
+    background-image: url(../img/gallery-loop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.gallery__card:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+.gallery__card:hover::after {
+    opacity: 1;
+}
+
+.gallery__card:active::before {
+    background-color: var(--active-gradient-1);
+    opacity: 1;
+}
+
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__span-adaptive {
+    display: none;
+}
+
+.gallery__authorization {
+    position: relative;
+    z-index: 1;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--text-alternative-2);
+    transition: color 0.15s ease-in-out;
+}
+
+.gallery__authorization::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    right: -4px;
+    bottom: 2px;
+    left: -4px;
+    background-color: var(--focus-2);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.gallery__authorization:focus-visible {
+    color: var(--text-light);
+}
+
+.gallery__authorization:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+.gallery__authorization:hover {
+    color: var(--hover-1);
+}
+
+.gallery__authorization:active {
+    color: var(--active-1);
+}
+
+.gallery__overlay {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-gallery-overlay);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+.gallery__overlay--active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.gallery__modal {
+    position: relative;
+    width: calc(900 / 1920 * 100%);
+    height: clamp(300px, 95vh, 500px);
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery__modal--active {
+    transform: scale(1);
+}
+
+.gallery__modal::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
+}
+
+.gallery__modal-content {
+    width: 100%;
+}
+
+.gallery__modal-picture {
+    height: 100%;
+    width: calc(400 / 900 * 100%);
+    flex-shrink: 0;
+}
+
+.gallery__modal-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.gallery__modal-information {
+    flex-direction: column;
+    padding-top: 121px;
+    padding-right: 29px;
+    padding-bottom: 105px;
+    padding-left: 49px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-modal-information);
+}
+
+.gallery__modal-scrollbar {
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.gallery__modal-name {
+    display: block;
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--text-dark);
+}
+
+.gallery__modal-date {
+    margin-bottom: 10px;
+}
+
+.gallery__modal-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+}
+
+.gallery__modal-svg {
+    fill: var(--svg-2);
+    transition: fill 0.15s ease-in-out;
+}
+
+.gallery__modal-button:focus-visible:not(:hover):not(:active) svg {
+    fill: var(--focus-1);
+}
+
+.gallery__modal-button:hover svg {
+    fill: var(--hover-1);
+}
+
+.gallery__modal-button:active svg {
+    fill: var(--active-1);
+}
+
+.gallery__simplebar-track {
+    width: 2px;
+    background-color: #ececec;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gallery__simplebar-scrollbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 2px;
+}
+
+.gallery__simplebar-scrollbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-color: #000;
+}
+
+.simplebar-content-wrapper:focus-visible::before {
+    opacity: 1;
+}
+
+/* 6. BIG-SECTION */
+.big-section__events {
+    padding-top: 80px;
+}
+
+/* 6.1. CATALOG */
+.catalog__text {
+    margin-bottom: var(--catalog-text-margin);
+}
+
+.catalog__country-box {
+    align-items: center;
+    gap: var(--catalog-country-box-gap);
+    margin-bottom: var(--catalog-country-box-margin);
+    margin-left: -1px;
+}
+
+.catalog__heading {
+    margin-bottom: 0;
+}
+
+.catalog__country-list {
+    gap: var(--catalog-country-list-gap);
+    padding-top: 4px;
+}
+
+.catalog__country-step {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 46px;
+    background-size: 46px 46px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid transparent;
+    border-radius: 100%;
+    transition: filter 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.catalog__country-step::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    background-color: transparent;
+    border: 2px solid var(--active-1);
+    border-radius: 100%;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.catalog__country-step:focus-visible:not(:active):not(:hover) {
+    filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
+}
+
+.catalog__country-step:hover:not(:active) {
+    filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
+}
+
+.catalog__country-step:active {
+    border-color: var(--active-1);
+}
+
+.catalog__country-step--disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.catalog__country-step--disabled::before {
+    opacity: 1;
+}
+
+.catalog__accordion {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: var(--catalog-accordion-gap);
+}
+
+.catalog__accordion--active {
+    display: flex;
+}
+
+.catalog__box-left {
+    width: calc(750 / 1600 * 100%);
+}
+
+.catalog__box-right {
+    padding-top: 1px;
+    width: calc(800 / 1600 * 100%);
+}
+
+.catalog__tab-post {
+    display: none;
+    width: 100%;
+    animation: animation-opacity 0.4s 1;
+}
+
+.catalog__tab-post--active {
+    display: block;
+}
+
+.catalog__img {
+    margin-bottom: var(--catalog-img-margin);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog__subject {
+    margin-bottom: var(--catalog-subject-margin);
+}
+
+.catalog__date {
+    display: block;
+    margin-bottom: var(--catalog-date-margin);
+}
+
+.catalog__button {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    width: 100%;
+    color: var(--text-dark);
+    border-top: 1px solid var(--border-2);
+    border-bottom: 1px solid var(--border-2);
+    transition: border-color 0.15s ease-in-out;
+}
+
+.catalog__button {
+    margin-top: -1px;
+}
+
+.catalog__button::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    background-color: transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.catalog__button-span {
+    position: relative;
+    transition: color 0.15s ease-in-out;
+}
+
+.catalog__button-span::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -5px;
+    bottom: -2px;
+    left: -2px;
+    background-color: var(--focus-1);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.catalog__button-circle {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--background-button-2);
+    border-radius: 25px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.catalog__button-circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid var(--active-border-1);
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.catalog__button-svg {
+    width: 18px;
+    height: 11px;
+    stroke: var(--svg-2);
+    transform: translateY(2px);
+    transition: transform 0.15s ease-in-out;
+}
+
+.catalog__button:focus-visible:not(:hover):not(:active) .catalog__button-span {
+    color: var(--text-light);
+}
+
+.catalog__button:focus-visible:not(:hover):not(:active) .catalog__button-span::before {
+    opacity: 1;
+}
+
+.catalog__button:focus-visible:not(:hover):not(:active) .catalog__button-circle {
+    background-color: var(--focus-4);
+}
+
+.catalog__button:hover {
+    border-color: transparent;
+}
+
+.catalog__button:hover::before {
+    border-color: var(--hover-1);
+}
+
+.catalog__button:hover .catalog__button-span {
+    color: var(--hover-1);
+}
+
+.catalog__button:hover .catalog__button-circle {
+    background-color: var(--hover-3);
+}
+
+.catalog__button:active {
+    border-color: transparent;
+}
+
+.catalog__button:active::before {
+    border-color: var(--active-1);
+}
+
+.catalog__button:active .catalog__button-span {
+    color: var(--active-1);
+}
+
+.catalog__button:active .catalog__button-circle::before {
+    opacity: 1;
+}
+
+.catalog__button:active .catalog__button-svg {
+    transform: rotate(180deg);
+}
+
+/* -- open -- */
+.catalog__time-item--active .catalog__button {
+    border-top: 1px solid var(--active-1);
+    border-bottom: 1px solid var(--active-1);
+}
+
+.catalog__time-item--active .catalog__button-span {
+    color: var(--active-1);
+}
+
+.catalog__time-item--active .catalog__button-svg {
+    transform: translateY(-3px) rotate(180deg);
+}
+
+.catalog__time-item--active .catalog__button-circle {
+    background-color: var(--active-3);
+}
+
+.catalog__time-item--active .catalog__button-circle::before {
+    opacity: 1;
+}
+/* --- */
+
+.catalog__button-content {
+    overflow: hidden;
+    visibility: hidden;
+    transition-property: height, visibility;
+    transition-timing-function: ease-in-out;
+}
+
+.catalog__time-item--active .catalog__button-content {
+    visibility: visible;
+}
+
+.catalog__button-list {
+    padding-top: 25px;
+    padding-bottom: 26px;
+    column-count: 3;
+    margin-right: 73px;
+}
+
+.catalog__button-link {
+    position: relative;
+}
+
+.catalog__button-link::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -2px;
+    bottom: 0;
+    left: -2px;
+    background-color: var(--focus-1);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.catalog__button-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10px;
+    bottom: -2px;
+    left: 0;
+    border-bottom: 1px solid var(--hover-1);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.catalog__button-link:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+.catalog__button-link:hover::after {
+    opacity: 1;
+}
+
+.catalog__button-link:active::before {
+    opacity: 0;
+}
+
+.catalog__button-link:active::after {
+    opacity: 0;
+}
+
+.catalog__button-plug {
+    line-height: 32px;
+}
+
+.catalog__null {
+    align-items: center;
+    gap: var(--catalog-null-gap);
+    padding-top: 25px;
+    padding-bottom: 26px;
+}
+
+.catalog__null-empty {
+    max-width: 275px;
+}
+
+.catalog__figure-img {
+    width: 275px;
+    height: 189px;
+}
+
+.catalog__figure-picture {
+    flex-shrink: 0;
+}
+
+.catalog__null-text {
+    margin: 0;
+    margin-bottom: var(--catalog-null-text-margin);
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.catalog__null-span {
+    display: block;
+    margin-bottom: var(--catalog-null-span-margin);
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.catalog__null-link {
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--text-alternative-1);
+}
+
+/* 6.2 EVENTS */
+.events__list {
+    margin-bottom: var(--events-list-margin);
+}
+
+.events__list--no-swiper {
+    flex-wrap: wrap;
+    gap: var(--events-list-gap);
+}
+
+.events__item {
+    height: auto;
+    width: calc((100% - var(--events-list-gap) * 2) / 3);
+}
+
+.events__card {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.events__img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.events__information {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--events-information-gap);
+    padding-left: 49px;
+    padding-right: 19px;
+    padding-top: 14px;
+    padding-bottom: 40px;
+    height: 100%;
+    border: 1px solid var(--border-2);
+    border-top: none;
+}
+
+.events__span {
+    text-align: right;
+}
+
+.events__span:not(:first-child) {
+    margin-bottom: var(--events-span-margin);
+}
+
+.events__subject {
+    margin-bottom: var(--events-subject-margin);
+    max-width: 420px;
+    line-height: 33px;
+}
+
+.events__text {
+    width: 95%;
+}
+
+.events__link {
+    display: block;
+    position: relative;
+    margin-right: auto;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--text-alternative-1);
+    transition: color 0.15s ease-in-out;
+}
+
+.events__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    border-bottom: 1px solid var(--border-4);
+    transition: border-color 0.15s ease-in-out;
+}
+
+.events__link::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -8px;
+    right: -8px;
+    bottom: -13px;
+    left: -8px;
+    background-color: var(--focus-1);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.events__link:focus-visible:not(:hover):not(:active) {
+    color: var(--focus-7);
+}
+
+.events__link:focus-visible:not(:hover):not(:active)::before {
+    border-color: var(--focus-border-4);
+}
+
+.events__link:focus-visible:not(:hover):not(:active)::after {
+    opacity: 1;
+}
+
+.events__link:hover {
+    color: var(--hover-4);
+}
+
+.events__link:hover::before {
+    border-color: var(--hover-border-4);
+}
+
+.events__link:active {
+    color: var(--active-5);
+}
+
+.events__link:active::before {
+    border-color: var(--active-border-3);
+}
+
+.events__link:active::after {
+    opacity: 0;
+}
+
+.events__item {
+    display: flex;
+    animation: animation-opacity 0.4s 1;
+}
+
+.events__item--hidden {
+    display: none;
+}
+
+.events__button {
+    display: block;
+    margin: 0 auto;
+}
+
+.events__button--hidden {
+    display: none;
+}
+
+/* 7. EDITIONS */
+.editions__background {
+    background-image: url(../img/editions-1920-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.editions__content {
+    padding-bottom: 71px;
+    justify-content: space-between;
+    gap: var(--editions-box-gap);
+    min-height: 595px;
+}
+
+.editions__left {
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.editions__heading {
+    color: var(--text-light);
+}
+
+.editions__button-filter {
+    width: 100%;
+    align-items: center;
+    cursor: default;
+    pointer-events: none;
+}
+
+.editions__svg-filter {
+    display: none;
+}
+
+.editions__list-checkbox {
+    flex-direction: column;
+    padding-left: 1px;
+    margin-bottom: var(--editions-check-margin);
+}
+
+.editions__list-checkbox--animation {
+    transition: max-height 0.3s ease-in-out;
+}
+
+.editions__box-checkbox {
+    align-items: center;
+    margin-right: auto;
+}
+
+.editions__checkbox {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    transition: color 0.15s ease-in-out;
+}
+
+.editions__style-checkbox {
+    flex-shrink: 0;
+    position: relative;
+    margin-right: var(--editions-style-checkbox-margin);
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--border-1);
+    transition: border-color 0.15s ease-in-out;
+}
+
+.editions__span-checkbox {
+    color: var(--text-light);
+    transition: color 0.15s ease-in-out;
+}
+
+.editions__checkbox + .editions__style-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../img/checked.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 4px 4px;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.editions__checkbox:focus-visible:not(:hover):not(:checked) ~ .editions__span-checkbox {
+    color: var(--focus-3);
+}
+
+.editions__checkbox:hover + .editions__style-checkbox {
+    border-color: var(--hover-2);
+}
+
+.editions__checkbox:hover ~ .editions__span-checkbox {
+    color: var(--text-light);
+}
+
+.editions__checkbox:focus-visible:not(:hover):not(:checked) + .editions__style-checkbox {
+    border-color: var(--focus-3);
+}
+
+.editions__checkbox:checked + .editions__style-checkbox {
+    border-color: var(--checked-1);
+}
+
+.editions__checkbox:checked + .editions__style-checkbox::after {
+    opacity: 1;
+}
+
+.editions__checkbox:checked ~ .editions__span-checkbox {
+    color: var(--checked-1);
+}
+
+.editions__button-checkbox {
+    display: none;
+}
+
+.editions__price-title {
+    margin-bottom: var(--editions-price-title-margin);
+}
+
+.editions__cost {
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+
+.editions__span-cost {
+    padding: 0px 10px;
+}
+
+.editions__span-cost:last-child {
+    padding-right: 9px;
+}
+
+.editions__span-cost:first-child {
+    padding-left: 9px;
+}
+
+.editions__input {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    padding: 4px 10px;
+    width: 73px;
+    border: none;
+    outline: none;
+    appearance: textfield;
+    background-color: rgba(157, 92, 208, 0.5);
+}
+
+.editions__input::-webkit-outer-spin-button,
+.editions__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.editions__products {
+    width: 72.4375%;
+}
+
+.editions__swiper {
+    position: relative;
+    padding-left: 7rem;
+    padding-right: 2rem;
+    padding-bottom: 7rem;
+}
+
+.editions__list {
+    width: 100%;
+}
+
+.editions__null {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.editions__null--active {
+    opacity: 1;
+}
+
+.editions__navigation {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: var(--editions-navigation-gap);
+    min-height: 94px;
+    padding-top: 32px;
+    padding-bottom: 30px;
+    padding-left: 7px;
+}
+
+.editions__number {
+    color: var(--text-light);
+    width: auto;
+}
+
+.editions__pagination--lock {
+    display: block;
+}
+
+.editions__img {
+    display: block;
+    margin-bottom: var(--editions-image-margin);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.editions__information {
+    justify-content: space-between;
+    margin-bottom: var(--editions-information-margin);
+}
+
+.editions__top {
+    width: 68%;
+}
+
+.editions__subject {
+    margin: 0;
+    margin-bottom: var(--editions-subject-margin);
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.editions__author {
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.editions__price {
+    display: block;
+    margin-right: -4px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    white-space: nowrap;
+    flex-grow: 0;
+    color: var(--text-light);
+}
+
+.editions__button {
+    padding: 7px 19.8px;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--text-light);
+}
+
+/* 8. PROJECTS */
+.projects {
+    position: relative;
+}
+
+.projects__information {
+    margin-bottom: var(--projects-information-margin);
+}
+
+.projects__text {
+    max-width: 1070px;
+}
+
+.projects__tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1px;
+    margin-right: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 1px solid var(--border-4);
+    outline: none;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.projects__tooltip-icons {
+    display: inline-flex;
+}
+
+.projects__tooltip-svg {
+    width: 2px;
+    height: 10px;
+    fill: var(--svg-2);
+    transition: fill 0.15s ease-in-out;
+}
+
+.projects__tooltip:focus-visible:not(:hover):not(:active) {
+    background-color: var(--focus-4);
+}
+
+.projects__tooltip:hover {
+    background-color: var(--hover-3);
+}
+
+.projects__tooltip:active {
+    background-color: var(--active-2);
+}
+
+.projects__tooltip:active .projects__tooltip-svg {
+    fill: var(--active-4);
+}
+
+.projects__tooltip-span {
+    position: absolute;
+    display: block;
+    z-index: 9999;
+    left: 0;
+    padding: 11px;
+    padding-top: 8px;
+    width: min(264px, 100%);
+    min-width: 100px;
+    min-height: 34px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--text-light);
+    word-wrap: break-word;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    --mouse-x: 0;
+    translate: clamp(5px, calc(var(--mouse-x) - 50%), calc(100vw - 100% - 5px));
+    background-color: var(--background-tooltip);
+    transition: opacity 0.15s ease-in-out, visibility 0.15s;
+}
+
+.projects__tooltip-span--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.projects__tooltip-arrow {
+    position: absolute;
+    display: block;
+    top: -13px;
+    left: 0;
+    fill: var(--background-tooltip);
+    stroke: var(--background-tooltip);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out, visibility 0.15s;
+}
+
+.projects__tooltip-arrow--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.projects__tooltip-cross {
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    left: -1px;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.projects__tooltip-cross--active {
+    opacity: 1;
+}
+
+.projects__link {
+    position: relative;
+    color: var(--text-alternative-1);
+    transition: color 0.15s ease-in-out;
+}
+
+.projects__link::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -3px;
+    bottom: -2px;
+    left: -3px;
+    background-color: var(--focus-1);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.projects__link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -2px;
+    left: 0;
+    border-bottom: 1px solid var(--hover-1);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.projects__link:focus-visible:not(:hover):not(:active) {
+    color: var(--focus-7);
+}
+
+.projects__link:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+.projects__link:hover::after {
+    opacity: 1;
+}
+
+.projects__link:active {
+    color: var(--active-1);
+}
+
+.projects__link:active::after {
+    border-color: var(--active-border-4);
+}
+
+.projects__subject {
+    margin-bottom: var(--projects-subject-margin);
+}
+
+.projects__partners {
+    align-items: center;
+}
+
+.projects__swiper {
+    width: 100%;
+    margin: 0 45px;
+}
+
+.projects__buttonlight {
+    flex-shrink: 0;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7px 12px;
+    background-color: var(--background-button-2);
+    border-radius: 100%;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.projects__buttonlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid var(--focus-border-1);
+    border-radius: 100%;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.projects__buttonlight-svg {
+    stroke: var(--svg-2);
+    transition: stroke 0.15s ease-in-out;
+}
+
+.projects__buttonlight:focus-visible:not(:hover):before {
+    opacity: 1;
+}
+
+.projects__buttonlight:hover {
+    background-color: var(--hover-3);
+}
+
+.projects__buttonlight:active {
+    background-color: var(--active-3);
+}
+
+.projects__buttonlight:active::before {
+    opacity: 1;
+}
+
+.projects__buttonlight--disabled {
+    pointer-events: none;
+    background-color: var(--disabled-color-2);
+}
+
+.projects__buttonlight--disabled svg {
+    stroke: var(--disabled-arrow-color-2);
+}
+
+.projects__link-page {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 148px;
+    border: 1px solid var(--border-2);
+    transition: border-color 0.15s ease-in-out;
+}
+
+.projects__image {
+    object-fit: cover;
+    filter: grayscale(1);
+    opacity: 0.2;
+    transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out;
+}
+
+.projects__link-page:focus-visible:not(:hover) {
+    border-color: var(--focus-border-1);
+}
+
+.projects__link-page:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.projects__link-page:active {
+    border-color: var(--active-border-1);
+}
+
+.projects__link-page:active img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* 9. CONTACTS */
+.contacts__background {
+    background-color: transparent;
+}
+
+.contacts__heading {
+    padding-left: 160px;
+}
+
+.contacts__box {
+    position: relative;
+    height: 700px;
+}
+
+.contacts__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid var(--border-2);
+    flex-shrink: 0;
+}
+
+.contacts__content {
+    padding-top: 123px;
+    padding-right: 121px;
+    padding-bottom: 123px;
+    padding-left: 159px;
+}
+
+.contacts__address-box--320 {
+    display: none;
+}
+
+.contacts__address-box {
+    margin-bottom: var(--contacts-address-box-margin);
+}
+
+.contacts__address-subject {
+    margin-bottom: var(--contacts-address-subject-margin);
+}
+
+.contacts__form-box {
+    margin-bottom: var(--contacts-form-box-margin);
+}
+
+.contacts__subject--form {
+    margin-bottom: var(--contacts-subject-form-margin);
+}
+
+.contacts__subject--links {
+    margin-bottom: var(--contacts-subject-links-margin);
+}
+
+.contacts__form {
+    flex-direction: column;
+    gap: var(--contacts-form-gap);
+}
+
+.contacts__input-container {
+    flex-direction: column;
+    gap: var(--contacts-input-container-gap);
+}
+
+.contacts__input-box {
+    flex-direction: column-reverse;
+    min-height: 55px;
+}
+
+.contacts__input {
+    padding: 2px 24px;
+    min-width: 400px;
+    border: 1px solid #333;
+    border-radius: 100px;
+    color: var(--text-dark);
+    transition: background-color 0.15s ease-in-out;
+}
+
+.contacts__input:focus-visible {
+    background-color: var(--focus-6);
+}
+
+.contacts__input:hover {
+    background-color: var(--hover-7);
+}
+
+.contacts__input::placeholder {
+    color: var(--placeholder-2);
+}
+
+.js-validate-error-label {
+    padding-left: 24px;
+    margin-bottom: 2px;
+    font-family: 'OpenSans';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    opacity: 1;
+    animation: animation-opacity 0.3s 1;
+}
+
+.contacts__button {
+    align-self: flex-start;
+    position: relative;
+    padding: 15px 34px;
+    background-color: transparent;
+    color: var(--text-alternative-1);
+    border-radius: 100px;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.contacts__button:hover {
+    background-color: var(--hover-1);
+    color: var(--text-light);
+}
+
+.contacts__button:active {
+    background-color: var(--active-1);
+}
+
+.contacts__subject-alternative {
+    margin-bottom: var(--contacts-subject-alternative-margin);
+}
+
+.contacts__social-links {
+    gap: var(--contacts-social-links-gap);
+}
+
+.contacts__social-link {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    border-radius: 100%;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.contacts__social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid var(--active-border-1);
+    border-radius: 100%;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.contacts__social-link:focus-visible:not(:hover):not(:active) {
+    opacity: 0.5;
+}
+
+.contacts__social-link:hover {
+    opacity: 0.5;
+}
+
+.contacts__social-link:active {
+    opacity: 1;
+}
+
+.contacts__social-link:active::before {
+    opacity: 1;
+}
+
+.contacts__right {
+    width: 100%;
+    height: 700px;
+}
+
+[class*='ground-pane'] {
+    filter: grayscale(1);
+}
+
+/* 10. FOOTER */
+.footer__box {
+    padding-top: 47px;
+    padding-bottom: 48px;
+    background-color: var(--background-box);
+}
+
+.footer__container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo {
+    padding-top: 3px;
+}
+
+.footer__links {
+    gap: var(--footer-links-gap);
+}
+
+.footer__link {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+.footer__svg {
+    display: block;
+    width: 45px;
+    height: 45px;
+    fill: var(--svg-3);
+    transition: fill 0.15s ease-in-out;
+}
+
+.footer__link:focus-visible .footer__svg {
+    fill: var(--focus-7);
+}
+
+.footer__link:hover .footer__svg {
+    fill: var(--hover-6);
+}
+
+.footer__link:active .footer__svg {
+    fill: var(--active-2);
+}

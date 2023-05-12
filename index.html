@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blanchard</title>
+        <link rel="shortcut icon" href="./img/blanchard.svg" type="image/svg" />
+        <link rel="stylesheet" href="./libs/accordion/accordion.css" />
+        <link rel="stylesheet" href="./libs/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="./libs/simplebar/simplebar.css" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/media.css" />
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header__background-top">
+                <div class="header__container-top container flex">
+                    <button class="header__burger button-reset">
+                        <span class="header__line header__line--passive"></span>
+                        <span class="header__line header__line--passive"></span>
+                        <span class="header__line header__line--passive"></span>
+                        <span class="header__line header__line--passive"></span>
+                    </button>
+                    <a class="header__link link">
+                        <picture class="link__picture">
+                            <source srcset="./img/logo-320-header.svg" media="(max-width: 767px)" />
+                            <source srcset="./img/logo-768-header.svg" media="(max-width: 1919px)" />
+                            <img class="link__image" src="./img/logo-1920.svg" alt="Логотип сайта" />
+                        </picture>
+                    </a>
+                    <div class="header__box">
+                        <div class="header__scroll">
+                            <div class="header__scroll-box flex">
+                                <nav class="header__menu-anchor flex" aria-label="верхнее меню сайта">
+                                    <ul class="header__list-anchor list-reset flex">
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#about">О&nbsp;нас</a>
+                                        </li>
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#gallery">Галерея</a>
+                                        </li>
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#catalog">Каталог</a>
+                                        </li>
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#events">События</a>
+                                        </li>
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#editions">Издания</a>
+                                        </li>
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#projects">Проекты</a>
+                                        </li>
+                                        <li class="header__item-anchor">
+                                            <a class="header__link-anchor" href="#contacts">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <button class="header__button-login button-reset flex">
+                                    <span class="header__box-login flex">
+                                        <svg
+                                            class="header__animation-login"
+                                            width="6"
+                                            height="3"
+                                            viewBox="0 0 6 3"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M0.25 2.11119V0.666748H5.99194V2.11114L0.25 2.11119Z" />
+                                        </svg>
+                                        <svg
+                                            class="header__svg-login"
+                                            width="14"
+                                            height="13"
+                                            viewBox="0 0 14 13"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5.62056 9.09278L6.63889 10.1111L10.25 6.5L6.63889 2.88889L5.62056 3.90722L7.48389 5.77778H0.5V7.22222H7.48389L5.62056 9.09278ZM12.0556 0H1.94444C1.14278 0 0.5 0.65 0.5 1.44444V4.33333H1.94444V1.44444H12.0556V11.5556H1.94444V8.66667H0.5V11.5556C0.5 12.35 1.14278 13 1.94444 13H12.0556C12.85 13 13.5 12.35 13.5 11.5556V1.44444C13.5 0.65 12.85 0 12.0556 0Z"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <span class="header__span-login">Войти</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="header__search-open button-reset">
+                        <svg
+                            class="header__svg-open"
+                            width="23"
+                            height="22"
+                            viewbox="0 0 23 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                width="6.8678"
+                                height="1.71695"
+                                transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"
+                            />
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
+                            />
+                        </svg>
+                    </button>
+
+                    <div class="header__search-box">
+                        <form
+                            class="header__form-search flex"
+                            id="header-search-form"
+                            action="https://jsonplaceholder.typicode.com/posts"
+                            method="POST"
+                        >
+                            <input
+                                class="header__input-search"
+                                type="search"
+                                name="Поиск по сайту"
+                                placeholder="Поиск по сайту"
+                                autocomplete="off"
+                                required
+                            />
+                            <button class="header__button-search button-reset">
+                                <svg
+                                    class="header__svg-search"
+                                    width="23"
+                                    height="22"
+                                    viewBox="0 0 23 22"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        width="6.8678"
+                                        height="1.71695"
+                                        transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"
+                                    />
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
+                                    />
+                                </svg>
+                            </button>
+                        </form>
+                        <button class="header__search-close button-reset">
+                            <svg
+                                class="header__svg-close"
+                                width="23"
+                                height="23"
+                                viewbox="0 0 23 23"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    width="29.567"
+                                    height="2.9567"
+                                    transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.09375 0)"
+                                />
+                                <rect
+                                    width="29.567"
+                                    height="2.9567"
+                                    transform="matrix(0.707093 -0.707121 0.707093 0.707121 0 20.9074)"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="header__background-bottom">
+                <div class="header__container-bottom container flex">
+                    <nav class="header__menu-select">
+                        <ul class="header__list-select list-reset flex">
+                            <li class="header__item-select">
+                                <button class="header__button-select button-reset">
+                                    <span class="header__span-select">Реализм</span>
+                                    <svg
+                                        class="header__svg-select"
+                                        width="12"
+                                        height="7"
+                                        viewbox="0 0 12 7"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M11 1L6 6L1 1" />
+                                    </svg>
+                                </button>
+                                <div class="header__box-select">
+                                    <ul class="header__list-page list-reset">
+                                        <li class="header__item-page">
+                                            <a class="header__link-page tintoretto" href="#">
+                                                <span class="header__span-link">Тинторетто</span>
+                                            </a>
+                                        </li>
+                                        <li class="header__item-page">
+                                            <a class="header__link-page friedrich" href="#">
+                                                <span class="header__span-link">Фридрих</span>
+                                            </a>
+                                        </li>
+                                        <li class="header__item-page">
+                                            <a class="header__link-page leonardo" href="#">
+                                                <span class="header__span-link">Леонардо</span>
+                                            </a>
+                                        </li>
+                                        <li class="header__item-page">
+                                            <a class="header__link-page verrocchio" href="#">
+                                                <span class="header__span-link">Верроккьо</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header__item-select">
+                                <button class="header__button-select button-reset">
+                                    <span class="header__span-select">Импрессионизм</span>
+                                    <svg
+                                        class="header__svg-select"
+                                        width="12"
+                                        height="7"
+                                        viewbox="0 0 12 7"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M11 1L6 6L1 1" />
+                                    </svg>
+                                </button>
+                                <div class="header__box-select">
+                                    <div class="header__scroll-select">
+                                        <ul class="header__list-page list-reset">
+                                            <li class="header__item-page">
+                                                <a class="header__link-page monet" href="#">
+                                                    <span class="header__span-link">Моне</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a class="header__link-page sisley" href="#">
+                                                    <span class="header__span-link">Сислей</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a class="header__link-page mane" href="#">
+                                                    <span class="header__span-link">Мане</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a class="header__link-page renoir" href="#">
+                                                    <span class="header__span-link">Ренуар</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__item-select">
+                                <button class="header__button-select button-reset">
+                                    <span class="header__span-select">Постимпрессионизм</span>
+                                    <svg
+                                        class="header__svg-select"
+                                        width="12"
+                                        height="7"
+                                        viewbox="0 0 12 7"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M11 1L6 6L1 1" />
+                                    </svg>
+                                </button>
+                                <div class="header__box-select">
+                                    <div class="header__scroll-select">
+                                        <ul class="header__list-page list-reset">
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page van-gogh">
+                                                    <span class="header__span-link">Ван Гог</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page cezanne">
+                                                    <span class="header__span-link">Сезанн</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page gauguin">
+                                                    <span class="header__span-link">Гоген</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page seurat">
+                                                    <span class="header__span-link">Сёра</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__item-select">
+                                <button class="header__button-select button-reset">
+                                    <span class="header__span-select">Авангард</span>
+                                    <svg
+                                        class="header__svg-select"
+                                        width="12"
+                                        height="7"
+                                        viewbox="0 0 12 7"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M11 1L6 6L1 1" />
+                                    </svg>
+                                </button>
+                                <div class="header__box-select">
+                                    <div class="header__scroll-select">
+                                        <ul class="header__list-page list-reset">
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page kandinsky">
+                                                    <span class="header__span-link">Кандинский</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page marinetti">
+                                                    <span class="header__span-link">Маринетти</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page malevich">
+                                                    <span class="header__span-link">Малевич</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page picasso">
+                                                    <span class="header__span-link">Пикассо</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__item-select">
+                                <button class="header__button-select button-reset">
+                                    <span class="header__span-select">Футуризм</span>
+                                    <svg
+                                        class="header__svg-select"
+                                        width="12"
+                                        height="7"
+                                        viewbox="0 0 12 7"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M11 1L6 6L1 1" />
+                                    </svg>
+                                </button>
+                                <div class="header__box-select">
+                                    <div class="header__scroll-select">
+                                        <ul class="header__list-page list-reset">
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page carra">
+                                                    <span class="header__span-link">Карра</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page pratella">
+                                                    <span class="header__span-link">Прателла</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page severini">
+                                                    <span class="header__span-link">Северини</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page balla">
+                                                    <span class="header__span-link">Балла</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a href="" class="header__link-page bochonni">
+                                                    <span class="header__span-link">Бочонни</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <form
+                        class="header__form-search flex"
+                        action="https://jsonplaceholder.typicode.com/posts"
+                        method="POST"
+                    >
+                        <input
+                            class="header__input-search"
+                            type="search"
+                            name="Поиск по сайту"
+                            placeholder="Поиск по сайту"
+                            autocomplete="off"
+                            required
+                        />
+                        <button class="header__button-search button-reset">
+                            <svg
+                                class="header__svg-search"
+                                width="23"
+                                height="22"
+                                viewBox="0 0 23 22"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    width="6.8678"
+                                    height="1.71695"
+                                    transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"
+                                />
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
+                                />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="header__swiper">
+                <div class="header__wrapper flex">
+                    <div class="header__picture slide-1 header__picture--active"></div>
+                    <div class="header__picture slide-2"></div>
+                    <div class="header__picture slide-3"></div>
+                </div>
+            </div>
+            <section class="preview header__preview">
+                <h1 class="preview__global-title visually-hidden">Blanchard - художественная галерея</h1>
+                <div class="preview__container container">
+                    <div class="preview__content content">
+                        <div class="preview__information">
+                            <h2 class="preview__title title">Прикоснитесь к&nbsp;прекрасному</h2>
+                            <p class="preview__text text">
+                                Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий
+                                создаёт предпосылки для новых предложений
+                            </p>
+                            <button class="preview__button button-reset button-big">
+                                Подписаться на&nbsp;рассылку
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <main class="main">
+            <section class="about-us main__about-us" id="about">
+                <div class="about-us__container container">
+                    <div class="about-us__content content">
+                        <h2 class="about-us__heading heading">О&nbsp;нас</h2>
+                        <p class="about-us__text text">
+                            Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно
+                            определяет каждого участника как способного принимать собственные решения касаемо
+                            распределения внутренних резервов и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что
+                            высококачественный прототип будущего проекта влечёт за&nbsp;собой процесс внедрения
+                            и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое качество
+                            позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого
+                            ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних резервов
+                            и&nbsp;ресурсов. В&nbsp;рамках спецификации современных стандартов, действия представителей
+                            оппозиции набирают популярность среди определённых слоёв населения, а&nbsp;значит, должны
+                            быть разоблачены.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="main__gallery gallery" id="gallery">
+                <div class="gallery__background">
+                    <div class="gallery__container container">
+                        <div class="gallery__content content flex">
+                            <div class="gallery__left flex">
+                                <div class="gallery__top">
+                                    <h2 class="gallery__heading heading">Галерея</h2>
+                                    <span class="gallery__filter-title">Фильтр:</span>
+                                    <select class="gallery__filter-select" name="filter" id="filter">
+                                        <option class="gallery__filter-option" value="painting" selected>
+                                            Живопись
+                                        </option>
+                                        <option class="gallery__filter-option" value="drawing">Рисунок</option>
+                                        <option class="gallery__filter-option" value="sculpture">Скульптура</option>
+                                    </select>
+                                </div>
+                                <p class="gallery__span span-normal">
+                                    Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
+                                    <button class="gallery__authorization button-reset">авторизуйтесь</button>
+                                    , либо воспользуйтесь лицензией.
+                                </p>
+                            </div>
+                            <div class="gallery__pictures flex">
+                                <div class="gallery__navigation flex">
+                                    <button
+                                        class="gallery__buttondark button-reset buttondark gallery__buttondark--left"
+                                    >
+                                        <svg
+                                            class="gallery__buttondark-svg buttondark-svg"
+                                            width="7"
+                                            height="12"
+                                            viewbox="0 0 7 12"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M6 11L0.999995 6L6 0.999998" />
+                                        </svg>
+                                    </button>
+                                    <span class="gallery__number text"></span>
+                                    <button
+                                        class="gallery__buttondark button-reset buttondark gallery__buttondark--right"
+                                    >
+                                        <svg
+                                            class="gallery__buttondark-svg buttondark-svg"
+                                            width="7"
+                                            height="12"
+                                            viewbox="0 0 7 12"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M1 11L6.00001 6L1 0.999997" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="gallery__swiper swiper">
+                                    <ul class="gallery__list-swiper list-reset swiper-wrapper"></ul>
+                                </div>
+                            </div>
+                            <p class="gallery__span-adaptive span-normal">
+                                Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
+                                <button class="gallery__authorization button-reset">авторизуйтесь</button>
+                                , либо воспользуйтесь лицензией.
+                            </p>
+                            <div class="gallery__overlay flex">
+                                <div class="gallery__modal flex">
+                                    <button class="gallery__modal-button button-reset">
+                                        <svg
+                                            class="gallery__modal-svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M0.666641 15.3043L15.3333 7.75525e-05L16 0.695724L1.33331 16L0.666641 15.3043Z"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M0.66697 -1.82207e-05L15.3337 15.3042L14.667 15.9999L0.000301755 0.695629L0.66697 -1.82207e-05Z"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <div class="gallery__modal-content flex"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__big big-section" id="catalog">
+                <div class="big-section__background">
+                    <div class="big-section__container container">
+                        <div class="big-section__content content">
+                            <div class="big-section__catalog catalog">
+                                <div class="catalog__country-box flex">
+                                    <h2 class="catalog__heading heading">Каталог</h2>
+                                    <ul class="catalog__country-list list-reset flex">
+                                        <li class="catalog__country-item">
+                                            <a
+                                                class="catalog__country-step france"
+                                                href="#france"
+                                                data-step="#france"
+                                            ></a>
+                                        </li>
+                                        <li class="catalog__country-item">
+                                            <a
+                                                class="catalog__country-step germany"
+                                                href="#germany"
+                                                data-step="#germany"
+                                            ></a>
+                                        </li>
+                                        <li class="catalog__country-item">
+                                            <a
+                                                class="catalog__country-step catalog__country-step--disabled italy"
+                                                href="#italy"
+                                                data-step="#italy"
+                                                tabindex="-1"
+                                            ></a>
+                                        </li>
+                                        <li class="catalog__country-item">
+                                            <a
+                                                class="catalog__country-step russia"
+                                                href="#russia"
+                                                data-step="#russia"
+                                            ></a>
+                                        </li>
+                                        <li class="catalog__country-item">
+                                            <a
+                                                class="catalog__country-step belgium"
+                                                href="#belgium"
+                                                data-step="#belgium"
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="catalog__text text">
+                                    Акционеры крупнейших компаний, которые представляют собой яркий пример
+                                    континентально-европейского типа политической культуры, будут объявлены нарушающими
+                                    общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины,
+                                    стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей
+                                    день остаются уделом либералов, которые жаждут быть функционально разнесены
+                                    на&nbsp;независимые элементы.
+                                </p>
+
+                                <div class="catalog__accordion flex">
+                                    <div class="catalog__box-right">
+                                        <ul class="catalog__time-list list-reset">
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;1400 по&nbsp;1499&nbsp;гг.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                d="M17.3333 1.33334L9 9.66667L0.666664 1.33334"
+                                                                stroke="black"
+                                                            />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="1400"></div>
+                                            </li>
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;1500 по&nbsp;1599&nbsp;гг.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="1500"></div>
+                                            </li>
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;1600 по&nbsp;1699&nbsp;гг.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="1600"></div>
+                                            </li>
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;1700 по&nbsp;1799&nbsp;гг.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="1700"></div>
+                                            </li>
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;1800 по&nbsp;1899&nbsp;гг.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="1800"></div>
+                                            </li>
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;1900 по&nbsp;1999&nbsp;гг.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="1900"></div>
+                                            </li>
+                                            <li class="catalog__time-item">
+                                                <button class="catalog__button button-reset flex">
+                                                    <span class="catalog__button-span subject">
+                                                        C&nbsp;2000&nbsp;г.
+                                                    </span>
+                                                    <span class="catalog__button-circle flex">
+                                                        <svg
+                                                            class="catalog__button-svg"
+                                                            width="18"
+                                                            height="11"
+                                                            viewbox="0 0 18 11"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path d="M17.3333 1.33334L9 9.66667L0.666664 1.33334" />
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                                <div class="catalog__button-content" data-time="2000"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="catalog__box-left"></div>
+                                </div>
+                            </div>
+                            <div class="big-section__events events" id="events">
+                                <div class="events__content">
+                                    <h2 class="events__heading heading">События</h2>
+                                    <div class="events__swiper swiper">
+                                        <ul class="events__list events__list--no-swiper swiper-wrapper list-reset flex">
+                                            <li class="events__item swiper-slide flex">
+                                                <div class="events__card flex">
+                                                    <picture class="events__picture">
+                                                        <source
+                                                            srcset="./img/events-320-event01.jpg"
+                                                            media="(max-width: 767px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-768-event01.jpg"
+                                                            media="(max-width: 1023px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-1024-event01.jpg"
+                                                            media="(max-width: 1919px)"
+                                                        />
+                                                        <img
+                                                            class="events__img"
+                                                            src="./img/events-1920-event01.jpg"
+                                                            alt=""
+                                                        />
+                                                    </picture>
+                                                    <div class="events__information flex">
+                                                        <div class="events__box">
+                                                            <span class="events__span span-gray">Музей им. Щусева</span>
+                                                            <time class="events__span span-gray" datetime="41d">
+                                                                с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля
+                                                            </time>
+                                                            <h3 class="events__subject subject">
+                                                                Книжная гравюра в&nbsp;живом восприятии
+                                                            </h3>
+                                                            <p class="events__text text">
+                                                                Один из&nbsp;ведущих флорентийских художников
+                                                                Кватроченто, основатель художественной династии, которую
+                                                                продолжили его брат Давид и&nbsp;сын Ридольфо
+                                                            </p>
+                                                        </div>
+                                                        <a href="" class="events__link">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="events__item swiper-slide flex">
+                                                <div class="events__card flex">
+                                                    <picture class="events__picture">
+                                                        <source
+                                                            srcset="./img/events-320-event02.jpg"
+                                                            media="(max-width: 767px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-768-event02.jpg"
+                                                            media="(max-width: 1023px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-1024-event02.jpg"
+                                                            media="(max-width: 1919px)"
+                                                        />
+                                                        <img
+                                                            class="events__img"
+                                                            src="./img/events-1920-event02.jpg"
+                                                            alt=""
+                                                        />
+                                                    </picture>
+                                                    <div class="events__information flex">
+                                                        <div class="events__box">
+                                                            <span class="events__span span-gray">ММОМА</span>
+                                                            <time
+                                                                class="events__span span-gray"
+                                                                datetime="2021-03-24T19:00"
+                                                            >
+                                                                24&nbsp;марта 19:00
+                                                            </time>
+                                                            <h3 class="events__subject subject">
+                                                                &laquo;Открытая дискуссия&raquo;. Дмитрий Петров
+                                                                и&nbsp;Сергей Ильин
+                                                            </h3>
+                                                            <p class="events__text text">
+                                                                Высокий уровень вовлечения представителей целевой
+                                                                аудитории является чётким доказательством простого факта
+                                                            </p>
+                                                        </div>
+                                                        <a href="" class="events__link">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="events__item swiper-slide flex events__item--hidden-768">
+                                                <div class="events__card flex">
+                                                    <picture class="events__picture">
+                                                        <source
+                                                            srcset="./img/events-320-event03.jpg"
+                                                            media="(max-width: 767px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-768-event03.jpg"
+                                                            media="(max-width: 1023px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-1024-event03.jpg"
+                                                            media="(max-width: 1919px)"
+                                                        />
+                                                        <img
+                                                            class="events__img"
+                                                            src="./img/events-1920-event03.jpg"
+                                                            alt=""
+                                                        />
+                                                    </picture>
+                                                    <div class="events__information flex">
+                                                        <div class="events__box">
+                                                            <span class="events__span span-gray">Еврейский музей</span>
+                                                            <time class="events__span span-gray" datetime="22d">
+                                                                с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля
+                                                            </time>
+                                                            <h3 class="events__subject subject">
+                                                                Выставка &laquo;Формация 2020&raquo;
+                                                            </h3>
+                                                            <p class="events__text text">
+                                                                Идейные соображения высшего порядка, а&nbsp;также
+                                                                современная методология разработки играет важную роль
+                                                                в&nbsp;формировании глубокомысленных рассуждений
+                                                            </p>
+                                                        </div>
+                                                        <a href="" class="events__link">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="events__item swiper-slide flex events__item--hidden events__item--hidden-768"
+                                            >
+                                                <div class="events__card flex">
+                                                    <picture class="events__picture">
+                                                        <source
+                                                            srcset="./img/events-320-event04.jpg"
+                                                            media="(max-width: 767px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-768-event04.jpg"
+                                                            media="(max-width: 1023px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-1024-event04.jpg"
+                                                            media="(max-width: 1919px)"
+                                                        />
+                                                        <img
+                                                            class="events__img"
+                                                            src="./img/events-1920-event04.jpg"
+                                                            alt=""
+                                                        />
+                                                    </picture>
+                                                    <div class="events__information flex">
+                                                        <div class="events__box">
+                                                            <span class="events__span span-gray">ММАМ</span>
+                                                            <time class="events__span span-gray" datetime="43d">
+                                                                с&nbsp;8&nbsp;апреля по&nbsp;20&nbsp;мая
+                                                            </time>
+                                                            <h3 class="events__subject subject">
+                                                                Джон Винзор. Фотографии из&nbsp;серии
+                                                                &laquo;Метафора&raquo;
+                                                            </h3>
+                                                            <p class="events__text text">
+                                                                Один из&nbsp;ведущих флорентийских художников
+                                                                Кватроченто, основатель художественной династии, которую
+                                                                продолжили его брат Давид и&nbsp;сын Ридольфо
+                                                            </p>
+                                                        </div>
+                                                        <a href="" class="events__link">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="events__item swiper-slide flex events__item--hidden events__item--hidden-768"
+                                            >
+                                                <div class="events__card flex">
+                                                    <picture class="events__picture">
+                                                        <source
+                                                            srcset="./img/events-320-event05.jpg"
+                                                            media="(max-width: 767px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-768-event05.jpg"
+                                                            media="(max-width: 1023px)"
+                                                        />
+                                                        <source
+                                                            srcset="./img/events-1024-event05.jpg"
+                                                            media="(max-width: 1919px)"
+                                                        />
+                                                        <img
+                                                            class="events__img"
+                                                            src="./img/events-1920-event05.jpg"
+                                                            alt=""
+                                                        />
+                                                    </picture>
+                                                    <div class="events__information flex">
+                                                        <div class="events__box">
+                                                            <span class="events__span span-gray">
+                                                                Третьяковка на&nbsp;Крымском валу
+                                                            </span>
+                                                            <time class="events__span span-gray" datetime="32d">
+                                                                с&nbsp;30&nbsp;марта по&nbsp;30&nbsp;апреля
+                                                            </time>
+                                                            <h3 class="events__subject subject">
+                                                                XXIV Международная биеннале молодого искусства
+                                                            </h3>
+                                                            <p class="events__text text">
+                                                                Внезапно, реплицированные с&nbsp;зарубежных источников,
+                                                                современные исследования
+                                                            </p>
+                                                        </div>
+                                                        <a href="" class="events__link">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="events__pagination flex"></div>
+                                    <button class="events__button button-reset button-big">Все события</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__editions editions" id="editions">
+                <div class="editions__background">
+                    <div class="editions__container container">
+                        <div class="editions__content content flex">
+                            <div class="editions__left">
+                                <h2 class="editions__heading heading">Издания</h2>
+                                <button class="editions__button-filter button-reset flex">
+                                    <span class="editions__title-filter span-normal">Категории</span>
+                                    <svg
+                                        class="editions__svg-filter"
+                                        width="12"
+                                        height="8"
+                                        viewbox="0 0 12 8"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M11.3393 1.16934L6.16992 6.33869L1.00058 1.16934" stroke="white" />
+                                    </svg>
+                                </button>
+                                <ul class="editions__list-checkbox list-reset flex">
+                                    <li class="editions__item-checkbox flex" id="1">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="bestsellers" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Бестселлеры</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="2">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="art" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Искусство</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="3">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input
+                                                    class="editions__checkbox"
+                                                    type="checkbox"
+                                                    value="architecture"
+                                                />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Архитектура</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="4">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input
+                                                    class="editions__checkbox"
+                                                    type="checkbox"
+                                                    value="design"
+                                                    checked
+                                                />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Дизайн</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="5">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="fashion" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Мода</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="6">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="child" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Детям</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="7">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="artistic" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">
+                                                    Художественная литература
+                                                </span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="8">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="publicism" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Публицистика</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="9">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="travel" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Путеводители</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="10">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="philosophy" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">Философия</span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="11">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="study" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">
+                                                    Учебная литература
+                                                </span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+
+                                    <li class="editions__item-checkbox flex" id="12">
+                                        <label class="editions__label-checkbox flex">
+                                            <span class="editions__box-checkbox flex">
+                                                <input class="editions__checkbox" type="checkbox" value="magazines" />
+                                                <span class="editions__style-checkbox"></span>
+                                                <span class="editions__span-checkbox span-little">
+                                                    Журналы и газеты
+                                                </span>
+                                            </span>
+                                            <svg
+                                                class="editions__svg-checkbox"
+                                                width="13"
+                                                height="12"
+                                                viewbox="0 0 13 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.501492 11.4791L11.5015 0.000460445L12.0015 0.522217L1.00149 12.0009L0.501492 11.4791Z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                />
+                                            </svg>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul class="editions__list-checked list-reset flex"></ul>
+
+                                <span class="editions__price-title span-normal">Цена</span>
+                                <div class="editions__cost flex">
+                                    <span class="editions__span-cost span-little">От</span>
+                                    <input
+                                        class="editions__input span-little"
+                                        type="number"
+                                        data-name="from"
+                                        value="50"
+                                    />
+                                    <span class="editions__span-cost span-little">до</span>
+                                    <input
+                                        class="editions__input span-little"
+                                        type="number"
+                                        data-name="to"
+                                        value="25000"
+                                    />
+                                    <span class="editions__span-cost span-little">руб.</span>
+                                </div>
+                            </div>
+                            <div class="editions__products">
+                                <div class="editions__navigation flex">
+                                    <button
+                                        class="editions__buttondark button-reset buttondark editions__buttondark--left"
+                                    >
+                                        <svg
+                                            class="editions__buttondark-svg buttondark-svg"
+                                            width="7"
+                                            height="12"
+                                            viewbox="0 0 7 12"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M6 11L0.999995 6L6 0.999998" />
+                                        </svg>
+                                    </button>
+                                    <span class="editions__number text"></span>
+                                    <button
+                                        class="editions__buttondark button-reset buttondark editions__buttondark--right"
+                                    >
+                                        <svg
+                                            class="editions__buttondark-svg buttondark-svg"
+                                            width="7"
+                                            height="12"
+                                            viewbox="0 0 7 12"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M1 11L6.00001 6L1 0.999997" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="editions__swiper swiper">
+                                    <ul class="editions__list list-reset swiper-wrapper"></ul>
+                                    <div class="editions__null flex">
+                                        <span class="editions__null-span span-little">ТАКИХ ИЗДАНИЙ НЕТ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__projects projects" id="projects">
+                <div class="projects__container container">
+                    <div class="projects__content content">
+                        <div class="projects__information">
+                            <h2 class="projects__heading heading">Проекты</h2>
+                            <p class="projects__text text">
+                                Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей
+                                деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи.
+                                А&nbsp;ещё независимые государства смешаны с&nbsp;не уникальными данными до&nbsp;степени
+                                совершённой неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде
+                                всего, постоянное информационно-пропагандистское
+                                <button class="projects__tooltip button-reset">
+                                    <svg
+                                        class="projects__tooltip-svg"
+                                        width="2"
+                                        height="10"
+                                        viewbox="0 0 2 10"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0.261539 3.4551H1.73846V10H0.261539V3.4551ZM1 1.90259C0.712821 1.90259 0.471795 1.81126 0.276924 1.62861C0.0923081 1.44597 0 1.22273 0 0.958904C0 0.695079 0.0923081 0.471841 0.276924 0.289193C0.471795 0.0963976 0.712821 0 1 0C1.28718 0 1.52308 0.0913239 1.70769 0.273972C1.90256 0.446473 2 0.664636 2 0.928462C2 1.20243 1.90256 1.43582 1.70769 1.62861C1.52308 1.81126 1.28718 1.90259 1 1.90259Z"
+                                        />
+                                    </svg>
+                                    <svg
+                                        class="projects__tooltip-arrow"
+                                        width="16"
+                                        height="9"
+                                        viewBox="0 0 16 9"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M8 7.5L2 0.5H8H14L8 7.5Z" />
+                                    </svg>
+                                    <svg
+                                        class="projects__tooltip-cross"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z"
+                                            fill="#9D5CD0"
+                                        />
+                                        <path
+                                            d="M10.9111 4.49268L11.9555 5.53702L5.20621 12.2863L4.16187 11.2419L10.9111 4.49268Z"
+                                            fill="white"
+                                        />
+                                        <path
+                                            d="M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </button>
+                                <span class="projects__tooltip-span">
+                                    Пример современных тенденций&nbsp;&mdash; современная методология разработки
+                                </span>
+                                обеспечение нашей деятельности однозначно фиксирует необходимость экономической
+                                целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей
+                                оппозиции могут быть рассмотрены
+                                <button class="projects__tooltip button-reset">
+                                    <svg
+                                        class="projects__tooltip-svg"
+                                        width="2"
+                                        height="10"
+                                        viewbox="0 0 2 10"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0.261539 3.4551H1.73846V10H0.261539V3.4551ZM1 1.90259C0.712821 1.90259 0.471795 1.81126 0.276924 1.62861C0.0923081 1.44597 0 1.22273 0 0.958904C0 0.695079 0.0923081 0.471841 0.276924 0.289193C0.471795 0.0963976 0.712821 0 1 0C1.28718 0 1.52308 0.0913239 1.70769 0.273972C1.90256 0.446473 2 0.664636 2 0.928462C2 1.20243 1.90256 1.43582 1.70769 1.62861C1.52308 1.81126 1.28718 1.90259 1 1.90259Z"
+                                        />
+                                    </svg>
+                                    <svg
+                                        class="projects__tooltip-arrow"
+                                        width="16"
+                                        height="9"
+                                        viewBox="0 0 16 9"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M8 7.5L2 0.5H8H14L8 7.5Z" />
+                                    </svg>
+                                    <svg
+                                        class="projects__tooltip-cross"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z"
+                                            fill="#9D5CD0"
+                                        />
+                                        <path
+                                            d="M10.9111 4.49268L11.9555 5.53702L5.20621 12.2863L4.16187 11.2419L10.9111 4.49268Z"
+                                            fill="white"
+                                        />
+                                        <path
+                                            d="M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </button>
+                                <span class="projects__tooltip-span">
+                                    Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают
+                                    у&nbsp;вас эмоции
+                                </span>
+                                исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
+                                <button class="projects__tooltip button-reset">
+                                    <svg
+                                        class="projects__tooltip-svg"
+                                        width="2"
+                                        height="10"
+                                        viewbox="0 0 2 10"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0.261539 3.4551H1.73846V10H0.261539V3.4551ZM1 1.90259C0.712821 1.90259 0.471795 1.81126 0.276924 1.62861C0.0923081 1.44597 0 1.22273 0 0.958904C0 0.695079 0.0923081 0.471841 0.276924 0.289193C0.471795 0.0963976 0.712821 0 1 0C1.28718 0 1.52308 0.0913239 1.70769 0.273972C1.90256 0.446473 2 0.664636 2 0.928462C2 1.20243 1.90256 1.43582 1.70769 1.62861C1.52308 1.81126 1.28718 1.90259 1 1.90259Z"
+                                        />
+                                    </svg>
+                                    <svg
+                                        class="projects__tooltip-arrow"
+                                        width="16"
+                                        height="9"
+                                        viewBox="0 0 16 9"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M8 7.5L2 0.5H8H14L8 7.5Z" />
+                                    </svg>
+                                    <svg
+                                        class="projects__tooltip-cross"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z"
+                                            fill="#9D5CD0"
+                                        />
+                                        <path
+                                            d="M10.9111 4.49268L11.9555 5.53702L5.20621 12.2863L4.16187 11.2419L10.9111 4.49268Z"
+                                            fill="white"
+                                        />
+                                        <path
+                                            d="M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </button>
+                                <span class="projects__tooltip-span">В стремлении повысить качество</span>
+                                предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители
+                                современных социальных резервов призывают нас к&nbsp;новым свершениям, которые,
+                                в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными
+                                до&nbsp;степени совершённой неузнаваемости. Подробнее:
+                                <a class="projects__link" href="#">blanchard-art.ru/projects</a>
+                            </p>
+                        </div>
+                        <h3 class="projects__subject subject">Партнеры проектов:</h3>
+                        <div class="projects__partners flex">
+                            <button class="projects__buttonlight button-reset projects__buttonlight--left">
+                                <svg
+                                    class="projects__buttonlight-svg"
+                                    width="7"
+                                    height="12"
+                                    viewbox="0 0 7 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M6 11L0.999995 6L6 0.999998" />
+                                </svg>
+                            </button>
+                            <div class="projects__swiper swiper">
+                                <ul class="projects__list list-reset swiper-wrapper">
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners01"
+                                                src="./img/projects-partners01.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners02"
+                                                src="./img/projects-partners02.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners03"
+                                                src="./img/projects-partners03.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners04"
+                                                src="./img/projects-partners04.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners05"
+                                                src="./img/projects-partners05.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners06"
+                                                src="./img/projects-partners06.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners07"
+                                                src="./img/projects-partners07.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners08"
+                                                src="./img/projects-partners08.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                    <li class="projects__item swiper-slide">
+                                        <a class="projects__link-page flex" href="">
+                                            <img
+                                                class="projects__image size-partners09"
+                                                src="./img/projects-partners09.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="projects__buttonlight button-reset projects__buttonlight--right">
+                                <svg
+                                    class="projects__buttonlight-svg"
+                                    width="7"
+                                    height="12"
+                                    viewbox="0 0 7 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M1 11L6.00001 6L1 0.999997" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__contacts contacts" id="contacts">
+                <div class="contacts__background">
+                    <h2 class="contacts__heading heading">Контакты</h2>
+                    <div class="contacts__address-box contacts__address-box--320">
+                        <h3 class="contacts__address-subject subject">Шоурум №4</h3>
+                        <address class="contacts__address text">Леонтьевский переулок, дом 5/1</address>
+                    </div>
+                    <div class="contacts__box">
+                        <div class="contacts__left">
+                            <div class="contacts__content">
+                                <div class="contacts__address-box">
+                                    <h3 class="contacts__address-subject subject">Шоурум №4</h3>
+                                    <address class="contacts__address text">Леонтьевский переулок, дом 5/1</address>
+                                </div>
+                                <div class="contacts__form-box">
+                                    <h3 class="contacts__subject subject-alternative contacts__subject--form">
+                                        Заказать обратный звонок
+                                    </h3>
+                                    <form
+                                        class="contacts__form flex"
+                                        action="https://jsonplaceholder.typicode.com/posts"
+                                        method="POST"
+                                    >
+                                        <div class="contacts__input-container flex">
+                                            <div class="contacts__input-box flex">
+                                                <input
+                                                    class="contacts__input text flex"
+                                                    type="text"
+                                                    name="Имя"
+                                                    placeholder="Имя*"
+                                                    data-validate-field="name"
+                                                />
+                                            </div>
+                                            <div class="contacts__input-box flex">
+                                                <input
+                                                    class="contacts__input text flex"
+                                                    type="tel"
+                                                    name="Телефон"
+                                                    placeholder="Телефон*"
+                                                    data-validate-field="tel"
+                                                    data-validate-rules="phone"
+                                                />
+                                            </div>
+                                        </div>
+                                        <button class="contacts__button button-reset button-big">Заказать</button>
+                                    </form>
+                                </div>
+                                <div class="contacts__social-box">
+                                    <h3 class="contacts__subject subject-alternative contacts__subject--links">
+                                        Связаться в&nbsp;один клик
+                                    </h3>
+                                    <div class="contacts__social-links flex">
+                                        <a class="contacts__social-link whatsapp" href=""></a>
+                                        <a class="contacts__social-link telegram" href=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contacts__right" id="blanchardMap"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__box">
+                <div class="footer__container container flex">
+                    <div class="logo footer__logo">
+                        <a class="logo__link" href="">
+                            <picture class="logo__picture">
+                                <source srcset="./img/logo-320-footer.svg" media="(max-width: 767px)" />
+                                <source srcset="./img/logo-768-footer.svg" media="(max-width: 1919px)" />
+                                <img class="logo__image" src="./img/logo-1920.svg" alt="Логотип сайта" />
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="footer__links flex">
+                        <a class="footer__link" href="">
+                            <svg
+                                class="footer__svg"
+                                width="45"
+                                height="45"
+                                viewbox="0 0 45 45"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M22.5 0C10.074 0 0 10.0736 0 22.5C0 34.9264 10.074 45 22.5 45C34.926 45 45 34.9264 45 22.5C45 10.0736 34.926 0 22.5 0ZM33.9132 24.9335C34.9619 25.9577 36.0714 26.9217 37.0128 28.0519C37.4299 28.5519 37.823 29.0688 38.1222 29.6503C38.5495 30.4794 38.1637 31.3886 37.4216 31.4379L32.812 31.4369C31.6215 31.5354 30.6741 31.0553 29.8754 30.2414C29.2378 29.5927 28.6462 28.8999 28.0321 28.2292C27.7812 27.9539 27.517 27.6947 27.2021 27.4907C26.5737 27.0819 26.0277 27.2072 25.6677 27.8636C25.3008 28.5316 25.217 29.2719 25.182 30.0153C25.1319 31.1022 24.8041 31.3863 23.7135 31.4374C21.3832 31.5465 19.1721 31.1929 17.117 30.0181C15.3041 28.9818 13.901 27.5193 12.6783 25.8634C10.2973 22.6353 8.47381 19.0924 6.8354 15.4478C6.46665 14.627 6.73642 14.1878 7.64194 14.1707C9.14639 14.1417 10.6508 14.1454 12.1553 14.1694C12.7676 14.179 13.1727 14.5294 13.4079 15.1071C14.2209 17.1074 15.2176 19.0105 16.4665 20.7755C16.7994 21.2455 17.1391 21.7142 17.623 22.0461C18.157 22.4125 18.5639 22.2915 18.8158 21.6953C18.9769 21.3164 19.0464 20.9113 19.0814 20.5053C19.2011 19.1145 19.2153 17.7242 19.0082 16.339C18.8793 15.4722 18.3918 14.9124 17.5277 14.7485C17.0876 14.6652 17.152 14.5022 17.3661 14.2508C17.7376 13.8163 18.0856 13.5474 18.7812 13.5474L23.9893 13.5465C24.8101 13.7076 24.9942 14.0759 25.1056 14.9027L25.1102 20.6903C25.1006 21.0103 25.2709 21.9586 25.8454 22.1681C26.3058 22.32 26.6096 21.9508 26.8849 21.6594C28.1339 20.334 29.0237 18.7697 29.8206 17.1506C30.1723 16.4366 30.4757 15.6978 30.7703 14.9575C30.9895 14.4101 31.3301 14.1408 31.9479 14.15L36.9631 14.156C37.1108 14.156 37.2609 14.1574 37.4073 14.1827C38.2525 14.3273 38.4841 14.6909 38.2226 15.5154C37.811 16.8109 37.0114 17.89 36.2297 18.9718C35.3919 20.1301 34.4983 21.2478 33.6687 22.4111C32.9064 23.4746 32.9667 24.01 33.9132 24.9335Z"
+                                />
+                            </svg>
+                        </a>
+                        <a class="footer__link" href="">
+                            <svg
+                                class="footer__svg"
+                                width="45"
+                                height="45"
+                                viewbox="0 0 45 45"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g clip-path="url(#clip0_136320_2861)">
+                                    <path
+                                        d="M18.1172 22.5C18.1172 24.8785 20.0453 26.8066 22.4238 26.8066C24.8024 26.8066 26.7305 24.8785 26.7305 22.5C26.7305 20.1215 24.8024 18.1934 22.4238 18.1934C20.0453 18.1934 18.1172 20.1215 18.1172 22.5Z"
+                                    />
+                                    <path
+                                        d="M12.3517 14.8803C12.5587 14.3194 12.889 13.8116 13.3182 13.3948C13.735 12.9656 14.2424 12.6354 14.8037 12.4283C15.259 12.2515 15.9429 12.0411 17.2025 11.9837C18.5652 11.9216 18.9737 11.9082 22.4234 11.9082C25.8735 11.9082 26.282 11.9212 27.6443 11.9834C28.904 12.0411 29.5882 12.2515 30.0431 12.4283C30.6045 12.6354 31.1122 12.9656 31.5287 13.3948C31.9578 13.8116 32.2881 14.319 32.4955 14.8803C32.6723 15.3356 32.8828 16.0198 32.9401 17.2795C33.0022 18.6418 33.0156 19.0503 33.0156 22.5004C33.0156 25.9501 33.0022 26.3587 32.9401 27.7213C32.8828 28.981 32.6723 29.6649 32.4955 30.1201C32.2881 30.6814 31.9582 31.1889 31.529 31.6057C31.1122 32.0348 30.6048 32.3651 30.0435 32.5721C29.5882 32.7493 28.904 32.9597 27.6443 33.0171C26.282 33.0792 25.8738 33.0922 22.4238 33.0922C18.9734 33.0922 18.5648 33.0792 17.2029 33.0171C15.9432 32.9597 15.259 32.7493 14.8037 32.5721C13.6769 32.1375 12.7864 31.2469 12.3517 30.1201C12.1749 29.6649 11.9644 28.981 11.9068 27.7213C11.8446 26.3587 11.8316 25.9501 11.8316 22.5004C11.8316 19.0503 11.8446 18.6418 11.9068 17.2795C11.9641 16.0198 12.1746 15.3356 12.3517 14.8803ZM22.4234 29.1344C26.0877 29.1344 29.0581 26.1643 29.0581 22.5001C29.0581 18.8358 26.0877 15.8657 22.4234 15.8657C18.7595 15.8657 15.7891 18.8358 15.7891 22.5001C15.7891 26.1643 18.7595 29.1344 22.4234 29.1344ZM15.5268 17.1538C16.383 17.1538 17.0772 16.4596 17.0772 15.6034C17.0772 14.7471 16.383 14.0529 15.5268 14.0529C14.6705 14.0529 13.9763 14.7471 13.9763 15.6034C13.9767 16.4596 14.6705 17.1538 15.5268 17.1538Z"
+                                    />
+                                    <path
+                                        d="M22.6204 0C34.9364 0 44.9238 9.98747 44.9238 22.3034C44.9238 34.6194 34.9364 44.6069 22.6204 44.6069C10.3044 44.6069 0.316959 34.6194 0.316959 22.3034C0.316959 9.98747 10.3044 0 22.6204 0ZM9.89059 27.5836C9.95253 28.9469 10.1693 29.8777 10.4858 30.6924C11.1512 32.4127 12.5111 33.7727 14.2314 34.438C15.0458 34.7545 15.9769 34.971 17.3399 35.0332C18.7057 35.0955 19.1419 35.1105 22.6201 35.1105C26.0985 35.1105 26.5345 35.0955 27.9005 35.0332C29.2635 34.971 30.1946 34.7545 31.009 34.438C31.8639 34.1164 32.6378 33.6124 33.2776 32.9607C33.929 32.3212 34.433 31.547 34.7546 30.6924C35.0711 29.878 35.2879 28.9469 35.3498 27.5839C35.4128 26.2178 35.4274 25.7815 35.4274 22.3034C35.4274 18.8253 35.4128 18.389 35.3502 17.0233C35.2883 15.66 35.0718 14.7292 34.7553 13.9145C34.4337 13.0599 33.9293 12.2857 33.2776 11.6462C32.6382 10.9945 31.8639 10.4905 31.0094 10.1689C30.1946 9.85236 29.2638 9.63592 27.9005 9.57364C26.5348 9.51136 26.0985 9.49638 22.6204 9.49638C19.1423 9.49638 18.706 9.51136 17.3403 9.57398C15.9769 9.63592 15.0462 9.85236 14.2314 10.1685C13.3769 10.4901 12.6026 10.9945 11.9628 11.6462C11.3114 12.286 10.8071 13.0599 10.4858 13.9145C10.169 14.7292 9.95253 15.66 9.89025 17.0233C9.82798 18.389 9.81334 18.8253 9.81334 22.3034C9.81334 25.7815 9.82798 26.2178 9.89059 27.5836Z"
+                                    />
+                                </g>
+                                <defs>
+                                    <clippath id="clip0_136320_2861">
+                                        <rect width="45" height="45" fill="white" transform="matrix(-1 0 0 1 45 0)" />
+                                    </clippath>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a class="footer__link" href="">
+                            <svg
+                                class="footer__svg"
+                                width="45"
+                                height="45"
+                                viewbox="0 0 45 45"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M22.5 0C10.125 0 0 10.1431 0 22.6355C0 33.9307 8.23499 43.3057 18.99 45V29.1867H13.275V22.6355H18.99V17.6431C18.99 11.9729 22.3425 8.85542 27.495 8.85542C29.9475 8.85542 32.5125 9.28464 32.5125 9.28464V14.8645H29.6775C26.8875 14.8645 26.01 16.6039 26.01 18.3886V22.6355H32.265L31.2525 29.1867H26.01V45C31.312 44.1593 36.1399 41.4432 39.6223 37.342C43.1047 33.2408 45.012 28.0248 44.9999 22.6355C44.9999 10.1431 34.875 0 22.5 0Z"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./libs/focus-visible/focus-visible.js"></script>
+        <script src="./libs/accordion/accordion.js"></script>
+        <script src="./libs/swiper/swiper-bundle.js" defer></script>
+        <script src="./libs/simplebar/simplebar.js"></script>
+        <script src="./libs/inputmask/inputmask.js"></script>
+        <script src="./libs/just-validate/just-validate.js"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU"></script>
+        <script src="./js/script.js" defer></script>
+    </body>
+</html>

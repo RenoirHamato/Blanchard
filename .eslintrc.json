@@ -1,0 +1,34 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "semi": "error",
+        "no-console": "warn",
+        "no-redeclare": "off",
+        "no-lonely-if": "error",
+        "no-unused-vars": ["warn", {"vars": "local"}],
+        "no-empty": "off",
+        "valid-typeof": ["error", {"requireStringLiterals": true}],
+        "quotes": [
+            "error",
+            "single",
+            {
+                "avoidEscape": true
+            }
+        ]
+    },
+    "globals": {
+        "SimpleBar": true,
+        "Swiper": true,
+        "Accordion": true,
+        "ymaps": true,
+        "Inputmask": true,
+        "JustValidate": true
+    }
+}
