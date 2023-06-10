@@ -1,9 +1,10 @@
 [
     {
         "id": 1,
-        "img1920": "./img/editions-1920-product01.jpg",
-        "img768": "./img/editions-768-product01.jpg",
-        "img320": "./img/editions-320-product01.jpg",
+        "img1920": "./img/editions-1920-product01.webp",
+        "img1024": "./img/editions-1024-product01.webp",
+        "img768": "./img/editions-768-product01.webp",
+        "img320": "./img/editions-320-product01.webp",
         "name": "Искусство цвета",
         "cost": 620,
         "authors": "Иттен, Иоханнес",
@@ -12,9 +13,10 @@
 
     {
         "id": 2,
-        "img1920": "./img/editions-1920-product02.jpg",
-        "img768": "./img/editions-768-product02.jpg",
-        "img320": "./img/editions-320-product02.jpg",
+        "img1920": "./img/editions-1920-product02.webp",
+        "img1024": "./img/editions-1024-product02.webp",
+        "img768": "./img/editions-768-product02.webp",
+        "img320": "./img/editions-320-product02.webp",
         "name": "Типографика",
         "cost": 2450,
         "authors": "Рудер, Эмиль",
@@ -23,9 +25,10 @@
 
     {
         "id": 3,
-        "img1920": "./img/editions-1920-product03.jpg",
-        "img768": "./img/editions-768-product03.jpg",
-        "img320": "./img/editions-320-product03.jpg",
+        "img1920": "./img/editions-1920-product03.webp",
+        "img1024": "./img/editions-1024-product03.webp",
+        "img768": "./img/editions-768-product03.webp",
+        "img320": "./img/editions-320-product03.webp",
         "name": "Книга про буквы",
         "cost": 2200,
         "authors": "Гордон, Юрий",
@@ -34,9 +37,10 @@
 
     {
         "id": 4,
-        "img1920": "./img/editions-1920-product04.jpg",
-        "img768": "./img/editions-768-product04.jpg",
-        "img320": "./img/editions-320-product04.jpg",
+        "img1920": "./img/editions-1920-product04.webp",
+        "img1024": "./img/editions-1024-product04.webp",
+        "img768": "./img/editions-768-product04.webp",
+        "img320": "./img/editions-320-product04.webp",
         "name": "Николай Ильин",
         "cost": 1100,
         "authors": "Кричевский, Владимир",
@@ -45,9 +49,10 @@
 
     {
         "id": 5,
-        "img1920": "./img/editions-1920-product05.jpg",
-        "img768": "./img/editions-768-product05.jpg",
-        "img320": "./img/editions-320-product05.jpg",
+        "img1920": "./img/editions-1920-product05.webp",
+        "img1024": "./img/editions-1024-product05.webp",
+        "img768": "./img/editions-768-product05.webp",
+        "img320": "./img/editions-320-product05.webp",
         "name": "Модульные сетки в графическом дизайне",
         "cost": 1450,
         "authors": "Мюллер-Брокманн, Йозеф",
@@ -56,9 +61,10 @@
 
     {
         "id": 6,
-        "img1920": "./img/editions-1920-product06.jpg",
-        "img768": "./img/editions-768-product06.jpg",
-        "img320": "./img/editions-320-product06.jpg",
+        "img1920": "./img/editions-1920-product06.webp",
+        "img1024": "./img/editions-1024-product06.webp",
+        "img768": "./img/editions-768-product06.webp",
+        "img320": "./img/editions-320-product06.webp",
         "name": "Эволюция графических стилей",
         "cost": 3200,
         "authors": "Хеллер, Чваст",
@@ -67,9 +73,10 @@
 
     {
         "id": 7,
-        "img1920": "./img/editions-1920-product07.jpg",
-        "img768": "./img/editions-768-product07.jpg",
-        "img320": "./img/editions-320-product07.jpg",
+        "img1920": "./img/editions-1920-product07.webp",
+        "img1024": "./img/editions-1024-product07.webp",
+        "img768": "./img/editions-768-product07.webp",
+        "img320": "./img/editions-320-product07.webp",
         "name": "Искусство и визуальное восприятие",
         "cost": 2200,
         "authors": "Арнхейм, Рудольф",

@@ -1,3 +1,6 @@
+/* LAZYLOAD */
+lazyload();
+
 /* STOP-SCROLL MODAL*/
 function scrollLock() {
     console.log('yes');
@@ -13,7 +16,6 @@ function scrollLock() {
     window.myTimeout = setTimeout(function () {
         stopScroll.classList.remove('stop-scroll');
         stopScroll.removeAttribute('style');
-        window.myTimeout = 0;
     }, delay);
 }
 const stopScroll = document.querySelector('body');
@@ -233,7 +235,7 @@ document.body.addEventListener('keyup', function (event) {
                             <source srcset="${item.img320}" media="(max-width: 767px)">
                             <source srcset="${item.img768}" media="(max-width: 1023px)">
                             <source srcset="${item.img1024}" media="(max-width: 1919px)">
-                            <img class="gallery__image" src="${item.img1920}" alt="">
+                            <img class="gallery__image lazyload" src="${item.img1920}" alt="">
                         </picture>
                     </button>
                 </li>`;
@@ -260,7 +262,7 @@ document.body.addEventListener('keyup', function (event) {
                 <source srcset="${filteredModals[index].modal320}" media="(max-width: 767px)" />
                 <source srcset="${filteredModals[index].modal768}" media="(max-width: 1023px)" />
                 <source srcset="${filteredModals[index].modal1024}" media="(max-width: 1919px)" />
-                <img class="gallery__modal-img" src="${filteredModals[index].modal1920}" alt="" />
+                <img class="gallery__modal-img lazyload" src="${filteredModals[index].modal1920}" alt="" />
             </picture>
             <div class="gallery__modal-information">
                 <div class="gallery__modal-scrollbar">
@@ -278,7 +280,9 @@ document.body.addEventListener('keyup', function (event) {
         contentModal.insertAdjacentHTML('afterbegin', htmlModal);
 
         window.startAnimation = Date.now();
-        const scrollSize = String(window.innerWidth - stopScroll.clientWidth);
+        let clientSize = stopScroll.clientWidth;
+        let windowSize = window.innerWidth;
+        const scrollSize = String(windowSize - clientSize);
 
         boxModal.classList.add('gallery__modal--active');
         overlay.classList.add('gallery__overlay--active');
@@ -440,10 +444,10 @@ document.body.addEventListener('keyup', function (event) {
         const contentNullHTML = `
         <div class="catalog__null flex">
             <picture class="catalog__figure-picture">
-                <source srcset="./img/catalog-320-figure.jpg" media="(max-width: 767px)" />
-                <source srcset="./img/catalog-768-figure.jpg" media="(max-width: 1023px)" />
-                <source srcset="./img/catalog-1024-figure.jpg" media="(max-width: 1919px)" />
-                <img class="catalog__figure-img" src="./img/catalog-1920-figure.jpg" alt="" />
+                <source srcset="./img/catalog-320-figure.webp" media="(max-width: 767px)" />
+                <source srcset="./img/catalog-768-figure.webp" media="(max-width: 1023px)" />
+                <source srcset="./img/catalog-1024-figure.webp" media="(max-width: 1919px)" />
+                <img class="catalog__figure-img lazyload" src="./img/catalog-1920-figure.webp" alt="" />
             </picture>
             <div class="catalog__null-empty">
                 <p class="catalog__null-text">Здесь пока пусто</p>
@@ -488,7 +492,13 @@ document.body.addEventListener('keyup', function (event) {
                         class="catalog__tab-post"
                         data-target="${country}-${item.id}"
                     >
-                        <img class="catalog__img" src="${item.content.img}" alt="" />
+                        <picture class="catalog__picture">
+                            <source srcset="${item.content.img320}" media="(max-width: 767px)" />
+                            <source srcset="${item.content.img768}" media="(max-width: 1023px)" />
+                            <source srcset="${item.content.img1024}" media="(max-width: 1919px)" />
+                            <img class="catalog__img lazyload" src="${item.content.img1920}" alt="" />
+                        </picture>
+
                         <h4 class="catalog__subject subject">${item.name}</h4>
                         <span class="catalog__date span-gray">
                             ${item.content.date}
@@ -501,10 +511,10 @@ document.body.addEventListener('keyup', function (event) {
                         htmlGallery += `
                         <div class="catalog__tab-post" data-target="${country}-${item.id}">
                         <picture class="catalog__picture">
-                            <source srcset="./img/catalog-320-null.jpg" media="(max-width: 767px)" />
-                            <source srcset="./img/catalog-768-null.jpg" media="(max-width: 1023px)" />
-                            <source srcset="./img/catalog-1024-null.jpg" media="(max-width: 1919px)" />
-                            <img class="catalog__img" src="./img/catalog-1920-null.jpg" alt="" />
+                            <source srcset="./img/catalog-320-null.webp" media="(max-width: 767px)" />
+                            <source srcset="./img/catalog-768-null.webp" media="(max-width: 1023px)" />
+                            <source srcset="./img/catalog-1024-null.webp" media="(max-width: 1919px)" />
+                            <img class="catalog__img lazyload" src="./img/catalog-1920-null.webp" alt="" />
                         </picture>
                         <h4 class="catalog__subject subject">Что мы о нём знаем?</h4>
                         <p class="catalog__description text">
@@ -549,10 +559,10 @@ document.body.addEventListener('keyup', function (event) {
                     `
                     <div class="catalog__tab-post catalog__tab-post--active">
                         <picture class="catalog__picture">
-                            <source srcset="./img/catalog-320-null.jpg" media="(max-width: 767px)" />
-                            <source srcset="./img/catalog-768-null.jpg" media="(max-width: 1023px)" />
-                            <source srcset="./img/catalog-1024-null.jpg" media="(max-width: 1919px)" />
-                            <img class="catalog__img" src="./img/catalog-1920-null.jpg" alt="" />
+                            <source srcset="./img/catalog-320-null.webp" media="(max-width: 767px)" />
+                            <source srcset="./img/catalog-768-null.webp" media="(max-width: 1023px)" />
+                            <source srcset="./img/catalog-1024-null.webp" media="(max-width: 1919px)" />
+                            <img class="catalog__img lazyload" src="./img/catalog-1920-null.webp" alt="" />
                         </picture>
                         <h4 class="catalog__subject subject">Что мы о нём знаем?</h4>
                         <p class="catalog__description text">
@@ -837,8 +847,9 @@ function unification(elementU) {
                     <div class="editions__product">
                     <picture class="editions__picture">
                         <source srcset="${requiredContent[number].img320}" media="(max-width: 767px)">
-                        <source srcset="${requiredContent[number].img768}" media="(max-width: 1919px)">
-                        <img class="editions__img" src="${requiredContent[number].img1920}" alt="">
+                        <source srcset="${requiredContent[number].img768}" media="(max-width: 1023px)">
+                        <source srcset="${requiredContent[number].img1024}" media="(max-width: 1919px)">
+                        <img class="editions__img lazyload" src="${requiredContent[number].img1920}" alt="">
                     </picture>
                     <div class="editions__information flex">
                     <div class="editions__top">
@@ -1078,6 +1089,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* YANDEX.MAP */
+/*
 ymaps.ready(init);
 function init() {
     var myMap = new ymaps.Map(
@@ -1105,3 +1117,4 @@ function init() {
 
     myMap.geoObjects.add(myPlacemark);
 }
+*/

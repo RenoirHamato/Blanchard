@@ -44,17 +44,23 @@
         padding: 0 50px;
     }
 
+    /* 1.6. Логотип: HEADER и FOOTER */
+    .logo-header {
+        width: 187.6px;
+        height: 42px;
+    }
+
     /* 1.10. Прочее */
     .slide-1 {
-        background-image: url(../img/header-1024_image-1.jpg);
+        background-image: url(../img/header-1024_image-1.webp);
     }
 
     .slide-2 {
-        background-image: url(../img/header-1024_image-2.jpg);
+        background-image: url(../img/header-1024_image-2.webp);
     }
 
     .slide-3 {
-        background-image: url(../img/header-1024_image-3.jpg);
+        background-image: url(../img/header-1024_image-3.webp);
     }
 
     .size-partners01 {
@@ -608,7 +614,7 @@
 
     /* 5. GALLERY */
     .gallery__background {
-        background-image: url(../img/gallery-1024-background.jpg);
+        background-image: url(../img/gallery-1024-background.webp);
     }
 
     .gallery__left {
@@ -716,7 +722,7 @@
 
     /* 7. EDITIONS */
     .editions__background {
-        background-image: url(../img/editions-1024-background.jpg);
+        background-image: url(../img/editions-1024-background.webp);
     }
 
     .editions__left {
@@ -780,7 +786,11 @@
     .contacts__social-link {
         width: 60px;
         height: 60px;
-        background-size: 60px 60px;
+    }
+
+    .contacts__social-svg {
+        width: 60px;
+        height: 60px;
     }
 
     /* 10. FOOTER */
@@ -839,15 +849,15 @@
 
     /* 1.10. Прочее */
     .slide-1 {
-        background-image: url(../img/header-768_image-1.jpg);
+        background-image: url(../img/header-768_image-1.webp);
     }
 
     .slide-2 {
-        background-image: url(../img/header-768_image-2.jpg);
+        background-image: url(../img/header-768_image-2.webp);
     }
 
     .slide-3 {
-        background-image: url(../img/header-768_image-3.jpg);
+        background-image: url(../img/header-768_image-3.webp);
     }
 
     .size-partners01 {
@@ -973,7 +983,7 @@
 
     /* 5. GALLERY */
     .gallery__background {
-        background-image: url(../img/gallery-768-background.jpg);
+        background-image: url(../img/gallery-768-background.webp);
     }
 
     .gallery__content {
@@ -1075,7 +1085,7 @@
 
     /* 7. EDITIONS */
     .editions__background {
-        background-image: url(../img/editions-768-background.jpg);
+        background-image: url(../img/editions-768-background.webp);
     }
 
     .editions__content {
@@ -1247,17 +1257,28 @@
         padding: 0 15px;
     }
 
+    /* 1.6. Логотип: HEADER и FOOTER */
+    .logo-header {
+        width: 96.8px;
+        height: 21.67px;
+    }
+
+    .logo-footer {
+        width: 96.8px;
+        height: 21.67px;
+    }
+
     /* 1.10. Прочее */
     .slide-1 {
-        background-image: url(../img/header-320_image-1.jpg);
+        background-image: url(../img/header-320_image-1.webp);
     }
 
     .slide-2 {
-        background-image: url(../img/header-320_image-2.jpg);
+        background-image: url(../img/header-320_image-2.webp);
     }
 
     .slide-3 {
-        background-image: url(../img/header-320_image-3.jpg);
+        background-image: url(../img/header-320_image-3.webp);
     }
 
     .size-partners01 {
@@ -1545,7 +1566,7 @@
 
     /* GALLERY */
     .gallery__background {
-        background-image: url(../img/gallery-320-background.jpg);
+        background-image: url(../img/gallery-320-background.webp);
     }
 
     .gallery__content {
@@ -1767,7 +1788,7 @@
 
     /* EDITIONS */
     .editions__background {
-        background-image: url(../img/editions-320-background.jpg);
+        background-image: url(../img/editions-320-background.webp);
         background-repeat: repeat;
         background-size: 100%;
     }
@@ -1790,6 +1811,7 @@
         display: block;
         width: 12px;
         height: 8px;
+        fill: none;
         stroke: var(--svg-1);
         transition: transform 0.25s ease-in-out;
     }
@@ -1825,7 +1847,6 @@
     }
 
     .editions__svg-checkbox {
-        display: none;
         width: 12px;
         height: 12px;
         fill: var(--active-6);
@@ -1975,7 +1996,11 @@
     .contacts__social-link {
         width: 50px;
         height: 50px;
-        background-size: 50px 50px;
+    }
+
+    .contacts__social-svg {
+        width: 50px;
+        height: 50px;
     }
 
     /* FOOTER */
