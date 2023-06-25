@@ -24,7 +24,7 @@ const stopScroll = document.querySelector('body');
 const burgerButton = document.querySelector('.header__burger');
 const burgerLine = document.querySelectorAll('.header__line');
 const burgerBox = document.querySelector('.header__box');
-const burgerScroll = document.querySelector('.header__scroll');
+const burgerScroll = document.querySelector('.header__scroll-box');
 
 burgerButton.addEventListener('click', function () {
     burgerButton.classList.toggle('header__burger--open');
@@ -62,8 +62,9 @@ const simplebarMenu = new SimpleBar(burgerScroll, {
     autoHide: false,
     scrollbarMaxSize: 28,
     classNames: {
-        scrollbar: 'simplebar-scrollbar-menu',
-        track: 'simplebar-track-menu',
+        content: 'header__content-menu',
+        scrollbar: 'header__scrollbar-menu',
+        track: 'header__track-menu',
     },
 });
 
@@ -103,40 +104,56 @@ Array.prototype.forEach.call(
             autoHide: false,
             scrollbarMaxSize: 28,
             classNames: {
-                scrollbar: 'simplebar-scrollbar-select',
-                track: 'simplebar-track-select',
+                track: 'header__track-select',
+                scrollbar: 'header__scrollbar-select',
             },
         })
 );
 
+let parent = null;
+let myHeight = 0;
+document.querySelectorAll('.header__list-page > .header__item-page:nth-child(-n+4)').forEach((el, index, array) => {
+    if (!parent) {
+        parent = el.parentElement;
+    }
+    if (parent.contains(el)) {
+        myHeight += el.offsetHeight;
+    }
+    if (!parent.contains(el) || index === array.length - 1) {
+        array[index - 1].closest('.header__scroll-select').style.maxHeight = myHeight + 3 * 20 + 'px';
+        myHeight = el.offsetHeight;
+        parent = el.parentElement;
+    }
+});
+
 /* SEARCH */
-let searchOpen = document.querySelector('.header__search-open');
-let searchBox = document.querySelector('.header__search-box');
-let searchClose = document.querySelector('.header__search-close');
+let searchOpen = document.querySelector('.header__open-search');
+let searchBox = document.querySelector('.header__box-search');
+let searchClose = document.querySelector('.header__close-search');
 let searchInput = document.querySelector('.header__input-search');
 
 searchOpen.addEventListener('click', function () {
-    searchBox.classList.add('header__search-box--active');
+    searchBox.classList.add('header__box-search--active');
     searchOpen.classList.add('header__search-open--active');
     searchOpen.setAttribute('tabindex', '-1');
     searchInput.focus();
 });
 
 searchClose.addEventListener('click', function () {
-    searchOpen.classList.remove('header__search-open--active');
+    searchOpen.classList.remove('header__open-search--active');
     searchOpen.removeAttribute('tabindex', '-1');
-    searchBox.classList.remove('header__search-box--active');
+    searchBox.classList.remove('header__box-search--active');
     searchOpen.focus();
 });
 
 document.addEventListener('click', function (event) {
-    if (event.target.closest('.header__search-box--active') || event.target.closest('.header__search-open--active'))
+    if (event.target.closest('.header__box-search--active') || event.target.closest('.header__search-open--active'))
         return;
-    const activeSearchOpen = document.querySelector('.header__search-open--active');
-    const activeSearchBox = document.querySelector('.header__search-box--active');
+    const activeSearchOpen = document.querySelector('.header__open-search--active');
+    const activeSearchBox = document.querySelector('.header__box-search--active');
     if (activeSearchBox) {
-        activeSearchOpen.classList.remove('header__search-open--active');
-        activeSearchBox.classList.remove('header__search-box--active');
+        activeSearchOpen.classList.remove('header__open-search--active');
+        activeSearchBox.classList.remove('header__box-search--active');
     }
 });
 
@@ -149,15 +166,15 @@ let oldImage = 0;
 setInterval(() => {
     oldImage = numberImage;
     numberImage = (numberImage + 1) % arrowImages.length;
-    arrowImages[numberImage].classList.add('header__picture--active');
+    arrowImages[numberImage].classList.add('header__image--active');
     if (oldImage == arrowImages.length - 1) {
-        arrowImages[numberImage].classList.add('header__picture--return');
+        arrowImages[numberImage].classList.add('header__image--return');
         setTimeout(() => {
-            arrowImages[numberImage].classList.remove('header__picture--return');
+            arrowImages[numberImage].classList.remove('header__image--return');
         }, 2000);
     }
     setTimeout(() => {
-        arrowImages[oldImage].classList.remove('header__picture--active');
+        arrowImages[oldImage].classList.remove('header__image--active');
     }, 1000);
 }, 8000);
 
@@ -189,7 +206,7 @@ function tabModal(event) {
 
 const overlay = document.querySelector('.gallery__overlay');
 const boxModal = document.querySelector('.gallery__modal');
-const modalClose = document.querySelector('.gallery__modal-button');
+const modalClose = document.querySelector('.gallery__close-modal');
 
 /* event 1 */
 modalClose.addEventListener('click', function () {
@@ -220,7 +237,7 @@ document.body.addEventListener('keyup', function (event) {
 (async function getResponse() {
     const library = await fetch('./json/pictures.json');
     const content = await library.json();
-    const select = document.querySelector('.gallery__filter-select');
+    const select = document.querySelector('.gallery__select');
     const listGallery = document.querySelector('.gallery__list-swiper');
 
     function showCards(value) {
@@ -229,13 +246,13 @@ document.body.addEventListener('keyup', function (event) {
             .map(item => {
                 let htmlGallery = '';
                 htmlGallery += `
-                <li class="gallery__item swiper-slide">
-                    <button class="gallery__card button-reset flex" id="${item.id}">
-                        <picture class="gallery__picture">
+                <li class="gallery__item-swiper swiper-slide">
+                    <button class="gallery__card-swiper button-reset flex" id="${item.id}">
+                        <picture class="gallery__picture-swiper">
                             <source srcset="${item.img320}" media="(max-width: 767px)">
                             <source srcset="${item.img768}" media="(max-width: 1023px)">
                             <source srcset="${item.img1024}" media="(max-width: 1919px)">
-                            <img class="gallery__image lazyload" src="${item.img1920}" alt="">
+                            <img class="gallery__img-swiper lazyload" src="${item.img1920}" alt="">
                         </picture>
                     </button>
                 </li>`;
@@ -245,32 +262,32 @@ document.body.addEventListener('keyup', function (event) {
 
         listGallery.insertAdjacentHTML('beforeend', itemsGalleryHTML);
 
-        const buttonGallery = document.querySelectorAll('.gallery__card');
+        const buttonGallery = document.querySelectorAll('.gallery__card-swiper');
         buttonGallery.forEach(function (elem) {
             elem.addEventListener('click', showModals);
         });
     }
 
     function showModals() {
-        const contentModal = document.querySelector('.gallery__modal-content');
+        const contentModal = document.querySelector('.gallery__content-modal');
         window.lastFocus = document.activeElement;
         clearing(contentModal);
         const filteredModals = content.filter(item => item.category === newSelect);
         const index = this.id;
         const htmlModal = `
-            <picture class="gallery__modal-picture">
+            <picture class="gallery__picture-modal">
                 <source srcset="${filteredModals[index].modal320}" media="(max-width: 767px)" />
                 <source srcset="${filteredModals[index].modal768}" media="(max-width: 1023px)" />
                 <source srcset="${filteredModals[index].modal1024}" media="(max-width: 1919px)" />
-                <img class="gallery__modal-img lazyload" src="${filteredModals[index].modal1920}" alt="" />
+                <img class="gallery__img-modal lazyload" src="${filteredModals[index].modal1920}" alt="" />
             </picture>
-            <div class="gallery__modal-information">
-                <div class="gallery__modal-scrollbar">
-                    <h3 class="gallery__modal-subject subject">
+            <div class="gallery__information-modal">
+                <div class="gallery__scroll-modal">
+                    <h3 class="gallery__subject-modal subject">
                         ${filteredModals[index].author}
-                        <span class="gallery__modal-name">"${filteredModals[index].name}"</span>
+                        <span class="gallery__name-modal">"${filteredModals[index].name}"</span>
                     </h3>
-                    <span class="gallery__modal-date span-gray">${filteredModals[index].date}</span>
+                    <time class="gallery__date-modal span-gray" datetime="${filteredModals[index].datetime}">${filteredModals[index].date}</time>
                     <p class="gallery__modal-text text">
                         ${filteredModals[index].text}
                     </p>
@@ -289,11 +306,11 @@ document.body.addEventListener('keyup', function (event) {
         stopScroll.classList.add('stop-scroll');
         stopScroll.style.paddingRight = scrollSize + 'px';
 
-        const simplebarModal = new SimpleBar(document.querySelector('.gallery__modal-scrollbar'), {
+        const simplebarModal = new SimpleBar(document.querySelector('.gallery__scroll-modal'), {
             scrollbarMaxSize: 28,
             classNames: {
-                scrollbar: 'gallery__simplebar-scrollbar',
-                track: 'gallery__simplebar-track',
+                track: 'gallery__track-modal',
+                scrollbar: 'gallery__scrollbar-modal',
             },
         });
 
@@ -367,18 +384,18 @@ document.body.addEventListener('keyup', function (event) {
             update: function () {
                 this.slides.forEach(slide => {
                     if (!slide.classList.contains('gallery__slide-visible')) {
-                        slide.querySelector('.gallery__card').tabIndex = '-1';
+                        slide.querySelector('.gallery__card-swiper').tabIndex = '-1';
                     } else {
-                        slide.querySelector('.gallery__card').tabIndex = '';
+                        slide.querySelector('.gallery__card-swiper').tabIndex = '';
                     }
                 });
             },
             slideChange: function () {
                 this.slides.forEach(slide => {
                     if (!slide.classList.contains('gallery__slide-visible')) {
-                        slide.querySelector('.gallery__card').tabIndex = '-1';
+                        slide.querySelector('.gallery__card-swiper').tabIndex = '-1';
                     } else {
-                        slide.querySelector('.gallery__card').tabIndex = '';
+                        slide.querySelector('.gallery__card-swiper').tabIndex = '';
                     }
                 });
             },
@@ -400,29 +417,29 @@ document.body.addEventListener('keyup', function (event) {
 (async function getResponse() {
     const catalogLibrary = await fetch('./json/catalog.json');
     const catalogContent = await catalogLibrary.json();
-    const catalogButton = document.querySelectorAll('.catalog__button-content');
-    const catalogContentBox = document.querySelector('.catalog__box-left');
+    const catalogButton = document.querySelectorAll('.catalog__content-time');
+    const catalogContentBox = document.querySelector('.catalog__left');
 
     /* TAB FUNCTION */
     function newTab(tabID) {
-        const oldTabBox = document.querySelector('.catalog__tab-post--active');
+        const oldTabBox = document.querySelector('.catalog__post--active');
         const newTabBox = document.querySelector(`[data-target="${tabID}"]`);
 
         if (oldTabBox) {
-            oldTabBox.classList.remove('catalog__tab-post--active');
+            oldTabBox.classList.remove('catalog__post--active');
         }
 
         if (!newTabBox && tabID != window.location.hash.split('-')[0]) {
             catalogShow('');
         } else {
-            newTabBox.classList.add('catalog__tab-post--active');
+            newTabBox.classList.add('catalog__post--active');
         }
     }
 
     /* TAB SHOW */
     function catalogShow(hash) {
-        const activeCountry = document.querySelector('.catalog__country-step--disabled');
-        activeCountry.classList.remove('catalog__country-step--disabled');
+        const activeCountry = document.querySelector('.catalog__step-country--disabled');
+        activeCountry.classList.remove('catalog__step-country--disabled');
         activeCountry.removeAttribute('tabindex');
         let country = hash.split('-')[0];
         let nowCountry = document.querySelector(`[data-step="${country}"`);
@@ -438,24 +455,24 @@ document.body.addEventListener('keyup', function (event) {
             nowCountry = document.querySelector(`[data-step="${country}"`);
         }
 
-        nowCountry.classList.add('catalog__country-step--disabled');
+        nowCountry.classList.add('catalog__step-country--disabled');
         nowCountry.setAttribute('tabindex', '-1');
         const filteredCountry = catalogContent.filter(item => item.country === country);
         const contentNullHTML = `
         <div class="catalog__null flex">
-            <picture class="catalog__figure-picture">
+            <picture class="catalog__picture-null">
                 <source srcset="./img/catalog-320-figure.webp" media="(max-width: 767px)" />
                 <source srcset="./img/catalog-768-figure.webp" media="(max-width: 1023px)" />
                 <source srcset="./img/catalog-1024-figure.webp" media="(max-width: 1919px)" />
-                <img class="catalog__figure-img lazyload" src="./img/catalog-1920-figure.webp" alt="" />
+                <img class="catalog__img-null lazyload" src="./img/catalog-1920-figure.webp" alt="" />
             </picture>
-            <div class="catalog__null-empty">
-                <p class="catalog__null-text">Здесь пока пусто</p>
-                <span class="catalog__null-span">
+            <div class="catalog__information-null">
+                <p class="catalog__text-null">Здесь пока пусто</p>
+                <span class="catalog__span-null">
                     А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то
                     интересное для себя
                 </span>
-                <a class="catalog__null-link" href="#gallery">В галерею</a>
+                <a class="catalog__link-null" href="#gallery">В галерею</a>
             </div>
         </div>
         `;
@@ -469,9 +486,9 @@ document.body.addEventListener('keyup', function (event) {
                 .map(item => {
                     let htmlGallery = '';
                     htmlGallery += `
-                <li class="catalog__button-item">
+                <li class="catalog__item-artist">
                 <a
-                    class="catalog__button-link text"
+                    class="catalog__link-artist text"
                     href="${country}-${item.id}"
                     data-step="${country}-${item.id}"
                 >
@@ -489,7 +506,7 @@ document.body.addEventListener('keyup', function (event) {
                     if (Object.keys(item.content).length !== 0) {
                         htmlGallery += `
                         <div
-                        class="catalog__tab-post"
+                        class="catalog__post"
                         data-target="${country}-${item.id}"
                     >
                         <picture class="catalog__picture">
@@ -499,9 +516,9 @@ document.body.addEventListener('keyup', function (event) {
                             <img class="catalog__img lazyload" src="${item.content.img1920}" alt="" />
                         </picture>
 
-                        <h4 class="catalog__subject subject">${item.name}</h4>
+                        <h3 class="catalog__subject subject">${item.name}</h3>
                         <span class="catalog__date span-gray">
-                            ${item.content.date}
+                        <time class="catalog__birthday" datetime="${item.content.birthdayTime}">${item.content.birthday}</time>&nbsp;&mdash; <time class="catalog__death" datetime="${item.content.deathTime}">${item.content.death}</time>.
                         </span>
                         <p class="catalog__description text">
                             ${item.content.text}
@@ -509,7 +526,7 @@ document.body.addEventListener('keyup', function (event) {
                     </div>`;
                     } else {
                         htmlGallery += `
-                        <div class="catalog__tab-post" data-target="${country}-${item.id}">
+                        <div class="catalog__post" data-target="${country}-${item.id}">
                         <picture class="catalog__picture">
                             <source srcset="./img/catalog-320-null.webp" media="(max-width: 767px)" />
                             <source srcset="./img/catalog-768-null.webp" media="(max-width: 1023px)" />
@@ -521,7 +538,7 @@ document.body.addEventListener('keyup', function (event) {
                             Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть
                             на&nbsp;что посмотреть!
                         </p>
-                        <a class="catalog__null-link" href="#gallery">В галерею</a>
+                        <a class="catalog__link-null" href="#gallery">В галерею</a>
                     </div>`;
                     }
                     return htmlGallery;
@@ -532,14 +549,14 @@ document.body.addEventListener('keyup', function (event) {
                 elem.insertAdjacentHTML(
                     'beforeend',
                     `
-                    <ul class="catalog__button-list list-reset">
+                    <ul class="catalog__list-artist list-reset">
                     </ul>`
                 );
-                elem.querySelector('.catalog__button-list').insertAdjacentHTML(
+                elem.querySelector('.catalog__list-artist').insertAdjacentHTML(
                     'beforeend',
                     itemsCatalogTimelineHTML +
                         `
-                    <li class="catalog__button-plug">&nbsp;</li>`
+                    <li class="catalog__plug-artist">&nbsp;</li>`
                 );
                 catalogContentBox.insertAdjacentHTML('beforeend', itemsCatalogContentHTML);
             } else {
@@ -557,7 +574,7 @@ document.body.addEventListener('keyup', function (event) {
                 catalogContentBox.insertAdjacentHTML(
                     'beforeend',
                     `
-                    <div class="catalog__tab-post catalog__tab-post--active">
+                    <div class="catalog__post catalog__post--active">
                         <picture class="catalog__picture">
                             <source srcset="./img/catalog-320-null.webp" media="(max-width: 767px)" />
                             <source srcset="./img/catalog-768-null.webp" media="(max-width: 1023px)" />
@@ -569,7 +586,7 @@ document.body.addEventListener('keyup', function (event) {
                             Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть
                             на&nbsp;что посмотреть!
                         </p>
-                        <a class="catalog__null-link" href="#gallery">В галерею</a>
+                        <a class="catalog__link-null" href="#gallery">В галерею</a>
                     </div>`
                 );
             } else {
@@ -583,7 +600,7 @@ document.body.addEventListener('keyup', function (event) {
         }
 
         /* TAB ARTISTS */
-        const stepArtists = document.querySelectorAll('.catalog__button-link');
+        const stepArtists = document.querySelectorAll('.catalog__link-artist');
         stepArtists.forEach(function (linkStep) {
             linkStep.addEventListener('click', function () {
                 /*
@@ -591,7 +608,7 @@ document.body.addEventListener('keyup', function (event) {
 */
                 newTab(this.getAttribute('data-step'));
                 if (window.innerWidth < 1024) {
-                    document.querySelector('.catalog__box-left').scrollIntoView({
+                    document.querySelector('.catalog__left').scrollIntoView({
                         behavior: 'smooth',
                     });
                 } else {
@@ -603,7 +620,7 @@ document.body.addEventListener('keyup', function (event) {
             });
         });
 
-        let nullLink = document.querySelectorAll('.catalog__null-link');
+        let nullLink = document.querySelectorAll('.catalog__link-null');
         nullLink.forEach(function (elem) {
             elem.addEventListener('click', function (event) {
                 const anchorTab = this.getAttribute('href').replace('#', '');
@@ -622,7 +639,7 @@ document.body.addEventListener('keyup', function (event) {
     catalogShow(idTab);
 
     /* event 2 */
-    const stepCountry = document.querySelectorAll('.catalog__country-step');
+    const stepCountry = document.querySelectorAll('.catalog__step-country');
     stepCountry.forEach(function (linkStep) {
         linkStep.addEventListener('click', function () {
             /*
@@ -663,11 +680,11 @@ document.body.addEventListener('keyup', function (event) {
     });
 })();
 
-const accordionCatalog = new Accordion('.catalog__time-list', {
-    elementClass: 'catalog__time-item',
-    triggerClass: 'catalog__button',
-    panelClass: 'catalog__button-content',
-    activeClass: 'catalog__time-item--active',
+const accordionCatalog = new Accordion('.catalog__list-time', {
+    elementClass: 'catalog__item-time',
+    triggerClass: 'catalog__button-time',
+    panelClass: 'catalog__content-time',
+    activeClass: 'catalog__item-time--active',
 });
 
 window.addEventListener('load', function () {
@@ -692,7 +709,7 @@ const swiperBoxEvents = document.querySelector('.events__swiper');
 const swiperListEvents = document.querySelector('.events__list');
 const swiperItemEvents = document.querySelectorAll('.events__item');
 
-window.addEventListener('load', adaptiveSwiperEvents);
+adaptiveSwiperEvents();
 window.addEventListener('resize', adaptiveSwiperEvents);
 
 function adaptiveSwiperEvents() {
@@ -724,11 +741,11 @@ function adaptiveSwiperEvents() {
 
 /* EDITIONS */
 /* ПЕРЕМЕННЫЕ */
-const listCheckbox = document.querySelector('.editions__list-checkbox'); /* лист невыбранных checkbox */
+const listCheckbox = document.querySelector('.editions__list-category'); /* лист невыбранных checkbox */
 const listChecked = document.querySelector('.editions__list-checked'); /* лист выбранных checkbox */
-const inputCheckbox = document.querySelectorAll('.editions__checkbox'); /* все объекты checkbox */
+const inputCheckbox = document.querySelectorAll('.editions__checkbox-category'); /* все объекты checkbox */
 const buttonAccordeon =
-    document.querySelector('.editions__button-filter'); /* кнопка раскрытия списка checkbox при адаптиве 320 */
+    document.querySelector('.editions__button-accordion'); /* кнопка раскрытия списка checkbox при адаптиве 320 */
 
 /* 1. АККОРДЕОН 320 */
 function accordeonAnimation() {
@@ -737,7 +754,7 @@ function accordeonAnimation() {
         window.myAnimationAccordeon = 0;
     }
     window.myAnimationAccordeon = setTimeout(function () {
-        listCheckbox.classList.remove('editions__list-checkbox--animation');
+        listCheckbox.classList.remove('editions__list-category--animation');
         window.myAnimationAccordeon = 0;
     }, 300);
 }
@@ -745,10 +762,10 @@ function accordeonAnimation() {
 buttonAccordeon.addEventListener('click', accordeonEditions);
 
 function accordeonEditions() {
-    this.classList.toggle('editions__button-filter--active');
-    listCheckbox.classList.add('editions__list-checkbox--animation');
+    this.classList.toggle('editions__button-accordion--active');
+    listCheckbox.classList.add('editions__list-category--animation');
     accordeonAnimation();
-    if (this.classList.contains('editions__button-filter--active')) {
+    if (this.classList.contains('editions__button-accordion--active')) {
         listCheckbox.style.maxHeight = listCheckbox.scrollHeight + 'px';
     } else {
         listCheckbox.style.maxHeight = 0;
@@ -756,7 +773,7 @@ function accordeonEditions() {
 }
 
 /* 2. ПЕРЕСТАНОВКА CHECKBOX-ОВ 320 */
-window.addEventListener('load', permutation);
+permutation();
 window.addEventListener('resize', permutation);
 
 function permutation() {
@@ -788,26 +805,28 @@ function rearrangingCheckboxes() {
     } else {
         unification(this);
     }
-    if (buttonAccordeon.classList.contains('editions__button-filter--active'))
+    if (buttonAccordeon.classList.contains('editions__button-accordion--active'))
         listCheckbox.style.maxHeight = listCheckbox.scrollHeight + 'px';
 }
 
 function separation(elementS) {
-    listChecked.prepend(elementS.closest('.editions__item-checkbox'));
+    listChecked.prepend(elementS.closest('.editions__item-category'));
 }
 
 function unification(elementU) {
     const itemsCheckbox = Array.from(inputCheckbox).filter(
         index => index.checked == false
     ); /* Создается новый массив НЕвыбранных checkbox при текущей ширине экрана устройства */
-    const indexChecked = Number(elementU.closest('.editions__item-checkbox').id);
-    const indexCheckbox = itemsCheckbox.findIndex(index => index.closest('.editions__item-checkbox').id > indexChecked);
+    const indexChecked = Number(elementU.closest('.editions__item-category').getAttribute('data-category'));
+    const indexCheckbox = itemsCheckbox.findIndex(
+        index => Number(index.closest('.editions__item-category').getAttribute('data-category')) > indexChecked
+    );
     if (indexCheckbox != -1) {
         itemsCheckbox[indexCheckbox]
-            .closest('.editions__item-checkbox')
-            .before(elementU.closest('.editions__item-checkbox'));
+            .closest('.editions__item-category')
+            .before(elementU.closest('.editions__item-category'));
     } else {
-        listCheckbox.append(elementU.closest('.editions__item-checkbox'));
+        listCheckbox.append(elementU.closest('.editions__item-category'));
     }
 }
 
@@ -816,10 +835,10 @@ function unification(elementU) {
     const library = await fetch('./json/editions.json');
     const content = await library.json();
     const swiperBox = document.querySelector('.editions__swiper');
-    const swiperNull = document.querySelector('.editions__null');
-    const editions = document.querySelector('.editions__list');
-    const checkbox = document.querySelectorAll('.editions__checkbox');
-    const cost = document.querySelectorAll('.editions__input');
+    const swiperNull = document.querySelector('.editions__null-swiper');
+    const editions = document.querySelector('.editions__list-swiper');
+    const checkbox = document.querySelectorAll('.editions__checkbox-category');
+    const cost = document.querySelectorAll('.editions__input-cost');
     let slideControl = false;
     let nowCheckboxArrayEditions = Array.from(checkbox);
 
@@ -843,41 +862,39 @@ function unification(elementU) {
             editions.insertAdjacentHTML(
                 'beforeend',
                 `
-                <li class="editions__item swiper-slide">
-                    <div class="editions__product">
-                    <picture class="editions__picture">
+                <li class="editions__item-swiper swiper-slide">
+                    <picture class="editions__picture-swiper">
                         <source srcset="${requiredContent[number].img320}" media="(max-width: 767px)">
                         <source srcset="${requiredContent[number].img768}" media="(max-width: 1023px)">
                         <source srcset="${requiredContent[number].img1024}" media="(max-width: 1919px)">
-                        <img class="editions__img lazyload" src="${requiredContent[number].img1920}" alt="">
+                        <img class="editions__img-swiper lazyload" src="${requiredContent[number].img1920}" alt="">
                     </picture>
-                    <div class="editions__information flex">
-                    <div class="editions__top">
-                        <h3 class="editions__subject subject">
-                            ${requiredContent[number].name}
-                        </h3>
-                        <span class="editions__author span-little">
-                            ${requiredContent[number].authors}
+                    <div class="editions__box-swiper flex">
+                        <div class="editions__information-swiper">
+                            <h3 class="editions__subject-swiper subject">
+                                ${requiredContent[number].name}
+                            </h3>
+                            <span class="editions__author-swiper span-little">
+                                ${requiredContent[number].authors}
+                            </span>
+                        </div>
+                        <span class="editions__price-swiper">
+                            ${requiredContent[number].cost} руб.
                         </span>
                     </div>
-                    <span class="editions__price">
-                        ${requiredContent[number].cost} руб.
-                    </span>
-                    </div>
-                        <button class="editions__button button-reset button-big">
-                            Заказать
-                        </button>
-                    </div>
+                    <button class="editions__button-swiper button-reset button-big">
+                        Заказать
+                    </button>
                 </li>
             `
             );
         }
 
-        const editionsItem = document.querySelector('.editions__item');
+        const editionsItem = document.querySelector('.editions__item-swiper');
         if (!editionsItem) {
-            swiperNull.classList.add('editions__null--active');
+            swiperNull.classList.add('editions__null-swiper--active');
         } else {
-            swiperNull.classList.remove('editions__null--active');
+            swiperNull.classList.remove('editions__null-swiper--active');
         }
 
         if (slideControl === true) {
@@ -886,7 +903,7 @@ function unification(elementU) {
         }
     }
 
-    window.addEventListener('load', controlSwiper);
+    controlSwiper();
     window.addEventListener('resize', controlSwiper);
 
     function controlSwiper() {
@@ -899,14 +916,14 @@ function unification(elementU) {
         if (window.innerWidth >= 768 && swiperBox.classList.contains('swiper-initialized') === false) {
             buttonAccordeon.setAttribute('tabindex', '-1');
             slideControl = true;
-            document.querySelector('.editions__button-filter').classList.remove('editions__button-filter--active');
+            document
+                .querySelector('.editions__button-accordion')
+                .classList.remove('editions__button-accordion--active');
             window.swiperEditions = new Swiper('.editions__swiper', {
                 spaceBetween: 0,
                 slidesPerView: 1,
                 maxBackfaceHiddenSlides: 0,
-                a11y: {
-                    enabled: false,
-                },
+                a11y: false,
                 navigation: {
                     nextEl: '.editions__buttondark--right',
                     prevEl: '.editions__buttondark--left',
@@ -933,6 +950,30 @@ function unification(elementU) {
                         slidesPerView: 2,
                         spaceBetween: 34,
                         slidesPerGroup: 2,
+                    },
+                },
+                watchSlidesProgress: true,
+                watchSlidesVisibility: true,
+                slideVisibleClass: 'editions__visible-swiper',
+
+                on: {
+                    update: function () {
+                        this.slides.forEach(slide => {
+                            if (!slide.classList.contains('editions__visible-swiper')) {
+                                slide.querySelector('.editions__button-swiper').tabIndex = '-1';
+                            } else {
+                                slide.querySelector('.editions__button-swiper').tabIndex = '';
+                            }
+                        });
+                    },
+                    slideChange: function () {
+                        this.slides.forEach(slide => {
+                            if (!slide.classList.contains('editions__visible-swiper')) {
+                                slide.querySelector('.editions__button-swiper').tabIndex = '-1';
+                            } else {
+                                slide.querySelector('.editions__button-swiper').tabIndex = '';
+                            }
+                        });
                     },
                 },
             });
@@ -963,38 +1004,29 @@ function unification(elementU) {
 })();
 
 /* TOOLTIP */
-let tooltip = document.querySelectorAll('.projects__tooltip');
-let tooltipBox = document.querySelectorAll('.projects__tooltip-span');
+let tooltip = document.querySelectorAll('.projects__button-tooltip');
+let tooltipBox = document.querySelectorAll('.projects__span-tooltip');
 
 tooltip.forEach(function (tooltipButton) {
     tooltipButton.addEventListener('click', function () {
-        const tooltipActiveBoxNow = document.querySelector('.projects__tooltip-span--active');
-        const tooltipActiveArrowNow = document.querySelector('.projects__tooltip-arrow--active');
-        const tooltipActiveCrossNow = document.querySelector('.projects__tooltip-cross--active');
+        const tooltipActiveBoxNow = document.querySelector('.projects__span-tooltip--active');
+        const tooltipActiveArrowNow = document.querySelector('.projects__arrow-tooltip--active');
+        const tooltipActiveCrossNow = document.querySelector('.projects__cross-tooltip--active');
         const tooltipActiveBox = tooltipButton.nextElementSibling;
-        const tooltipActiveArrow = tooltipButton.querySelector('.projects__tooltip-arrow');
-        const tooltipActiveCross = tooltipButton.querySelector('.projects__tooltip-cross');
+        const tooltipActiveArrow = tooltipButton.querySelector('.projects__arrow-tooltip');
+        const tooltipActiveCross = tooltipButton.querySelector('.projects__cross-tooltip');
         if (tooltipActiveBoxNow && tooltipActiveBox !== tooltipActiveBoxNow) {
-            this.classList.remove('projects__tooltip--active');
-            tooltipActiveBoxNow.classList.remove('projects__tooltip-span--active');
-            tooltipActiveArrowNow.classList.remove('projects__tooltip-arrow--active');
-            tooltipActiveCrossNow.classList.remove('projects__tooltip-cross--active');
+            tooltipActiveBoxNow.classList.remove('projects__span-tooltip--active');
+            tooltipActiveArrowNow.classList.remove('projects__arrow-tooltip--active');
+            tooltipActiveCrossNow.classList.remove('projects__cross-tooltip--active');
         }
-        this.classList.toggle('projects__tooltip--active');
-        tooltipActiveBox.classList.toggle('projects__tooltip-span--active');
-        tooltipActiveArrow.classList.toggle('projects__tooltip-arrow--active');
-        tooltipActiveCross.classList.toggle('projects__tooltip-cross--active');
+        tooltipActiveBox.classList.toggle('projects__span-tooltip--active');
+        tooltipActiveArrow.classList.toggle('projects__arrow-tooltip--active');
+        tooltipActiveCross.classList.toggle('projects__cross-tooltip--active');
     });
 });
 
-/*
-console.log(tooltipCoord);
-console.log(tooltip[1].clientWidth * 0.5);
-const correct = 12;
-console.log((tooltipBox[1].style.transform = `translateX(${correct}px)`));
-*/
-
-window.addEventListener('load', function () {
+function tooltipPosition() {
     for (let i = 0; i < tooltip.length; i++) {
         let coord = tooltip[i].getBoundingClientRect();
         let coordX = coord.left + tooltip[i].clientWidth * 0.5;
@@ -1002,26 +1034,10 @@ window.addEventListener('load', function () {
         tooltipBox[i].style.setProperty('--mouse-x', coordX + 'px');
         tooltipBox[i].style.setProperty('bottom', coordY + 'px');
     }
-});
+}
 
-window.addEventListener('resize', function () {
-    for (let i = 0; i < tooltip.length; i++) {
-        let coord = tooltip[i].getBoundingClientRect();
-        let coordX = coord.left + tooltip[i].clientWidth * 0.5;
-        let coordY = document.querySelector('.projects').clientHeight - tooltip[i].offsetTop + 12;
-        /*
-        console.log(coord);
-        console.log(coordX);
-        console.log(coordY);
-        */
-        tooltipBox[i].style.setProperty('--mouse-x', coordX + 'px');
-        tooltipBox[i].style.setProperty('bottom', coordY + 'px');
-    }
-});
-/*
-
-
-*/
+window.addEventListener('load', tooltipPosition);
+window.addEventListener('resize', tooltipPosition);
 
 /* SWIPER-PROJECTS */
 const swiperProjects = new Swiper('.projects__swiper', {
@@ -1029,6 +1045,7 @@ const swiperProjects = new Swiper('.projects__swiper', {
     slidesPerGroup: 1,
     spaceBetween: 0,
     loop: false,
+    a11y: false,
     navigation: {
         nextEl: '.projects__buttonlight--right',
         prevEl: '.projects__buttonlight--left',
@@ -1051,58 +1068,137 @@ const swiperProjects = new Swiper('.projects__swiper', {
             slidesPerGroup: 2,
         },
     },
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    slideVisibleClass: 'projects__visible-swiper',
+
+    on: {
+        update: function () {
+            this.slides.forEach(slide => {
+                if (!slide.classList.contains('projects__visible-swiper')) {
+                    slide.querySelector('.projects__link-swiper').tabIndex = '-1';
+                } else {
+                    slide.querySelector('.projects__link-swiper').tabIndex = '';
+                }
+            });
+        },
+        slideChange: function () {
+            this.slides.forEach(slide => {
+                if (!slide.classList.contains('projects__visible-swiper')) {
+                    slide.querySelector('.projects__link-swiper').tabIndex = '-1';
+                } else {
+                    slide.querySelector('.projects__link-swiper').tabIndex = '';
+                }
+            });
+        },
+    },
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const telephone = document.querySelector('input[type="tel"]');
-    const im = new Inputmask('+7(999)-999-99-99');
-    im.mask(telephone);
+/* CONTACTS */
+const telephone = document.querySelector('input[type="tel"]');
+const im = new Inputmask('+7(999)-999-99-99');
+im.mask(telephone);
 
-    new JustValidate('.contacts__form', {
-        colorWrong: '#d11616',
-        rules: {
-            name: {
-                required: true,
-                minLength: 2,
-                maxLength: 30,
-            },
-            tel: {
-                required: true,
-                function: () => {
-                    const phone = telephone.inputmask.unmaskedvalue();
-                    return Number(phone) && phone.length === 10;
-                },
+new JustValidate('.contacts__form', {
+    colorWrong: '#d11616',
+    rules: {
+        name: {
+            required: true,
+            minLength: 2,
+            maxLength: 30,
+        },
+        tel: {
+            required: true,
+            function: () => {
+                const phone = telephone.inputmask.unmaskedvalue();
+                return Number(phone) && phone.length === 10;
             },
         },
-        messages: {
-            name: {
-                required: 'Вы не ввели имя',
-                minLength: 'Минимальное количество символов: 2',
-                maxLength: 'Максимальное количество символов: 30',
-            },
-            tel: {
-                required: 'Вы не ввели телефон',
-                function: 'Недопустимый формат',
-            },
+    },
+    messages: {
+        name: {
+            required: 'Вы не ввели имя',
+            minLength: 'Минимальное количество символов: 2',
+            maxLength: 'Максимальное количество символов: 30',
         },
-    });
+        tel: {
+            required: 'Вы не ввели телефон',
+            function: 'Недопустимый формат',
+        },
+    },
 });
 
 /* YANDEX.MAP */
-/*
 ymaps.ready(init);
 function init() {
     var myMap = new ymaps.Map(
-        'blanchardMap',
-        {
-            center: [55.7607, 37.6147],
-            zoom: 14.223,
-            controls: [],
+            'blanchardMap',
+            {
+                center: [55.7607, 37.6147],
+                zoom: 14.223,
+                controls: [],
+            },
+            {
+                suppressMapOpenBlock: true,
+            }
+        ),
+        ZoomLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="contacts__container-map flex">' +
+                '<button class="contacts__button-map button-reset" id="zoom-in"><svg class="contacts__svg-map plus" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#plus"></use></svg></button>' +
+                '<button class="contacts__button-map button-reset" id="zoom-out"><svg class="contacts__svg-map minus" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#minus"></use></svg></button>' +
+                '</div>',
+            {
+                // Переопределяем методы макета, чтобы выполнять дополнительные действия
+                // при построении и очистке макета.
+                build: function () {
+                    // Вызываем родительский метод build.
+                    ZoomLayout.superclass.build.call(this);
+
+                    // Привязываем функции-обработчики к контексту и сохраняем ссылки
+                    // на них, чтобы потом отписаться от событий.
+                    this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+                    this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+
+                    // Начинаем слушать клики на кнопках макета.
+                    $('#zoom-in').bind('click', this.zoomInCallback);
+                    $('#zoom-out').bind('click', this.zoomOutCallback);
+                },
+
+                clear: function () {
+                    // Снимаем обработчики кликов.
+                    $('#zoom-in').unbind('click', this.zoomInCallback);
+                    $('#zoom-out').unbind('click', this.zoomOutCallback);
+
+                    // Вызываем родительский метод clear.
+                    ZoomLayout.superclass.clear.call(this);
+                },
+
+                zoomIn: function () {
+                    var map = this.getData().control.getMap();
+                    map.setZoom(map.getZoom() + 1, {checkZoomRange: true});
+                },
+
+                zoomOut: function () {
+                    var map = this.getData().control.getMap();
+                    map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
+                },
+            }
+        ),
+        zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
+
+    var geolocationControl = new ymaps.control.GeolocationControl({
+        options: {
+            layout: ymaps.templateLayoutFactory.createClass(
+                '<div class="contacts__container-map flex">' +
+                    '<button class="contacts__button-map button-reset" id="geo"><svg class="contacts__svg-map geolocation" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#geolocation"></use></svg></button>' +
+                    '</div>'
+            ),
+            position: {
+                top: 353,
+                right: 11,
+            },
         },
-        {
-            suppressMapOpenBlock: true,
-        }
-    );
+    });
 
     var myPlacemark = new ymaps.Placemark(
         [55.758468, 37.601088],
@@ -1116,5 +1212,11 @@ function init() {
     );
 
     myMap.geoObjects.add(myPlacemark);
+    myMap.controls.add(zoomControl, {
+        position: {
+            top: 260,
+            right: 11,
+        },
+    });
+    myMap.controls.add(geolocationControl);
 }
-*/

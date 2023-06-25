@@ -53,16 +53,29 @@ img {
     /* Цвета: */
     /* --background-color */
     --background-site: #fff;
-    --background-box: #000;
-    --background-box-alternative: rgba(0, 0, 0, 0.5);
-    --background-static: #4b4b4b;
-    --background-static-2: rgba(0, 0, 0, 0.6);
+    --background-header-top: #000;
+    --background-header-bottom: rgba(0, 0, 0, 0.5);
+    --background-header-swiper-img-null: #4b4b4b;
+    --background-gallery: #000;
+    --background-gallery-option: #000;
+    --background-gallery-img-swiper-null: rgba(0, 0, 0, 0.8);
+    --background-gallery-overlay: rgba(0, 0, 0, 0.6);
+    --background-gallery-img-modal-null: #4b4b4b;
+    --background-gallery-information-modal: #fff;
+    --background-catalog-img-null: #ececec;
+    --background-events-img-null: #4b4b4b;
+    --background-editions: #000;
+    --background-editions-input-cost: rgba(157, 92, 208, 0.5);
+    --background-editions-null-swiper: rgba(0, 0, 0, 0.5);
+    --background-editions-swiper-img-null: rgba(0, 0, 0, 0.8);
+    --background-contacts: transparent;
+    --background-contacts-content: #fff;
+    --background-footer: #000;
     --background-button-big: transparent;
     --background-button-preview: #9d5cd0;
     --background-button-1: #666;
     --background-button-2: #ececec;
-    --background-gallery-overlay: rgba(0, 0, 0, 0.6);
-    --background-modal-information: #fff;
+    --background-button-3: #fff;
     --background-tooltip: #9d5cd0;
 
     /* --text-color */
@@ -123,87 +136,92 @@ img {
     /* --details-color */
     --border-1: #fff;
     --border-2: #cacaca;
-    --border-3: #999;
-    --border-4: #9d5cd0;
+    --border-3: #9d5cd0;
+    --border-4: rgba(255, 255, 255, 0.5);
+    --border-5: #333;
     --border-button-big: #9d5cd0;
     --caret: #fff;
     --placeholder-1: rgba(255, 255, 255, 0.85);
     --placeholder-2: #999;
+    --box-shadow-1: rgba(0, 0, 0, 0.8);
+    --box-shadow-2: rgba(180, 180, 180, 0.8);
+    --track-simplebar-1: #000;
+    --track-simplebar-2: #ececec;
+    --scrollbar-simplebar-1: #fff;
+    --scrollbar-simplebar-2: #000;
     --svg-1: #fff;
     --svg-2: #000;
     --svg-3: #cacaca;
+    --svg-4: #4d4d4d;
 
     /* Отступы: */
     /* --gap */
-    --header-container-gap: 179px;
-    --header-box-gap: 179px;
-    --header-anchor-gap: 62.4px;
-    --header-button-login-gap: 6px;
-    --header-select-gap: 95.5px;
-    --header-form-search-gap: 9px;
-    --gallery-box-gap: 50px;
-    --gallery-pictures-gap: 3px;
-    --gallery-navigation-gap: 18px;
-    --gallery-swiper-list-gap: 50px;
-    --catalog-country-box-gap: 41px;
-    --catalog-country-list-gap: 50px;
-    --catalog-accordion-gap: 50px;
-    --catalog-button-list-gap: 61.5px;
-    --catalog-null-gap: 24px;
-    --events-list-gap: 50px;
-    --events-information-gap: 81px;
-    --editions-box-gap: 167px;
-    --editions-navigation-gap: 19px;
-    --editions-swiper-list-gap: 50px;
-    --projects-swiper-list-gap: 50px;
-    --contacts-form-gap: 23px;
-    --contacts-input-container-gap: 8px;
-    --contacts-social-links-gap: 20px;
+    --gap-header-container: 179px;
+    --gap-header-box: 179px;
+    --gap-header-anchor: 62.4px;
+    --gap-header-button-login: 6px;
+    --gap-header-select: 95.5px;
+    --gap-header-form-search: 9px;
+    --gap-gallery-box: 50px;
+    --gap-gallery-left: 200px;
+    --gap-gallery-pictures: 3px;
+    --gap-gallery-navigation: 18px;
+    --gap-catalog-country-box: 41px;
+    --gap-catalog-country-list: 50px;
+    --gap-catalog-accordion: 50px;
+    --gap-catalog-null: 24px;
+    --gap-events-list: 50px;
+    --gap-events-information: 81px;
+    --gap-editions-content: 167px;
+    --gap-editions-navigation: 19px;
+    --gap-contacts-zoom-map: 20px;
+    --gap-contacts-list-social: 20px;
     --footer-links-gap: 20px;
 
     /* --margin */
     --heading-margin: 16px;
-    --header-item-page-margin: 20px;
-    --preview-title-margin: 19px;
-    --preview-text-margin: 93px;
-    --gallery-filter-title-margin: 10px;
-    --catalog-text-margin: 39px;
-    --catalog-country-box-margin: 16px;
-    --catalog-img-margin: 31px;
-    --catalog-subject-margin: 9px;
-    --catalog-date-margin: 6px;
-    --catalog-null-text-margin: 5px;
-    --catalog-null-span-margin: 5px;
-    --events-list-margin: 51px;
-    --events-span-margin: 3px;
-    --events-subject-margin: 3px;
-    --editions-check-margin: 27px;
-    --editions-style-checkbox-margin: 12px;
-    --editions-price-title-margin: 7px;
-    --editions-image-margin: 23px;
-    --editions-information-margin: 17px;
-    --editions-subject-margin: 4px;
-    --projects-information-margin: 20px;
-    --projects-subject-margin: 23px;
-    --contacts-address-box-margin: 27px;
-    --contacts-address-subject-margin: 4px;
-    --contacts-form-box-margin: 38px;
-    --contacts-subject-form-margin: 0px;
-    --contacts-subject-links-margin: 16px;
-    --contacts-subject-alternative-margin: 6px;
-}
+    --margin-header-item-page: 20px;
+    --margin-preview-title: 19px;
+    --margin-preview-text: 93px;
+    --margin-gallery-span: 10px;
+    --margin-gallery-name-modal: 10px;
+    --margin-catalog-country-box: 16px;
+    --margin-catalog-heading: 0;
+    --margin-catalog-text: 39px;
+    --margin-catalog-text-null: 5px;
+    --margin-catalog-span-null: 5px;
+    --margin-catalog-img: 31px;
+    --margin-catalog-subject: 9px;
+    --margin-catalog-date: 6px;
+    --margin-events-list: 49.21px;
+    --margin-events-span: 3px;
+    --margin-events-subject: 3px;
+    --margin-editions-list-category: 27px;
+    --margin-editions-style-category: 12px;
+    --margin-editions-span-cost: 7px;
+    --margin-editions-img: 23px;
+    --margin-editions-box: 17px;
+    --margin-editions-subject: 4px;
+    --margin-projects-text: 21px;
+    --margin-projects-subject: 24px;
+    --margin-contacts-subject-address: 4px;
+    --margin-contacts-address: 25px;
+    --margin-contacts-subject-form: 0px;
+    --margin-contacts-form: 38px;
+    --margin-contacts-list-validate: 21px;
+    --margin-contacts-item-validate: 9px;
+    --margin-contacts-subject-social: 14px;
 
-/*
-.contacts {
-    display: none;
+    /* Особые значения */
+    --mouse-x: 0;
 }
-*/
 
 /* 1.3. body */
 body {
     min-width: 320px;
     font-family: 'OpenSans', sans-serif;
     font-weight: 400;
+    word-wrap: break-word;
     background-color: var(--background-site);
 }
 
@@ -216,8 +234,8 @@ body {
 
 .button-reset {
     margin: 0;
-    padding: 0;
     border: none;
+    padding: 0;
     outline: none;
     background-color: transparent;
     cursor: pointer;
@@ -257,49 +275,26 @@ body {
 }
 
 /* 1.6. Логотип: HEADER и FOOTER */
-/* 1.6.1. Ссылка */
 .link {
-    /* Позиционирование */
     position: relative;
-    /* Блочная модель */
     display: block;
 }
 
-/* Стили для focus-visible */
-.link::before {
+.link::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: 2;
     top: -10px;
     right: -10px;
     bottom: -10px;
     left: -10px;
-    /* Оформление */
     border: 2px solid var(--focus-border-5);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/* Рабочее состояние Focus-visible */
-.link:focus-visible:not(:hover):not(:active)::before {
+.link:focus-visible:not(:hover):not(:active)::after {
     opacity: 1;
-}
-
-.link__picture {
-    width: 100%;
-    height: 100%;
-}
-
-.logo-header {
-    width: 173px;
-    height: 39.9px;
-}
-
-.logo-footer {
-    width: 173px;
-    height: 39.9px;
 }
 
 /* 1.7. Параграфы */
@@ -411,6 +406,7 @@ body {
 /* Большие кнопки */
 .button-big {
     position: relative;
+    border: 2px solid var(--border-button-big);
     padding: 15px 33px;
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
@@ -419,7 +415,6 @@ body {
     line-height: 24px;
     background-color: var(--background-button-big);
     color: var(--text-alternative-1);
-    border: 2px solid var(--border-button-big);
     border-radius: 100px;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -464,7 +459,7 @@ body {
     transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
 }
 
-.buttondark::before {
+.buttondark::after {
     content: '';
     position: absolute;
     top: 0;
@@ -485,7 +480,7 @@ body {
     transition: stroke 0.15s ease-in-out;
 }
 
-.buttondark:focus-visible:not(:hover)::before {
+.buttondark:focus-visible:not(:hover)::after {
     opacity: 1;
 }
 
@@ -497,7 +492,7 @@ body {
     background-color: var(--active-1);
 }
 
-.buttondark:active::before {
+.buttondark:active::after {
     opacity: 1;
 }
 
@@ -531,6 +526,10 @@ body {
     100% {
         transform: scale(1.1);
     }
+}
+
+.simplebar-content-wrapper:focus-visible::after {
+    opacity: 1;
 }
 
 .tintoretto {
@@ -694,859 +693,471 @@ body {
     height: 62px;
 }
 
-.simplebar-track-menu {
-    display: none;
+.simplebar-content {
+    height: 100%;
 }
 
-.simplebar-track-select {
-    width: 2px;
-    background-color: #000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    overflow: hidden;
+[class*='ground-pane'] {
+    filter: grayscale(1);
 }
 
-.simplebar-scrollbar-select {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 28px;
-    width: 2px;
+.plus {
+    width: 12px;
+    height: 13px;
 }
 
-.simplebar-scrollbar-select::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.minus {
+    width: 12px;
+    height: 3px;
+}
+
+.geolocation {
+    width: 19px;
+    height: 19px;
+}
+
+.js-validate-error-label {
+    padding-left: 24px;
+    margin-bottom: 2px;
+    font-family: 'OpenSans';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
     opacity: 1;
-    background-color: #fff;
+    animation: animation-opacity 0.3s 1;
 }
 
 /*  2. HEADER 
     ==========================================================================  */
 
-/**
- * HEADER
- * Блок с вводным контентом.
- * Для HEADER указана позиция RELATIVE для адаптивности SWIPER. 
- */
-
 .header {
-    /* Позиционирование */
     position: relative;
 }
 
-/**
- * БЛОК ВЕРХНЕГО ФОНА
- * Специальный блок, относительно которого в специальном псевдоэлементе устанавливается фон ВЕРХНЕГО КОНТЕЙНЕРА.
- * Также блоку задается минимальная высота, чтобы при отсутствии контента верхний контейнер оставался видимым и не нарушал общий вид сайта.
- */
-
 .header__background-top {
-    /* Позиционирование */
     position: relative;
-    /* Блочная модель */
     min-height: 100px;
 }
 
-/**
- * ПСЕВДОЭЛЕМЕНТ ВЕРХНЕГО БЛОКА
- * Псевдоэлемент, в котором задается фон верхнего контейнера HEADER. Чтобы изменить фон, воспользуйтесь root.
- */
-
 .header__background-top::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* Оформление */
-    background-color: var(--background-box);
+    background-color: var(--background-header-top);
 }
 
-/**
- * ВЕРХНИЙ КОНТЕЙНЕР
- * Главный контейнер, в котором распологаются другие блоки: логотип, навигация, кнопка ВХОД и другое. Указаны стили для мониторов с разрешением экрана 1920px и более.
- * В зависимости от размера экрана содержимое может менять свои положение и свойства.
- * Также установлена позиция RELATIVE с Z-INDEX параметром для установки главного контейнера выше псевдоэлемента с фоном. 
- */
-
 .header__container-top {
-    /* Позиционирование */
     position: relative;
     z-index: 1;
-    /* Блочная модель */
-    gap: var(--header-container-gap);
+    gap: var(--gap-header-container);
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-/**
- * БУРГЕР-КНОПКА
- * Кнопка используется на адаптиве, когда ГЛАВНОЕ МЕНЮ сайта переходит в режим БУРГЕР-ОКНО.
- * В данный момент кнопка скрыта, поскольку на мониторах с разрешением 1920px и выше БУРГЕР-ОКНО полностью отображается в HEADER.
- */
-
 .header__burger {
-    /* Блочная модель */
     display: none;
 }
 
-/**
- * ССЫЛКА НА ГЛАВНУЮ
- * Блок с ГЛАВНОЙ ССЫЛКОЙ и ЛОГОТИПОМ сайта.
- * Указаны свойства блочной модели для верного расположения. 
- * В данный момент ссылка не работает, поскольку отсутствует атрибут href. Для включения ссылки обратитесь к соответствующему тегу и добавьте атрибут href.
- */
-
-.header__link {
-    /* Блочная модель */
+.header__logo {
     flex-shrink: 0;
-    height: 40px;
+    max-width: 173px;
+    max-height: 40px;
 }
 
-/**
- * БУРГЕР-ОКНО
- * Блок, который в зависимости от разрешения экрана работает в 2 разных режимах: в ПРОСТОМ режиме при разрешении экрана 1920px и более или режиме БУРГЕР-ОКНО при экране с разрешением менее 1920px.
- * Сейчас блок работает в ПРОСТОМ режиме.
- */
+.header__img {
+    width: 173px;
+    height: 39.9px;
+}
 
 .header__box {
-    /* Блочная модель */
-    width: 100%;
-    height: 100%;
     margin-right: -5px;
     margin-left: -5px;
-}
-
-/**
- * SCROLL
- * Специальный блок для включения плагина SIMPLEBAR. Установлены максимальная ширина и высота для корректной работы.
- * Если высоты экрана нехватает для полного размещения навигации и кнопки в режиме БУРГЕР-ОКНА, то запускается кастомный scrollbar.
- */
-
-.header__scroll {
-    /* Блочная модель */
     width: 100%;
     height: 100%;
 }
 
-/**
- * БЛОК-SCROLL
- * Окно для scroll-контента, которое будет скроллиться в случае нехватка места по высоте.
- * В блоке указаны свойства для верного отображения согласно дизайну на странице с экранами 1920px и более, а также отключен scrollbar.
- */
-
 .header__scroll-box {
-    /* Блочная модель */
+    width: 100%;
+    height: 100%;
+}
+
+.header__container-box {
+    gap: var(--gap-header-box);
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    gap: var(--header-box-gap);
-    width: 100%;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 2px;
-    /* Оформление */
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
-/**
- * ГЛАВНОЕ МЕНЮ
- * Блок для обозначения содержимого в виде основных навигационных ссылок.
- * Указан автоматический отступ справа, чтобы меню занимало все свободное доступное пространство в БУРГЕР-ОКНе (если такое пространство имеется).
- */
-
 .header__menu-anchor {
-    /* Блочная модель */
     margin-right: auto;
 }
 
-/**
- * СПИСОК ГЛАВНОГО МЕНЮ
- * Селектор, свойства которого указывают на поведение элементов СПИСКА ГЛАВНОГО МЕНЮ в различных ситуациях, например, в случае увеличение числа этих элементов.
- * Требуется для прохождения теста на переполнение.
- */
-
 .header__list-anchor {
-    /* Блочная модель */
+    gap: var(--gap-header-anchor);
     flex-wrap: wrap;
-    gap: var(--header-anchor-gap);
 }
 
-/**
- * ЯКОРНЫЕ ССЫЛКИ
- * Главные навигационные ЯКОРНЫЕ ССЫЛКИ, необходимые для быстрого перемещения с одной части сайта на другую.
- * В селекторе указаны параметры блочной модели, типографика для текста внутри ссылок, некоторые декоративные стили, а также свойство анимации.
- * Также указана позиция RELATIVE для верного отображения сотояния FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
- */
-
 .header__link-anchor {
-    /* Позиционирование */
     position: relative;
     z-index: 0;
-    /* Блочная модель*/
     display: block;
     min-height: 24px;
-    /* Типографика */
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
     text-align: center;
-    /* Оформление */
     color: var(--text-light);
     outline: none;
-    /* Анимации */
     transition: color 0.15s ease-in-out;
 }
 
-/**
- * ЯКОРНЫЕ ССЫЛКИ (FOCUS-VISIBLE) 
- * Псевдоэлемент, в котором указаны альтернативные стили ЯКОРНЫХ ССЫЛОК в состоянии FOCUS-VISIBLE.
- * В данный момент стили не видны, поскольку они скрыты через определенное CSS-правило.
- */
-
 .header__link-anchor::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: -1;
     top: 0;
     right: -5px;
     bottom: -2px;
     left: -5px;
-    /* Оформление */
     background-color: var(--focus-2);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/**
- * ЯКОРНЫЕ ССЫЛКИ : FOCUS-VISIBLE
- * Псевдокласс FOCUS-VISIBLE, который отменяется прозрачность псевдоэлемента ЯКОРНОЙ ССЫЛКИ.
- * Для отображения стилей псевдоэлемента необходимо при помощи клавиатуры навести фокус на ЯКОРНУЮ ССЫЛКУ.
- * FOCUS-VISIBLE не работает совместо с состояниями HOVER или ACTIVE для корректного отображения стилей.
- */
-
 .header__link-anchor:focus-visible:not(:hover):not(:active)::after {
-    /* Оформление */
     opacity: 1;
 }
 
-/**
- * ЯКОРНЫЕ ССЫЛКИ : HOVER
- * Псевдокласс HOVER, который задает альтернативный цвет текста ЯКОРНОЙ ССЫЛКЕ при наведении на нее курсора мышки.
- */
-
 .header__link-anchor:hover {
-    /* Оформление */
     color: var(--hover-2);
 }
 
-/**
- * ЯКОРНЫЕ ССЫЛКИ : ACTIVE
- * Псевдокласс ACTIVE, который задает альтернативный цвет текста ЯКОРНОЙ ССЫЛКЕ в момент, когда она активируется пользователем (время между нажатием и отпусканием пользователем кнопки мыши).
- */
-
 .header__link-anchor:active {
-    /* Оформление */
     color: var(--active-1);
 }
 
-/**
- * КНОПКА ВХОДА
- * Данная кнопка необходима для открытия отдельного блока с формой входа. Пока такая функция не предусмотрена макетом, поэтому кнопка существует как задел.
- * В селекторе указаны параметры блочной модели для верного поведения КНОПКИ ВХОДА при экранах с разрешением 1920px и более.
- * Также указана позиция RELATIVE для верного отображения сотояния FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
- * В КНОПКЕ содержится текст и блок с анимированным декоративным элементом, стили которых задаются своими классами.
- */
-
 .header__button-login {
-    /* Позиционирование */
     position: relative;
-    /* Блочная модель */
+    gap: var(--gap-header-button-login);
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: var(--header-button-login-gap);
     margin-right: -1px;
     padding-bottom: 1px;
 }
 
-/**
- * КНОПКА ВХОДА (FOCUS-VISIBLE)
- * Псевдоэлемент, в котором указаны альтернативные стили КНОПКИ ВХОДА в состоянии FOCUS-VISIBLE.
- * В данный момент стили не видны, поскольку они скрыты через определенное CSS-правило.
- */
-
 .header__button-login::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: -1;
     top: 0;
     right: -5px;
     bottom: -2px;
     left: -3px;
-    /* Оформление */
     background-color: var(--focus-2);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/**
- * КНОПКИ ВХОДА (БЛОК С ДЕКОРАЦИЯМИ)
- * Объединяющий блок КНОПКИ ВХОДА, необходимый для верного отображения декораций и корректной работы анимации. 
- */
-
 .header__box-login {
-    /* Блочная модель */
     align-items: center;
     padding-top: 2px;
 }
 
-/** 
- * КНОПКА ВХОДА (АНИМИРОВАННАЯ ЛИНИЯ)
- * SVG-линия, которая удлиняет стрелочку внутри декоративной картинки в состояниях HOVER или ACTIVE.
- * В данный момент линия скрыта и имеет свой исходный цвет.
- */
-
 .header__animation-login {
-    /* Блочная модель */
     display: block;
     width: 6px;
     height: 3px;
-    /* Оформление */
     fill: var(--svg-1);
-    /* Анимации */
     transform: translateX(6px);
     transition: transform 0.15s ease-in-out, fill 0.15s ease-in-out;
 }
 
-/**
- * КНОПКА ВХОДА (ДЕКОРАТИВНАЯ КАРТИНКА)
- * Стили по умолчанию для декоративной SVG-картинки.
- */
-
 .header__svg-login {
-    /* Блочная модель */
     display: block;
     width: 14px;
     height: 13px;
-    /* Оформление */
     fill: var(--svg-1);
-    /* Анимации */
     transition: fill 0.15s ease-in-out;
 }
 
-/**
- * КНОПКА ВХОДА (ПОДПИСЬ)
- * 
- * В селекторе указаны параметры блочной модели, типографика, некоторые декоративные стили, а также свойство анимации.
- */
-
 .header__span-login {
-    /* Блочная модель */
     display: block;
     min-height: 24px;
-    /* Типографика */
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    /* Оформление */
     color: var(--text-light);
-    /* Анимации */
     transition: color 0.15s ease-in-out;
 }
 
-/**
- * КНОПКА ВХОДА : FOCUS-VISIBLE
- * Псевдокласс FOCUS-VISIBLE, который отменяется прозрачность псевдоэлемента КНОПКИ ВХОДА.
- * Для отображения стилей псевдоэлемента необходимо при помощи клавиатуры навести фокус на КНОПКУ ВХОДА.
- * FOCUS-VISIBLE не работает совместо с состояниями HOVER или ACTIVE для корректного отображения стилей.
- */
-
 .header__button-login:focus-visible:not(:hover):not(:active)::after {
-    /* Оформление */
     opacity: 1;
 }
 
-/**
- * КНОПКА ВХОДА (АНИМИРОВАННАЯ ЛИНИЯ) : HOVER
- * При активации состояния HOVER у КНОПКИ ВХОДА, линия плавно выдвигается и меняет цвет согласно этому селектору.
- */
-
 .header__button-login:hover .header__animation-login {
-    /* Оформление */
     fill: var(--hover-2);
-    /* Анимации */
     transform: translateX(2px);
 }
 
-/**
- * КНОПКА ВХОДА (ДЕКОРАТИВНАЯ КАРТИНКА) : HOVER
- * При активации состояния HOVER у КНОПКИ ВХОДА, декоративная картинка меняет цвет согласно этому селектору.
- */
-
 .header__button-login:hover .header__svg-login {
-    /* Оформление */
     fill: var(--hover-2);
 }
 
-/**
- * КНОПКА ВХОДА (ПОДПИСЬ) : HOVER
- * При активации состояния HOVER у КНОПКИ ВХОДА, надпись плавно меняет цвет согласно этому селектору.
- */
-
 .header__button-login:hover .header__span-login {
-    /* Оформление */
     color: var(--hover-2);
 }
 
-/**
- * КНОПКА ВХОДА (АНИМИРОВАННАЯ ЛИНИЯ) : ACTIVE
- * При активации состояния ACTIVE у КНОПКИ ВХОДА, ЛИНИЯ плавно меняет цвет согласно этому селектору, а также остается на месте, если активация была с мышки или клавиатуры.
- */
-
 .header__button-login:active .header__animation-login {
-    /* Оформление */
     fill: var(--active-1);
-    /* Анимации */
     transform: translateX(2px);
 }
 
-/**
- * КНОПКА ВХОДА (ДЕКОРАТИВНАЯ КАРТИНКА) : ACTIVE
- * При активации состояния ACTIVE у КНОПКИ ВХОДА, ДЕКОРАТИВНАЯ КАРТИНКА плавно меняет цвет согласно этому селектору.
- */
-
 .header__button-login:active .header__svg-login {
-    /* Оформление */
     fill: var(--active-1);
 }
 
-/**
- * КНОПКА ВХОДА (ПОДПИСЬ) : ACTIVE
- * При активации состоянияACTIVE у КНОПКИ ВХОДА, надпись плавно меняет цвет согласно этому селектору.
- */
-
 .header__button-login:active .header__span-login {
-    /* Оформление */
     color: var(--active-1);
 }
 
-/**
- * КНОПКА АКТИВАЦИИ ПОЛЯ ПОИСКА
- * Кнопка, при нажатии на которую, появляется форма с полем для поиска по сайту.
- * В данный момент КНОПКА скрыта, поскольку она нужна только на устройствах с разрешением экрана меньше 1920px.
- */
-
-.header__search-open {
+.header__open-search {
     display: none;
 }
 
-/**
- * БЛОК ФОРМЫ ПОИСКА
- * Блок, который содержит ФОРМУ ПОИСКА, а также кнопку для закрытия этой ФОРМЫ. 
- * Данный блок становится доступным по нажатию КНОПКИ АКТИВАЦИИ ПОЛЯ ПОИСКА.
- */
-
-.header__search-box {
+.header__box-search {
     display: none;
 }
-
-/**
- * БЛОК НИЖНЕГО ФОНА
- * Специальный блок, относительно которого устанавливается фон НИЖНЕГО КОНТЕЙНЕРА через псевдоэлемент (указана позиция RELATIVE).
- * Также для блока задается минимальная высота, чтобы при отсутствии контента нижний контейнер (как и верхний) оставался видимым и не нарушал общий вид сайта.
- */
 
 .header__background-bottom {
-    /* Позиционирование */
     position: relative;
-    top: 0;
-    /* Блочная модель */
     min-height: 70px;
 }
 
-/**
- * ПСЕВДОЭЛЕМЕНТ НИЖНЕГО БЛОКА
- * Псевдоэлемент, в котором задается фон нижнего контейнера HEADER. Чтобы изменить фон, воспользуйтесь root.
- */
-
 .header__background-bottom::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* Оформление */
-    background-color: var(--background-box-alternative);
+    background-color: var(--background-header-bottom);
 }
 
-/**
- * НИЖНИЙ КОНТЕЙНЕР
- * Дополнительный контейнер, в котором распологаются дополнительные блоки, такие как форма поиска и список из выпадающих списков.
- * Блок виден только на устройствах с разрешением экрана 1920px и более. На иных устройствах, блок полностью исчезает и становится недоступным для взаимодействия.
- * Также установлена позиция RELATIVE с Z-INDEX параметром для установки дополнительного контейнера выше псевдоэлемента с фоном. 
- */
-
 .header__container-bottom {
-    /* Позиционирование */
     position: relative;
     z-index: 1;
-    /* Блочная модель */
-    gap: var(--header-container-gap);
+    gap: var(--gap-header-container);
     justify-content: space-between;
     align-items: center;
     padding-top: 22px;
     padding-bottom: 22px;
 }
 
-/**
- * ДОПОЛНИТЕЛЬНОЕ МЕНЮ
- * Класс дополнительного меню. В нем указан отступ слева для соответствия макету.
- */
-
 .header__menu-select {
-    /* Блочная модель */
     margin-left: -2px;
 }
 
-/**
- * СПИСОК ГЛАВНОГО МЕНЮ
- * Селектор, свойства которого указывают на поведение элементов списка в различных ситуациях, например, увеличение числа этих элементов.
- * Требуется для прохождения теста на переполнение.
- */
-
 .header__list-select {
-    /* Блочная модель */
     flex-wrap: wrap;
-    gap: var(--header-select-gap);
+    gap: var(--gap-header-select);
 }
 
-/**
- * SELECT-КНОПКА
- * В селекторе указаны основные стили для SELECT-КНОПКИ.
- * В кнопке содержится текст с анимированным декоративным элементом, стили которых задаются своими классами.
- * Также указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
- */
-
 .header__button-select {
-    /* Позиционирование */
     position: relative;
-    /* Типографика */
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    /* Оформление */
     color: var(--text-light);
-    /* Анимации */
     transition: color 0.15s ease-in-out;
 }
 
-/**
- * SELECT-КНОПКА (FOCUS-VISIBLE)
- * Псевдоэлемент, в котором указаны стили состояния FOCUS-VISIBLE у SELECT-КНОПКИ.
- * Сейчас стили не видны, поскольку отображаются только при наведении на SELECT-КНОПКУ фокуса с клавиатуры.
- */
-
-.header__button-select::before {
+.header__button-select::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: -1;
     top: 0;
     right: -5px;
     bottom: -2px;
     left: -5px;
-    /* Оформление */
     background-color: var(--focus-2);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/**
- * SELECT-КНОПКА (ТЕКСТ)
- * Корректировочные стили для текста внутри кнопки. Задается отступ справа для сооответствия текста макету.
- */
-
-.header__span-select {
-    /* Блочная модель */
-    margin-right: 1px;
-}
-
-/**
- * SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА)
- * Стили по умолчанию для декоративной стрелки SELECT-КНОПКИ.
- * Задано анимированное поведение при активации различных состояний SELECT-КНОПКИ.
- */
-
 .header__svg-select {
-    /* Блочная модель */
     padding-bottom: 2px;
     width: 12px;
     height: 9px;
-    /* Оформление */
+    fill: none;
     stroke: var(--svg-1);
-    /* Анимации */
     transition: stroke 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 
-/**
- * SELECT-КНОПКА : FOCUS-VISIBLE
- * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры SELECT-КНОПКИ.
- * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
- */
-
-.header__button-select:focus-visible:not(:hover):not(:active)::before {
-    /* Оформление */
+.header__button-select:focus-visible:not(:hover):not(:active)::after {
     opacity: 1;
 }
 
-/**
- * SELECT-КНОПКА : HOVER
- * Псевдокласс HOVER, который меняет цвет текста при наведении на SELECT-КНОПКУ мышкой.
- */
-
 .header__button-select:hover {
-    /* Оформление */
     color: var(--hover-1);
 }
 
-/**
- * SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА) : HOVER
- * При активации состояния HOVER у SELECT-КНОПКИ, декоративная стрелка меняет цвет согласно этому селектору.
- */
-
 .header__button-select:hover .header__svg-select {
-    /* Оформление */
     stroke: var(--hover-1);
 }
 
-/**
- * SELECT-КНОПКА : ACTIVE
- * Псевдокласс ACTIVE, который меняет цвет текста у SELECT-КНОПКИ при клике (клавишей или мышкой).
- */
-
 .header__button-select:active {
-    /* Оформление */
     color: var(--active-1);
 }
-
-/**
- * SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА) : ACTIVE
- * При активации состояния ACTIVE у SELECT-КНОПКИ, ДЕКОРАТИВНАЯ СТРЕЛКА плавно меняет цвет согласно этому селектору.
- */
 
 .header__button-select:active .header__svg-select {
-    /* Оформление */
     stroke: var(--active-1);
 }
 
-/**
- * АКТИВНАЯ SELECT-КНОПКА
- * Класс, который задает цвет ТЕКСТА у SELECT-КНОПКИ, пока SELECT-ОКНО доступно для пользователя.
- * Цвет ТЕКСТА заменяется на цвет FOCUS-VISIBLE при его активации.
- */
-
 .header__button-select--open:not(:focus-visible) {
-    /* Оформление */
     color: var(--active-1);
 }
 
-/**
- * АКТИВНАЯ SELECT-КНОПКА (ДЕКОРАТИВНАЯ СТРЕЛКА)
- * Класс, который задает цвет ДЕКОРАТИВНОЙ СТРЕЛКЕ у SELECT-КНОПКИ, пока SELECT-ОКНО доступно для пользователя.
- * Цвет ДЕКОРАТИВНОЙ СТРЕЛИ заменяется на цвет FOCUS-VISIBLE при его активации на SELECT-КНОПКЕ.
- */
-
 .header__button-select--open:not(:focus-visible) .header__svg-select {
-    /* Оформление */
     stroke: var(--active-1);
 }
 
-/**
- * АКТИВНАЯ SELECT-КНОПКА (ТРАНСФОРМАЦИЯ СТРЕЛКИ)
- * При одновременном нажатии на SELECT-КНОПКУ стрелка поворачивается и фиксируется. 
- * Направление поворота зависит от открытия или закрытия SELECT-ОКНА.
- */
-
 .header__button-select--open .header__svg-select {
-    /* Анимации */
     transform: translateY(-2px) rotate(-180deg);
 }
 
-/**
- * SELECT-ОКНО
- * В этом классе задаются основные стили для SELECT-ОКНА.
- * ОКНА имеют позицию ABSOLUTE и выстраиваются относительно ближайшего родителя с позицией RELATIVE. Требуется для корректного отображения при тесте на переполнение.
- * Сейчас ОКНА невидимы и появляются по нажатию на соответствующую SELECT-КНОПКУ.
- */
+.header__span-select {
+    margin-right: 1px;
+}
 
 .header__box-select {
-    /* Позиционирование */
     position: absolute;
     z-index: 2;
     top: 100%;
-    /* Блочная модель */
-    padding: 40px;
+    padding-top: 40px;
     padding-right: 19px;
-    width: 300px;
-    height: 300px;
-    /* Оформление */
-    background-color: var(--background-box-alternative);
+    padding-bottom: 40px;
+    padding-left: 39px;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: var(--background-header-bottom);
     visibility: hidden;
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out, visibility 0.15s;
 }
 
-/**
- * АКТИВНОЕ SELECT-ОКНО
- * Стили для появления SELECT-ОКНА на сайте при его вызове соответствующей SELECT-КНОПКОЙ.
- */
-
 .header__box-select--active {
-    /* Оформление */
     visibility: visible;
     opacity: 1;
 }
 
-/**
- * SELECT-SCROLL
- * Специальный блок для подключения плагина SIMPLEBAR. Установлены максимальные ширина и высота для размещение 4 КЛАССИЧЕСКИХ ССЫЛОК.
- * Если список состоит из более 4 элементов, то активируется кастомный scroll.
- */
-
 .header__scroll-select {
-    /* Блочная модель */
     width: 100%;
-    max-height: 220px;
 }
 
-/**
- * ЭЛЕМЕНТЫ СПИСКА SELECT-ОКНА
- * В этом селекторе указывается поведение элементов списка относительно друг друга.
- * Для равномерного расположения ссылок по вертикали в SELECT-ОКНЕ каждому элементу (кроме последнего) задан отступ снизу.
- */
+.header__track-select {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--track-simplebar-1);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.header__scrollbar-select {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 2px;
+    height: 28px;
+}
+
+.header__scrollbar-select::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-color: var(--scrollbar-simplebar-1);
+}
 
 .header__item-page:not(:last-child) {
-    /* Блочная модель */
-    margin-bottom: var(--header-item-page-margin);
+    margin-bottom: var(--margin-header-item-page);
 }
 
-/**
- * КЛАССИЧЕСКИЕ ССЫЛКИ
- * В селекторе указаны основные стили для классических ссылок в дополнительной навигации сайта.
- * Также указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
- */
-
 .header__link-page {
-    /* Позиционирование */
     position: relative;
-    /* Блочная модель */
     display: block;
     margin: 0;
     margin-right: auto;
-    width: 216px;
+    width: 219px;
     min-height: 36px;
-    /* Оформление */
     outline: 2px solid transparent;
     outline-offset: -2px;
     color: var(--text-light);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* Анимации */
     transition: outline-color 0.15s ease-in-out;
 }
 
-/*
- * КЛАССИЧЕСКИЕ ССЫЛКИ (ACTIVE)
- * Псевдоэлемент, в котором указаны стили состояния ACTIVE у КЛАССИЧЕСКИХ ССЫЛОК.
- * Сейчас стили не видны, поскольку отображаются в момент клика по ссылке.
- */
-
 .header__link-page::before {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: 0;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* Блочная модель */
     width: 100%;
     height: 100%;
-    /* Оформление */
     background-color: var(--active-gradient-1);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/*
- * КЛАССИЧЕСКИЕ ССЫЛКИ (FOCUS-VISIBLE)
- * Псевдоэлемент, в котором указаны стили состояния FOCUS-VISIBLE у КЛАССИЧЕСКИХ ССЫЛОК.
- * Сейчас стили не видны, поскольку отображаются только при наведении на КЛАССИЧЕСКУЮ ССЫЛКУ фокуса с клавиатуры.
- */
-
 .header__link-page::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: 1;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* Оформление */
     border: 2px solid var(--focus-1);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/*
- * КЛАССИЧЕСКИЕ ССЫЛКИ (НАДПИСЬ)
- * В селекторе указаны основные стили для НАДПИСИ ССЫЛКИ.
- * Также установлена позиция RELATIVE с Z-INDEX параметром для установки текста выше всех псевдоэлементов КЛАССИЧЕСКОЙ ССЫЛКИ, чтобы эффекты HOVER и ACTIVE срабатывали под надписью согласно макету.
- */
-
-.header__span-link {
-    /* Позиционирование */
+.header__span-page {
     position: relative;
     z-index: 1;
-    /* Блочная модель */
     display: block;
     padding-top: 9px;
     padding-right: 20px;
     padding-bottom: 12px;
     padding-left: 14px;
-    /* Типографика */
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 14px;
@@ -1554,385 +1165,187 @@ body {
     line-height: 19px;
 }
 
-/*
- * КЛАССИЧЕСКИЕ ССЫЛКИ : FOCUS-VISIBLE
- * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры КЛАССИЧЕСКОЙ ССЫЛКИ.
- * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
- */
-
 .header__link-page:focus-visible:not(:hover):not(:active)::after {
-    /* Оформление */
     opacity: 1;
 }
 
-/*
- * КЛАССИЧЕСКИЕ ССЫЛКИ : HOVER
- * Псевдокласс HOVER, который заменяет цвет OUTLINE рамки при наведении на КЛАССИЧЕСКУЮ ССЫЛКУ мышкой.
- */
-
 .header__link-page:hover {
-    /* Оформление */
     outline-color: var(--hover-1);
 }
 
-/*
- * КЛАССИЧЕСКИЕ ССЫЛКИ : ACTIVE
- * Псевдокласс ACTIVE, который задает всей КЛАССИЧЕСКОЙ ССЫЛКЕ градиент при клике (клавишей или мышкой).
- */
-
 .header__link-page:active::before {
-    /* Оформление */
     opacity: 1;
 }
 
-/*
- * ФОРМА ПОИСКА
- * Блок формы с указанием минимальной высоты. Также в блоке указаны свойства для правильного расположения кнопки и поля ввода текста внутри формы.
- * Также установлена позиция RELATIVE с Z-INDEX параметром для установки ФОРМЫ ПОИСКА выше псевдоэлемента с фоном. 
- */
-
 .header__form-search {
-    /* Позиционирование */
     position: relative;
     z-index: 2;
-    /* Блочная модель */
+    gap: var(--gap-header-form-search);
     flex-direction: row-reverse;
     align-items: flex-end;
-    gap: var(--header-form-search-gap);
     min-height: 26px;
 }
 
-/*
- * КНОПКА ПОИСКА
- * Селектор, в котором указаны основные стили для КНОПКИ ПОИСКА.
- * Также указана позиция RELATIVE, чтобы верно отображалось сотояние FOCUS-VISIBLE, стили которого заданы через псевдоэлемент.
- */
+.header__input-search {
+    border: none;
+    border-bottom: 1px solid var(--border-1);
+    padding: 0;
+    min-width: 219px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    caret-color: var(--caret);
+    background: none;
+    outline: none;
+    transition: border-color 0.15s ease-in-out;
+}
 
-.header__button-search {
-    /* Позиционирование */
+.header__input-search:focus-visible:not(:hover):not(:active) {
+    border-color: var(--focus-border-2);
+}
+
+.header__input-search:hover {
+    border-color: var(--hover-border-2);
+}
+
+.header__input-search:active {
+    border-color: var(--active-border-4);
+}
+
+.header__input-search::placeholder {
+    color: var(--placeholder-1);
+}
+
+.header__activate-search {
     position: relative;
-    /* Блочная модель */
     flex-shrink: 0;
     width: 22.1px;
     height: 21.62px;
 }
 
-/*
- * КНОПКА ПОИСКА (ДЕКОРАТИВНАЯ КАРТИНКА)
- * Основные стили для декоративной картинки КНОПКИ ПОИСКА.
- */
-
-.header__svg-search {
-    /* Блочная модель */
-    display: block;
-    width: 22.1px;
-    height: 21.62px;
-    /* Оформление */
-    fill: var(--svg-1);
-    /* Анимации */
-    transition: fill 0.15s ease-in-out;
-}
-
-/*
- * КНОПКА ПОИСКА (FOCUS-VISIBLE)
- * Псевдоэлемент, в котором указаны стили состояния FOCUS-VISIBLE у КНОПКИ ПОИСКА.
- * Сейчас стили не видны, поскольку отображаются только при наведении на КНОПКУ ПОИСКА фокуса с клавиатуры.
- */
-
-.header__button-search::before {
+.header__activate-search::after {
     content: '';
-    /* Позиционирование */
     position: absolute;
     z-index: -1;
     top: -5px;
     left: -5px;
     bottom: -5px;
     right: -5px;
-    /* Оформление */
     border: 2px solid var(--focus-border-5);
     opacity: 0;
-    /* Анимации */
     transition: opacity 0.15s ease-in-out;
 }
 
-/*
- * КНОПКА ПОИСКА : FOCUS-VISIBLE
- * Псевдокласс FOCUS-VISIBLE, который активирует стили псевдоэлемента у сфокусируемой с клавиатуры КНОПКИ ПОИСКА.
- * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
- */
+.header__loop-search {
+    display: block;
+    width: 22.1px;
+    height: 21.62px;
+    fill: var(--svg-1);
+    transition: fill 0.15s ease-in-out;
+}
 
-.header__button-search:focus-visible:not(:hover):not(:active)::before {
+.header__activate-search:focus-visible:not(:hover):not(:active)::after {
     opacity: 1;
 }
 
-/*
- * КНОПКА ПОИСКА : HOVER
- * Псевдокласс HOVER, который заменяет цвет декоративной картинки при наведении на КНОПКУ ПОИСКА мышкой.
- */
-
-.header__button-search:hover .header__svg-search {
+.header__activate-search:hover .header__loop-search {
     fill: var(--hover-2);
 }
 
-/*
- * КНОПКА ПОИСКА : ACTIVE
- * Псевдокласс ACTIVE, который заменяет цвет декоративной картинки при клике (клавишей или мышкой).
- */
-
-.header__button-search:active .header__svg-search {
+.header__activate-search:active .header__loop-search {
     fill: var(--active-1);
 }
 
-/*
- * ПОЛЕ ПОИСКА
- * В селекторе указаны основные стили для ПОЛЯ ПОИСКА.
- */
-
-.header__input-search {
-    /* Блочная модель */
-    padding: 0;
-    width: 219px;
-    /* Типографика */
-    font-family: 'OpenSans', sans-serif;
-    font-style: normal;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 25px;
-    /* Оформление */
-    caret-color: var(--caret);
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--border-1);
-    outline: none;
-    /* Анимации */
-    transition: border-color 0.15s ease-in-out;
-}
-
-/*
- * ПОЛЕ ПОИСКА : FOCUS-VISIBLE
- * Псевдокласс FOCUS-VISIBLE, который заменяет цвет нижней линии у сфокусируемого с клавиатуры ПОЛЯ ПОИСКА.
- * Для корректной работы отключен при активации режимов HOVER или ACTIVE.
- */
-
-.header__input-search:focus-visible:not(:hover):not(:active) {
-    /* Оформление */
-    border-color: var(--focus-border-2);
-}
-
-/*
- * ПОЛЕ ПОИСКА : HOVER
- * Псевдокласс HOVER, который заменяет цвет нижней линии при наведении на ПОЛЕ ПОИСКА мышкой.
- */
-
-.header__input-search:hover {
-    /* Оформление */
-    border-color: var(--hover-border-2);
-}
-
-/*
- * ПОЛЕ ПОИСКА : ACTIVE
- * Псевдокласс ACTIVE, который заменяет цвет нижней линии ПОЛЯ ПОИСКА при клике (клавишей или мышкой). 
- */
-
-.header__input-search:active {
-    /* Оформление */
-    border-color: var(--active-border-4);
-}
-
-/*
- * ПОЛЕ ПОИСКА : PLACEHOLDER
- * Псевдокласс, который заменяет цвет видимой подписи внутри ПОЛЯ ПОИСКА. 
- */
-
-.header__input-search::placeholder {
-    /* Оформление */
-    color: var(--placeholder-1);
-}
-
-/*
- * SWIPER ДЛЯ PREVIEW
- * Селектор, который устанавливает позицию ABSOLUTE относительно всего HEADER. В таком состоянии блок SWIPER-а растягивается или уменьшается в случае изменения контента в HEADER.
- * Для верной работы первой анимации контейнера установлен OVERFLOW блоку SWIPER. Также SWIPER-у задан фон, чтобы в случае отстутсвия слайдов, белый текст PREVIEW оставался читабельным (не смешивался с белым фоном BODY).
- * Для изменения фона SWIPER-а по умолчанию на другой, воспользуйтесь ROOT.
- */
-
 .header__swiper {
-    /* Позиционирование */
     position: absolute;
     z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* Оформление */
     overflow: hidden;
-    background-color: var(--background-static-1);
 }
 
-/*
- * КОНТЕЙНЕР SWIPER
- * Специальный контейнер для реализации первой анимации: последовательное уменьшение и увеличение слайдов SWIPER-а. Контейнер занимает всю доступную ширину и высоту согласно текущим размерам SWIPER.
- * Также установлена позиция RELATIVE, чтобы реализовать дополнительную анимацию ввиде плавного появления нового слайда поверх старого.
- */
-
 .header__wrapper {
-    /* Позиционирование */
     position: relative;
-    /* Блочная модель */
     width: 100%;
     height: 100%;
-    /* Анимации */
     animation-name: animation-scale;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-/*
- * СЛАЙДЫ
- * Селектор, который устанавливает параметры для фона слайда. Путь к картинкам, что должны окрашивать слайды указаны в отдельных дополнительных селекторах.
- * Каждому слайду задается дополнительная анимация, а также позиция ABSOLUTE относительно контейнера SWIPER-а, которая учавствует в реализации дополнительной анимации.
- */
-
-.header__picture {
-    /* Позиционирование */
+.header__image {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* Оформление */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: var(--background-header-swiper-img-null);
     opacity: 0;
-    /* Анимации */
     transition: opacity 1s ease-in-out;
 }
 
-/*
- * АКТИВНЫЙ СЛАЙД
- * Данный модификатор присваивается тому слайду, который должен быть виден в данный момент.
- */
-
-.header__picture--active {
-    /* Оформление */
+.header__image--active {
     opacity: 1;
 }
 
-/*
- * ЗАКОЛЬЦОВЫВАНИЕ
- * Специальный модификатор, который убирает некорректную работу дополнительной анимации при смене последнего слайда на первый.
- */
-
-.header__picture--return {
-    /* Позиционирование */
+.header__image--return {
     z-index: -1;
 }
 
 /*  3. PREVIEW
     ==========================================================================  */
 
-/*
- * КОНТЕЙНЕР КОНТЕНТА PREVIEW
- * Специальный селектор для указания собственных внутренних отступов сверху и снизу, отличных от отступов предусмотренных для тега SECTION селектором CONTENT.
- * Указана минимальная высота КОНТЕЙНЕРА, чтобы при отсутствии контента PREVIEW не нарушал PIXEL PERFECT.
- */
-
 .preview__content {
-    /* Блочная модель */
     padding-top: 71px;
-    padding-bottom: 122px;
+    padding-bottom: 121px;
+    min-height: 630px;
 }
 
-/*
- * БЛОК ИНФОРМАЦИИ
- * В селекторе указана максимальная ширина, чтобы любой контент, заключенный внутри, не выходил за пределы собственного КОНТЕЙНЕРА. Требуется для теста на переполнение.
- * Данное свойство выделено в отдельный селектор для гибкости настройки и адаптивности.
- */
-
-.preview__information {
+.preview__heading {
+    margin-bottom: var(--margin-preview-title);
     max-width: 579px;
-    min-height: 100px;
 }
-
-/*
- * ЗАГОЛОВОК
- * В селекторе не прописаны стили для типографики, поскольку свойствами заголовков 2 уровня управляет общий селектор HEADING.
- * Указан отступ снизу, чтобы верстка оставалась гибкой (при изменении количества контента структура сайта не ломается). 
- * Для изменения значения отступа снизу, воспользуйтесь ROOT.
- */
-
-.preview__title {
-    /* Блочная модель */
-    margin-bottom: var(--preview-title-margin);
-}
-
-/*
- * ТЕКСТ
- * В селекторе указаны основные стили для ТЕКСТА preview.
- * Указан отступ снизу, чтобы верстка оставалась гибкой (при изменении количества контента структура сайта не ломается). 
- * Для изменения значения отступа снизу, воспользуйтесь ROOT.
- */
 
 .preview__text {
-    /* Блочная модель */
-    margin-bottom: var(--preview-text-margin);
-    /* Типографика */
+    margin-bottom: var(--margin-preview-text);
+    max-width: 579px;
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 18px;
     font-weight: 700;
     line-height: 30px;
-    /* Оформление */
     color: var(--text-light);
 }
-
-/*
- * КНОПКА
- * Указаны корректировочные стили для КНОПКИ preview, отличной от дизайна других БОЛЬШИХ КНОПОК. Стили БОЛЬШИХ КНОПОК прописаны в селекторе BUTTON-BIG.
- */
 
 .preview__button {
-    /* Блочная модель */
-    padding: 19.5px 32px;
+    border: 3px solid var(--border-button-big);
+    padding: 20px 33px;
     min-width: 310px;
     max-width: 450px;
-    /* Оформление */
+    min-height: 70px;
     background-color: var(--background-button-preview);
     color: var(--text-light);
-    border: 3px solid var(--border-button-big);
 }
 
-/*
- * КНОПКА : HOVER
- * Псевдокласс HOVER, который заменяет цвет нижней линии при наведении на КНОПКУ preview мышкой.
- * Стили являются корректировочными, поскольку заменяют основные стили псевдоэлемента HOVER для БОЛЬШИХ КНОПОК согласно макету.
- */
-
 .preview__button:hover {
-    /* Оформление */
     border-color: var(--hover-border-3);
 }
 
 /*  4. ABOUT-US
     ==========================================================================  */
 
-/*
- * КОНТЕЙНЕР КОНТЕНТА ABOUT-US
- * Специальный селектор для указания собственного внутреннего отступа снизу, отличного от отступа предусмотренного для тега SECTION селектором CONTENT.
- * Указана минимальная высота КОНТЕЙНЕРА, чтобы при отсутствии контента ABOUT-US не нарушал требование PIXEL PERFECT.
- */
-
 .about-us__content {
     padding-bottom: 70px;
-    min-height: 295px;
+    min-height: 455px;
 }
-
-/*
- * ТЕКСТ
- * 
- */
 
 .about-us__text {
     max-width: 1090px;
@@ -1942,23 +1355,34 @@ body {
     ==========================================================================  */
 
 .gallery__background {
-    background-color: var(--background-static-1);
+    position: relative;
+}
+
+.gallery__background::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--background-gallery);
     background-image: url(../img/gallery-1920-background.webp);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .gallery__content {
+    gap: var(--gap-gallery-box);
     justify-content: space-between;
-    gap: var(--gallery-box-gap);
     padding-bottom: 70px;
-    width: 100%;
 }
 
 .gallery__left {
-    justify-content: space-between;
     flex-direction: column;
-    gap: 554px;
+    justify-content: space-between;
+    gap: var(--gap-gallery-left);
     width: calc(400 / 1600 * 100%);
 }
 
@@ -1967,9 +1391,9 @@ body {
     color: var(--text-light);
 }
 
-.gallery__filter-title {
+.gallery__span {
     display: block;
-    margin-bottom: var(--gallery-filter-title-margin);
+    margin-bottom: var(--margin-gallery-span);
     max-width: 70%;
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
@@ -1979,10 +1403,10 @@ body {
     color: var(--text-light);
 }
 
-.gallery__filter-select {
+.gallery__select {
     padding-left: 9px;
-    min-height: 40px;
     width: 100%;
+    min-height: 40px;
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -1993,119 +1417,17 @@ body {
     border-radius: 6px;
 }
 
-.gallery__filter-select option {
-    background-color: #000;
-    color: #999;
+.gallery__option {
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 16px;
     font-weight: 400;
     line-height: 32px;
+    color: var(--text-gray);
+    background-color: var(--background-gallery-option);
 }
 
-.gallery__filter-select option:checked {
-    display: none;
-}
-
-.gallery__pictures {
-    width: calc(1150 / 1600 * 100%);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--gallery-pictures-gap);
-    padding-bottom: 10px;
-}
-
-.gallery__navigation {
-    flex-wrap: nowrap;
-    align-items: center;
-    min-height: 82px;
-    gap: var(--gallery-navigation-gap);
-    padding-top: 24px;
-    padding-right: 3px;
-    padding-bottom: 26px;
-    padding-left: 3px;
-}
-
-.gallery__number {
-    padding-right: 2px;
-    color: var(--text-light);
-    opacity: 1;
-    transition: opacity 0.15s ease-in-out;
-}
-
-.gallery__pagination--lock {
-    display: block;
-}
-
-.gallery__swiper {
-    position: relative;
-    z-index: 0;
-    width: 100%;
-}
-
-.gallery__item {
-    animation: animation-opacity 0.4s 1;
-    height: calc((100% - 50px) / 2);
-    background-color: var(--background-static-2);
-}
-
-.gallery__card {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.gallery__card::before {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: transparent;
-    border: 3px solid var(--focus-2);
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
-}
-
-.gallery__card::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    right: 25px;
-    bottom: 30px;
-    left: 25px;
-    background-color: var(--hover-5);
-    background-image: url(../img/gallery-loop.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out;
-}
-
-.gallery__card:focus-visible:not(:hover):not(:active)::before {
-    opacity: 1;
-}
-
-.gallery__card:hover::after {
-    opacity: 1;
-}
-
-.gallery__card:active::before {
-    background-color: var(--active-gradient-1);
-    opacity: 1;
-}
-
-.gallery__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gallery__span-adaptive {
+.gallery__option:checked {
     display: none;
 }
 
@@ -2121,7 +1443,7 @@ body {
     transition: color 0.15s ease-in-out;
 }
 
-.gallery__authorization::before {
+.gallery__authorization::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -2138,7 +1460,7 @@ body {
     color: var(--text-light);
 }
 
-.gallery__authorization:focus-visible:not(:hover):not(:active)::before {
+.gallery__authorization:focus-visible:not(:hover):not(:active)::after {
     opacity: 1;
 }
 
@@ -2150,13 +1472,116 @@ body {
     color: var(--active-1);
 }
 
+.gallery__pictures {
+    gap: var(--gap-gallery-pictures);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    width: calc(1150 / 1600 * 100%);
+}
+
+.gallery__navigation {
+    gap: var(--gap-gallery-navigation);
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 24px;
+    padding-right: 3px;
+    padding-bottom: 26px;
+    padding-left: 3px;
+}
+
+.gallery__number {
+    padding-right: 2px;
+    max-width: 300px;
+    min-height: 30px;
+    color: var(--text-light);
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.gallery__pagination--lock {
+    display: block;
+}
+
+.gallery__swiper {
+    width: 100%;
+    height: 750rem;
+}
+
+.gallery__item-swiper {
+    height: calc((100% - 50px) / 2);
+    animation: animation-opacity 0.4s 1;
+}
+
+.gallery__card-swiper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery__card-swiper::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 3px solid var(--focus-2);
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.gallery__card-swiper::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 25px;
+    bottom: 30px;
+    left: 25px;
+    background-color: var(--hover-5);
+    background-image: url(../img/gallery-loop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.gallery__card-swiper:focus-visible:not(:hover):not(:active)::before {
+    opacity: 1;
+}
+
+.gallery__card-swiper:hover::after {
+    opacity: 1;
+}
+
+.gallery__card-swiper:active::before {
+    background-color: var(--active-gradient-1);
+    opacity: 1;
+}
+
+.gallery__img-swiper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--background-gallery-img-swiper-null);
+}
+
+.gallery__text-adaptive {
+    display: none;
+}
+
 .gallery__overlay {
     position: fixed;
-    align-items: center;
-    justify-content: center;
     z-index: 5;
     top: 0;
     left: 0;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-color: var(--background-gallery-overlay);
@@ -2183,7 +1608,7 @@ body {
     transform: scale(1);
 }
 
-.gallery__modal::before {
+.gallery__modal::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -2191,44 +1616,99 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 80px var(--box-shadow-1);
 }
 
-.gallery__modal-content {
+.gallery__close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+}
+
+.gallery__cross-modal {
+    width: 16px;
+    height: 16px;
+    fill: var(--svg-2);
+    transition: fill 0.15s ease-in-out;
+}
+
+.gallery__close-modal:focus-visible:not(:hover):not(:active) .gallery__cross-modal {
+    fill: var(--focus-1);
+}
+
+.gallery__close-modal:hover .gallery__cross-modal {
+    fill: var(--hover-1);
+}
+
+.gallery__close-modal:active .gallery__cross-modal {
+    fill: var(--active-1);
+}
+
+.gallery__content-modal {
     width: 100%;
 }
 
-.gallery__modal-picture {
-    height: 100%;
-    width: calc(400 / 900 * 100%);
+.gallery__picture-modal {
     flex-shrink: 0;
+    width: calc(400 / 900 * 100%);
 }
 
-.gallery__modal-img {
-    height: 100%;
+.gallery__img-modal {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top;
+    background-color: var(--background-gallery-img-modal-null);
 }
 
-.gallery__modal-information {
-    flex-direction: column;
+.gallery__information-modal {
     padding-top: 121px;
     padding-right: 29px;
     padding-bottom: 105px;
     padding-left: 49px;
-    height: 100%;
     width: 100%;
-    background-color: var(--background-modal-information);
+    height: 100%;
+    background-color: var(--background-gallery-information-modal);
 }
 
-.gallery__modal-scrollbar {
-    width: 100%;
-    height: 100%;
+.gallery__scroll-modal {
     padding-right: 20px;
+    width: 100%;
+    height: 100%;
 }
 
-.gallery__modal-name {
+.gallery__track-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--track-simplebar-2);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gallery__scrollbar-modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 2px;
+}
+
+.gallery__scrollbar-modal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-color: var(--scrollbar-simplebar-2);
+}
+
+.gallery__name-modal {
     display: block;
     margin: 0;
     font-family: 'OpenSans', sans-serif;
@@ -2239,97 +1719,38 @@ body {
     color: var(--text-dark);
 }
 
-.gallery__modal-date {
-    margin-bottom: 10px;
+.gallery__date-modal {
+    margin-bottom: var(--margin-gallery-name-modal);
 }
 
-.gallery__modal-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 16px;
-    height: 16px;
-}
+/*  6. BIG-SECTION
+    ==========================================================================  */
 
-.gallery__modal-svg {
-    width: 16px;
-    height: 16px;
-    fill: var(--svg-2);
-    transition: fill 0.15s ease-in-out;
-}
-
-.gallery__modal-button:focus-visible:not(:hover):not(:active) svg {
-    fill: var(--focus-1);
-}
-
-.gallery__modal-button:hover svg {
-    fill: var(--hover-1);
-}
-
-.gallery__modal-button:active svg {
-    fill: var(--active-1);
-}
-
-.gallery__simplebar-track {
-    width: 2px;
-    background-color: #ececec;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.gallery__simplebar-scrollbar {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 2px;
-}
-
-.gallery__simplebar-scrollbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 1;
-    background-color: #000;
-}
-
-.simplebar-content-wrapper:focus-visible::before {
-    opacity: 1;
-}
-
-/* 6. BIG-SECTION */
 .big-section__events {
-    padding-top: 80px;
+    padding-top: 81px;
 }
 
-/* 6.1. CATALOG */
-.catalog__text {
-    margin-bottom: var(--catalog-text-margin);
-}
+/**
+ * 6.1. CATALOG 
+ */
 
 .catalog__country-box {
+    gap: var(--gap-catalog-country-box);
     align-items: center;
-    gap: var(--catalog-country-box-gap);
-    margin-bottom: var(--catalog-country-box-margin);
+    margin-bottom: var(--margin-catalog-country-box);
     margin-left: -1px;
 }
 
 .catalog__heading {
-    margin-bottom: 0;
+    margin-bottom: var(--margin-catalog-heading);
 }
 
-.catalog__country-list {
-    gap: var(--catalog-country-list-gap);
+.catalog__list-country {
+    gap: var(--gap-catalog-country-list);
     padding-top: 4px;
 }
 
-.catalog__country-step {
+.catalog__step-country {
     position: relative;
     display: block;
     width: 46px;
@@ -2337,110 +1758,81 @@ body {
     background-size: 46px 46px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid transparent;
     border-radius: 100%;
     transition: filter 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
-.catalog__country-step::before {
+.catalog__step-country::after {
     content: '';
     position: absolute;
-    top: -12px;
-    right: -12px;
-    bottom: -12px;
-    left: -12px;
-    background-color: transparent;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     border: 2px solid var(--active-1);
+    background-color: transparent;
     border-radius: 100%;
     opacity: 0;
-    transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 
-.catalog__country-step:focus-visible:not(:active):not(:hover) {
+.catalog__step-country:focus-visible:not(:active):not(:hover) {
     filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
 }
 
-.catalog__country-step:hover:not(:active) {
+.catalog__step-country:hover:not(:active) {
     filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
 }
 
-.catalog__country-step:active {
-    border-color: var(--active-1);
+.catalog__step-country:active::after {
+    opacity: 1;
 }
 
-.catalog__country-step--disabled {
+.catalog__step-country--disabled {
     pointer-events: none;
     cursor: default;
 }
 
-.catalog__country-step--disabled::before {
+.catalog__step-country--disabled::after {
     opacity: 1;
+    transform: scale(1.43);
+}
+
+.catalog__text {
+    margin-bottom: var(--margin-catalog-text);
 }
 
 .catalog__accordion {
-    justify-content: space-between;
+    gap: var(--gap-catalog-accordion);
     flex-direction: row-reverse;
-    gap: var(--catalog-accordion-gap);
+    justify-content: space-between;
 }
 
 .catalog__accordion--active {
     display: flex;
 }
 
-.catalog__box-left {
-    width: calc(750 / 1600 * 100%);
-}
-
-.catalog__box-right {
+.catalog__right {
     padding-top: 1px;
     width: calc(800 / 1600 * 100%);
 }
 
-.catalog__tab-post {
-    display: none;
-    width: 100%;
-    animation: animation-opacity 0.4s 1;
-}
-
-.catalog__tab-post--active {
-    display: block;
-}
-
-.catalog__img {
-    margin-bottom: var(--catalog-img-margin);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.catalog__subject {
-    margin-bottom: var(--catalog-subject-margin);
-}
-
-.catalog__date {
-    display: block;
-    margin-bottom: var(--catalog-date-margin);
-}
-
-.catalog__button {
+.catalog__button-time {
     position: relative;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin: 0;
+    margin-top: -1px;
+    border-top: 1px solid var(--border-2);
+    border-bottom: 1px solid var(--border-2);
     padding-top: 32px;
     padding-bottom: 32px;
     width: 100%;
-    color: var(--text-dark);
-    border-top: 1px solid var(--border-2);
-    border-bottom: 1px solid var(--border-2);
+    min-height: 116px;
     transition: border-color 0.15s ease-in-out;
 }
 
-.catalog__button {
-    margin-top: -1px;
-}
-
-.catalog__button::before {
+.catalog__button-time::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -2448,18 +1840,20 @@ body {
     right: 0;
     bottom: -1px;
     left: 0;
-    background-color: transparent;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
+    background-color: transparent;
     transition: border-color 0.15s ease-in-out;
 }
 
-.catalog__button-span {
+.catalog__span-time {
     position: relative;
+    text-align: left;
+    color: var(--text-dark);
     transition: color 0.15s ease-in-out;
 }
 
-.catalog__button-span::before {
+.catalog__span-time::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -2472,10 +1866,10 @@ body {
     transition: opacity 0.15s ease-in-out;
 }
 
-.catalog__button-circle {
+.catalog__circle-time {
     position: relative;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     width: 50px;
     height: 50px;
@@ -2484,7 +1878,7 @@ body {
     transition: background-color 0.15s ease-in-out;
 }
 
-.catalog__button-circle::before {
+.catalog__circle-time::after {
     content: '';
     position: absolute;
     top: 0;
@@ -2497,7 +1891,7 @@ body {
     transition: opacity 0.15s ease-in-out;
 }
 
-.catalog__button-svg {
+.catalog__svg-time {
     width: 18px;
     height: 11px;
     fill: none;
@@ -2506,100 +1900,94 @@ body {
     transition: transform 0.15s ease-in-out;
 }
 
-.catalog__button:focus-visible:not(:hover):not(:active) .catalog__button-span {
+.catalog__button-time:focus-visible:not(:hover):not(:active) .catalog__span-time {
     color: var(--text-light);
 }
 
-.catalog__button:focus-visible:not(:hover):not(:active) .catalog__button-span::before {
+.catalog__button-time:focus-visible:not(:hover):not(:active) .catalog__span-time::after {
     opacity: 1;
 }
 
-.catalog__button:focus-visible:not(:hover):not(:active) .catalog__button-circle {
+.catalog__button-time:focus-visible:not(:hover):not(:active) .catalog__circle-time {
     background-color: var(--focus-4);
 }
 
-.catalog__button:hover {
-    border-color: transparent;
-}
-
-.catalog__button:hover::before {
+.catalog__button-time:hover::after {
     border-color: var(--hover-1);
 }
 
-.catalog__button:hover .catalog__button-span {
+.catalog__button-time:hover .catalog__span-time {
     color: var(--hover-1);
 }
 
-.catalog__button:hover .catalog__button-circle {
+.catalog__button-time:hover .catalog__circle-time {
     background-color: var(--hover-3);
 }
 
-.catalog__button:active {
-    border-color: transparent;
-}
-
-.catalog__button:active::before {
+.catalog__button-time:active::after {
     border-color: var(--active-1);
 }
 
-.catalog__button:active .catalog__button-span {
+.catalog__button-time:active .catalog__span-time {
     color: var(--active-1);
 }
 
-.catalog__button:active .catalog__button-circle::before {
+.catalog__button-time:active .catalog__circle-time {
+    background-color: var(--active-3);
+}
+
+.catalog__button-time:active .catalog__circle-time::after {
     opacity: 1;
 }
 
-.catalog__button:active .catalog__button-svg {
+.catalog__button-time:active .catalog__svg-time {
     transform: rotate(180deg);
 }
 
-/* -- open -- */
-.catalog__time-item--active .catalog__button {
+.catalog__item-time--active .catalog__button-time {
     border-top: 1px solid var(--active-1);
     border-bottom: 1px solid var(--active-1);
 }
 
-.catalog__time-item--active .catalog__button-span {
+.catalog__item-time--active .catalog__span-time {
     color: var(--active-1);
 }
 
-.catalog__time-item--active .catalog__button-svg {
-    transform: translateY(-3px) rotate(180deg);
-}
-
-.catalog__time-item--active .catalog__button-circle {
+.catalog__item-time--active .catalog__circle-time {
     background-color: var(--active-3);
 }
 
-.catalog__time-item--active .catalog__button-circle::before {
+.catalog__item-time--active .catalog__circle-time::after {
     opacity: 1;
 }
-/* --- */
 
-.catalog__button-content {
+.catalog__item-time--active .catalog__svg-time {
+    transform: translateY(-3px) rotate(180deg);
+}
+
+.catalog__content-time {
     overflow: hidden;
     visibility: hidden;
     transition-property: height, visibility;
     transition-timing-function: ease-in-out;
 }
 
-.catalog__time-item--active .catalog__button-content {
+.catalog__item-time--active .catalog__content-time {
     visibility: visible;
 }
 
-.catalog__button-list {
+.catalog__list-artist {
     padding-top: 25px;
     padding-bottom: 26px;
-    column-count: 3;
     margin-right: 73px;
+    column-count: 3;
 }
 
-.catalog__button-link {
+.catalog__link-artist {
     position: relative;
 }
 
-.catalog__button-link::before {
+.catalog__link-artist::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -2612,7 +2000,7 @@ body {
     transition: opacity 0.15s ease-in-out;
 }
 
-.catalog__button-link::after {
+.catalog__link-artist::after {
     content: '';
     position: absolute;
     top: 0;
@@ -2624,49 +2012,45 @@ body {
     transition: opacity 0.15s ease-in-out;
 }
 
-.catalog__button-link:focus-visible:not(:hover):not(:active)::before {
+.catalog__link-artist:focus-visible:not(:hover):not(:active)::before {
     opacity: 1;
 }
 
-.catalog__button-link:hover::after {
+.catalog__link-artist:hover::after {
     opacity: 1;
 }
 
-.catalog__button-link:active::before {
+.catalog__link-artist:active::after {
     opacity: 0;
 }
 
-.catalog__button-link:active::after {
-    opacity: 0;
-}
-
-.catalog__button-plug {
+.catalog__plug-artist {
     line-height: 32px;
 }
 
 .catalog__null {
+    gap: var(--gap-catalog-null);
     align-items: center;
-    gap: var(--catalog-null-gap);
     padding-top: 25px;
     padding-bottom: 26px;
 }
 
-.catalog__null-empty {
-    max-width: 275px;
+.catalog__picture-null {
+    flex-shrink: 0;
 }
 
-.catalog__figure-img {
+.catalog__img-null {
     width: 275px;
     height: 189px;
 }
 
-.catalog__figure-picture {
-    flex-shrink: 0;
+.catalog__information-null {
+    max-width: 275px;
 }
 
-.catalog__null-text {
+.catalog__text-null {
     margin: 0;
-    margin-bottom: var(--catalog-null-text-margin);
+    margin-bottom: var(--margin-catalog-text-null);
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 24px;
@@ -2674,9 +2058,9 @@ body {
     line-height: 32px;
 }
 
-.catalog__null-span {
+.catalog__span-null {
     display: block;
-    margin-bottom: var(--catalog-null-span-margin);
+    margin-bottom: var(--margin-catalog-span-null);
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -2684,7 +2068,7 @@ body {
     line-height: 22px;
 }
 
-.catalog__null-link {
+.catalog__link-null {
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -2693,45 +2077,81 @@ body {
     color: var(--text-alternative-1);
 }
 
-/* 6.2 EVENTS */
+.catalog__left {
+    width: calc(750 / 1600 * 100%);
+}
+
+.catalog__post {
+    display: none;
+    width: 100%;
+    animation: animation-opacity 0.4s 1;
+}
+
+.catalog__post--active {
+    display: block;
+}
+
+.catalog__img {
+    margin-bottom: var(--margin-catalog-img);
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-catalog-img-null);
+    object-fit: cover;
+}
+
+.catalog__subject {
+    margin-bottom: var(--margin-catalog-subject);
+}
+
+.catalog__date {
+    display: block;
+    margin-bottom: var(--margin-catalog-date);
+}
+
+/**
+ * 6.2. EVENTS
+ */
+
 .events__list {
-    margin-bottom: var(--events-list-margin);
+    margin-bottom: var(--margin-events-list);
 }
 
 .events__list--no-swiper {
     flex-wrap: wrap;
-    gap: var(--events-list-gap);
+    gap: var(--gap-events-list);
 }
 
 .events__item {
-    height: auto;
-    width: calc((100% - var(--events-list-gap) * 2) / 3);
-}
-
-.events__card {
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: calc((100% - var(--gap-events-list) * 2) / 3);
+    height: auto;
+    animation: animation-opacity 0.4s 1;
+}
+
+.events__item--hidden {
+    display: none;
 }
 
 .events__img {
     display: block;
-    object-fit: cover;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    background-color: var(--background-events-img-null);
 }
 
 .events__information {
+    gap: var(--gap-events-information);
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--events-information-gap);
-    padding-left: 49px;
-    padding-right: 19px;
-    padding-top: 14px;
-    padding-bottom: 40px;
-    height: 100%;
     border: 1px solid var(--border-2);
     border-top: none;
+    padding-top: 14px;
+    padding-right: 19px;
+    padding-bottom: 40px;
+    padding-left: 49px;
+    height: 100%;
 }
 
 .events__span {
@@ -2739,11 +2159,11 @@ body {
 }
 
 .events__span:not(:first-child) {
-    margin-bottom: var(--events-span-margin);
+    margin-bottom: var(--margin-events-span);
 }
 
 .events__subject {
-    margin-bottom: var(--events-subject-margin);
+    margin-bottom: var(--margin-events-subject);
     max-width: 420px;
     line-height: 33px;
 }
@@ -2753,8 +2173,8 @@ body {
 }
 
 .events__link {
-    display: block;
     position: relative;
+    display: block;
     margin-right: auto;
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
@@ -2772,7 +2192,7 @@ body {
     right: 0;
     bottom: 2px;
     left: 0;
-    border-bottom: 1px solid var(--border-4);
+    border-bottom: 1px solid var(--border-3);
     transition: border-color 0.15s ease-in-out;
 }
 
@@ -2817,105 +2237,106 @@ body {
     border-color: var(--active-border-3);
 }
 
-.events__link:active::after {
-    opacity: 0;
-}
-
-.events__item {
-    display: flex;
-    animation: animation-opacity 0.4s 1;
-}
-
-.events__item--hidden {
-    display: none;
-}
-
 .events__button {
     display: block;
     margin: 0 auto;
+    max-width: 500px;
+    min-height: 59px;
 }
 
 .events__button--hidden {
     display: none;
 }
 
-/* 7. EDITIONS */
+/*  7. EDITIONS
+    ==========================================================================  */
+
 .editions__background {
+    background-color: var(--background-editions);
     background-image: url(../img/editions-1920-background.webp);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .editions__content {
-    padding-bottom: 71px;
+    gap: var(--gap-editions-content);
     justify-content: space-between;
-    gap: var(--editions-box-gap);
-    min-height: 595px;
+    padding-bottom: 70px;
 }
 
-.editions__left {
-    flex-direction: column;
-    flex-shrink: 0;
+.editions__filter {
+    width: calc(277 / 1600 * 100%);
 }
 
 .editions__heading {
+    max-width: 90%;
     color: var(--text-light);
 }
 
-.editions__button-filter {
+.editions__button-accordion {
     width: 100%;
     align-items: center;
+    text-align: left;
     cursor: default;
     pointer-events: none;
 }
 
-.editions__svg-filter {
+.editions__svg-accordion {
     display: none;
 }
 
-.editions__list-checkbox {
+.editions__list-category {
     flex-direction: column;
+    margin-bottom: var(--margin-editions-list-category);
     padding-left: 1px;
-    margin-bottom: var(--editions-check-margin);
 }
 
-.editions__list-checkbox--animation {
+.editions__list-category--animation {
     transition: max-height 0.3s ease-in-out;
 }
 
-.editions__box-checkbox {
-    align-items: center;
+.editions__item-category {
     margin-right: auto;
 }
 
-.editions__checkbox {
-    width: 1px;
-    height: 1px;
+.editions__label-category {
+    align-items: center;
+    cursor: pointer;
+}
+
+.editions__checkbox-category {
     margin: -1px;
     border: 0;
     padding: 0;
+    width: 1px;
+    height: 1px;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
     transition: color 0.15s ease-in-out;
 }
 
-.editions__style-checkbox {
-    flex-shrink: 0;
+.editions__style-category {
     position: relative;
-    margin-right: var(--editions-style-checkbox-margin);
+    flex-shrink: 0;
+    margin-right: var(--margin-editions-style-category);
+    border: 1px solid var(--border-1);
     width: 12px;
     height: 12px;
-    border: 1px solid var(--border-1);
     transition: border-color 0.15s ease-in-out;
 }
 
-.editions__span-checkbox {
+.editions__span-category {
     color: var(--text-light);
     transition: color 0.15s ease-in-out;
 }
 
-.editions__checkbox + .editions__style-checkbox::after {
+.editions__svg-category {
+    display: none;
+}
+
+.editions__checkbox-category + .editions__style-category::after {
     content: '';
     position: absolute;
     top: 0;
@@ -2923,159 +2344,152 @@ body {
     bottom: 0;
     left: 0;
     background-image: url(../img/checked.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
     background-size: 4px 4px;
+    background-repeat: no-repeat;
+    background-position: center center;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
 }
 
-.editions__checkbox:focus-visible:not(:hover):not(:checked) ~ .editions__span-checkbox {
-    color: var(--focus-3);
-}
-
-.editions__checkbox:hover + .editions__style-checkbox {
-    border-color: var(--hover-2);
-}
-
-.editions__checkbox:hover ~ .editions__span-checkbox {
-    color: var(--text-light);
-}
-
-.editions__checkbox:focus-visible:not(:hover):not(:checked) + .editions__style-checkbox {
+.editions__checkbox-category:focus-visible:not(:hover):not(:checked) + .editions__style-category {
     border-color: var(--focus-3);
 }
 
-.editions__checkbox:checked + .editions__style-checkbox {
+.editions__checkbox-category:focus-visible:not(:hover):not(:checked) ~ .editions__span-category {
+    color: var(--focus-3);
+}
+
+.editions__checkbox-category:hover + .editions__style-category {
+    border-color: var(--hover-2);
+}
+
+.editions__checkbox-category:hover ~ .editions__span-category {
+    color: var(--text-light);
+}
+
+.editions__checkbox-category:checked + .editions__style-category {
     border-color: var(--checked-1);
 }
 
-.editions__checkbox:checked + .editions__style-checkbox::after {
+.editions__checkbox-category:checked + .editions__style-category::after {
     opacity: 1;
 }
 
-.editions__checkbox:checked ~ .editions__span-checkbox {
+.editions__checkbox-category:checked ~ .editions__span-category {
     color: var(--checked-1);
 }
 
-.editions__svg-checkbox {
-    display: none;
+.editions__span-cost {
+    margin-bottom: var(--margin-editions-span-cost);
 }
 
-.editions__button-checkbox {
-    display: none;
-}
-
-.editions__price-title {
-    margin-bottom: var(--editions-price-title-margin);
-}
-
-.editions__cost {
+.editions__box-cost {
     justify-content: space-around;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--border-4);
+    width: 100%;
+    min-height: 40px;
     border-radius: 6px;
 }
 
-.editions__span-cost {
-    padding: 0px 10px;
-}
-
-.editions__span-cost:last-child {
-    padding-right: 9px;
-}
-
-.editions__span-cost:first-child {
+.editions__from-cost {
     padding-left: 9px;
+    padding-right: 10px;
+    max-width: 39px;
 }
 
-.editions__input {
+.editions__input-cost {
     margin-top: -1px;
     margin-bottom: -1px;
+    border: none;
     padding: 4px 10px;
     width: 73px;
-    border: none;
     outline: none;
     appearance: textfield;
-    background-color: rgba(157, 92, 208, 0.5);
+    background-color: var(--background-editions-input-cost);
 }
 
-.editions__input::-webkit-outer-spin-button,
-.editions__input::-webkit-inner-spin-button {
+.editions__input-cost::-webkit-outer-spin-button,
+.editions__input-cost::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
+.editions__to-cost {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 39px;
+}
+
+.editions__currency-cost {
+    padding-left: 10px;
+    padding-right: 9px;
+    max-width: 51px;
+}
+
 .editions__products {
-    width: 72.4375%;
-}
-
-.editions__swiper {
-    position: relative;
-    padding-left: 7rem;
-    padding-right: 2rem;
-    padding-bottom: 7rem;
-}
-
-.editions__list {
-    width: 100%;
-}
-
-.editions__null {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-}
-
-.editions__null--active {
-    opacity: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(1159 / 1600 * 100%);
 }
 
 .editions__navigation {
+    gap: var(--gap-editions-navigation);
     flex-wrap: nowrap;
     align-items: center;
-    gap: var(--editions-navigation-gap);
-    min-height: 94px;
     padding-top: 32px;
     padding-bottom: 30px;
     padding-left: 7px;
+    min-height: 94px;
 }
 
 .editions__number {
+    max-width: 300px;
+    min-height: 30px;
     color: var(--text-light);
-    width: auto;
 }
 
 .editions__pagination--lock {
     display: block;
 }
 
-.editions__img {
-    display: block;
-    margin-bottom: var(--editions-image-margin);
+.editions__swiper {
+    position: relative;
+    padding-right: 2rem;
+    padding-bottom: 7rem;
+    padding-left: 7rem;
     width: 100%;
-    height: 100%;
+    height: 519rem;
+}
+
+.editions__list-swiper {
+    width: 100%;
+}
+
+.editions__item-swiper {
+    animation: animation-opacity 0.4s 1;
+}
+
+.editions__img-swiper {
+    display: block;
+    margin-bottom: var(--margin-editions-img);
+    background-color: var(--background-editions-swiper-img-null);
     object-fit: cover;
 }
 
-.editions__information {
+.editions__box-swiper {
     justify-content: space-between;
-    margin-bottom: var(--editions-information-margin);
+    margin-bottom: var(--margin-editions-box);
 }
 
-.editions__top {
+.editions__information-swiper {
     width: 68%;
 }
 
-.editions__subject {
+.editions__subject-swiper {
     margin: 0;
-    margin-bottom: var(--editions-subject-margin);
+    margin-bottom: var(--margin-editions-subject);
     font-family: 'OpenSans', sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -3087,122 +2501,102 @@ body {
     text-overflow: ellipsis;
 }
 
-.editions__author {
+.editions__author-swiper {
     line-height: 16px;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
-.editions__price {
+.editions__price-swiper {
     display: block;
     margin-right: -4px;
+    max-width: 77px;
     font-family: 'OpenSans', sans-serif;
     font-style: italic;
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
-    white-space: nowrap;
-    flex-grow: 0;
     color: var(--text-light);
 }
 
-.editions__button {
+.editions__button-swiper {
     padding: 7px 19.8px;
+    max-width: 200px;
     font-size: 16px;
     line-height: 22px;
     color: var(--text-light);
 }
 
-/* 8. PROJECTS */
+.editions__null-swiper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    text-align: center;
+    background-color: var(--background-editions-null-swiper);
+    opacity: 0;
+}
+
+.editions__null-swiper--active {
+    opacity: 1;
+    animation: animation-opacity 0.4s 1;
+}
+
+/*  8. PROJECTS
+    ==========================================================================  */
+
 .projects {
     position: relative;
 }
 
-.projects__information {
-    margin-bottom: var(--projects-information-margin);
-}
-
 .projects__text {
+    margin-bottom: var(--margin-projects-text);
     max-width: 1070px;
 }
 
-.projects__tooltip {
+.projects__button-tooltip {
     position: relative;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin-left: -1px;
     margin-right: 2px;
+    border: 1px solid var(--border-3);
     width: 16px;
     height: 16px;
     background-color: transparent;
-    border: 1px solid var(--border-4);
     outline: none;
     border-radius: 100%;
     cursor: pointer;
     transition: background-color 0.15s ease-in-out;
 }
 
-.projects__tooltip-icons {
-    display: inline-flex;
+.projects__button-tooltip:focus-visible:not(:hover):not(:active) {
+    background-color: var(--focus-4);
 }
 
-.projects__tooltip-svg {
+.projects__button-tooltip:hover {
+    background-color: var(--hover-3);
+}
+
+.projects__button-tooltip:active {
+    background-color: var(--active-2);
+}
+
+.projects__svg-tooltip {
     width: 2px;
     height: 10px;
     fill: var(--svg-2);
     transition: fill 0.15s ease-in-out;
 }
 
-.projects__tooltip:focus-visible:not(:hover):not(:active) {
-    background-color: var(--focus-4);
-}
-
-.projects__tooltip:hover {
-    background-color: var(--hover-3);
-}
-
-.projects__tooltip:active {
-    background-color: var(--active-2);
-}
-
-.projects__tooltip:active .projects__tooltip-svg {
-    fill: var(--active-4);
-}
-
-.projects__tooltip-span {
-    position: absolute;
-    display: block;
-    z-index: 9999;
-    left: 0;
-    padding: 11px;
-    padding-top: 8px;
-    width: min(264px, 100%);
-    min-width: 100px;
-    min-height: 34px;
-    font-family: 'OpenSans', sans-serif;
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 16px;
-    color: var(--text-light);
-    word-wrap: break-word;
-    text-align: center;
-    visibility: hidden;
-    opacity: 0;
-    --mouse-x: 0;
-    translate: clamp(5px, calc(var(--mouse-x) - 50%), calc(100vw - 100% - 5px));
-    background-color: var(--background-tooltip);
-    transition: opacity 0.15s ease-in-out, visibility 0.15s;
-}
-
-.projects__tooltip-span--active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.projects__tooltip-arrow {
+.projects__arrow-tooltip {
     position: absolute;
     display: block;
     top: -13px;
@@ -3216,23 +2610,54 @@ body {
     transition: opacity 0.15s ease-in-out, visibility 0.15s;
 }
 
-.projects__tooltip-arrow--active {
+.projects__arrow-tooltip--active {
     visibility: visible;
     opacity: 1;
 }
 
-.projects__tooltip-cross {
+.projects__cross-tooltip {
     position: absolute;
     z-index: 1;
     top: -1px;
     left: -1px;
     width: 16px;
     height: 16px;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out, visibility 0.15s;
 }
 
-.projects__tooltip-cross--active {
+.projects__cross-tooltip--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.projects__span-tooltip {
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    display: block;
+    padding: 11px;
+    padding-top: 8px;
+    width: min(100%, 264px);
+    min-width: 100px;
+    min-height: 34px;
+    font-family: 'OpenSans', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--text-light);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(clamp(5px, calc(var(--mouse-x) - 50%), calc(100vw - 100% - 5px)));
+    background-color: var(--background-tooltip);
+    transition: opacity 0.15s ease-in-out, visibility 0.15s;
+}
+
+.projects__span-tooltip--active {
+    visibility: visible;
     opacity: 1;
 }
 
@@ -3288,16 +2713,11 @@ body {
 }
 
 .projects__subject {
-    margin-bottom: var(--projects-subject-margin);
+    margin-bottom: var(--margin-projects-subject);
 }
 
 .projects__partners {
     align-items: center;
-}
-
-.projects__swiper {
-    width: 100%;
-    margin: 0 45px;
 }
 
 .projects__buttonlight {
@@ -3305,15 +2725,15 @@ body {
     position: relative;
     width: 30px;
     height: 30px;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: 7px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: var(--background-button-2);
     border-radius: 100%;
     transition: background-color 0.15s ease-in-out;
 }
 
-.projects__buttonlight::before {
+.projects__buttonlight::after {
     content: '';
     position: absolute;
     top: 0;
@@ -3334,7 +2754,7 @@ body {
     transition: stroke 0.15s ease-in-out;
 }
 
-.projects__buttonlight:focus-visible:not(:hover):before {
+.projects__buttonlight:focus-visible:not(:hover):after {
     opacity: 1;
 }
 
@@ -3346,7 +2766,7 @@ body {
     background-color: var(--active-3);
 }
 
-.projects__buttonlight:active::before {
+.projects__buttonlight:active::after {
     opacity: 1;
 }
 
@@ -3355,53 +2775,59 @@ body {
     background-color: var(--disabled-color-2);
 }
 
-.projects__buttonlight--disabled svg {
+.projects__buttonlight--disabled .projects__buttonlight-svg {
     stroke: var(--disabled-arrow-color-2);
 }
 
-.projects__link-page {
+.projects__swiper {
+    width: 100%;
+    margin: 0 45px;
+}
+
+.projects__item-swiper {
+    align-items: stretch;
+    height: 148px;
+}
+
+.projects__link-swiper {
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    min-height: 148px;
     border: 1px solid var(--border-2);
+    width: 100%;
     transition: border-color 0.15s ease-in-out;
 }
 
-.projects__picture {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-.projects__image {
-    object-fit: cover;
+.projects__img-swiper {
+    display: block;
+    margin: 0 auto;
     filter: grayscale(1);
     opacity: 0.2;
     transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out;
 }
 
-.projects__link-page:focus-visible:not(:hover) {
+.projects__link-swiper:focus-visible:not(:hover) {
     border-color: var(--focus-border-1);
 }
 
-.projects__link-page:hover img {
+.projects__link-swiper:hover .projects__img-swiper {
     filter: grayscale(0);
     opacity: 1;
 }
 
-.projects__link-page:active {
+.projects__link-swiper:active {
     border-color: var(--active-border-1);
 }
 
-.projects__link-page:active img {
+.projects__link-swiper:active .projects__img-swiper {
     filter: grayscale(0);
     opacity: 1;
 }
 
-/* 9. CONTACTS */
+/*  9. CONTACTS
+    ==========================================================================  */
+
 .contacts__background {
-    background-color: transparent;
+    background-color: var(--background-contacts);
 }
 
 .contacts__heading {
@@ -3410,102 +2836,135 @@ body {
 
 .contacts__box {
     position: relative;
-    height: 700px;
-}
-
-.contacts__left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    background-color: #fff;
-    border: 1px solid var(--border-2);
-    flex-shrink: 0;
+    z-index: 0;
+    align-items: stretch;
+    min-height: 700px;
 }
 
 .contacts__content {
+    border: 1px solid var(--border-2);
     padding-top: 123px;
     padding-right: 121px;
     padding-bottom: 123px;
     padding-left: 159px;
+    width: calc(682 / 1920 * 100%);
+    background-color: var(--background-contacts-content);
 }
 
-.contacts__address-box--320 {
-    display: none;
+.contacts__subject#address {
+    margin-bottom: var(--margin-contacts-subject-address);
 }
 
-.contacts__address-box {
-    margin-bottom: var(--contacts-address-box-margin);
+.contacts__address {
+    margin-bottom: var(--margin-contacts-address);
 }
 
-.contacts__address-subject {
-    margin-bottom: var(--contacts-address-subject-margin);
+.contacts__box-map {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.contacts__form-box {
-    margin-bottom: var(--contacts-form-box-margin);
+.contacts__container-map {
+    gap: var(--gap-contacts-zoom-map);
+    flex-direction: column;
+    padding: 10px;
+    min-width: 20px;
+    min-height: 20px;
+    background-color: var(--background-button-3);
+    border-radius: 8px;
+    box-shadow: 0px 0px 7px var(--box-shadow-2);
 }
 
-.contacts__subject--form {
-    margin-bottom: var(--contacts-subject-form-margin);
+.contacts__button-map {
+    position: relative;
+    width: 20px;
+    height: 20px;
 }
 
-.contacts__subject--links {
-    margin-bottom: var(--contacts-subject-links-margin);
+.contacts__button-map:after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border: 2px solid var(--focus-border-2);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.contacts__svg-map {
+    display: block;
+    margin: auto;
+    fill: var(--svg-4);
+    transition: fill 0.15s ease-in-out;
+}
+
+.contacts__button-map:focus-visible:not(:hover):not(:active)::after {
+    opacity: 1;
+}
+
+.contacts__button-map:hover .contacts__svg-map {
+    fill: var(--hover-2);
+}
+
+.contacts__button-map:active .contacts__svg-map {
+    fill: var(--active-1);
+}
+
+.contacts .contacts__subject#form {
+    margin-bottom: var(--margin-contacts-subject-form);
 }
 
 .contacts__form {
-    flex-direction: column;
-    gap: var(--contacts-form-gap);
+    margin-bottom: var(--margin-contacts-form);
 }
 
-.contacts__input-container {
-    flex-direction: column;
-    gap: var(--contacts-input-container-gap);
+.contacts__list-validate {
+    margin-bottom: var(--margin-contacts-list-validate);
 }
 
-.contacts__input-box {
+.contacts__item-validate {
     flex-direction: column-reverse;
-    min-height: 55px;
+    min-height: 57px;
 }
 
-.contacts__input {
+.contacts__item-validate:first-child {
+    margin-bottom: var(--margin-contacts-item-validate);
+}
+
+.contacts__input-validate {
+    border: 1px solid var(--border-5);
     padding: 2px 24px;
     min-width: 400px;
-    border: 1px solid #333;
+    max-width: 450px;
+    height: 40px;
     border-radius: 100px;
     color: var(--text-dark);
     transition: background-color 0.15s ease-in-out;
 }
 
-.contacts__input:focus-visible {
+.contacts__input-validate:focus-visible {
     background-color: var(--focus-6);
 }
 
-.contacts__input:hover {
+.contacts__input-validate:hover {
     background-color: var(--hover-7);
 }
 
-.contacts__input::placeholder {
+.contacts__input-validate::placeholder {
     color: var(--placeholder-2);
 }
 
-.js-validate-error-label {
-    padding-left: 24px;
-    margin-bottom: 2px;
-    font-family: 'OpenSans';
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
-    opacity: 1;
-    animation: animation-opacity 0.3s 1;
-}
-
 .contacts__button {
-    align-self: flex-start;
-    position: relative;
     padding: 15px 34px;
+    min-width: 157px;
+    max-width: 200px;
+    min-height: 59px;
     background-color: transparent;
     color: var(--text-alternative-1);
     border-radius: 100px;
@@ -3521,23 +2980,24 @@ body {
     background-color: var(--active-1);
 }
 
-.contacts__subject-alternative {
-    margin-bottom: var(--contacts-subject-alternative-margin);
+.contacts__subject#social {
+    margin-bottom: var(--margin-contacts-subject-social);
 }
 
-.contacts__social-links {
-    gap: var(--contacts-social-links-gap);
+.contacts__list-social {
+    gap: var(--gap-contacts-list-social);
 }
 
-.contacts__social-link {
+.contacts__link-social {
     position: relative;
+    display: block;
     width: 40px;
     height: 40px;
     border-radius: 100%;
     transition: opacity 0.15s ease-in-out;
 }
 
-.contacts__social-link::before {
+.contacts__link-social::after {
     content: '';
     position: absolute;
     top: 0;
@@ -3550,64 +3010,74 @@ body {
     transition: opacity 0.15s ease-in-out;
 }
 
-.contacts__social-link:focus-visible:not(:hover):not(:active) {
+.contacts__link-social:focus-visible:not(:hover):not(:active) {
     opacity: 0.5;
 }
 
-.contacts__social-link:hover {
+.contacts__link-social:hover {
     opacity: 0.5;
 }
 
-.contacts__social-link:active {
+.contacts__link-social:active {
     opacity: 1;
 }
 
-.contacts__social-link:active::before {
+.contacts__link-social:active::after {
     opacity: 1;
 }
 
-.contacts__social-svg {
+.contacts__svg-social {
     width: 40px;
     height: 40px;
 }
 
-.contacts__right {
-    width: 100%;
-    height: 700px;
-}
-
-[class*='ground-pane'] {
-    filter: grayscale(1);
-}
-
 /* 10. FOOTER */
-.footer__box {
-    padding-top: 47px;
-    padding-bottom: 48px;
-    background-color: var(--background-box);
+.footer__background {
+    position: relative;
+    z-index: 2;
+}
+
+.footer__background::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--background-footer);
 }
 
 .footer__container {
     justify-content: space-between;
     align-items: center;
+    padding-top: 47px;
+    padding-bottom: 48px;
 }
 
 .footer__logo {
     padding-top: 3px;
+    width: 173px;
+    height: 39.9px;
 }
 
-.footer__links {
+.footer__img {
+    width: 173px;
+    height: 39.9px;
+}
+
+.footer__list-social {
     gap: var(--footer-links-gap);
 }
 
-.footer__link {
+.footer__link-social {
     display: block;
     width: 45px;
     height: 45px;
     border-radius: 100%;
 }
 
-.footer__svg {
+.footer__svg-social {
     display: block;
     width: 45px;
     height: 45px;
@@ -3615,18 +3085,18 @@ body {
     transition: fill 0.15s ease-in-out;
 }
 
-.footer__link:focus-visible .footer__svg {
+.footer__link-social:focus-visible .footer__svg-social {
     fill: var(--focus-7);
 }
 
-.footer__link:hover .footer__svg {
+.footer__link-social:hover .footer__svg-social {
     fill: var(--hover-6);
 }
 
-.footer__link:active .footer__svg {
+.footer__link-social:active .footer__svg-social {
     fill: var(--active-2);
 }
 
-.main__sprite {
+.sprite {
     display: none;
 }

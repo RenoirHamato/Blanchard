@@ -20,9 +20,11 @@
         <script src="./libs/accordion/accordion.min.js" defer></script>
         <script src="./libs/inputmask/inputmask.min.js" defer></script>
         <script src="./libs/just-validate/just-validate.js" defer></script>
-        <!--
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" defer></script>
-        -->
+        <script
+            src="https://api-maps.yandex.ru/2.1/?apikey=4458dd5c-4b45-4e7b-9a6f-3312d9e02a7c&lang=ru_RU"
+            defer
+        ></script>
+        <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
         <script src="./js/script.js" defer></script>
     </head>
 
@@ -36,21 +38,17 @@
                         <span class="header__line header__line--passive"></span>
                         <span class="header__line header__line--passive"></span>
                     </button>
-                    <a class="header__link link" href="#" aria-label="логотип">
-                        <picture class="link__picture">
+                    <a class="header__logo link" href="#" aria-label="логотип сайта">
+                        <picture class="header__picture">
                             <source srcset="./img/logo-320-header.webp" media="(max-width: 767px)" />
                             <source srcset="./img/logo-768-header.webp" media="(max-width: 1023px)" />
                             <source srcset="./img/logo-1024-header.webp" media="(max-width: 1919px)" />
-                            <img
-                                class="link__image logo-header"
-                                src="./img/logo-1920-header.webp"
-                                alt="логотип сайта"
-                            />
+                            <img class="header__img" src="./img/logo-1920-header.webp" alt="логотип сайта" />
                         </picture>
                     </a>
                     <div class="header__box">
-                        <div class="header__scroll">
-                            <div class="header__scroll-box flex">
+                        <div class="header__scroll-box">
+                            <div class="header__container-box flex">
                                 <nav class="header__menu-anchor flex" aria-label="главное меню">
                                     <ul class="header__list-anchor list-reset flex">
                                         <li class="header__item-anchor">
@@ -90,14 +88,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <button class="header__search-open button-reset" aria-label="раскрыть поиск">
-                        <svg class="header__svg-open" xmlns="http://www.w3.org/2000/svg">
+                    <button class="header__open-search button-reset" aria-label="раскрыть поиск">
+                        <svg class="header__loop-search" xmlns="http://www.w3.org/2000/svg">
                             <use xlink:href="#header-loop"></use>
                         </svg>
                     </button>
-
-                    <div class="header__search-box">
+                    <div class="header__box-search">
                         <form
                             class="header__form-search flex"
                             id="header-search-form"
@@ -111,16 +107,15 @@
                                 placeholder="Поиск по сайту"
                                 autocomplete="off"
                                 required
-                                aria-label="поле ввода запроса"
                             />
-                            <button class="header__button-search button-reset" aria-label="активировать поиск">
-                                <svg class="header__svg-search" xmlns="http://www.w3.org/2000/svg">
+                            <button class="header__activate-search button-reset" aria-label="активировать поиск">
+                                <svg class="header__loop-search" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#header-search"></use>
                                 </svg>
                             </button>
                         </form>
-                        <button class="header__search-close button-reset" aria-label="закрыть поиск">
-                            <svg class="header__svg-close" xmlns="http://www.w3.org/2000/svg">
+                        <button class="header__close-search button-reset" aria-label="закрыть поиск">
+                            <svg class="header__cross-search" xmlns="http://www.w3.org/2000/svg">
                                 <use xlink:href="#header-cross"></use>
                             </svg>
                         </button>
@@ -139,28 +134,30 @@
                                     </svg>
                                 </button>
                                 <div class="header__box-select">
-                                    <ul class="header__list-page list-reset">
-                                        <li class="header__item-page">
-                                            <a class="header__link-page tintoretto" href="#">
-                                                <span class="header__span-link">Тинторетто</span>
-                                            </a>
-                                        </li>
-                                        <li class="header__item-page">
-                                            <a class="header__link-page friedrich" href="#">
-                                                <span class="header__span-link">Фридрих</span>
-                                            </a>
-                                        </li>
-                                        <li class="header__item-page">
-                                            <a class="header__link-page leonardo" href="#">
-                                                <span class="header__span-link">Леонардо</span>
-                                            </a>
-                                        </li>
-                                        <li class="header__item-page">
-                                            <a class="header__link-page verrocchio" href="#">
-                                                <span class="header__span-link">Верроккьо</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div class="header__scroll-select">
+                                        <ul class="header__list-page list-reset">
+                                            <li class="header__item-page">
+                                                <a class="header__link-page tintoretto" href="#">
+                                                    <span class="header__span-page">Тинторетто</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a class="header__link-page friedrich" href="#">
+                                                    <span class="header__span-page">Фридрих</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a class="header__link-page leonardo" href="#">
+                                                    <span class="header__span-page">Леонардо</span>
+                                                </a>
+                                            </li>
+                                            <li class="header__item-page">
+                                                <a class="header__link-page verrocchio" href="#">
+                                                    <span class="header__span-page">Верроккьо</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
                             <li class="header__item-select">
@@ -175,22 +172,22 @@
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
                                                 <a class="header__link-page monet" href="#">
-                                                    <span class="header__span-link">Моне</span>
+                                                    <span class="header__span-page">Моне</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page sisley" href="#">
-                                                    <span class="header__span-link">Сислей</span>
+                                                    <span class="header__span-page">Сислей</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page mane" href="#">
-                                                    <span class="header__span-link">Мане</span>
+                                                    <span class="header__span-page">Мане</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page renoir" href="#">
-                                                    <span class="header__span-link">Ренуар</span>
+                                                    <span class="header__span-page">Ренуар</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -209,22 +206,22 @@
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
                                                 <a class="header__link-page van-gogh" href="#">
-                                                    <span class="header__span-link">Ван Гог</span>
+                                                    <span class="header__span-page">Ван Гог</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page cezanne" href="#">
-                                                    <span class="header__span-link">Сезанн</span>
+                                                    <span class="header__span-page">Сезанн</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page gauguin" href="#">
-                                                    <span class="header__span-link">Гоген</span>
+                                                    <span class="header__span-page">Гоген</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page seurat" href="#">
-                                                    <span class="header__span-link">Сёра</span>
+                                                    <span class="header__span-page">Сёра</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -243,22 +240,22 @@
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
                                                 <a class="header__link-page kandinsky" href="#">
-                                                    <span class="header__span-link">Кандинский</span>
+                                                    <span class="header__span-page">Кандинский</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page marinetti" href="#">
-                                                    <span class="header__span-link">Маринетти</span>
+                                                    <span class="header__span-page">Маринетти</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page malevich" href="#">
-                                                    <span class="header__span-link">Малевич</span>
+                                                    <span class="header__span-page">Малевич</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page picasso" href="#">
-                                                    <span class="header__span-link">Пикассо</span>
+                                                    <span class="header__span-page">Пикассо</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -277,27 +274,27 @@
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
                                                 <a class="header__link-page carra" href="#">
-                                                    <span class="header__span-link">Карра</span>
+                                                    <span class="header__span-page">Карра</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page pratella" href="#">
-                                                    <span class="header__span-link">Прателла</span>
+                                                    <span class="header__span-page">Прателла</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page severini" href="#">
-                                                    <span class="header__span-link">Северини</span>
+                                                    <span class="header__span-page">Северини</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page balla" href="#">
-                                                    <span class="header__span-link">Балла</span>
+                                                    <span class="header__span-page">Балла</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
                                                 <a class="header__link-page bochonni" href="#">
-                                                    <span class="header__span-link">Бочонни</span>
+                                                    <span class="header__span-page">Бочонни</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -319,38 +316,34 @@
                             autocomplete="off"
                             required
                         />
-                        <button class="header__button-search button-reset">
-                            <svg class="header__svg-search" xmlns="http://www.w3.org/2000/svg">
+                        <button class="header__activate-search button-reset" aria-label="активировать поиск">
+                            <svg class="header__loop-search" xmlns="http://www.w3.org/2000/svg">
                                 <use xlink:href="#header-search"></use>
                             </svg>
                         </button>
                     </form>
                 </div>
             </div>
-            <div class="header__swiper">
-                <div class="header__wrapper flex">
-                    <div class="header__picture slide-1 header__picture--active"></div>
-                    <div class="header__picture slide-2"></div>
-                    <div class="header__picture slide-3"></div>
-                </div>
-            </div>
             <section class="preview header__preview">
-                <h1 class="preview__global-title visually-hidden">Blanchard - художественная галерея</h1>
+                <h1 class="preview__title visually-hidden">Blanchard - художественная галерея</h1>
                 <div class="preview__container container">
                     <div class="preview__content content">
-                        <div class="preview__information">
-                            <h2 class="preview__title title">Прикоснитесь к&nbsp;прекрасному</h2>
-                            <p class="preview__text text">
-                                Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий
-                                создаёт предпосылки для новых предложений
-                            </p>
-                            <button class="preview__button button-reset button-big">
-                                Подписаться на&nbsp;рассылку
-                            </button>
-                        </div>
+                        <h2 class="preview__heading title">Прикоснитесь к&nbsp;прекрасному</h2>
+                        <p class="preview__text text">
+                            Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий
+                            создаёт предпосылки для новых предложений
+                        </p>
+                        <button class="preview__button button-reset button-big">Подписаться на&nbsp;рассылку</button>
                     </div>
                 </div>
             </section>
+            <div class="header__swiper">
+                <div class="header__wrapper flex">
+                    <div class="header__image slide-1 header__image--active"></div>
+                    <div class="header__image slide-2"></div>
+                    <div class="header__image slide-3"></div>
+                </div>
+            </div>
         </header>
         <main class="main">
             <section class="about-us main__about-us" id="about">
@@ -377,20 +370,20 @@
                     <div class="gallery__container container">
                         <div class="gallery__content content flex">
                             <div class="gallery__left flex">
-                                <div class="gallery__top">
+                                <div class="gallery__filter">
                                     <h2 class="gallery__heading heading">Галерея</h2>
-                                    <span class="gallery__filter-title">Фильтр:</span>
-                                    <select class="gallery__filter-select" name="filter" id="filter">
-                                        <option class="gallery__filter-option" value="painting" selected>
-                                            Живопись
-                                        </option>
-                                        <option class="gallery__filter-option" value="drawing">Рисунок</option>
-                                        <option class="gallery__filter-option" value="sculpture">Скульптура</option>
+                                    <span class="gallery__span">Фильтр:</span>
+                                    <select class="gallery__select" name="filter" id="filter">
+                                        <option class="gallery__option" value="painting" selected>Живопись</option>
+                                        <option class="gallery__option" value="drawing">Рисунок</option>
+                                        <option class="gallery__option" value="sculpture">Скульптура</option>
                                     </select>
                                 </div>
-                                <p class="gallery__span span-normal">
+                                <p class="gallery__text span-normal">
                                     Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-                                    <button class="gallery__authorization button-reset">авторизуйтесь</button>
+                                    <button class="gallery__authorization button-reset" aria-label="авторизация">
+                                        авторизуйтесь
+                                    </button>
                                     , либо воспользуйтесь лицензией.
                                 </p>
                             </div>
@@ -422,19 +415,19 @@
                                     <ul class="gallery__list-swiper list-reset swiper-wrapper"></ul>
                                 </div>
                             </div>
-                            <p class="gallery__span-adaptive span-normal">
+                            <p class="gallery__text-adaptive span-normal">
                                 Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
                                 <button class="gallery__authorization button-reset">авторизуйтесь</button>
                                 , либо воспользуйтесь лицензией.
                             </p>
                             <div class="gallery__overlay flex">
                                 <div class="gallery__modal flex">
-                                    <button class="gallery__modal-button button-reset">
-                                        <svg class="gallery__modal-svg" xmlns="http://www.w3.org/2000/svg">
+                                    <button class="gallery__close-modal button-reset">
+                                        <svg class="gallery__cross-modal" xmlns="http://www.w3.org/2000/svg">
                                             <use xlink:href="#modal-cross"></use>
                                         </svg>
                                     </button>
-                                    <div class="gallery__modal-content flex"></div>
+                                    <div class="gallery__content-modal flex"></div>
                                 </div>
                             </div>
                         </div>
@@ -448,39 +441,39 @@
                             <div class="big-section__catalog catalog">
                                 <div class="catalog__country-box flex">
                                     <h2 class="catalog__heading heading">Каталог</h2>
-                                    <ul class="catalog__country-list list-reset flex">
-                                        <li class="catalog__country-item">
+                                    <ul class="catalog__list-country list-reset flex">
+                                        <li class="catalog__item-country">
                                             <a
-                                                class="catalog__country-step france"
+                                                class="catalog__step-country france"
                                                 href="#france"
                                                 data-step="#france"
                                             ></a>
                                         </li>
-                                        <li class="catalog__country-item">
+                                        <li class="catalog__item-country">
                                             <a
-                                                class="catalog__country-step germany"
+                                                class="catalog__step-country germany"
                                                 href="#germany"
                                                 data-step="#germany"
                                             ></a>
                                         </li>
-                                        <li class="catalog__country-item">
+                                        <li class="catalog__item-country">
                                             <a
-                                                class="catalog__country-step catalog__country-step--disabled italy"
+                                                class="catalog__step-country catalog__step-country--disabled italy"
                                                 href="#italy"
                                                 data-step="#italy"
                                                 tabindex="-1"
                                             ></a>
                                         </li>
-                                        <li class="catalog__country-item">
+                                        <li class="catalog__item-country">
                                             <a
-                                                class="catalog__country-step russia"
+                                                class="catalog__step-country russia"
                                                 href="#russia"
                                                 data-step="#russia"
                                             ></a>
                                         </li>
-                                        <li class="catalog__country-item">
+                                        <li class="catalog__item-country">
                                             <a
-                                                class="catalog__country-step belgium"
+                                                class="catalog__step-country belgium"
                                                 href="#belgium"
                                                 data-step="#belgium"
                                             ></a>
@@ -497,123 +490,121 @@
                                 </p>
 
                                 <div class="catalog__accordion flex">
-                                    <div class="catalog__box-right">
-                                        <ul class="catalog__time-list list-reset">
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
+                                    <div class="catalog__right">
+                                        <ul class="catalog__list-time list-reset">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">
                                                         C&nbsp;1400 по&nbsp;1499&nbsp;гг.
                                                     </span>
-                                                    <span class="catalog__button-circle flex">
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="1400"></div>
+                                                <div class="catalog__content-time" data-time="1400"></div>
                                             </li>
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">
                                                         C&nbsp;1500 по&nbsp;1599&nbsp;гг.
                                                     </span>
-                                                    <span class="catalog__button-circle flex">
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="1500"></div>
+                                                <div class="catalog__content-time" data-time="1500"></div>
                                             </li>
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">
                                                         C&nbsp;1600 по&nbsp;1699&nbsp;гг.
                                                     </span>
-                                                    <span class="catalog__button-circle flex">
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="1600"></div>
+                                                <div class="catalog__content-time" data-time="1600"></div>
                                             </li>
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">
                                                         C&nbsp;1700 по&nbsp;1799&nbsp;гг.
                                                     </span>
-                                                    <span class="catalog__button-circle flex">
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="1700"></div>
+                                                <div class="catalog__content-time" data-time="1700"></div>
                                             </li>
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">
                                                         C&nbsp;1800 по&nbsp;1899&nbsp;гг.
                                                     </span>
-                                                    <span class="catalog__button-circle flex">
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="1800"></div>
+                                                <div class="catalog__content-time" data-time="1800"></div>
                                             </li>
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">
                                                         C&nbsp;1900 по&nbsp;1999&nbsp;гг.
                                                     </span>
-                                                    <span class="catalog__button-circle flex">
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="1900"></div>
+                                                <div class="catalog__content-time" data-time="1900"></div>
                                             </li>
-                                            <li class="catalog__time-item">
-                                                <button class="catalog__button button-reset flex">
-                                                    <span class="catalog__button-span subject">
-                                                        C&nbsp;2000&nbsp;г.
-                                                    </span>
-                                                    <span class="catalog__button-circle flex">
+                                            <li class="catalog__item-time">
+                                                <button class="catalog__button-time button-reset flex">
+                                                    <span class="catalog__span-time subject">C&nbsp;2000&nbsp;г.</span>
+                                                    <span class="catalog__circle-time flex">
                                                         <svg
-                                                            class="catalog__button-svg"
+                                                            class="catalog__svg-time"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                         >
                                                             <use xlink:href="#catalog-arrow"></use>
                                                         </svg>
                                                     </span>
                                                 </button>
-                                                <div class="catalog__button-content" data-time="2000"></div>
+                                                <div class="catalog__content-time" data-time="2000"></div>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="catalog__box-left"></div>
+                                    <div class="catalog__left"></div>
                                 </div>
                             </div>
                             <div class="big-section__events events" id="events">
@@ -622,217 +613,206 @@
                                     <div class="events__swiper swiper">
                                         <ul class="events__list events__list--no-swiper swiper-wrapper list-reset flex">
                                             <li class="events__item swiper-slide flex">
-                                                <div class="events__card flex">
-                                                    <picture class="events__picture">
-                                                        <source
-                                                            srcset="./img/events-320-event01.webp"
-                                                            media="(max-width: 767px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-768-event01.webp"
-                                                            media="(max-width: 1023px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-1024-event01.webp"
-                                                            media="(max-width: 1919px)"
-                                                        />
-                                                        <img
-                                                            class="events__img lazyload"
-                                                            src="./img/"
-                                                            data-src="./img/events-1920-event01.webp"
-                                                            alt=""
-                                                        />
-                                                    </picture>
-                                                    <div class="events__information flex">
-                                                        <div class="events__box">
-                                                            <span class="events__span span-gray">Музей им. Щусева</span>
-                                                            <time class="events__span span-gray" datetime="41d">
-                                                                с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля
-                                                            </time>
-                                                            <h3 class="events__subject subject">
-                                                                Книжная гравюра в&nbsp;живом восприятии
-                                                            </h3>
-                                                            <p class="events__text text">
-                                                                Один из&nbsp;ведущих флорентийских художников
-                                                                Кватроченто, основатель художественной династии, которую
-                                                                продолжили его брат Давид и&nbsp;сын Ридольфо
-                                                            </p>
-                                                        </div>
-                                                        <a class="events__link" href="#">Подробнее</a>
+                                                <picture class="events__picture">
+                                                    <source
+                                                        srcset="./img/events-320-event01.webp"
+                                                        media="(max-width: 767px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-768-event01.webp"
+                                                        media="(max-width: 1023px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-1024-event01.webp"
+                                                        media="(max-width: 1919px)"
+                                                    />
+                                                    <img
+                                                        class="events__img lazyload"
+                                                        src="./img/"
+                                                        data-src="./img/events-1920-event01.webp"
+                                                        alt=""
+                                                    />
+                                                </picture>
+                                                <div class="events__information flex">
+                                                    <div class="events__box">
+                                                        <span class="events__span span-gray">Музей им. Щусева</span>
+                                                        <time class="events__span span-gray" datetime="41d">
+                                                            с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля
+                                                        </time>
+                                                        <h3 class="events__subject subject">
+                                                            Книжная гравюра в&nbsp;живом восприятии
+                                                        </h3>
+                                                        <p class="events__text text">
+                                                            Один из&nbsp;ведущих флорентийских художников Кватроченто,
+                                                            основатель художественной династии, которую продолжили его
+                                                            брат Давид и&nbsp;сын Ридольфо
+                                                        </p>
                                                     </div>
+                                                    <a class="events__link" href="#">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li class="events__item swiper-slide flex">
-                                                <div class="events__card flex">
-                                                    <picture class="events__picture">
-                                                        <source
-                                                            srcset="./img/events-320-event02.webp"
-                                                            media="(max-width: 767px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-768-event02.webp"
-                                                            media="(max-width: 1023px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-1024-event02.webp"
-                                                            media="(max-width: 1919px)"
-                                                        />
-                                                        <img
-                                                            class="events__img lazyload"
-                                                            src="./img/"
-                                                            data-src="./img/events-1920-event02.webp"
-                                                            alt=""
-                                                        />
-                                                    </picture>
-                                                    <div class="events__information flex">
-                                                        <div class="events__box">
-                                                            <span class="events__span span-gray">ММОМА</span>
-                                                            <time
-                                                                class="events__span span-gray"
-                                                                datetime="2021-03-24T19:00"
-                                                            >
-                                                                24&nbsp;марта 19:00
-                                                            </time>
-                                                            <h3 class="events__subject subject">
-                                                                &laquo;Открытая дискуссия&raquo;. Дмитрий Петров
-                                                                и&nbsp;Сергей Ильин
-                                                            </h3>
-                                                            <p class="events__text text">
-                                                                Высокий уровень вовлечения представителей целевой
-                                                                аудитории является чётким доказательством простого факта
-                                                            </p>
-                                                        </div>
-                                                        <a class="events__link" href="#">Подробнее</a>
+                                                <picture class="events__picture">
+                                                    <source
+                                                        srcset="./img/events-320-event02.webp"
+                                                        media="(max-width: 767px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-768-event02.webp"
+                                                        media="(max-width: 1023px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-1024-event02.webp"
+                                                        media="(max-width: 1919px)"
+                                                    />
+                                                    <img
+                                                        class="events__img lazyload"
+                                                        src="./img/"
+                                                        data-src="./img/events-1920-event02.webp"
+                                                        alt=""
+                                                    />
+                                                </picture>
+                                                <div class="events__information flex">
+                                                    <div class="events__box">
+                                                        <span class="events__span span-gray">ММОМА</span>
+                                                        <time
+                                                            class="events__span span-gray"
+                                                            datetime="2021-03-24T19:00"
+                                                        >
+                                                            24&nbsp;марта 19:00
+                                                        </time>
+                                                        <h3 class="events__subject subject">
+                                                            &laquo;Открытая дискуссия&raquo;. Дмитрий Петров
+                                                            и&nbsp;Сергей Ильин
+                                                        </h3>
+                                                        <p class="events__text text">
+                                                            Высокий уровень вовлечения представителей целевой аудитории
+                                                            является чётким доказательством простого факта
+                                                        </p>
                                                     </div>
+                                                    <a class="events__link" href="#">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li class="events__item swiper-slide flex events__item--hidden-768">
-                                                <div class="events__card flex">
-                                                    <picture class="events__picture">
-                                                        <source
-                                                            srcset="./img/events-320-event03.webp"
-                                                            media="(max-width: 767px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-768-event03.webp"
-                                                            media="(max-width: 1023px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-1024-event03.webp"
-                                                            media="(max-width: 1919px)"
-                                                        />
-                                                        <img
-                                                            class="events__img lazyload"
-                                                            src="./img/"
-                                                            data-src="./img/events-1920-event03.webp"
-                                                            alt=""
-                                                        />
-                                                    </picture>
-                                                    <div class="events__information flex">
-                                                        <div class="events__box">
-                                                            <span class="events__span span-gray">Еврейский музей</span>
-                                                            <time class="events__span span-gray" datetime="22d">
-                                                                с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля
-                                                            </time>
-                                                            <h3 class="events__subject subject">
-                                                                Выставка &laquo;Формация 2020&raquo;
-                                                            </h3>
-                                                            <p class="events__text text">
-                                                                Идейные соображения высшего порядка, а&nbsp;также
-                                                                современная методология разработки играет важную роль
-                                                                в&nbsp;формировании глубокомысленных рассуждений
-                                                            </p>
-                                                        </div>
-                                                        <a class="events__link" href="#">Подробнее</a>
+                                                <picture class="events__picture">
+                                                    <source
+                                                        srcset="./img/events-320-event03.webp"
+                                                        media="(max-width: 767px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-768-event03.webp"
+                                                        media="(max-width: 1023px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-1024-event03.webp"
+                                                        media="(max-width: 1919px)"
+                                                    />
+                                                    <img
+                                                        class="events__img lazyload"
+                                                        src="./img/"
+                                                        data-src="./img/events-1920-event03.webp"
+                                                        alt=""
+                                                    />
+                                                </picture>
+                                                <div class="events__information flex">
+                                                    <div class="events__box">
+                                                        <span class="events__span span-gray">Еврейский музей</span>
+                                                        <time class="events__span span-gray" datetime="22d">
+                                                            с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля
+                                                        </time>
+                                                        <h3 class="events__subject subject">
+                                                            Выставка &laquo;Формация 2020&raquo;
+                                                        </h3>
+                                                        <p class="events__text text">
+                                                            Идейные соображения высшего порядка, а&nbsp;также
+                                                            современная методология разработки играет важную роль
+                                                            в&nbsp;формировании глубокомысленных рассуждений
+                                                        </p>
                                                     </div>
+                                                    <a class="events__link" href="#">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li
                                                 class="events__item swiper-slide flex events__item--hidden events__item--hidden-768"
                                             >
-                                                <div class="events__card flex">
-                                                    <picture class="events__picture">
-                                                        <source
-                                                            srcset="./img/events-320-event04.webp"
-                                                            media="(max-width: 767px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-768-event04.webp"
-                                                            media="(max-width: 1023px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-1024-event04.webp"
-                                                            media="(max-width: 1919px)"
-                                                        />
-                                                        <img
-                                                            class="events__img lazyload"
-                                                            src="./img/"
-                                                            data-src="./img/events-1920-event04.webp"
-                                                            alt=""
-                                                        />
-                                                    </picture>
-                                                    <div class="events__information flex">
-                                                        <div class="events__box">
-                                                            <span class="events__span span-gray">ММАМ</span>
-                                                            <time class="events__span span-gray" datetime="43d">
-                                                                с&nbsp;8&nbsp;апреля по&nbsp;20&nbsp;мая
-                                                            </time>
-                                                            <h3 class="events__subject subject">
-                                                                Джон Винзор. Фотографии из&nbsp;серии
-                                                                &laquo;Метафора&raquo;
-                                                            </h3>
-                                                            <p class="events__text text">
-                                                                Один из&nbsp;ведущих флорентийских художников
-                                                                Кватроченто, основатель художественной династии, которую
-                                                                продолжили его брат Давид и&nbsp;сын Ридольфо
-                                                            </p>
-                                                        </div>
-                                                        <a class="events__link" href="#">Подробнее</a>
+                                                <picture class="events__picture">
+                                                    <source
+                                                        srcset="./img/events-320-event04.webp"
+                                                        media="(max-width: 767px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-768-event04.webp"
+                                                        media="(max-width: 1023px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-1024-event04.webp"
+                                                        media="(max-width: 1919px)"
+                                                    />
+                                                    <img
+                                                        class="events__img lazyload"
+                                                        src="./img/"
+                                                        data-src="./img/events-1920-event04.webp"
+                                                        alt=""
+                                                    />
+                                                </picture>
+                                                <div class="events__information flex">
+                                                    <div class="events__box">
+                                                        <span class="events__span span-gray">ММАМ</span>
+                                                        <time class="events__span span-gray" datetime="43d">
+                                                            с&nbsp;8&nbsp;апреля по&nbsp;20&nbsp;мая
+                                                        </time>
+                                                        <h3 class="events__subject subject">
+                                                            Джон Винзор. Фотографии из&nbsp;серии &laquo;Метафора&raquo;
+                                                        </h3>
+                                                        <p class="events__text text">
+                                                            Один из&nbsp;ведущих флорентийских художников Кватроченто,
+                                                            основатель художественной династии, которую продолжили его
+                                                            брат Давид и&nbsp;сын Ридольфо
+                                                        </p>
                                                     </div>
+                                                    <a class="events__link" href="#">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li
                                                 class="events__item swiper-slide flex events__item--hidden events__item--hidden-768"
                                             >
-                                                <div class="events__card flex">
-                                                    <picture class="events__picture">
-                                                        <source
-                                                            srcset="./img/events-320-event05.webp"
-                                                            media="(max-width: 767px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-768-event05.webp"
-                                                            media="(max-width: 1023px)"
-                                                        />
-                                                        <source
-                                                            srcset="./img/events-1024-event05.webp"
-                                                            media="(max-width: 1919px)"
-                                                        />
-                                                        <img
-                                                            class="events__img lazyload"
-                                                            src="./img/"
-                                                            data-src="./img/events-1920-event05.webp"
-                                                            alt=""
-                                                        />
-                                                    </picture>
-                                                    <div class="events__information flex">
-                                                        <div class="events__box">
-                                                            <span class="events__span span-gray">
-                                                                Третьяковка на&nbsp;Крымском валу
-                                                            </span>
-                                                            <time class="events__span span-gray" datetime="32d">
-                                                                с&nbsp;30&nbsp;марта по&nbsp;30&nbsp;апреля
-                                                            </time>
-                                                            <h3 class="events__subject subject">
-                                                                XXIV Международная биеннале молодого искусства
-                                                            </h3>
-                                                            <p class="events__text text">
-                                                                Внезапно, реплицированные с&nbsp;зарубежных источников,
-                                                                современные исследования
-                                                            </p>
-                                                        </div>
-                                                        <a class="events__link" href="#">Подробнее</a>
+                                                <picture class="events__picture">
+                                                    <source
+                                                        srcset="./img/events-320-event05.webp"
+                                                        media="(max-width: 767px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-768-event05.webp"
+                                                        media="(max-width: 1023px)"
+                                                    />
+                                                    <source
+                                                        srcset="./img/events-1024-event05.webp"
+                                                        media="(max-width: 1919px)"
+                                                    />
+                                                    <img
+                                                        class="events__img lazyload"
+                                                        src="./img/"
+                                                        data-src="./img/events-1920-event05.webp"
+                                                        alt=""
+                                                    />
+                                                </picture>
+                                                <div class="events__information flex">
+                                                    <div class="events__box">
+                                                        <span class="events__span span-gray">
+                                                            Третьяковка на&nbsp;Крымском валу
+                                                        </span>
+                                                        <time class="events__span span-gray" datetime="32d">
+                                                            с&nbsp;30&nbsp;марта по&nbsp;30&nbsp;апреля
+                                                        </time>
+                                                        <h3 class="events__subject subject">
+                                                            XXIV Международная биеннале молодого искусства
+                                                        </h3>
+                                                        <p class="events__text text">
+                                                            Внезапно, реплицированные с&nbsp;зарубежных источников,
+                                                            современные исследования
+                                                        </p>
                                                     </div>
+                                                    <a class="events__link" href="#">Подробнее</a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -850,208 +830,203 @@
                 <div class="editions__background">
                     <div class="editions__container container">
                         <div class="editions__content content flex">
-                            <div class="editions__left">
+                            <div class="editions__filter">
                                 <h2 class="editions__heading heading">Издания</h2>
-                                <button class="editions__button-filter button-reset flex">
-                                    <span class="editions__title-filter span-normal">Категории</span>
-                                    <svg class="editions__svg-filter" xmlns="http://www.w3.org/2000/svg">
+                                <button class="editions__button-accordion button-reset flex">
+                                    <span class="editions__span-accordion span-normal">Категории</span>
+                                    <svg class="editions__svg-accordion" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#editions-arrow"></use>
                                     </svg>
                                 </button>
-                                <ul class="editions__list-checkbox list-reset flex">
-                                    <li class="editions__item-checkbox flex" id="1">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="bestsellers" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Бестселлеры</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                <ul class="editions__list-category list-reset flex">
+                                    <li class="editions__item-category" data-category="1">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="bestsellers"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Бестселлеры</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="2">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="art" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Искусство</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="2">
+                                        <label class="editions__label-category flex">
+                                            <input class="editions__checkbox-category" type="checkbox" value="art" />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Искусство</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="3">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input
-                                                    class="editions__checkbox"
-                                                    type="checkbox"
-                                                    value="architecture"
-                                                />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Архитектура</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="3">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="architecture"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Архитектура</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="4">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input
-                                                    class="editions__checkbox"
-                                                    type="checkbox"
-                                                    value="design"
-                                                    checked
-                                                />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Дизайн</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="4">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="design"
+                                                checked
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Дизайн</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="5">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="fashion" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Мода</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="5">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="fashion"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Мода</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="6">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="child" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Детям</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="6">
+                                        <label class="editions__label-category flex">
+                                            <input class="editions__checkbox-category" type="checkbox" value="child" />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Детям</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="7">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="artistic" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">
-                                                    Художественная литература
-                                                </span>
+                                    <li class="editions__item-category" data-category="7">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="artistic"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">
+                                                Художественная литература
                                             </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="8">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="publicism" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Публицистика</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="8">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="publicism"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Публицистика</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="9">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="travel" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Путеводители</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="9">
+                                        <label class="editions__label-category flex">
+                                            <input class="editions__checkbox-category" type="checkbox" value="travel" />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Путеводители</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="10">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="philosophy" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">Философия</span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="10">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="philosophy"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Философия</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="11">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="study" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">
-                                                    Учебная литература
-                                                </span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="11">
+                                        <label class="editions__label-category flex">
+                                            <input class="editions__checkbox-category" type="checkbox" value="study" />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Учебная литература</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
 
-                                    <li class="editions__item-checkbox flex" id="12">
-                                        <label class="editions__label-checkbox flex">
-                                            <span class="editions__box-checkbox flex">
-                                                <input class="editions__checkbox" type="checkbox" value="magazines" />
-                                                <span class="editions__style-checkbox"></span>
-                                                <span class="editions__span-checkbox span-little">
-                                                    Журналы и газеты
-                                                </span>
-                                            </span>
-                                            <svg class="editions__svg-checkbox" xmlns="http://www.w3.org/2000/svg">
+                                    <li class="editions__item-category" data-category="12">
+                                        <label class="editions__label-category flex">
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                value="magazines"
+                                            />
+                                            <span class="editions__style-category"></span>
+                                            <span class="editions__span-category span-little">Журналы и газеты</span>
+                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#editions-cross"></use>
                                             </svg>
                                         </label>
                                     </li>
                                 </ul>
                                 <ul class="editions__list-checked list-reset flex"></ul>
-
-                                <span class="editions__price-title span-normal">Цена</span>
-                                <div class="editions__cost flex">
-                                    <span class="editions__span-cost span-little">От</span>
+                                <span class="editions__span-cost span-normal">Цена</span>
+                                <div class="editions__box-cost flex">
+                                    <span class="editions__from-cost span-little">От</span>
                                     <input
-                                        class="editions__input span-little"
-                                        type="number"
+                                        class="editions__input-cost span-little"
+                                        type="text"
                                         data-name="from"
                                         value="50"
                                     />
-                                    <span class="editions__span-cost span-little">до</span>
+                                    <span class="editions__to-cost span-little">до</span>
                                     <input
-                                        class="editions__input span-little"
-                                        type="number"
+                                        class="editions__input-cost span-little"
+                                        type="text"
                                         data-name="to"
                                         value="25000"
                                     />
-                                    <span class="editions__span-cost span-little">руб.</span>
+                                    <span class="editions__currency-cost span-little">руб.</span>
                                 </div>
                             </div>
-                            <div class="editions__products">
+                            <div class="editions__products flex">
                                 <div class="editions__navigation flex">
                                     <button
                                         class="editions__buttondark button-reset buttondark editions__buttondark--left"
@@ -1076,10 +1051,8 @@
                                     </button>
                                 </div>
                                 <div class="editions__swiper swiper">
-                                    <ul class="editions__list list-reset swiper-wrapper"></ul>
-                                    <div class="editions__null flex">
-                                        <span class="editions__null-span span-little">ТАКИХ ИЗДАНИЙ НЕТ</span>
-                                    </div>
+                                    <ul class="editions__list-swiper list-reset swiper-wrapper"></ul>
+                                    <span class="editions__null-swiper span-little">ТАКИХ ИЗДАНИЙ НЕТ</span>
                                 </div>
                             </div>
                         </div>
@@ -1090,66 +1063,64 @@
             <section class="main__projects projects" id="projects">
                 <div class="projects__container container">
                     <div class="projects__content content">
-                        <div class="projects__information">
-                            <h2 class="projects__heading heading">Проекты</h2>
-                            <p class="projects__text text">
-                                Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей
-                                деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи.
-                                А&nbsp;ещё независимые государства смешаны с&nbsp;не уникальными данными до&nbsp;степени
-                                совершённой неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде
-                                всего, постоянное информационно-пропагандистское
-                                <button class="projects__tooltip button-reset">
-                                    <svg class="projects__tooltip-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip"></use>
-                                    </svg>
-                                    <svg class="projects__tooltip-arrow" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip-arrow"></use>
-                                    </svg>
-                                    <svg class="projects__tooltip-cross" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip-cross"></use>
-                                    </svg>
-                                </button>
-                                <span class="projects__tooltip-span">
-                                    Пример современных тенденций&nbsp;&mdash; современная методология разработки
-                                </span>
-                                обеспечение нашей деятельности однозначно фиксирует необходимость экономической
-                                целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей
-                                оппозиции могут быть рассмотрены
-                                <button class="projects__tooltip button-reset">
-                                    <svg class="projects__tooltip-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip"></use>
-                                    </svg>
-                                    <svg class="projects__tooltip-arrow" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip-arrow"></use>
-                                    </svg>
-                                    <svg class="projects__tooltip-cross" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip-cross"></use>
-                                    </svg>
-                                </button>
-                                <span class="projects__tooltip-span">
-                                    Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают
-                                    у&nbsp;вас эмоции
-                                </span>
-                                исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
-                                <button class="projects__tooltip button-reset">
-                                    <svg class="projects__tooltip-svg" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip"></use>
-                                    </svg>
-                                    <svg class="projects__tooltip-arrow" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip-arrow"></use>
-                                    </svg>
-                                    <svg class="projects__tooltip-cross" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#projects-tooltip-cross"></use>
-                                    </svg>
-                                </button>
-                                <span class="projects__tooltip-span">В стремлении повысить качество</span>
-                                предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители
-                                современных социальных резервов призывают нас к&nbsp;новым свершениям, которые,
-                                в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными
-                                до&nbsp;степени совершённой неузнаваемости. Подробнее:
-                                <a class="projects__link" href="#">blanchard-art.ru/projects</a>
-                            </p>
-                        </div>
+                        <h2 class="projects__heading heading">Проекты</h2>
+                        <p class="projects__text text">
+                            Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей
+                            деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи.
+                            А&nbsp;ещё независимые государства смешаны с&nbsp;не уникальными данными до&nbsp;степени
+                            совершённой неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде
+                            всего, постоянное информационно-пропагандистское
+                            <button class="projects__button-tooltip button-reset">
+                                <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip"></use>
+                                </svg>
+                                <svg class="projects__arrow-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-arrow"></use>
+                                </svg>
+                                <svg class="projects__cross-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-cross"></use>
+                                </svg>
+                            </button>
+                            <span class="projects__span-tooltip">
+                                Пример современных тенденций&nbsp;&mdash; современная методология разработки
+                            </span>
+                            обеспечение нашей деятельности однозначно фиксирует необходимость экономической
+                            целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей
+                            оппозиции могут быть рассмотрены
+                            <button class="projects__button-tooltip button-reset">
+                                <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip"></use>
+                                </svg>
+                                <svg class="projects__arrow-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-arrow"></use>
+                                </svg>
+                                <svg class="projects__cross-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-cross"></use>
+                                </svg>
+                            </button>
+                            <span class="projects__span-tooltip">
+                                Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают
+                                у&nbsp;вас эмоции
+                            </span>
+                            исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
+                            <button class="projects__button-tooltip button-reset">
+                                <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip"></use>
+                                </svg>
+                                <svg class="projects__arrow-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-arrow"></use>
+                                </svg>
+                                <svg class="projects__cross-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-cross"></use>
+                                </svg>
+                            </button>
+                            <span class="projects__span-tooltip">В стремлении повысить качество</span>
+                            предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители
+                            современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
+                            очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой
+                            неузнаваемости. Подробнее:
+                            <a class="projects__link" href="#">blanchard-art.ru/projects</a>
+                        </p>
                         <h3 class="projects__subject subject">Партнеры проектов:</h3>
                         <div class="projects__partners flex">
                             <button class="projects__buttonlight button-reset projects__buttonlight--left">
@@ -1158,10 +1129,10 @@
                                 </svg>
                             </button>
                             <div class="projects__swiper swiper">
-                                <ul class="projects__list list-reset swiper-wrapper">
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                <ul class="projects__list-swiper list-reset swiper-wrapper">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners01.webp"
                                                     media="(max-width: 767px)"
@@ -1175,17 +1146,17 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners01 lazyload"
+                                                    class="projects__img-swiper size-partners01 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners01.webp"
-                                                    alt=""
+                                                    alt="Партнер Freelands Foundation"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners02.webp"
                                                     media="(max-width: 767px)"
@@ -1199,7 +1170,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners02 lazyload"
+                                                    class="projects__img-swiper size-partners02 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners02.webp"
                                                     alt=""
@@ -1207,9 +1178,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners03.webp"
                                                     media="(max-width: 767px)"
@@ -1223,7 +1194,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners03 lazyload"
+                                                    class="projects__img-swiper size-partners03 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners03.webp"
                                                     alt=""
@@ -1231,9 +1202,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners04.webp"
                                                     media="(max-width: 767px)"
@@ -1247,7 +1218,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners04 lazyload"
+                                                    class="projects__img-swiper size-partners04 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners04.webp"
                                                     alt=""
@@ -1255,9 +1226,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners05.webp"
                                                     media="(max-width: 767px)"
@@ -1271,7 +1242,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners05 lazyload"
+                                                    class="projects__img-swiper size-partners05 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners05.webp"
                                                     alt=""
@@ -1279,9 +1250,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners06.webp"
                                                     media="(max-width: 767px)"
@@ -1295,7 +1266,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners06 lazyload"
+                                                    class="projects__img-swiper size-partners06 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners06.webp"
                                                     alt=""
@@ -1303,9 +1274,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners07.webp"
                                                     media="(max-width: 767px)"
@@ -1319,7 +1290,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners07 lazyload"
+                                                    class="projects__img-swiper size-partners07 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners07.webp"
                                                     alt=""
@@ -1327,9 +1298,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners08.webp"
                                                     media="(max-width: 767px)"
@@ -1343,7 +1314,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners08 lazyload"
+                                                    class="projects__img-swiper size-partners08 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners08.webp"
                                                     alt=""
@@ -1351,9 +1322,9 @@
                                             </picture>
                                         </a>
                                     </li>
-                                    <li class="projects__item swiper-slide">
-                                        <a class="projects__link-page flex" href="#">
-                                            <picture class="projects__picture">
+                                    <li class="projects__item-swiper flex swiper-slide">
+                                        <a class="projects__link-swiper flex" href="#">
+                                            <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners09.webp"
                                                     media="(max-width: 767px)"
@@ -1367,7 +1338,7 @@
                                                     media="(max-width: 1919px)"
                                                 />
                                                 <img
-                                                    class="projects__image size-partners09 lazyload"
+                                                    class="projects__img-swiper size-partners09 lazyload"
                                                     src="./img/"
                                                     data-src="./img/projects-1920-partners09.webp"
                                                     alt=""
@@ -1390,115 +1361,113 @@
             <section class="main__contacts contacts" id="contacts">
                 <div class="contacts__background">
                     <h2 class="contacts__heading heading">Контакты</h2>
-                    <div class="contacts__address-box contacts__address-box--320">
-                        <h3 class="contacts__address-subject subject">Шоурум №4</h3>
-                        <address class="contacts__address text">Леонтьевский переулок, дом 5/1</address>
-                    </div>
-                    <div class="contacts__box">
-                        <div class="contacts__left">
-                            <div class="contacts__content">
-                                <div class="contacts__address-box">
-                                    <h3 class="contacts__address-subject subject">Шоурум №4</h3>
-                                    <address class="contacts__address text">Леонтьевский переулок, дом 5/1</address>
-                                </div>
-                                <div class="contacts__form-box">
-                                    <h3 class="contacts__subject subject-alternative contacts__subject--form">
-                                        Заказать обратный звонок
-                                    </h3>
-                                    <form
-                                        class="contacts__form flex"
-                                        action="https://jsonplaceholder.typicode.com/posts"
-                                        method="POST"
-                                    >
-                                        <div class="contacts__input-container flex">
-                                            <div class="contacts__input-box flex">
-                                                <input
-                                                    class="contacts__input text flex"
-                                                    type="text"
-                                                    name="Имя"
-                                                    placeholder="Имя*"
-                                                    data-validate-field="name"
-                                                />
-                                            </div>
-                                            <div class="contacts__input-box flex">
-                                                <input
-                                                    class="contacts__input text flex"
-                                                    type="tel"
-                                                    name="Телефон"
-                                                    placeholder="Телефон*"
-                                                    data-validate-field="tel"
-                                                    data-validate-rules="phone"
-                                                />
-                                            </div>
-                                        </div>
-                                        <button class="contacts__button button-reset button-big">Заказать</button>
-                                    </form>
-                                </div>
-                                <div class="contacts__social-box">
-                                    <h3 class="contacts__subject subject-alternative contacts__subject--links">
-                                        Связаться в&nbsp;один клик
-                                    </h3>
-                                    <div class="contacts__social-links flex">
-                                        <a class="contacts__social-link" href="#">
-                                            <svg class="contacts__social-svg" xmlns="http://www.w3.org/2000/svg">
+                    <div class="contacts__box flex">
+                        <div class="contacts__content">
+                            <div class="contacts__adaptive">
+                                <h3 class="contacts__subject subject" id="address">Шоурум №4</h3>
+                                <address class="contacts__address text">Леонтьевский переулок, дом 5/1</address>
+                            </div>
+                            <div class="contacts__box-map" id="blanchardMap"></div>
+                            <div class="contacts__adaptive">
+                                <h3 class="contacts__subject subject-alternative" id="form">
+                                    Заказать обратный звонок
+                                </h3>
+                                <form
+                                    class="contacts__form"
+                                    action="https://jsonplaceholder.typicode.com/posts"
+                                    method="POST"
+                                >
+                                    <ul class="contacts__list-validate list-reset">
+                                        <li class="contacts__item-validate flex">
+                                            <input
+                                                class="contacts__input-validate text"
+                                                type="text"
+                                                name="Имя"
+                                                placeholder="Имя*"
+                                                data-validate-field="name"
+                                            />
+                                        </li>
+                                        <li class="contacts__item-validate flex">
+                                            <input
+                                                class="contacts__input-validate text"
+                                                type="tel"
+                                                name="Телефон"
+                                                placeholder="Телефон*"
+                                                data-validate-field="tel"
+                                                data-validate-rules="phone"
+                                            />
+                                        </li>
+                                    </ul>
+                                    <button class="contacts__button button-reset button-big">Заказать</button>
+                                </form>
+                                <h3 class="contacts__subject subject-alternative" id="social">
+                                    Связаться в&nbsp;один клик
+                                </h3>
+                                <ul class="contacts__list-social list-reset flex">
+                                    <li class="contacts__item-social">
+                                        <a class="contacts__link-social" href="#">
+                                            <svg class="contacts__svg-social" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#whatsapp"></use>
                                             </svg>
                                         </a>
-                                        <a class="contacts__social-link" href="#">
-                                            <svg class="contacts__social-svg" xmlns="http://www.w3.org/2000/svg">
+                                    </li>
+                                    <li class="contacts__item-social">
+                                        <a class="contacts__link-social" href="#">
+                                            <svg class="contacts__svg-social" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#telegram"></use>
                                             </svg>
                                         </a>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <!--
-                        <div class="contacts__right" id="blanchardMap"></div>
-                        -->
                     </div>
                 </div>
             </section>
         </main>
         <footer class="footer">
-            <div class="footer__box">
+            <div class="footer__background">
                 <div class="footer__container container flex">
-                    <div class="logo footer__logo">
-                        <a class="logo__link" href="#">
-                            <picture class="logo__picture">
-                                <source srcset="./img/logo-320-footer.webp" media="(max-width: 767px)" />
-                                <source srcset="./img/logo-768-footer.webp" media="(max-width: 1023px)" />
-                                <source srcset="./img/logo-1024-footer.webp" media="(max-width: 1919px)" />
-                                <img
-                                    class="logo__image logo-footer lazyload"
-                                    src="./img/"
-                                    data-src="./img/logo-1920-footer.webp"
-                                    alt="Логотип сайта"
-                                />
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="footer__links flex">
-                        <a class="footer__link" href="#">
-                            <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#vk"></use>
-                            </svg>
-                        </a>
-                        <a class="footer__link" href="#">
-                            <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#instagram"></use>
-                            </svg>
-                        </a>
-                        <a class="footer__link" href="#">
-                            <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="#facebook"></use>
-                            </svg>
-                        </a>
-                    </div>
+                    <a class="footer__logo link" href="#" aria-label="логотип сайта">
+                        <picture class="footer__picture">
+                            <source srcset="./img/logo-320-footer.webp" media="(max-width: 767px)" />
+                            <source srcset="./img/logo-768-footer.webp" media="(max-width: 1023px)" />
+                            <source srcset="./img/logo-1024-footer.webp" media="(max-width: 1919px)" />
+                            <img
+                                class="footer__img lazyload"
+                                src="./img/"
+                                data-src="./img/logo-1920-footer.webp"
+                                alt="Логотип сайта"
+                            />
+                        </picture>
+                    </a>
+                    <ul class="footer__list-social list-reset flex">
+                        <li class="footer__item-social">
+                            <a class="footer__link-social" href="#">
+                                <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__item-social">
+                            <a class="footer__link-social" href="#">
+                                <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__item-social">
+                            <a class="footer__link-social" href="#">
+                                <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </footer>
-        <svg class="main__sprite">
+        <svg class="sprite">
             <symbol viewBox="0 0 6 3" id="login-animation">
                 <path d="M0.25 2.11119V0.666748H5.99194V2.11114L0.25 2.11119Z" />
             </symbol>
@@ -1605,6 +1574,15 @@
                     d="M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z"
                     fill="white"
                 />
+            </symbol>
+            <symbol viewBox="0 0 12 13" id="plus">
+                <path d="M7 0.5H5V5.5H0V7.5H5V12.5H7V7.5H12V5.5H7V0.5Z" />
+            </symbol>
+            <symbol viewBox="0 0 12 3" id="minus">
+                <path d="M12 0.5H0V2.5H12V0.5Z" />
+            </symbol>
+            <symbol viewBox="0 0 20 20" id="geolocation">
+                <path d="M20 0L0 10L6.875 13.125L10 20L20 0Z" />
             </symbol>
             <symbol viewBox="0 0 40 40" id="whatsapp">
                 <g clip-path="url(#clip0_191243_648)">
