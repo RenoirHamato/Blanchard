@@ -1205,7 +1205,7 @@ function init() {
         {},
         {
             iconLayout: 'default#image',
-            iconImageHref: '../img/contacts-map-point.svg',
+            iconImageHref: '../img/contacts-map-point.png',
             iconImageSize: [20, 20],
             iconImageOffset: [-6, -16],
         }
