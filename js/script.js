@@ -160,23 +160,32 @@ document.addEventListener('click', function (event) {
 /* AUTO SWIPER */
 const previewSlider = document.querySelector('.header__wrapper');
 const arrowImages = Array.from(previewSlider.children);
-let numberImage = 0;
 let oldImage = 0;
+let newImage = 0;
+let startTime = null;
+let controlReturn = false;
 
-setInterval(() => {
-    oldImage = numberImage;
-    numberImage = (numberImage + 1) % arrowImages.length;
-    arrowImages[numberImage].classList.add('header__image--active');
-    if (oldImage == arrowImages.length - 1) {
-        arrowImages[numberImage].classList.add('header__image--return');
-        setTimeout(() => {
-            arrowImages[numberImage].classList.remove('header__image--return');
-        }, 2000);
+function imageChange(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    if (elapsed > 9000 && controlReturn == false) {
+        arrowImages[oldImage].classList.remove('header__image--return');
+        oldImage = newImage;
+        newImage = (newImage + 1) % arrowImages.length;
+        if (oldImage == arrowImages.length - 1) {
+            arrowImages[oldImage].classList.add('header__image--return');
+        }
+        arrowImages[newImage].classList.add('header__image--active');
+        controlReturn = true;
     }
-    setTimeout(() => {
+    if (elapsed > 10000) {
         arrowImages[oldImage].classList.remove('header__image--active');
-    }, 1000);
-}, 8000);
+        startTime = timestamp;
+        controlReturn = false;
+    }
+    requestAnimationFrame(imageChange);
+}
+requestAnimationFrame(imageChange);
 
 /* BUTTON MAILING */
 document.querySelector('.preview__button').addEventListener('click', function () {
@@ -234,6 +243,51 @@ document.body.addEventListener('keyup', function (event) {
     }
 });
 
+/* SELECT */
+const element = document.querySelector('.gallery__select');
+const choices = new Choices(element, {
+    searchEnabled: false,
+    itemSelectText: '',
+    allowHTML: false,
+    shouldSort: true,
+    position: 'bottom',
+    classNames: {
+        containerOuter: 'choices',
+        containerInner: 'choices__inner',
+        input: 'choices__input',
+        inputCloned: 'choices__input--cloned',
+        list: 'choices__list',
+        listItems: 'choices__list--multiple',
+        listSingle: 'choices__list--single',
+        listDropdown: 'choices__list--dropdown',
+        item: 'choices__item',
+        itemSelectable: 'choices__item--selectable',
+        itemDisabled: 'choices__item--disabled',
+        itemChoice: 'choices__item--choice',
+        placeholder: 'choices__placeholder',
+        group: 'choices__group',
+        groupHeading: 'choices__heading',
+        button: 'choices__button',
+        activeState: 'is-active',
+        focusState: 'is-focused',
+        openState: 'is-open',
+        disabledState: 'is-disabled',
+        highlightedState: 'is-highlighted',
+        selectedState: 'is-selected',
+        flippedState: 'is-flipped',
+        loadingState: 'is-loading',
+        noResults: 'has-no-results',
+        noChoices: 'has-no-choices',
+    },
+});
+
+element.addEventListener('showDropdown', function () {
+    document.querySelectorAll('.choices__item--choice').forEach(function (elem) {
+        elem.classList.remove('is-highlighted');
+    });
+    document.querySelector('.choices__item--choice:first-child').classList.add('is-highlighted');
+});
+
 (async function getResponse() {
     const library = await fetch('./json/pictures.json');
     const content = await library.json();
@@ -252,7 +306,7 @@ document.body.addEventListener('keyup', function (event) {
                             <source srcset="${item.img320}" media="(max-width: 767px)">
                             <source srcset="${item.img768}" media="(max-width: 1023px)">
                             <source srcset="${item.img1024}" media="(max-width: 1919px)">
-                            <img class="gallery__img-swiper lazyload" src="${item.img1920}" alt="">
+                            <img class="gallery__img-swiper" src="${item.img1920}" alt="${item.alt}">
                         </picture>
                     </button>
                 </li>`;
@@ -279,7 +333,7 @@ document.body.addEventListener('keyup', function (event) {
                 <source srcset="${filteredModals[index].modal320}" media="(max-width: 767px)" />
                 <source srcset="${filteredModals[index].modal768}" media="(max-width: 1023px)" />
                 <source srcset="${filteredModals[index].modal1024}" media="(max-width: 1919px)" />
-                <img class="gallery__img-modal lazyload" src="${filteredModals[index].modal1920}" alt="" />
+                <img class="gallery__img-modal" src="${filteredModals[index].modal1920}" alt="${filteredModals[index].altModal}" />
             </picture>
             <div class="gallery__information-modal">
                 <div class="gallery__scroll-modal">
@@ -357,6 +411,15 @@ document.body.addEventListener('keyup', function (event) {
         observeParents: true,
         observeSlideChildren: true,
         breakpoints: {
+            3840: {
+                slidesPerView: 3,
+                spaceBetween: 100,
+                slidesPerGroup: 3,
+                grid: {
+                    rows: 2,
+                    fill: 'row',
+                },
+            },
             1920: {
                 slidesPerView: 3,
                 spaceBetween: 50,
@@ -403,11 +466,13 @@ document.body.addEventListener('keyup', function (event) {
     });
 
     let newSelect = select.value;
+    document.querySelector('.is-selected').remove();
     showCards(newSelect);
 
     select.addEventListener('change', function (event) {
         clearing(listGallery);
         newSelect = event.target.value;
+        document.querySelector('.is-selected').remove();
         showCards(newSelect);
         swiperGallery.slideTo(0, 300);
     });
@@ -417,44 +482,92 @@ document.body.addEventListener('keyup', function (event) {
 (async function getResponse() {
     const catalogLibrary = await fetch('./json/catalog.json');
     const catalogContent = await catalogLibrary.json();
+    let mapCountry = catalogContent.map(item => item.country);
+    let arrayCountry = mapCountry.filter(uniqueness);
+    let arrayArtist = catalogContent.map(item => item.country + '-' + item.id);
+    console.log(arrayCountry);
+    console.log(arrayArtist);
     const catalogButton = document.querySelectorAll('.catalog__content-time');
     const catalogContentBox = document.querySelector('.catalog__left');
 
     /* TAB FUNCTION */
     function newTab(tabID) {
-        const oldTabBox = document.querySelector('.catalog__post--active');
         const newTabBox = document.querySelector(`[data-target="${tabID}"]`);
+        const oldTabBox = document.querySelector('.catalog__post--active');
 
         if (oldTabBox) {
             oldTabBox.classList.remove('catalog__post--active');
         }
 
-        if (!newTabBox && tabID != window.location.hash.split('-')[0]) {
-            catalogShow('');
+        newTabBox.classList.add('catalog__post--active');
+    }
+
+    function uniqueness(value, index, array) {
+        return array.indexOf(value) === index;
+    }
+
+    /* TAB OPEN */
+    function tabControl(hashView, event) {
+        let countryView = hashView.split('-')[0];
+        let status1 = arrayCountry.indexOf(countryView);
+        let status2 = arrayArtist.indexOf(hashView);
+        let status3 = arrayCountry.indexOf(hashView);
+        if (status1 !== -1 && status2 !== -1) {
+            catalogShow(hashView, countryView);
+            if (event === 'update') {
+                if (window.innerWidth < 1024) {
+                    document.querySelector('.catalog__left').scrollIntoView({
+                        behavior: 'smooth',
+                    });
+                } else {
+                    document.querySelector('.big-section').scrollIntoView({
+                        behavior: 'smooth',
+                    });
+                }
+            } else {
+                window.addEventListener('load', function () {
+                    setTimeout(function () {
+                        if (window.innerWidth < 1024) {
+                            document.querySelector('.catalog__left').scrollIntoView({
+                                behavior: 'smooth',
+                            });
+                        } else {
+                            document.querySelector('.big-section').scrollIntoView({
+                                behavior: 'smooth',
+                            });
+                        }
+                    }, 301);
+                });
+            }
+        } else if (status3 !== -1) {
+            catalogShow(hashView, countryView);
+            if (event === 'update') {
+                document.querySelector('.big-section').scrollIntoView({
+                    behavior: 'smooth',
+                });
+            } else {
+                window.addEventListener('load', function () {
+                    setTimeout(function () {
+                        document.querySelector('.big-section').scrollIntoView({
+                            behavior: 'smooth',
+                        });
+                    }, 301);
+                    console.log('yes');
+                });
+            }
+        } else if (event === 'open') {
+            catalogShow('#italy', '#italy');
         } else {
-            newTabBox.classList.add('catalog__post--active');
+            return;
         }
     }
 
     /* TAB SHOW */
-    function catalogShow(hash) {
+    function catalogShow(hash, country) {
+        let nowCountry = document.querySelector(`[data-step="${country}"`);
         const activeCountry = document.querySelector('.catalog__step-country--disabled');
         activeCountry.classList.remove('catalog__step-country--disabled');
         activeCountry.removeAttribute('tabindex');
-        let country = hash.split('-')[0];
-        let nowCountry = document.querySelector(`[data-step="${country}"`);
-        const defaultCountry = catalogContent.find(item => item.const);
-        if (!nowCountry && defaultCountry) {
-            country = defaultCountry.const;
-            hash = defaultCountry.const;
-            nowCountry = document.querySelector(`[data-step="${country}"`);
-        }
-        if (!nowCountry) {
-            country = '#italy';
-            hash = '#italy';
-            nowCountry = document.querySelector(`[data-step="${country}"`);
-        }
-
         nowCountry.classList.add('catalog__step-country--disabled');
         nowCountry.setAttribute('tabindex', '-1');
         const filteredCountry = catalogContent.filter(item => item.country === country);
@@ -464,7 +577,7 @@ document.body.addEventListener('keyup', function (event) {
                 <source srcset="./img/catalog-320-figure.webp" media="(max-width: 767px)" />
                 <source srcset="./img/catalog-768-figure.webp" media="(max-width: 1023px)" />
                 <source srcset="./img/catalog-1024-figure.webp" media="(max-width: 1919px)" />
-                <img class="catalog__img-null lazyload" src="./img/catalog-1920-figure.webp" alt="" />
+                <img class="catalog__img-null" src="./img/catalog-1920-figure.webp" alt="Прямоугольная фигура (заглушка)" />
             </picture>
             <div class="catalog__information-null">
                 <p class="catalog__text-null">Здесь пока пусто</p>
@@ -492,7 +605,7 @@ document.body.addEventListener('keyup', function (event) {
                     href="${country}-${item.id}"
                     data-step="${country}-${item.id}"
                 >
-                    ${item.name}
+                    ${item.preview}
                 </a>
             </li>`;
 
@@ -513,7 +626,7 @@ document.body.addEventListener('keyup', function (event) {
                             <source srcset="${item.content.img320}" media="(max-width: 767px)" />
                             <source srcset="${item.content.img768}" media="(max-width: 1023px)" />
                             <source srcset="${item.content.img1024}" media="(max-width: 1919px)" />
-                            <img class="catalog__img lazyload" src="${item.content.img1920}" alt="" />
+                            <img class="catalog__img" src="${item.content.img1920}" alt="${item.content.alt}" />
                         </picture>
 
                         <h3 class="catalog__subject subject">${item.name}</h3>
@@ -531,7 +644,7 @@ document.body.addEventListener('keyup', function (event) {
                             <source srcset="./img/catalog-320-null.webp" media="(max-width: 767px)" />
                             <source srcset="./img/catalog-768-null.webp" media="(max-width: 1023px)" />
                             <source srcset="./img/catalog-1024-null.webp" media="(max-width: 1919px)" />
-                            <img class="catalog__img lazyload" src="./img/catalog-1920-null.webp" alt="" />
+                            <img class="catalog__img" src="./img/catalog-1920-null.webp" alt="Портрет художника (заглушка)" />
                         </picture>
                         <h4 class="catalog__subject subject">Что мы о нём знаем?</h4>
                         <p class="catalog__description text">
@@ -563,13 +676,12 @@ document.body.addEventListener('keyup', function (event) {
                 elem.insertAdjacentHTML('beforeend', contentNullHTML);
             }
         });
-
         /* TAB DOWNLOAD */
-        if (hash != country) {
+        if (hash !== country) {
             newTab(hash);
         }
 
-        if (hash == country) {
+        if (hash === country) {
             if (!catalogContentBox.firstChild) {
                 catalogContentBox.insertAdjacentHTML(
                     'beforeend',
@@ -579,7 +691,7 @@ document.body.addEventListener('keyup', function (event) {
                             <source srcset="./img/catalog-320-null.webp" media="(max-width: 767px)" />
                             <source srcset="./img/catalog-768-null.webp" media="(max-width: 1023px)" />
                             <source srcset="./img/catalog-1024-null.webp" media="(max-width: 1919px)" />
-                            <img class="catalog__img lazyload" src="./img/catalog-1920-null.webp" alt="" />
+                            <img class="catalog__img" src="./img/catalog-1920-null.webp" alt="Портрет художника (заглушка)" />
                         </picture>
                         <h4 class="catalog__subject subject">Что мы о нём знаем?</h4>
                         <p class="catalog__description text">
@@ -599,32 +711,12 @@ document.body.addEventListener('keyup', function (event) {
             }
         }
 
-        /* TAB ARTISTS */
-        const stepArtists = document.querySelectorAll('.catalog__link-artist');
-        stepArtists.forEach(function (linkStep) {
-            linkStep.addEventListener('click', function () {
-                /*
-                console.log('trueClick');
-*/
-                newTab(this.getAttribute('data-step'));
-                if (window.innerWidth < 1024) {
-                    document.querySelector('.catalog__left').scrollIntoView({
-                        behavior: 'smooth',
-                    });
-                } else {
-                    document.querySelector('.big-section').scrollIntoView({
-                        behavior: 'smooth',
-                    });
-                }
-                window.control = true;
-            });
-        });
+        /* TAB LINK */
+        const nullLink = document.querySelectorAll('.catalog__link-null');
 
-        let nullLink = document.querySelectorAll('.catalog__link-null');
-        nullLink.forEach(function (elem) {
-            elem.addEventListener('click', function (event) {
-                const anchorTab = this.getAttribute('href').replace('#', '');
-                document.getElementById(anchorTab).scrollIntoView({
+        nullLink.forEach(function (linkStep) {
+            linkStep.addEventListener('click', function (event) {
+                document.querySelector('#gallery').scrollIntoView({
                     behavior: 'smooth',
                 });
                 event.preventDefault();
@@ -634,62 +726,25 @@ document.body.addEventListener('keyup', function (event) {
 
     /* TAB COUNTRY */
     /* event 1 */
-    window.control = false;
     let idTab = window.location.hash;
-    catalogShow(idTab);
+    tabControl(idTab, 'open');
+    console.log('event1');
 
     /* event 2 */
-    const stepCountry = document.querySelectorAll('.catalog__step-country');
-    stepCountry.forEach(function (linkStep) {
-        linkStep.addEventListener('click', function () {
-            /*
-            console.log('trueClick');
-            */
-            catalogShow(this.getAttribute('data-step'));
-            document.getElementById('catalog').scrollIntoView({
-                behavior: 'smooth',
-            });
-            window.control = true;
-        });
-    });
-
-    /* event 3 */
     window.addEventListener('hashchange', function () {
-        if (window.control == false) {
-            /*
-            console.log('trueHash');
-            console.log(window.location.hash.split('-').pop());
-            console.log(window.controlID);
-            */
-            if (window.controlID.includes(window.location.hash.split('-').pop())) {
-                newTab(window.location.hash);
-                /*
-                console.log('yes');
-                */
-            } else {
-                /*
-                console.log('show');
-                */
-                catalogShow(window.location.hash);
-            }
-        }
-        document.getElementById('catalog').scrollIntoView({
-            behavior: 'smooth',
-        });
-        window.control = false;
+        tabControl(window.location.hash, 'update');
     });
-})();
 
-const accordionCatalog = new Accordion('.catalog__list-time', {
-    elementClass: 'catalog__item-time',
-    triggerClass: 'catalog__button-time',
-    panelClass: 'catalog__content-time',
-    activeClass: 'catalog__item-time--active',
-});
+    const accordionCatalog = new Accordion('.catalog__list-time', {
+        duration: 300,
+        elementClass: 'catalog__item-time',
+        triggerClass: 'catalog__button-time',
+        panelClass: 'catalog__content-time',
+        activeClass: 'catalog__item-time--active',
+    });
 
-window.addEventListener('load', function () {
     accordionCatalog.open(0);
-});
+})();
 
 /* BUTTON-ALL */
 const buttonMore = document.querySelector('.events__button');
@@ -740,6 +795,18 @@ function adaptiveSwiperEvents() {
 }
 
 /* EDITIONS */
+const fromCost = document.querySelector('[data-name="from"');
+const toCost = document.querySelector('[data-name="to"');
+
+const inputCost = new Inputmask('numeric', {
+    rightAlign: false,
+    groupSeparator: ' ',
+    max: 50000,
+});
+
+inputCost.mask(fromCost);
+inputCost.mask(toCost);
+
 /* ПЕРЕМЕННЫЕ */
 const listCheckbox = document.querySelector('.editions__list-category'); /* лист невыбранных checkbox */
 const listChecked = document.querySelector('.editions__list-checked'); /* лист выбранных checkbox */
@@ -867,7 +934,7 @@ function unification(elementU) {
                         <source srcset="${requiredContent[number].img320}" media="(max-width: 767px)">
                         <source srcset="${requiredContent[number].img768}" media="(max-width: 1023px)">
                         <source srcset="${requiredContent[number].img1024}" media="(max-width: 1919px)">
-                        <img class="editions__img-swiper lazyload" src="${requiredContent[number].img1920}" alt="">
+                        <img class="editions__img-swiper lazyload" src="${requiredContent[number].img1920}" alt="${requiredContent[number].alt}">
                     </picture>
                     <div class="editions__box-swiper flex">
                         <div class="editions__information-swiper">
@@ -936,6 +1003,11 @@ function unification(elementU) {
                     lockClass: 'editions__pagination--lock',
                 },
                 breakpoints: {
+                    3840: {
+                        slidesPerView: 3,
+                        spaceBetween: 100,
+                        slidesPerGroup: 3,
+                    },
                     1920: {
                         slidesPerView: 3,
                         spaceBetween: 50,
@@ -980,8 +1052,10 @@ function unification(elementU) {
         }
     }
 
-    let from = document.querySelector('[data-name="from"').value;
-    let to = document.querySelector('[data-name="to"').value;
+    let from = Number(document.querySelector('[data-name="from"').value.replaceAll(' ', ''));
+    let to = Number(document.querySelector('[data-name="to"').value.replaceAll(' ', ''));
+
+    console.log(from, to);
 
     checkArrayEditions(nowCheckboxArrayEditions, from, to);
     checkbox.forEach(elemCheckbox => {
@@ -993,11 +1067,10 @@ function unification(elementU) {
     });
     cost.forEach(elemCost => {
         elemCost.addEventListener('change', function () {
-            from = document.querySelector('[data-name="from"').value;
-            to = document.querySelector('[data-name="to"').value;
+            from = Number(document.querySelector('[data-name="from"').value.replaceAll(' ', ''));
+            to = Number(document.querySelector('[data-name="to"').value.replaceAll(' ', ''));
             clearing(editions);
             nowCheckboxArrayEditions = Array.from(checkbox);
-            /*            console.log(document.querySelector('[data-name="from"').value);*/
             checkArrayEditions(nowCheckboxArrayEditions, from, to);
         });
     });
@@ -1028,9 +1101,10 @@ tooltip.forEach(function (tooltipButton) {
 
 function tooltipPosition() {
     for (let i = 0; i < tooltip.length; i++) {
+        let sizeArrow = document.querySelector('.projects__arrow-tooltip').clientHeight;
         let coord = tooltip[i].getBoundingClientRect();
         let coordX = coord.left + tooltip[i].clientWidth * 0.5;
-        let coordY = document.querySelector('.projects').clientHeight - tooltip[i].offsetTop + 12;
+        let coordY = document.querySelector('.projects').clientHeight - tooltip[i].offsetTop + sizeArrow;
         tooltipBox[i].style.setProperty('--mouse-x', coordX + 'px');
         tooltipBox[i].style.setProperty('bottom', coordY + 'px');
     }
@@ -1099,7 +1173,7 @@ const telephone = document.querySelector('input[type="tel"]');
 const im = new Inputmask('+7(999)-999-99-99');
 im.mask(telephone);
 
-new JustValidate('.contacts__form', {
+new window.JustValidate('.contacts__form', {
     colorWrong: '#d11616',
     rules: {
         name: {
@@ -1126,6 +1200,43 @@ new JustValidate('.contacts__form', {
             function: 'Недопустимый формат',
         },
     },
+    submitHandler: function (thisForm) {
+        let newFormData = new FormData(thisForm);
+        let formStartAnimation = null;
+        function messageAnimation(formTimestamp) {
+            if (!formStartAnimation) formStartAnimation = formTimestamp;
+            const elapsed = formTimestamp - formStartAnimation;
+            if (elapsed < 5000) {
+                requestAnimationFrame(messageAnimation);
+            } else {
+                document.querySelector('.contacts__status').classList.remove('contacts__status--successfully');
+                document.querySelector('.contacts__status').classList.remove('contacts__status--error');
+                document.querySelector('.contacts__button').classList.remove('contacts__button--disabled');
+            }
+        }
+
+        const ajaxSend = async formData => {
+            const response = await fetch('mail.php', {
+                method: 'POST',
+                body: formData,
+            });
+            if (response.ok) {
+                console.log('Отправлено');
+                document.querySelector('.contacts__preloader').classList.remove('contacts__preloader--active');
+                document.querySelector('.contacts__status').classList.add('contacts__status--successfully');
+                requestAnimationFrame(messageAnimation);
+            } else {
+                console.log('Не отправлено');
+                document.querySelector('.contacts__preloader').classList.remove('contacts__preloader--active');
+                document.querySelector('.contacts__status').classList.add('contacts__status--error');
+                requestAnimationFrame(messageAnimation);
+            }
+        };
+        document.querySelector('.contacts__button').classList.add('contacts__button--disabled');
+        document.querySelector('.contacts__preloader').classList.add('contacts__preloader--active');
+        ajaxSend(newFormData);
+        thisForm.reset();
+    },
 });
 
 /* YANDEX.MAP */
@@ -1134,7 +1245,7 @@ function init() {
     var myMap = new ymaps.Map(
             'blanchardMap',
             {
-                center: [55.7607, 37.6147],
+                center: [55.7595, 37.6099],
                 zoom: 14.223,
                 controls: [],
             },
@@ -1148,28 +1259,17 @@ function init() {
                 '<button class="contacts__button-map button-reset" id="zoom-out"><svg class="contacts__svg-map minus" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#minus"></use></svg></button>' +
                 '</div>',
             {
-                // Переопределяем методы макета, чтобы выполнять дополнительные действия
-                // при построении и очистке макета.
                 build: function () {
-                    // Вызываем родительский метод build.
                     ZoomLayout.superclass.build.call(this);
-
-                    // Привязываем функции-обработчики к контексту и сохраняем ссылки
-                    // на них, чтобы потом отписаться от событий.
                     this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
                     this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
-
-                    // Начинаем слушать клики на кнопках макета.
-                    $('#zoom-in').bind('click', this.zoomInCallback);
-                    $('#zoom-out').bind('click', this.zoomOutCallback);
+                    document.getElementById('zoom-in').addEventListener('click', this.zoomInCallback);
+                    document.getElementById('zoom-out').addEventListener('click', this.zoomOutCallback);
                 },
 
                 clear: function () {
-                    // Снимаем обработчики кликов.
-                    $('#zoom-in').unbind('click', this.zoomInCallback);
-                    $('#zoom-out').unbind('click', this.zoomOutCallback);
-
-                    // Вызываем родительский метод clear.
+                    document.getElementById('zoom-in').removeEventListener('click', this.zoomInCallback);
+                    document.getElementById('zoom-out').removeEventListener('click', this.zoomOutCallback);
                     ZoomLayout.superclass.clear.call(this);
                 },
 
@@ -1205,12 +1305,17 @@ function init() {
         {},
         {
             iconLayout: 'default#image',
-            iconImageHref: '../img/contacts-map-point.png',
+            iconImageHref: '../img/contacts-map-point.svg',
             iconImageSize: [20, 20],
             iconImageOffset: [-6, -16],
         }
     );
 
+    myMap.behaviors.disable('scrollZoom');
+    myMap.behaviors.enable('multiTouch');
+    myMap.events.add('click', function () {
+        myMap.behaviors.enable('scrollZoom');
+    });
     myMap.geoObjects.add(myPlacemark);
     myMap.controls.add(zoomControl, {
         position: {
@@ -1220,3 +1325,13 @@ function init() {
     });
     myMap.controls.add(geolocationControl);
 }
+
+/*
+function scrollIntoView(el) {
+    const elTop = el.getBoundingClientRect().top;
+    const bodyScrollTop = document.body.scrollTop;
+    const step = timestamp => {
+        
+    };
+}
+*/

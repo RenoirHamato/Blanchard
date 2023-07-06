@@ -7,15 +7,16 @@
         <meta name="description" content="необходимо описание" />
         <title>Blanchard</title>
         <link rel="shortcut icon" href="./img/favicon.svg" type="image/svg" />
-        <link rel="stylesheet" href="./libs/accordion/accordion.min.css" />
-        <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./libs/simplebar/simplebar.css" />
+        <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="./libs/accordion/accordion.min.css" />
         <link rel="stylesheet" href="./css/normalize.css" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/media.css" />
+        <link rel="stylesheet" href="./css/style.pref.css" />
+        <link rel="stylesheet" href="./css/media.pref.css" />
         <script src="./libs/lazyload/lazyload.min.js" defer></script>
         <script src="./libs/focus-visible/focus-visible.js" defer></script>
         <script src="./libs/simplebar/simplebar.min.js" defer></script>
+        <script src="./libs/choices/choices.min.js" defer></script>
         <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
         <script src="./libs/accordion/accordion.min.js" defer></script>
         <script src="./libs/inputmask/inputmask.min.js" defer></script>
@@ -24,7 +25,6 @@
             src="https://api-maps.yandex.ru/2.1/?apikey=4458dd5c-4b45-4e7b-9a6f-3312d9e02a7c&lang=ru_RU"
             defer
         ></script>
-        <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript" defer></script>
         <script src="./js/script.js" defer></script>
     </head>
 
@@ -38,12 +38,17 @@
                         <span class="header__line header__line--passive"></span>
                         <span class="header__line header__line--passive"></span>
                     </button>
-                    <a class="header__logo link" href="#" aria-label="логотип сайта">
+                    <a class="header__logo link" href="" aria-label="логотип сайта">
                         <picture class="header__picture">
                             <source srcset="./img/logo-320-header.webp" media="(max-width: 767px)" />
                             <source srcset="./img/logo-768-header.webp" media="(max-width: 1023px)" />
                             <source srcset="./img/logo-1024-header.webp" media="(max-width: 1919px)" />
-                            <img class="header__img" src="./img/logo-1920-header.webp" alt="логотип сайта" />
+                            <img
+                                class="header__img lazyload"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
+                                data-src="./img/logo-1920-header.webp"
+                                alt="логотип сайта"
+                            />
                         </picture>
                     </a>
                     <div class="header__box">
@@ -137,22 +142,22 @@
                                     <div class="header__scroll-select">
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
-                                                <a class="header__link-page tintoretto" href="#">
+                                                <a class="header__link-page tintoretto" href="">
                                                     <span class="header__span-page">Тинторетто</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page friedrich" href="#">
+                                                <a class="header__link-page friedrich" href="">
                                                     <span class="header__span-page">Фридрих</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page leonardo" href="#">
+                                                <a class="header__link-page leonardo" href="">
                                                     <span class="header__span-page">Леонардо</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page verrocchio" href="#">
+                                                <a class="header__link-page verrocchio" href="">
                                                     <span class="header__span-page">Верроккьо</span>
                                                 </a>
                                             </li>
@@ -171,22 +176,22 @@
                                     <div class="header__scroll-select">
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
-                                                <a class="header__link-page monet" href="#">
+                                                <a class="header__link-page monet" href="">
                                                     <span class="header__span-page">Моне</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page sisley" href="#">
+                                                <a class="header__link-page sisley" href="">
                                                     <span class="header__span-page">Сислей</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page mane" href="#">
+                                                <a class="header__link-page mane" href="">
                                                     <span class="header__span-page">Мане</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page renoir" href="#">
+                                                <a class="header__link-page renoir" href="">
                                                     <span class="header__span-page">Ренуар</span>
                                                 </a>
                                             </li>
@@ -205,22 +210,22 @@
                                     <div class="header__scroll-select">
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
-                                                <a class="header__link-page van-gogh" href="#">
+                                                <a class="header__link-page van-gogh" href="">
                                                     <span class="header__span-page">Ван Гог</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page cezanne" href="#">
+                                                <a class="header__link-page cezanne" href="">
                                                     <span class="header__span-page">Сезанн</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page gauguin" href="#">
+                                                <a class="header__link-page gauguin" href="">
                                                     <span class="header__span-page">Гоген</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page seurat" href="#">
+                                                <a class="header__link-page seurat" href="">
                                                     <span class="header__span-page">Сёра</span>
                                                 </a>
                                             </li>
@@ -239,22 +244,22 @@
                                     <div class="header__scroll-select">
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
-                                                <a class="header__link-page kandinsky" href="#">
+                                                <a class="header__link-page kandinsky" href="">
                                                     <span class="header__span-page">Кандинский</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page marinetti" href="#">
+                                                <a class="header__link-page marinetti" href="">
                                                     <span class="header__span-page">Маринетти</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page malevich" href="#">
+                                                <a class="header__link-page malevich" href="">
                                                     <span class="header__span-page">Малевич</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page picasso" href="#">
+                                                <a class="header__link-page picasso" href="">
                                                     <span class="header__span-page">Пикассо</span>
                                                 </a>
                                             </li>
@@ -273,27 +278,27 @@
                                     <div class="header__scroll-select">
                                         <ul class="header__list-page list-reset">
                                             <li class="header__item-page">
-                                                <a class="header__link-page carra" href="#">
+                                                <a class="header__link-page carra" href="">
                                                     <span class="header__span-page">Карра</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page pratella" href="#">
+                                                <a class="header__link-page pratella" href="">
                                                     <span class="header__span-page">Прателла</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page severini" href="#">
+                                                <a class="header__link-page severini" href="">
                                                     <span class="header__span-page">Северини</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page balla" href="#">
+                                                <a class="header__link-page balla" href="">
                                                     <span class="header__span-page">Балла</span>
                                                 </a>
                                             </li>
                                             <li class="header__item-page">
-                                                <a class="header__link-page bochonni" href="#">
+                                                <a class="header__link-page bochonni" href="">
                                                     <span class="header__span-page">Бочонни</span>
                                                 </a>
                                             </li>
@@ -391,6 +396,7 @@
                                 <div class="gallery__navigation flex">
                                     <button
                                         class="gallery__buttondark button-reset buttondark gallery__buttondark--left"
+                                        aria-label="Свайп влево"
                                     >
                                         <svg
                                             class="gallery__buttondark-svg buttondark-svg"
@@ -402,6 +408,7 @@
                                     <span class="gallery__number text"></span>
                                     <button
                                         class="gallery__buttondark button-reset buttondark gallery__buttondark--right"
+                                        aria-label="Свайп вправо"
                                     >
                                         <svg
                                             class="gallery__buttondark-svg buttondark-svg"
@@ -447,6 +454,7 @@
                                                 class="catalog__step-country france"
                                                 href="#france"
                                                 data-step="#france"
+                                                aria-label="Франция"
                                             ></a>
                                         </li>
                                         <li class="catalog__item-country">
@@ -454,6 +462,7 @@
                                                 class="catalog__step-country germany"
                                                 href="#germany"
                                                 data-step="#germany"
+                                                aria-label="Германия"
                                             ></a>
                                         </li>
                                         <li class="catalog__item-country">
@@ -461,6 +470,7 @@
                                                 class="catalog__step-country catalog__step-country--disabled italy"
                                                 href="#italy"
                                                 data-step="#italy"
+                                                aria-label="Италия"
                                                 tabindex="-1"
                                             ></a>
                                         </li>
@@ -469,6 +479,7 @@
                                                 class="catalog__step-country russia"
                                                 href="#russia"
                                                 data-step="#russia"
+                                                aria-label="Россия"
                                             ></a>
                                         </li>
                                         <li class="catalog__item-country">
@@ -476,6 +487,7 @@
                                                 class="catalog__step-country belgium"
                                                 href="#belgium"
                                                 data-step="#belgium"
+                                                aria-label="Бельгия"
                                             ></a>
                                         </li>
                                     </ul>
@@ -628,9 +640,9 @@
                                                     />
                                                     <img
                                                         class="events__img lazyload"
-                                                        src="./img/"
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                         data-src="./img/events-1920-event01.webp"
-                                                        alt=""
+                                                        alt="Книжная гравюра в живом восприятии (превью)"
                                                     />
                                                 </picture>
                                                 <div class="events__information flex">
@@ -648,7 +660,7 @@
                                                             брат Давид и&nbsp;сын Ридольфо
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="#">Подробнее</a>
+                                                    <a class="events__link" href="">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li class="events__item swiper-slide flex">
@@ -667,9 +679,9 @@
                                                     />
                                                     <img
                                                         class="events__img lazyload"
-                                                        src="./img/"
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                         data-src="./img/events-1920-event02.webp"
-                                                        alt=""
+                                                        alt="«Открытая дискуссия». Дмитрий Петров и Сергей Ильин (превью)"
                                                     />
                                                 </picture>
                                                 <div class="events__information flex">
@@ -690,7 +702,7 @@
                                                             является чётким доказательством простого факта
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="#">Подробнее</a>
+                                                    <a class="events__link" href="">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li class="events__item swiper-slide flex events__item--hidden-768">
@@ -709,9 +721,9 @@
                                                     />
                                                     <img
                                                         class="events__img lazyload"
-                                                        src="./img/"
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                         data-src="./img/events-1920-event03.webp"
-                                                        alt=""
+                                                        alt="Выставка «Формация 2020» (превью)"
                                                     />
                                                 </picture>
                                                 <div class="events__information flex">
@@ -729,7 +741,7 @@
                                                             в&nbsp;формировании глубокомысленных рассуждений
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="#">Подробнее</a>
+                                                    <a class="events__link" href="">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li
@@ -750,9 +762,9 @@
                                                     />
                                                     <img
                                                         class="events__img lazyload"
-                                                        src="./img/"
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                         data-src="./img/events-1920-event04.webp"
-                                                        alt=""
+                                                        alt="Джон Винзор. Фотографии из серии «Метафора» (превью)"
                                                     />
                                                 </picture>
                                                 <div class="events__information flex">
@@ -770,7 +782,7 @@
                                                             брат Давид и&nbsp;сын Ридольфо
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="#">Подробнее</a>
+                                                    <a class="events__link" href="">Подробнее</a>
                                                 </div>
                                             </li>
                                             <li
@@ -791,9 +803,9 @@
                                                     />
                                                     <img
                                                         class="events__img lazyload"
-                                                        src="./img/"
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                         data-src="./img/events-1920-event05.webp"
-                                                        alt=""
+                                                        alt="XXIV Международная биеннале молодого искусства (превью)"
                                                     />
                                                 </picture>
                                                 <div class="events__information flex">
@@ -812,7 +824,7 @@
                                                             современные исследования
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="#">Подробнее</a>
+                                                    <a class="events__link" href="">Подробнее</a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -844,6 +856,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="bestsellers"
                                                 value="bestsellers"
                                             />
                                             <span class="editions__style-category"></span>
@@ -856,7 +869,12 @@
 
                                     <li class="editions__item-category" data-category="2">
                                         <label class="editions__label-category flex">
-                                            <input class="editions__checkbox-category" type="checkbox" value="art" />
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                name="art"
+                                                value="art"
+                                            />
                                             <span class="editions__style-category"></span>
                                             <span class="editions__span-category span-little">Искусство</span>
                                             <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
@@ -870,6 +888,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="architecture"
                                                 value="architecture"
                                             />
                                             <span class="editions__style-category"></span>
@@ -885,6 +904,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="design"
                                                 value="design"
                                                 checked
                                             />
@@ -901,6 +921,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="fashion"
                                                 value="fashion"
                                             />
                                             <span class="editions__style-category"></span>
@@ -913,7 +934,12 @@
 
                                     <li class="editions__item-category" data-category="6">
                                         <label class="editions__label-category flex">
-                                            <input class="editions__checkbox-category" type="checkbox" value="child" />
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                name="child"
+                                                value="child"
+                                            />
                                             <span class="editions__style-category"></span>
                                             <span class="editions__span-category span-little">Детям</span>
                                             <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
@@ -927,6 +953,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="artistic"
                                                 value="artistic"
                                             />
                                             <span class="editions__style-category"></span>
@@ -944,6 +971,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="publicism"
                                                 value="publicism"
                                             />
                                             <span class="editions__style-category"></span>
@@ -956,7 +984,12 @@
 
                                     <li class="editions__item-category" data-category="9">
                                         <label class="editions__label-category flex">
-                                            <input class="editions__checkbox-category" type="checkbox" value="travel" />
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                name="travel"
+                                                value="travel"
+                                            />
                                             <span class="editions__style-category"></span>
                                             <span class="editions__span-category span-little">Путеводители</span>
                                             <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
@@ -970,6 +1003,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="philosophy"
                                                 value="philosophy"
                                             />
                                             <span class="editions__style-category"></span>
@@ -982,7 +1016,12 @@
 
                                     <li class="editions__item-category" data-category="11">
                                         <label class="editions__label-category flex">
-                                            <input class="editions__checkbox-category" type="checkbox" value="study" />
+                                            <input
+                                                class="editions__checkbox-category"
+                                                type="checkbox"
+                                                name="study"
+                                                value="study"
+                                            />
                                             <span class="editions__style-category"></span>
                                             <span class="editions__span-category span-little">Учебная литература</span>
                                             <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
@@ -996,6 +1035,7 @@
                                             <input
                                                 class="editions__checkbox-category"
                                                 type="checkbox"
+                                                name="magazines"
                                                 value="magazines"
                                             />
                                             <span class="editions__style-category"></span>
@@ -1014,14 +1054,18 @@
                                         class="editions__input-cost span-little"
                                         type="text"
                                         data-name="from"
+                                        name="from"
                                         value="50"
+                                        aria-label="от"
                                     />
                                     <span class="editions__to-cost span-little">до</span>
                                     <input
                                         class="editions__input-cost span-little"
                                         type="text"
                                         data-name="to"
+                                        name="to"
                                         value="25000"
+                                        aria-label="до"
                                     />
                                     <span class="editions__currency-cost span-little">руб.</span>
                                 </div>
@@ -1030,6 +1074,7 @@
                                 <div class="editions__navigation flex">
                                     <button
                                         class="editions__buttondark button-reset buttondark editions__buttondark--left"
+                                        aria-label="Свайп влево"
                                     >
                                         <svg
                                             class="editions__buttondark-svg buttondark-svg"
@@ -1041,6 +1086,7 @@
                                     <span class="editions__number text"></span>
                                     <button
                                         class="editions__buttondark button-reset buttondark editions__buttondark--right"
+                                        aria-label="Свайп вправо"
                                     >
                                         <svg
                                             class="editions__buttondark-svg buttondark-svg"
@@ -1070,7 +1116,7 @@
                             А&nbsp;ещё независимые государства смешаны с&nbsp;не уникальными данными до&nbsp;степени
                             совершённой неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде
                             всего, постоянное информационно-пропагандистское
-                            <button class="projects__button-tooltip button-reset">
+                            <button class="projects__button-tooltip button-reset" aria-label="Tooltip 1">
                                 <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#projects-tooltip"></use>
                                 </svg>
@@ -1087,7 +1133,7 @@
                             обеспечение нашей деятельности однозначно фиксирует необходимость экономической
                             целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей
                             оппозиции могут быть рассмотрены
-                            <button class="projects__button-tooltip button-reset">
+                            <button class="projects__button-tooltip button-reset" aria-label="Tooltip 2">
                                 <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#projects-tooltip"></use>
                                 </svg>
@@ -1103,7 +1149,7 @@
                                 у&nbsp;вас эмоции
                             </span>
                             исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
-                            <button class="projects__button-tooltip button-reset">
+                            <button class="projects__button-tooltip button-reset" aria-label="Tooltip 3">
                                 <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#projects-tooltip"></use>
                                 </svg>
@@ -1123,7 +1169,10 @@
                         </p>
                         <h3 class="projects__subject subject">Партнеры проектов:</h3>
                         <div class="projects__partners flex">
-                            <button class="projects__buttonlight button-reset projects__buttonlight--left">
+                            <button
+                                class="projects__buttonlight button-reset projects__buttonlight--left"
+                                aria-label="Свайп влево"
+                            >
                                 <svg class="projects__buttonlight-svg" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#swiper-arrow-left"></use>
                                 </svg>
@@ -1131,7 +1180,7 @@
                             <div class="projects__swiper swiper">
                                 <ul class="projects__list-swiper list-reset swiper-wrapper">
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners01.webp"
@@ -1147,15 +1196,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners01 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners01.webp"
-                                                    alt="Партнер Freelands Foundation"
+                                                    alt="Freelands Foundation"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners02.webp"
@@ -1171,15 +1220,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners02 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners02.webp"
-                                                    alt=""
+                                                    alt="Institute for Contemporary Art"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners03.webp"
@@ -1195,15 +1244,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners03 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners03.webp"
-                                                    alt=""
+                                                    alt="Workhouse Arts Center"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners04.webp"
@@ -1219,15 +1268,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners04 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners04.webp"
-                                                    alt=""
+                                                    alt="1849 Wine Co"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners05.webp"
@@ -1243,15 +1292,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners05 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners05.webp"
-                                                    alt=""
+                                                    alt="Hiscox Ltd"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners06.webp"
@@ -1267,15 +1316,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners06 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners06.webp"
-                                                    alt=""
+                                                    alt="Camden Arts Centre"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners07.webp"
@@ -1291,15 +1340,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners07 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners07.webp"
-                                                    alt=""
+                                                    alt="Cidrerie Stassen"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners08.webp"
@@ -1315,15 +1364,15 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners08 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners08.webp"
-                                                    alt=""
+                                                    alt="Watts Gallery - Artists' Village"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="#">
+                                        <a class="projects__link-swiper flex" href="">
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners09.webp"
@@ -1339,16 +1388,19 @@
                                                 />
                                                 <img
                                                     class="projects__img-swiper size-partners09 lazyload"
-                                                    src="./img/"
+                                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners09.webp"
-                                                    alt=""
+                                                    alt="EASD Valencia"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            <button class="projects__buttonlight button-reset projects__buttonlight--right">
+                            <button
+                                class="projects__buttonlight button-reset projects__buttonlight--right"
+                                aria-label="Свайп вправо"
+                            >
                                 <svg class="projects__buttonlight-svg" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#swiper-arrow-right"></use>
                                 </svg>
@@ -1374,8 +1426,10 @@
                                 </h3>
                                 <form
                                     class="contacts__form"
-                                    action="https://jsonplaceholder.typicode.com/posts"
+                                    id="subscription"
                                     method="POST"
+                                    enctype="multipart/form-data"
+                                    name="Форма"
                                 >
                                     <ul class="contacts__list-validate list-reset">
                                         <li class="contacts__item-validate flex">
@@ -1398,21 +1452,32 @@
                                             />
                                         </li>
                                     </ul>
-                                    <button class="contacts__button button-reset button-big">Заказать</button>
                                 </form>
+                                <div class="contacts__send flex">
+                                    <button
+                                        class="contacts__button button-reset button-big"
+                                        form="subscription"
+                                        type="sumbit"
+                                    >
+                                        Заказать
+                                    </button>
+                                    <div class="contacts__status flex">
+                                        <span class="contacts__preloader"></span>
+                                    </div>
+                                </div>
                                 <h3 class="contacts__subject subject-alternative" id="social">
                                     Связаться в&nbsp;один клик
                                 </h3>
                                 <ul class="contacts__list-social list-reset flex">
                                     <li class="contacts__item-social">
-                                        <a class="contacts__link-social" href="#">
+                                        <a class="contacts__link-social" href="" aria-label="Whatsapp">
                                             <svg class="contacts__svg-social" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#whatsapp"></use>
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="contacts__item-social">
-                                        <a class="contacts__link-social" href="#">
+                                        <a class="contacts__link-social" href="" aria-label="Telegram">
                                             <svg class="contacts__svg-social" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#telegram"></use>
                                             </svg>
@@ -1428,14 +1493,14 @@
         <footer class="footer">
             <div class="footer__background">
                 <div class="footer__container container flex">
-                    <a class="footer__logo link" href="#" aria-label="логотип сайта">
+                    <a class="footer__logo link" href="" aria-label="логотип сайта">
                         <picture class="footer__picture">
                             <source srcset="./img/logo-320-footer.webp" media="(max-width: 767px)" />
                             <source srcset="./img/logo-768-footer.webp" media="(max-width: 1023px)" />
                             <source srcset="./img/logo-1024-footer.webp" media="(max-width: 1919px)" />
                             <img
                                 class="footer__img lazyload"
-                                src="./img/"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                 data-src="./img/logo-1920-footer.webp"
                                 alt="Логотип сайта"
                             />
@@ -1443,21 +1508,21 @@
                     </a>
                     <ul class="footer__list-social list-reset flex">
                         <li class="footer__item-social">
-                            <a class="footer__link-social" href="#">
+                            <a class="footer__link-social" href="" aria-label="Вконтакте">
                                 <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#vk"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer__item-social">
-                            <a class="footer__link-social" href="#">
+                            <a class="footer__link-social" href="" aria-label="Instagram">
                                 <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer__item-social">
-                            <a class="footer__link-social" href="#">
+                            <a class="footer__link-social" href="" aria-label="Facebook">
                                 <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#facebook"></use>
                                 </svg>

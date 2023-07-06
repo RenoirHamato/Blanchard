@@ -1,18 +1,104 @@
 [
     {
-        "const": "#italy"
+        "country": "#france",
+        "id": "1",
+        "timeline": "1400",
+        "preview": "Бартелеми д'Эйк",
+        "content": {}
     },
 
     {
         "country": "#france",
-        "id": "1",
+        "id": "2",
         "timeline": "1400",
+        "preview": "Домбе, Гийом",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "3",
+        "timeline": "1400",
+        "preview": "Жакмар де Эсден",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "4",
+        "timeline": "1400",
+        "preview": "Иверни, Жак",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "5",
+        "timeline": "1400",
+        "preview": "Картон, Ангерран",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "6",
+        "timeline": "1400",
+        "preview": "Коломб, Жан",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "7",
+        "timeline": "1400",
+        "preview": "Лиферинкс, Йос",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "8",
+        "timeline": "1400",
+        "preview": "Мармион, Симон",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "9",
+        "timeline": "1400",
+        "preview": "Перреаль, Жан",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "10",
+        "timeline": "1400",
+        "preview": "Тестар, Робине",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "11",
+        "timeline": "1400",
+        "preview": "Фроман, Никола",
+        "content": {}
+    },
+
+    {
+        "country": "#france",
+        "id": "12",
+        "timeline": "1400",
+        "preview": "Фуке, Жан",
         "name": "Жан Фуке",
         "content": {
-            "img1920": "./img/catalog-1920-france01.webp",
-            "img1024": "./img/catalog-1024-france01.webp",
-            "img768": "./img/catalog-768-france01.webp",
-            "img320": "./img/catalog-320-france01.webp",
+            "img1920": "./img/catalog-1920-france12.webp",
+            "img1024": "./img/catalog-1024-france12.webp",
+            "img768": "./img/catalog-768-france12.webp",
+            "img320": "./img/catalog-320-france12.webp",
+            "alt": "Жан Фуке (портрет)",
             "birthday": "ок. 1420",
             "birthdayTime": "1420",
             "death": "1481",
@@ -22,15 +108,65 @@
     },
 
     {
+        "country": "#france",
+        "id": "13",
+        "timeline": "1400",
+        "preview": "Шанжене, Жан",
+        "content": {}
+    },
+
+    {
         "country": "#germany",
         "id": "1",
         "timeline": "1400",
+        "preview": "Борнеман, Ганс",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "2",
+        "timeline": "1400",
+        "preview": "Бургкмайр, Ханс",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "3",
+        "timeline": "1400",
+        "preview": "Виц, Конрад",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "4",
+        "timeline": "1400",
+        "preview": "Вольгемут, Михаэль",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "5",
+        "timeline": "1400",
+        "preview": "Гольбейн, Ганс Старший",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "6",
+        "timeline": "1400",
+        "preview": "Дюрер, Альбрехт",
         "name": "Альбрехт Дюрер",
         "content": {
-            "img1920": "./img/catalog-1920-germany01.webp",
-            "img1024": "./img/catalog-1024-germany01.webp",
-            "img768": "./img/catalog-768-germany01.webp",
-            "img320": "./img/catalog-320-germany01.webp",
+            "img1920": "./img/catalog-1920-germany06.webp",
+            "img1024": "./img/catalog-1024-germany06.webp",
+            "img768": "./img/catalog-768-germany06.webp",
+            "img320": "./img/catalog-320-germany06.webp",
+            "alt": "Альбрехт Дюрер (портрет)",
             "birthday": "21&nbsp;мая 1471",
             "birthdayTime": "1471-05-21",
             "death": "6 апреля 1528",
@@ -40,10 +176,130 @@
     },
 
     {
+        "country": "#germany",
+        "id": "7",
+        "timeline": "1400",
+        "preview": "Катцхаймер, Вольфганг",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "8",
+        "timeline": "1400",
+        "preview": "Конрад фон Зост",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "9",
+        "timeline": "1400",
+        "preview": "Лохнер, Штефан",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "10",
+        "timeline": "1400",
+        "preview": "Мемлинг, Ганс",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "11",
+        "timeline": "1400",
+        "preview": "Мозер, Лукас",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "12",
+        "timeline": "1400",
+        "preview": "Мульчер, Ганс",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "13",
+        "timeline": "1400",
+        "preview": "Нотке, Бернт",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "14",
+        "timeline": "1400",
+        "preview": "Плейденвурф, Вильгельм",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "15",
+        "timeline": "1400",
+        "preview": "Плейденвурф, Ганс",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "16",
+        "timeline": "1400",
+        "preview": "Полак, Ян",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "17",
+        "timeline": "1400",
+        "preview": "Роде, Герман",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "18",
+        "timeline": "1400",
+        "preview": "Цайтблом, Бартоломеус",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "19",
+        "timeline": "1400",
+        "preview": "Шаффнер, Мартин",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "20",
+        "timeline": "1400",
+        "preview": "Шонгауэр, Мартин",
+        "content": {}
+    },
+
+    {
+        "country": "#germany",
+        "id": "21",
+        "timeline": "1400",
+        "preview": "Штригель, Ханс Младший",
+        "content": {}
+    },
+
+    {
         "country": "#italy",
         "id": "1",
         "timeline": "1400",
-        "name": "Бенедетто ди Биндо",
+        "preview": "Бенедетто ди Биндо",
         "content": {}
     },
 
@@ -51,7 +307,7 @@
         "country": "#italy",
         "id": "2",
         "timeline": "1400",
-        "name": "Бергоньоне, Амброджо",
+        "preview": "Бергоньоне, Амброджо",
         "content": {}
     },
 
@@ -59,7 +315,7 @@
         "country": "#italy",
         "id": "3",
         "timeline": "1400",
-        "name": "Биссоло, Франческо",
+        "preview": "Биссоло, Франческо",
         "content": {}
     },
 
@@ -67,7 +323,7 @@
         "country": "#italy",
         "id": "4",
         "timeline": "1400",
-        "name": "Больтраффио, Джованни",
+        "preview": "Больтраффио, Джованни",
         "content": {}
     },
 
@@ -75,7 +331,7 @@
         "country": "#italy",
         "id": "5",
         "timeline": "1400",
-        "name": "Бонсиньори, Франческо",
+        "preview": "Бонсиньори, Франческо",
         "content": {}
     },
 
@@ -83,7 +339,7 @@
         "country": "#italy",
         "id": "6",
         "timeline": "1400",
-        "name": "Боттичини, Рафаэлло",
+        "preview": "Боттичини, Рафаэлло",
         "content": {}
     },
 
@@ -91,7 +347,7 @@
         "country": "#italy",
         "id": "7",
         "timeline": "1400",
-        "name": "Брамантино",
+        "preview": "Брамантино",
         "content": {}
     },
 
@@ -99,7 +355,7 @@
         "country": "#italy",
         "id": "8",
         "timeline": "1400",
-        "name": "Бреа, Людовико",
+        "preview": "Бреа, Людовико",
         "content": {}
     },
 
@@ -107,7 +363,7 @@
         "country": "#italy",
         "id": "9",
         "timeline": "1400",
-        "name": "Бьяджо д’Антонио Туччи",
+        "preview": "Бьяджо д’Антонио Туччи",
         "content": {}
     },
 
@@ -115,7 +371,7 @@
         "country": "#italy",
         "id": "10",
         "timeline": "1400",
-        "name": "Веккьетта",
+        "preview": "Веккьетта",
         "content": {}
     },
 
@@ -123,7 +379,7 @@
         "country": "#italy",
         "id": "11",
         "timeline": "1400",
-        "name": "Андреа Верроккьо",
+        "preview": "Андреа Верроккьо",
         "content": {}
     },
 
@@ -131,12 +387,14 @@
         "country": "#italy",
         "id": "12",
         "timeline": "1400",
+        "preview": "Доменико Гирландайо",
         "name": "Доменико Гирландайо",
         "content": {
             "img1920": "./img/catalog-1920-italy12.webp",
             "img1024": "./img/catalog-1024-italy12.webp",
             "img768": "./img/catalog-768-italy12.webp",
             "img320": "./img/catalog-320-italy12.webp",
+            "alt": "Доменико Гирландайо (портрет)",
             "birthday": "2&nbsp;июня 1448",
             "birthdayTime": "1448-06-02",
             "death": "11&nbsp;января 1494",
@@ -149,7 +407,7 @@
         "country": "#italy",
         "id": "13",
         "timeline": "1400",
-        "name": "Беноццо Гоццоли",
+        "preview": "Беноццо Гоццоли",
         "content": {}
     },
 
@@ -157,7 +415,7 @@
         "country": "#italy",
         "id": "14",
         "timeline": "1400",
-        "name": "Граначчи, Франческо",
+        "preview": "Граначчи, Франческо",
         "content": {}
     },
 
@@ -165,7 +423,7 @@
         "country": "#italy",
         "id": "15",
         "timeline": "1400",
-        "name": "Грегорио ди Чекко",
+        "preview": "Грегорио ди Чекко",
         "content": {}
     },
 
@@ -173,7 +431,7 @@
         "country": "#italy",
         "id": "16",
         "timeline": "1400",
-        "name": "Джованни да Удине",
+        "preview": "Джованни да Удине",
         "content": {}
     },
 
@@ -181,7 +439,7 @@
         "country": "#italy",
         "id": "17",
         "timeline": "1400",
-        "name": "Джованни ди Паоло",
+        "preview": "Джованни ди Паоло",
         "content": {}
     },
 
@@ -189,7 +447,7 @@
         "country": "#italy",
         "id": "18",
         "timeline": "1400",
-        "name": "Джорджоне",
+        "preview": "Джорджоне",
         "content": {}
     },
 
@@ -197,7 +455,7 @@
         "country": "#italy",
         "id": "19",
         "timeline": "1400",
-        "name": "Парентино, Бернардо",
+        "preview": "Парентино, Бернардо",
         "content": {}
     },
 
@@ -205,7 +463,7 @@
         "country": "#italy",
         "id": "20",
         "timeline": "1400",
-        "name": "Пезеллино",
+        "preview": "Пезеллино",
         "content": {}
     },
 
@@ -213,7 +471,7 @@
         "country": "#italy",
         "id": "21",
         "timeline": "1400",
-        "name": "Пьетро Перуджино",
+        "preview": "Пьетро Перуджино",
         "content": {}
     },
 
@@ -221,7 +479,7 @@
         "country": "#italy",
         "id": "22",
         "timeline": "1400",
-        "name": "Перуцци, Бальдассаре",
+        "preview": "Перуцци, Бальдассаре",
         "content": {}
     },
 
@@ -229,7 +487,7 @@
         "country": "#italy",
         "id": "23",
         "timeline": "1400",
-        "name": "Пизанелло",
+        "preview": "Пизанелло",
         "content": {}
     },
 
@@ -237,7 +495,7 @@
         "country": "#italy",
         "id": "24",
         "timeline": "1400",
-        "name": "Пинтуриккьо",
+        "preview": "Пинтуриккьо",
         "content": {}
     },
 
@@ -245,12 +503,30 @@
         "country": "#russia",
         "id": "1",
         "timeline": "1400",
+        "preview": "Амвросий",
+        "content": {}
+    },
+
+    {
+        "country": "#russia",
+        "id": "2",
+        "timeline": "1400",
+        "preview": "Дионисий",
+        "content": {}
+    },
+
+    {
+        "country": "#russia",
+        "id": "3",
+        "timeline": "1400",
+        "preview": "Андрей Рублев",
         "name": "Андрей Рублев",
         "content": {
-            "img1920": "./img/catalog-1920-russia01.webp",
-            "img1024": "./img/catalog-1024-russia01.webp",
-            "img768": "./img/catalog-768-russia01.webp",
-            "img320": "./img/catalog-320-russia01.webp",
+            "img1920": "./img/catalog-1920-russia03.webp",
+            "img1024": "./img/catalog-1024-russia03.webp",
+            "img768": "./img/catalog-768-russia03.webp",
+            "img320": "./img/catalog-320-russia03.webp",
+            "alt": "Андрей Рублев (портрет)",
             "birthday": "1360",
             "birthdayTime": "1360",
             "death": "1428",
@@ -263,12 +539,86 @@
         "country": "#belgium",
         "id": "1",
         "timeline": "1400",
+        "preview": "Оуватер, Альберт ван",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "2",
+        "timeline": "1400",
+        "preview": "Гертген тот Синт Янс",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "3",
+        "timeline": "1400",
+        "preview": "Баутс, Дирк",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "4",
+        "timeline": "1400",
+        "preview": "Даре, Жак",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "5",
+        "timeline": "1400",
+        "preview": "Йос ван Гент",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "6",
+        "timeline": "1400",
+        "preview": "Кристус, Петрус",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "7",
+        "timeline": "1400",
+        "preview": "Кампен, Робер",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "8",
+        "timeline": "1400",
+        "preview": "Ван дер Вейден, Рогир",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "9",
+        "timeline": "1400",
+        "preview": "Хуго ван дер Гус",
+        "content": {}
+    },
+
+    {
+        "country": "#belgium",
+        "id": "10",
+        "timeline": "1400",
+        "preview": "Ван Эйк, Ян",
         "name": "Ян ван Эйк",
         "content": {
-            "img1920": "./img/catalog-1920-belgium01.webp",
-            "img1024": "./img/catalog-1024-belgium01.webp",
-            "img768": "./img/catalog-768-belgium01.webp",
-            "img320": "./img/catalog-320-belgium01.webp",
+            "img1920": "./img/catalog-1920-belgium10.webp",
+            "img1024": "./img/catalog-1024-belgium10.webp",
+            "img768": "./img/catalog-768-belgium10.webp",
+            "img320": "./img/catalog-320-belgium10.webp",
+            "alt": "Ян ван Эйк (портрет)",
             "birthday": "ок. 1385 или 1390",
             "birthdayTime": "1385",
             "death": "1441",
