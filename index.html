@@ -4,41 +4,50 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="необходимо описание" />
-        <title>Blanchard</title>
+        <meta
+            name="description"
+            content="Живопись - одна из самых прекрасных видов исскуств. Заглянув к нам однажды, вам уже не захочется уводить взгляд от прекрасного. Наоборот, вы начнете изучать то, что раньше вам казалось сложным и таинственным."
+        />
+        <title>Blanchard - художественная галерея</title>
         <link rel="shortcut icon" href="./img/favicon.svg" type="image/svg" />
-        <link rel="stylesheet" href="./libs/simplebar/simplebar.css" />
+        <link rel="stylesheet" href="./libs/simplebar/simplebar.min.css" />
         <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./libs/accordion/accordion.min.css" />
-        <link rel="stylesheet" href="./css/normalize.css" />
-        <link rel="stylesheet" href="./css/style.pref.css" />
-        <link rel="stylesheet" href="./css/media.pref.css" />
+        <link rel="stylesheet" href="./css/normalize.min.css" />
+        <link rel="stylesheet" href="./css/style.min.css" />
+        <link rel="stylesheet" href="./css/media.min.css" />
         <script src="./libs/lazyload/lazyload.min.js" defer></script>
-        <script src="./libs/focus-visible/focus-visible.js" defer></script>
+        <script src="./libs/focus-visible/focus-visible.min.js" defer></script>
         <script src="./libs/simplebar/simplebar.min.js" defer></script>
         <script src="./libs/choices/choices.min.js" defer></script>
         <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
         <script src="./libs/accordion/accordion.min.js" defer></script>
         <script src="./libs/inputmask/inputmask.min.js" defer></script>
-        <script src="./libs/just-validate/just-validate.js" defer></script>
+        <script src="./libs/just-validate/just-validate.min.js" defer></script>
         <script
             src="https://api-maps.yandex.ru/2.1/?apikey=4458dd5c-4b45-4e7b-9a6f-3312d9e02a7c&lang=ru_RU"
             defer
         ></script>
-        <script src="./js/script.js" defer></script>
+        <script src="./js/script.min.js" defer></script>
     </head>
 
     <body>
         <header class="header">
             <div class="header__background-top">
                 <div class="header__container-top container flex">
-                    <button class="header__burger button-reset" aria-label="бургер меню">
+                    <button
+                        class="header__burger button-reset"
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-label="бургер меню"
+                    >
                         <span class="header__line header__line--passive"></span>
                         <span class="header__line header__line--passive"></span>
                         <span class="header__line header__line--passive"></span>
                         <span class="header__line header__line--passive"></span>
                     </button>
-                    <a class="header__logo link" href="" aria-label="логотип сайта">
+                    <a class="header__logo link" href="#" aria-label="логотип сайта">
                         <picture class="header__picture">
                             <source srcset="./img/logo-320-header.webp" media="(max-width: 767px)" />
                             <source srcset="./img/logo-768-header.webp" media="(max-width: 1023px)" />
@@ -79,7 +88,10 @@
                                         </li>
                                     </ul>
                                 </nav>
-                                <button class="header__button-login button-reset flex" aria-label="авторизация">
+                                <button
+                                    class="header__button-login button-reset flex"
+                                    aria-label="вход в личный кабинет"
+                                >
                                     <span class="header__box-login flex">
                                         <svg class="header__animation-login" xmlns="http://www.w3.org/2000/svg">
                                             <use xlink:href="#login-animation"></use>
@@ -98,13 +110,14 @@
                             <use xlink:href="#header-loop"></use>
                         </svg>
                     </button>
-                    <div class="header__box-search">
-                        <form
-                            class="header__form-search flex"
-                            id="header-search-form"
-                            action="https://jsonplaceholder.typicode.com/posts"
-                            method="POST"
-                        >
+                    <form
+                        class="header__box-search"
+                        id="header-search-form"
+                        action="https://jsonplaceholder.typicode.com/posts"
+                        method="POST"
+                        role="search"
+                    >
+                        <div class="header__form-search flex">
                             <input
                                 class="header__input-search"
                                 type="search"
@@ -113,26 +126,41 @@
                                 autocomplete="off"
                                 required
                             />
-                            <button class="header__activate-search button-reset" aria-label="активировать поиск">
+                            <button
+                                class="header__activate-search button-reset"
+                                type="submit"
+                                aria-label="активировать поиск"
+                            >
                                 <svg class="header__loop-search" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#header-search"></use>
                                 </svg>
                             </button>
-                        </form>
-                        <button class="header__close-search button-reset" aria-label="закрыть поиск">
+                        </div>
+                        <button class="header__close-search button-reset" type="button" aria-label="закрыть поиск">
                             <svg class="header__cross-search" xmlns="http://www.w3.org/2000/svg">
                                 <use xlink:href="#header-cross"></use>
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="header__background-bottom">
                 <div class="header__container-bottom container flex">
-                    <nav class="header__menu-select" aria-label="дополнительное меню">
-                        <ul class="header__list-select list-reset flex">
-                            <li class="header__item-select">
-                                <button class="header__button-select button-reset" aria-label="реализм">
+                    <nav class="header__menu-select">
+                        <ul
+                            class="header__list-select list-reset flex"
+                            role="menubar"
+                            aria-label="художники по категориям"
+                        >
+                            <li class="header__item-select" role="none">
+                                <button
+                                    class="header__button-select button-reset"
+                                    role="menuitem"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-label="художники реализма"
+                                    tabindex="0"
+                                >
                                     <span class="header__span-select">Реализм</span>
                                     <svg class="header__svg-select" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#header-arrow"></use>
@@ -140,24 +168,44 @@
                                 </button>
                                 <div class="header__box-select">
                                     <div class="header__scroll-select">
-                                        <ul class="header__list-page list-reset">
-                                            <li class="header__item-page">
-                                                <a class="header__link-page tintoretto" href="">
+                                        <ul class="header__list-page list-reset" role="menu" aria-label="художники">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page tintoretto"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Тинторетто</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page friedrich" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page friedrich"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Фридрих</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page leonardo" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page leonardo"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Леонардо</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page verrocchio" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page verrocchio"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Верроккьо</span>
                                                 </a>
                                             </li>
@@ -165,8 +213,15 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="header__item-select">
-                                <button class="header__button-select button-reset">
+                            <li class="header__item-select" role="none">
+                                <button
+                                    class="header__button-select button-reset"
+                                    role="menuitem"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-label="художники импрессионизма"
+                                    tabindex="-1"
+                                >
                                     <span class="header__span-select">Импрессионизм</span>
                                     <svg class="header__svg-select" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#header-arrow"></use>
@@ -174,24 +229,44 @@
                                 </button>
                                 <div class="header__box-select">
                                     <div class="header__scroll-select">
-                                        <ul class="header__list-page list-reset">
-                                            <li class="header__item-page">
-                                                <a class="header__link-page monet" href="">
+                                        <ul class="header__list-page list-reset" role="menu" aria-label="художники">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page monet"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Моне</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page sisley" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page sisley"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Сислей</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page mane" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page mane"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Мане</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page renoir" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page renoir"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Ренуар</span>
                                                 </a>
                                             </li>
@@ -199,8 +274,15 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="header__item-select">
-                                <button class="header__button-select button-reset">
+                            <li class="header__item-select" role="none">
+                                <button
+                                    class="header__button-select button-reset"
+                                    role="menuitem"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-label="художники постимпрессионизма"
+                                    tabindex="-1"
+                                >
                                     <span class="header__span-select">Постимпрессионизм</span>
                                     <svg class="header__svg-select" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#header-arrow"></use>
@@ -208,24 +290,44 @@
                                 </button>
                                 <div class="header__box-select">
                                     <div class="header__scroll-select">
-                                        <ul class="header__list-page list-reset">
-                                            <li class="header__item-page">
-                                                <a class="header__link-page van-gogh" href="">
+                                        <ul class="header__list-page list-reset" role="menu" aria-label="художники">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page van-gogh"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Ван Гог</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page cezanne" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page cezanne"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Сезанн</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page gauguin" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page gauguin"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Гоген</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page seurat" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page seurat"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Сёра</span>
                                                 </a>
                                             </li>
@@ -233,8 +335,15 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="header__item-select">
-                                <button class="header__button-select button-reset">
+                            <li class="header__item-select" role="none">
+                                <button
+                                    class="header__button-select button-reset"
+                                    role="menuitem"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-label="художники авангарда"
+                                    tabindex="-1"
+                                >
                                     <span class="header__span-select">Авангард</span>
                                     <svg class="header__svg-select" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#header-arrow"></use>
@@ -242,24 +351,44 @@
                                 </button>
                                 <div class="header__box-select">
                                     <div class="header__scroll-select">
-                                        <ul class="header__list-page list-reset">
-                                            <li class="header__item-page">
-                                                <a class="header__link-page kandinsky" href="">
+                                        <ul class="header__list-page list-reset" role="menu" aria-label="художники">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page kandinsky"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Кандинский</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page marinetti" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page marinetti"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Маринетти</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page malevich" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page malevich"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Малевич</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page picasso" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page picasso"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Пикассо</span>
                                                 </a>
                                             </li>
@@ -267,8 +396,15 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="header__item-select">
-                                <button class="header__button-select button-reset">
+                            <li class="header__item-select" role="none">
+                                <button
+                                    class="header__button-select button-reset"
+                                    role="menuitem"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-label="художники футуризма"
+                                    tabindex="-1"
+                                >
                                     <span class="header__span-select">Футуризм</span>
                                     <svg class="header__svg-select" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="#header-arrow"></use>
@@ -276,29 +412,54 @@
                                 </button>
                                 <div class="header__box-select">
                                     <div class="header__scroll-select">
-                                        <ul class="header__list-page list-reset">
-                                            <li class="header__item-page">
-                                                <a class="header__link-page carra" href="">
+                                        <ul class="header__list-page list-reset" role="menu" aria-label="художники">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page carra"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Карра</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page pratella" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page pratella"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Прателла</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page severini" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page severini"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Северини</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page balla" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page balla"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Балла</span>
                                                 </a>
                                             </li>
-                                            <li class="header__item-page">
-                                                <a class="header__link-page bochonni" href="">
+                                            <li class="header__item-page" role="none">
+                                                <a
+                                                    class="header__link-page bochonni"
+                                                    href="#"
+                                                    role="menuitem"
+                                                    tabindex="-1"
+                                                >
                                                     <span class="header__span-page">Бочонни</span>
                                                 </a>
                                             </li>
@@ -312,6 +473,7 @@
                         class="header__form-search flex"
                         action="https://jsonplaceholder.typicode.com/posts"
                         method="POST"
+                        role="search"
                     >
                         <input
                             class="header__input-search"
@@ -377,7 +539,7 @@
                             <div class="gallery__left flex">
                                 <div class="gallery__filter">
                                     <h2 class="gallery__heading heading">Галерея</h2>
-                                    <span class="gallery__span">Фильтр:</span>
+                                    <span class="gallery__span" id="gallery-span">Фильтр:</span>
                                     <select class="gallery__select" name="filter" id="filter">
                                         <option class="gallery__option" value="painting" selected>Живопись</option>
                                         <option class="gallery__option" value="drawing">Рисунок</option>
@@ -386,17 +548,38 @@
                                 </div>
                                 <p class="gallery__text span-normal">
                                     Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-                                    <button class="gallery__authorization button-reset" aria-label="авторизация">
+                                    <button
+                                        class="gallery__authorization button-reset"
+                                        aria-label="вход в личный кабинет"
+                                    >
                                         авторизуйтесь
                                     </button>
                                     , либо воспользуйтесь лицензией.
                                 </p>
                             </div>
-                            <div class="gallery__pictures flex">
+                            <div class="gallery__overlay flex">
+                                <div
+                                    class="gallery__modal flex"
+                                    role="dialog"
+                                    aria-labelledby="modal-title"
+                                    aria-modal="true"
+                                >
+                                    <button class="gallery__close-modal button-reset">
+                                        <svg class="gallery__cross-modal" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="#modal-cross"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="gallery__content-modal flex"></div>
+                                </div>
+                            </div>
+                            <section class="gallery__pictures flex" aria-labelledby="gallery-swiper">
+                                <h3 class="gallery__preview" id="gallery-swiper">Каталог работ</h3>
                                 <div class="gallery__navigation flex">
                                     <button
                                         class="gallery__buttondark button-reset buttondark gallery__buttondark--left"
-                                        aria-label="Свайп влево"
+                                        type="button"
+                                        aria-label="предыдущие слайды"
+                                        aria-controls="gallery-carousel"
                                     >
                                         <svg
                                             class="gallery__buttondark-svg buttondark-svg"
@@ -408,7 +591,9 @@
                                     <span class="gallery__number text"></span>
                                     <button
                                         class="gallery__buttondark button-reset buttondark gallery__buttondark--right"
-                                        aria-label="Свайп вправо"
+                                        type="button"
+                                        aria-label="следующие слайды"
+                                        aria-controls="gallery-carousel"
                                     >
                                         <svg
                                             class="gallery__buttondark-svg buttondark-svg"
@@ -418,25 +603,22 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="gallery__swiper swiper">
+                                <div
+                                    class="gallery__swiper swiper"
+                                    id="gallery-carousel"
+                                    aria-live="polite"
+                                    aria-relevant="additions"
+                                >
                                     <ul class="gallery__list-swiper list-reset swiper-wrapper"></ul>
                                 </div>
-                            </div>
+                            </section>
                             <p class="gallery__text-adaptive span-normal">
                                 Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-                                <button class="gallery__authorization button-reset">авторизуйтесь</button>
+                                <button class="gallery__authorization button-reset" aria-hidden="false">
+                                    авторизуйтесь
+                                </button>
                                 , либо воспользуйтесь лицензией.
                             </p>
-                            <div class="gallery__overlay flex">
-                                <div class="gallery__modal flex">
-                                    <button class="gallery__close-modal button-reset">
-                                        <svg class="gallery__cross-modal" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="#modal-cross"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="gallery__content-modal flex"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -445,52 +627,71 @@
                 <div class="big-section__background">
                     <div class="big-section__container container">
                         <div class="big-section__content content">
-                            <div class="big-section__catalog catalog">
+                            <div class="big-section__catalog catalog" aria-live="off">
                                 <div class="catalog__country-box flex">
                                     <h2 class="catalog__heading heading">Каталог</h2>
-                                    <ul class="catalog__list-country list-reset flex">
-                                        <li class="catalog__item-country">
-                                            <a
-                                                class="catalog__step-country france"
-                                                href="#france"
-                                                data-step="#france"
+                                    <div
+                                        class="catalog__list-country list-reset flex"
+                                        role="group"
+                                        aria-roledescription="фильтр каталога художников"
+                                    >
+                                        <label class="catalog__label-country">
+                                            <input
+                                                class="catalog__radio-country"
+                                                type="radio"
+                                                id="catalog-france"
+                                                name="country"
+                                                value="#france"
                                                 aria-label="Франция"
-                                            ></a>
-                                        </li>
-                                        <li class="catalog__item-country">
-                                            <a
-                                                class="catalog__step-country germany"
-                                                href="#germany"
-                                                data-step="#germany"
+                                            />
+                                            <span class="catalog__style-country france"></span>
+                                        </label>
+                                        <label class="catalog__label-country">
+                                            <input
+                                                class="catalog__radio-country"
+                                                type="radio"
+                                                id="catalog-germany"
+                                                name="country"
+                                                value="#germany"
                                                 aria-label="Германия"
-                                            ></a>
-                                        </li>
-                                        <li class="catalog__item-country">
-                                            <a
-                                                class="catalog__step-country catalog__step-country--disabled italy"
-                                                href="#italy"
-                                                data-step="#italy"
+                                            />
+                                            <span class="catalog__style-country germany"></span>
+                                        </label>
+                                        <label class="catalog__label-country">
+                                            <input
+                                                class="catalog__radio-country"
+                                                type="radio"
+                                                id="catalog-italy"
+                                                name="country"
+                                                value="#italy"
                                                 aria-label="Италия"
-                                                tabindex="-1"
-                                            ></a>
-                                        </li>
-                                        <li class="catalog__item-country">
-                                            <a
-                                                class="catalog__step-country russia"
-                                                href="#russia"
-                                                data-step="#russia"
+                                                checked
+                                            />
+                                            <span class="catalog__style-country italy"></span>
+                                        </label>
+                                        <label class="catalog__label-country">
+                                            <input
+                                                class="catalog__radio-country"
+                                                type="radio"
+                                                id="catalog-russia"
+                                                name="country"
+                                                value="#russia"
                                                 aria-label="Россия"
-                                            ></a>
-                                        </li>
-                                        <li class="catalog__item-country">
-                                            <a
-                                                class="catalog__step-country belgium"
-                                                href="#belgium"
-                                                data-step="#belgium"
+                                            />
+                                            <span class="catalog__style-country russia"></span>
+                                        </label>
+                                        <label class="catalog__label-country">
+                                            <input
+                                                class="catalog__radio-country"
+                                                type="radio"
+                                                id="catalog-belgium"
+                                                name="country"
+                                                value="#belgium"
                                                 aria-label="Бельгия"
-                                            ></a>
-                                        </li>
-                                    </ul>
+                                            />
+                                            <span class="catalog__style-country belgium"></span>
+                                        </label>
+                                    </div>
                                 </div>
                                 <p class="catalog__text text">
                                     Акционеры крупнейших компаний, которые представляют собой яркий пример
@@ -616,14 +817,17 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="catalog__left"></div>
+                                    <div class="catalog__left" id="artist"></div>
                                 </div>
                             </div>
                             <div class="big-section__events events" id="events">
                                 <div class="events__content">
-                                    <h2 class="events__heading heading">События</h2>
+                                    <h2 class="events__heading heading" id="events-heading">События</h2>
                                     <div class="events__swiper swiper">
-                                        <ul class="events__list events__list--no-swiper swiper-wrapper list-reset flex">
+                                        <ul
+                                            class="events__list events__list--no-swiper swiper-wrapper list-reset flex"
+                                            aria-labelledby="events-heading"
+                                        >
                                             <li class="events__item swiper-slide flex">
                                                 <picture class="events__picture">
                                                     <source
@@ -651,7 +855,7 @@
                                                         <time class="events__span span-gray" datetime="41d">
                                                             с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля
                                                         </time>
-                                                        <h3 class="events__subject subject">
+                                                        <h3 class="events__subject subject" id="events-subject1">
                                                             Книжная гравюра в&nbsp;живом восприятии
                                                         </h3>
                                                         <p class="events__text text">
@@ -660,7 +864,14 @@
                                                             брат Давид и&nbsp;сын Ридольфо
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="">Подробнее</a>
+                                                    <a
+                                                        class="events__link"
+                                                        id="events-link1"
+                                                        href="#"
+                                                        aria-labelledby="events-link1 events-subject1"
+                                                    >
+                                                        Подробнее
+                                                    </a>
                                                 </div>
                                             </li>
                                             <li class="events__item swiper-slide flex">
@@ -693,7 +904,7 @@
                                                         >
                                                             24&nbsp;марта 19:00
                                                         </time>
-                                                        <h3 class="events__subject subject">
+                                                        <h3 class="events__subject subject" id="events-subject2">
                                                             &laquo;Открытая дискуссия&raquo;. Дмитрий Петров
                                                             и&nbsp;Сергей Ильин
                                                         </h3>
@@ -702,7 +913,14 @@
                                                             является чётким доказательством простого факта
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="">Подробнее</a>
+                                                    <a
+                                                        class="events__link"
+                                                        id="events-link2"
+                                                        href="#"
+                                                        aria-labelledby="events-link2 events-subject2"
+                                                    >
+                                                        Подробнее
+                                                    </a>
                                                 </div>
                                             </li>
                                             <li class="events__item swiper-slide flex events__item--hidden-768">
@@ -732,7 +950,7 @@
                                                         <time class="events__span span-gray" datetime="22d">
                                                             с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля
                                                         </time>
-                                                        <h3 class="events__subject subject">
+                                                        <h3 class="events__subject subject" id="events-subject3">
                                                             Выставка &laquo;Формация 2020&raquo;
                                                         </h3>
                                                         <p class="events__text text">
@@ -741,7 +959,14 @@
                                                             в&nbsp;формировании глубокомысленных рассуждений
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="">Подробнее</a>
+                                                    <a
+                                                        class="events__link"
+                                                        id="events-link3"
+                                                        href="#"
+                                                        aria-labelledby="events-link3 events-subject3"
+                                                    >
+                                                        Подробнее
+                                                    </a>
                                                 </div>
                                             </li>
                                             <li
@@ -773,7 +998,7 @@
                                                         <time class="events__span span-gray" datetime="43d">
                                                             с&nbsp;8&nbsp;апреля по&nbsp;20&nbsp;мая
                                                         </time>
-                                                        <h3 class="events__subject subject">
+                                                        <h3 class="events__subject subject" id="events-subject4">
                                                             Джон Винзор. Фотографии из&nbsp;серии &laquo;Метафора&raquo;
                                                         </h3>
                                                         <p class="events__text text">
@@ -782,7 +1007,14 @@
                                                             брат Давид и&nbsp;сын Ридольфо
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="">Подробнее</a>
+                                                    <a
+                                                        class="events__link"
+                                                        id="events-link4"
+                                                        href="#"
+                                                        aria-labelledby="events-link4 events-subject4"
+                                                    >
+                                                        Подробнее
+                                                    </a>
                                                 </div>
                                             </li>
                                             <li
@@ -816,7 +1048,7 @@
                                                         <time class="events__span span-gray" datetime="32d">
                                                             с&nbsp;30&nbsp;марта по&nbsp;30&nbsp;апреля
                                                         </time>
-                                                        <h3 class="events__subject subject">
+                                                        <h3 class="events__subject subject" id="events-subject5">
                                                             XXIV Международная биеннале молодого искусства
                                                         </h3>
                                                         <p class="events__text text">
@@ -824,7 +1056,14 @@
                                                             современные исследования
                                                         </p>
                                                     </div>
-                                                    <a class="events__link" href="">Подробнее</a>
+                                                    <a
+                                                        class="events__link"
+                                                        id="events-link5"
+                                                        href="#"
+                                                        aria-labelledby="events-link5 events-subject5"
+                                                    >
+                                                        Подробнее
+                                                    </a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -844,237 +1083,265 @@
                         <div class="editions__content content flex">
                             <div class="editions__filter">
                                 <h2 class="editions__heading heading">Издания</h2>
-                                <button class="editions__button-accordion button-reset flex">
-                                    <span class="editions__span-accordion span-normal">Категории</span>
-                                    <svg class="editions__svg-accordion" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="#editions-arrow"></use>
-                                    </svg>
-                                </button>
-                                <ul class="editions__list-category list-reset flex">
-                                    <li class="editions__item-category" data-category="1">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="bestsellers"
-                                                value="bestsellers"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Бестселлеры</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                <fieldset class="editions__fieldset" aria-labelledby="editions-legend">
+                                    <legend class="editions__legend" id="editions-legend">Фильтр изданий</legend>
+                                    <button class="editions__button-accordion button-reset flex">
+                                        <span class="editions__span-accordion span-normal" id="editions-span">
+                                            Категории
+                                        </span>
+                                        <svg class="editions__svg-accordion" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="#editions-arrow"></use>
+                                        </svg>
+                                    </button>
+                                    <ul
+                                        class="editions__list-category list-reset flex"
+                                        aria-labelledby="editions-span"
+                                        aria-live="assertive"
+                                    >
+                                        <li class="editions__item-category" data-category="1">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="bestsellers"
+                                                    value="bestsellers"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Бестселлеры</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="2">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="art"
-                                                value="art"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Искусство</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="2">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="art"
+                                                    value="art"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Искусство</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="3">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="architecture"
-                                                value="architecture"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Архитектура</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="3">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="architecture"
+                                                    value="architecture"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Архитектура</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="4">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="design"
-                                                value="design"
-                                                checked
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Дизайн</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="4">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="design"
+                                                    value="design"
+                                                    checked
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Дизайн</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="5">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="fashion"
-                                                value="fashion"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Мода</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="5">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="fashion"
+                                                    value="fashion"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Мода</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="6">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="child"
-                                                value="child"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Детям</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="6">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="child"
+                                                    value="child"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Детям</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="7">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="artistic"
-                                                value="artistic"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">
-                                                Художественная литература
-                                            </span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="7">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="artistic"
+                                                    value="artistic"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">
+                                                    Художественная литература
+                                                </span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="8">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="publicism"
-                                                value="publicism"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Публицистика</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="8">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="publicism"
+                                                    value="publicism"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Публицистика</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="9">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="travel"
-                                                value="travel"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Путеводители</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="9">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="travel"
+                                                    value="travel"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Путеводители</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="10">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="philosophy"
-                                                value="philosophy"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Философия</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="10">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="philosophy"
+                                                    value="philosophy"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">Философия</span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="11">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="study"
-                                                value="study"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Учебная литература</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
+                                        <li class="editions__item-category" data-category="11">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="study"
+                                                    value="study"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">
+                                                    Учебная литература
+                                                </span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
 
-                                    <li class="editions__item-category" data-category="12">
-                                        <label class="editions__label-category flex">
-                                            <input
-                                                class="editions__checkbox-category"
-                                                type="checkbox"
-                                                name="magazines"
-                                                value="magazines"
-                                            />
-                                            <span class="editions__style-category"></span>
-                                            <span class="editions__span-category span-little">Журналы и газеты</span>
-                                            <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
-                                                <use xlink:href="#editions-cross"></use>
-                                            </svg>
-                                        </label>
-                                    </li>
-                                </ul>
-                                <ul class="editions__list-checked list-reset flex"></ul>
-                                <span class="editions__span-cost span-normal">Цена</span>
-                                <div class="editions__box-cost flex">
-                                    <span class="editions__from-cost span-little">От</span>
-                                    <input
-                                        class="editions__input-cost span-little"
-                                        type="text"
-                                        data-name="from"
-                                        name="from"
-                                        value="50"
-                                        aria-label="от"
-                                    />
-                                    <span class="editions__to-cost span-little">до</span>
-                                    <input
-                                        class="editions__input-cost span-little"
-                                        type="text"
-                                        data-name="to"
-                                        name="to"
-                                        value="25000"
-                                        aria-label="до"
-                                    />
-                                    <span class="editions__currency-cost span-little">руб.</span>
-                                </div>
+                                        <li class="editions__item-category" data-category="12">
+                                            <label class="editions__label-category flex">
+                                                <input
+                                                    class="editions__checkbox-category"
+                                                    type="checkbox"
+                                                    name="magazines"
+                                                    value="magazines"
+                                                />
+                                                <span class="editions__style-category"></span>
+                                                <span class="editions__span-category span-little">
+                                                    Журналы и газеты
+                                                </span>
+                                                <svg class="editions__svg-category" xmlns="http://www.w3.org/2000/svg">
+                                                    <use xlink:href="#editions-cross"></use>
+                                                </svg>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <ul class="editions__list-checked list-reset flex"></ul>
+                                    <span class="editions__span-cost span-normal" id="editions-cost">Цена</span>
+                                    <div class="editions__box-cost flex" role="form" aria-labelledby="editions-cost">
+                                        <span class="editions__from-cost span-little">От</span>
+                                        <span class="editions__aria-cost" id="editions-from-cost">
+                                            минимальная цена
+                                        </span>
+                                        <span class="editions__aria-cost" id="editions-from">50</span>
+                                        <input
+                                            class="editions__input-cost span-little"
+                                            type="text"
+                                            data-name="from"
+                                            name="from"
+                                            value="50"
+                                            aria-labelledby="editions-from-cost editions-from editions-currency"
+                                        />
+                                        <span class="editions__to-cost span-little">до</span>
+                                        <span class="editions__aria-cost" id="editions-to-cost">максимальная цена</span>
+                                        <span class="editions__aria-cost" id="editions-to">25000</span>
+                                        <input
+                                            class="editions__input-cost span-little"
+                                            type="text"
+                                            data-name="to"
+                                            name="to"
+                                            value="25000"
+                                            aria-labelledby="editions-to-cost editions-to editions-currency"
+                                        />
+                                        <span
+                                            class="editions__currency-cost span-little"
+                                            id="editions-currency"
+                                            aria-label="рублей"
+                                        >
+                                            руб.
+                                        </span>
+                                    </div>
+                                </fieldset>
                             </div>
-                            <div class="editions__products flex">
+                            <section class="editions__products flex" aria-labelledby="editions-swiper">
+                                <h3 class="editions__preview" id="editions-swiper">Каталог изданий</h3>
                                 <div class="editions__navigation flex">
                                     <button
                                         class="editions__buttondark button-reset buttondark editions__buttondark--left"
-                                        aria-label="Свайп влево"
+                                        type="button"
+                                        aria-label="предыдущие слайды"
+                                        aria-controls="editions-carousel"
                                     >
                                         <svg
                                             class="editions__buttondark-svg buttondark-svg"
@@ -1086,7 +1353,9 @@
                                     <span class="editions__number text"></span>
                                     <button
                                         class="editions__buttondark button-reset buttondark editions__buttondark--right"
-                                        aria-label="Свайп вправо"
+                                        type="button"
+                                        aria-label="следующие слайды"
+                                        aria-controls="editions-carousel"
                                     >
                                         <svg
                                             class="editions__buttondark-svg buttondark-svg"
@@ -1096,11 +1365,15 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="editions__swiper swiper">
-                                    <ul class="editions__list-swiper list-reset swiper-wrapper"></ul>
+                                <div class="editions__swiper swiper" id="editions-carousel">
+                                    <ul
+                                        class="editions__list-swiper list-reset swiper-wrapper"
+                                        aria-live="polite"
+                                        aria-relevant="additions"
+                                    ></ul>
                                     <span class="editions__null-swiper span-little">ТАКИХ ИЗДАНИЙ НЕТ</span>
                                 </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -1116,7 +1389,15 @@
                             А&nbsp;ещё независимые государства смешаны с&nbsp;не уникальными данными до&nbsp;степени
                             совершённой неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде
                             всего, постоянное информационно-пропагандистское
-                            <button class="projects__button-tooltip button-reset" aria-label="Tooltip 1">
+                            <span class="projects__span-tooltip" id="pojects-tooltip1">
+                                Пример современных тенденций&nbsp;&mdash; современная методология разработки
+                            </span>
+                            <button
+                                class="projects__button-tooltip button-reset"
+                                aria-label="Подсказка 1"
+                                aria-expanded="false"
+                                aria-controls="pojects-tooltip1"
+                            >
                                 <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#projects-tooltip"></use>
                                 </svg>
@@ -1127,29 +1408,19 @@
                                     <use xlink:href="#projects-tooltip-cross"></use>
                                 </svg>
                             </button>
-                            <span class="projects__span-tooltip">
-                                Пример современных тенденций&nbsp;&mdash; современная методология разработки
-                            </span>
                             обеспечение нашей деятельности однозначно фиксирует необходимость экономической
                             целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей
                             оппозиции могут быть рассмотрены
-                            <button class="projects__button-tooltip button-reset" aria-label="Tooltip 2">
-                                <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#projects-tooltip"></use>
-                                </svg>
-                                <svg class="projects__arrow-tooltip" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#projects-tooltip-arrow"></use>
-                                </svg>
-                                <svg class="projects__cross-tooltip" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#projects-tooltip-cross"></use>
-                                </svg>
-                            </button>
-                            <span class="projects__span-tooltip">
+                            <span class="projects__span-tooltip" id="pojects-tooltip2">
                                 Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают
                                 у&nbsp;вас эмоции
                             </span>
-                            исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
-                            <button class="projects__button-tooltip button-reset" aria-label="Tooltip 3">
+                            <button
+                                class="projects__button-tooltip button-reset"
+                                aria-label="Подсказка 2"
+                                aria-expanded="false"
+                                aria-controls="pojects-tooltip2"
+                            >
                                 <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#projects-tooltip"></use>
                                 </svg>
@@ -1160,27 +1431,64 @@
                                     <use xlink:href="#projects-tooltip-cross"></use>
                                 </svg>
                             </button>
-                            <span class="projects__span-tooltip">В стремлении повысить качество</span>
+                            исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
+                            <span class="projects__span-tooltip" id="pojects-tooltip3">
+                                В стремлении повысить качество
+                            </span>
+                            <button
+                                class="projects__button-tooltip button-reset"
+                                aria-label="Подсказка 3"
+                                aria-expanded="false"
+                                aria-controls="pojects-tooltip3"
+                            >
+                                <svg class="projects__svg-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip"></use>
+                                </svg>
+                                <svg class="projects__arrow-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-arrow"></use>
+                                </svg>
+                                <svg class="projects__cross-tooltip" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="#projects-tooltip-cross"></use>
+                                </svg>
+                            </button>
                             предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители
                             современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
                             очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой
                             неузнаваемости. Подробнее:
-                            <a class="projects__link" href="#">blanchard-art.ru/projects</a>
+                            <a class="projects__link" href="#" aria-label="подробнее о проектах галереи">
+                                blanchard-art.ru/projects
+                            </a>
                         </p>
-                        <h3 class="projects__subject subject">Партнеры проектов:</h3>
-                        <div class="projects__partners flex">
+                        <span class="projects__span subject">Партнеры проектов:</span>
+                        <section
+                            class="projects__partners flex"
+                            aria-labelledby="projects-preview"
+                            aria-roledescription="карусель из 9 элементов"
+                        >
+                            <h3 class="projects__preview" id="projects-preview">Список партнеров</h3>
                             <button
                                 class="projects__buttonlight button-reset projects__buttonlight--left"
-                                aria-label="Свайп влево"
+                                type="button"
+                                aria-label="предыдущие слайды"
+                                aria-controls="partners-carousel"
                             >
                                 <svg class="projects__buttonlight-svg" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#swiper-arrow-left"></use>
                                 </svg>
                             </button>
-                            <div class="projects__swiper swiper">
+                            <div
+                                class="projects__swiper swiper"
+                                id="partners-carousel"
+                                aria-live="polite"
+                                aria-relevant="additions"
+                            >
                                 <ul class="projects__list-swiper list-reset swiper-wrapper">
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Freelands Foundation (1 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners01.webp"
@@ -1198,13 +1506,18 @@
                                                     class="projects__img-swiper size-partners01 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners01.webp"
-                                                    alt="Freelands Foundation"
+                                                    alt="партнер Freelands Foundation"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Institute for Contemporary Art (2 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners02.webp"
@@ -1222,13 +1535,18 @@
                                                     class="projects__img-swiper size-partners02 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners02.webp"
-                                                    alt="Institute for Contemporary Art"
+                                                    alt="партнер Institute for Contemporary Art"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Workhouse Arts Center (3 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners03.webp"
@@ -1246,13 +1564,18 @@
                                                     class="projects__img-swiper size-partners03 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners03.webp"
-                                                    alt="Workhouse Arts Center"
+                                                    alt="партнер Workhouse Arts Center"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер 1849 Wine Co (4 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners04.webp"
@@ -1270,13 +1593,18 @@
                                                     class="projects__img-swiper size-partners04 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners04.webp"
-                                                    alt="1849 Wine Co"
+                                                    alt="партнер 1849 Wine Co"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Hiscox Ltd (5 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners05.webp"
@@ -1294,13 +1622,18 @@
                                                     class="projects__img-swiper size-partners05 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners05.webp"
-                                                    alt="Hiscox Ltd"
+                                                    alt="партнер Hiscox Ltd"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Camden Arts Centre (6 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners06.webp"
@@ -1318,13 +1651,18 @@
                                                     class="projects__img-swiper size-partners06 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners06.webp"
-                                                    alt="Camden Arts Centre"
+                                                    alt="партнер Camden Arts Centre"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Cidrerie Stassen (7 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners07.webp"
@@ -1342,13 +1680,18 @@
                                                     class="projects__img-swiper size-partners07 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners07.webp"
-                                                    alt="Cidrerie Stassen"
+                                                    alt="партнер Cidrerie Stassen"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер Watts Gallery - Artists' Village (8 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners08.webp"
@@ -1366,13 +1709,18 @@
                                                     class="projects__img-swiper size-partners08 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners08.webp"
-                                                    alt="Watts Gallery - Artists' Village"
+                                                    alt="партнер Watts Gallery - Artists' Village"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
                                     </li>
                                     <li class="projects__item-swiper flex swiper-slide">
-                                        <a class="projects__link-swiper flex" href="">
+                                        <a
+                                            class="projects__link-swiper flex"
+                                            href="#"
+                                            aria-label="партнер EASD Valencia (9 из 9)"
+                                        >
                                             <picture class="projects__picture-swiper">
                                                 <source
                                                     srcset="./img/projects-320-partners09.webp"
@@ -1390,7 +1738,8 @@
                                                     class="projects__img-swiper size-partners09 lazyload"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D"
                                                     data-src="./img/projects-1920-partners09.webp"
-                                                    alt="EASD Valencia"
+                                                    alt="партнер EASD Valencia"
+                                                    aria-live="off"
                                                 />
                                             </picture>
                                         </a>
@@ -1399,13 +1748,15 @@
                             </div>
                             <button
                                 class="projects__buttonlight button-reset projects__buttonlight--right"
-                                aria-label="Свайп вправо"
+                                type="button"
+                                aria-label="следующие слайды"
+                                aria-controls="partners-carousel"
                             >
                                 <svg class="projects__buttonlight-svg" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#swiper-arrow-right"></use>
                                 </svg>
                             </button>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </section>
@@ -1416,32 +1767,40 @@
                     <div class="contacts__box flex">
                         <div class="contacts__content">
                             <div class="contacts__adaptive">
-                                <h3 class="contacts__subject subject" id="address">Шоурум №4</h3>
+                                <span class="contacts__span subject" id="contacts-address">Шоурум №4</span>
                                 <address class="contacts__address text">Леонтьевский переулок, дом 5/1</address>
                             </div>
-                            <div class="contacts__box-map" id="blanchardMap"></div>
+                            <section
+                                class="contacts__box-map"
+                                id="blanchardMap"
+                                role="application"
+                                aria-labelledby="contacts-preview"
+                            >
+                                <h3 class="contacts__preview" id="contacts-preview">Яндекс карта</h3>
+                            </section>
                             <div class="contacts__adaptive">
-                                <h3 class="contacts__subject subject-alternative" id="form">
+                                <span class="contacts__span subject-alternative" id="contacts-form">
                                     Заказать обратный звонок
-                                </h3>
+                                </span>
                                 <form
                                     class="contacts__form"
-                                    id="subscription"
                                     method="POST"
                                     enctype="multipart/form-data"
                                     name="Форма"
+                                    aria-labelledby="contacts-form"
                                 >
-                                    <ul class="contacts__list-validate list-reset">
-                                        <li class="contacts__item-validate flex">
+                                    <div class="contacts__list-validate list-reset">
+                                        <label class="contacts__item-validate flex">
                                             <input
                                                 class="contacts__input-validate text"
                                                 type="text"
                                                 name="Имя"
                                                 placeholder="Имя*"
                                                 data-validate-field="name"
+                                                aria-label="ваше имя (обязательное поле)"
                                             />
-                                        </li>
-                                        <li class="contacts__item-validate flex">
+                                        </label>
+                                        <label class="contacts__item-validate flex">
                                             <input
                                                 class="contacts__input-validate text"
                                                 type="tel"
@@ -1449,35 +1808,32 @@
                                                 placeholder="Телефон*"
                                                 data-validate-field="tel"
                                                 data-validate-rules="phone"
+                                                aria-label="ваш телефон (обязательное поле)"
                                             />
-                                        </li>
-                                    </ul>
-                                </form>
-                                <div class="contacts__send flex">
-                                    <button
-                                        class="contacts__button button-reset button-big"
-                                        form="subscription"
-                                        type="sumbit"
-                                    >
-                                        Заказать
-                                    </button>
-                                    <div class="contacts__status flex">
-                                        <span class="contacts__preloader"></span>
+                                        </label>
                                     </div>
-                                </div>
-                                <h3 class="contacts__subject subject-alternative" id="social">
+                                    <div class="contacts__send flex">
+                                        <button class="contacts__button button-reset button-big" type="submit">
+                                            Заказать
+                                        </button>
+                                        <div class="contacts__status flex">
+                                            <span class="contacts__preloader"></span>
+                                        </div>
+                                    </div>
+                                </form>
+                                <span class="contacts__span subject-alternative" id="contacts-social">
                                     Связаться в&nbsp;один клик
-                                </h3>
-                                <ul class="contacts__list-social list-reset flex">
+                                </span>
+                                <ul class="contacts__list-social list-reset flex" aria-labelledby="contacts-social">
                                     <li class="contacts__item-social">
-                                        <a class="contacts__link-social" href="" aria-label="Whatsapp">
+                                        <a class="contacts__link-social" href="#" aria-label="Whatsapp">
                                             <svg class="contacts__svg-social" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#whatsapp"></use>
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="contacts__item-social">
-                                        <a class="contacts__link-social" href="" aria-label="Telegram">
+                                        <a class="contacts__link-social" href="#" aria-label="Telegram">
                                             <svg class="contacts__svg-social" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="#telegram"></use>
                                             </svg>
@@ -1493,7 +1849,7 @@
         <footer class="footer">
             <div class="footer__background">
                 <div class="footer__container container flex">
-                    <a class="footer__logo link" href="" aria-label="логотип сайта">
+                    <a class="footer__logo link" href="#" aria-label="логотип сайта">
                         <picture class="footer__picture">
                             <source srcset="./img/logo-320-footer.webp" media="(max-width: 767px)" />
                             <source srcset="./img/logo-768-footer.webp" media="(max-width: 1023px)" />
@@ -1506,23 +1862,23 @@
                             />
                         </picture>
                     </a>
-                    <ul class="footer__list-social list-reset flex">
+                    <ul class="footer__list-social list-reset flex" aria-label="мы в социальных сетях">
                         <li class="footer__item-social">
-                            <a class="footer__link-social" href="" aria-label="Вконтакте">
+                            <a class="footer__link-social" href="#" aria-label="Вконтакте">
                                 <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#vk"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer__item-social">
-                            <a class="footer__link-social" href="" aria-label="Instagram">
+                            <a class="footer__link-social" href="#" aria-label="Instagram">
                                 <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer__item-social">
-                            <a class="footer__link-social" href="" aria-label="Facebook">
+                            <a class="footer__link-social" href="#" aria-label="Facebook">
                                 <svg class="footer__svg-social" xmlns="http://www.w3.org/2000/svg">
                                     <use xlink:href="#facebook"></use>
                                 </svg>

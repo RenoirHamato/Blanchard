@@ -2,7 +2,7 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* Browsers: last 10 version
 */
 
 @media (min-width: 3840px) {
@@ -44,7 +44,7 @@
         --margin-preview-title: 38px;
         --margin-preview-text: 186px;
         --margin-gallery-span: 17px;
-        --margin-gallery-date-modal: 20px;
+        --margin-gallery-date-modal: 70px;
         --margin-catalog-country-box: 32px;
         --margin-catalog-heading: 0;
         --margin-catalog-text: 78px;
@@ -63,14 +63,17 @@
         --margin-editions-box: 34px;
         --margin-editions-subject: 8px;
         --margin-projects-text: 42px;
-        --margin-projects-subject: 48px;
-        --margin-contacts-subject-address: 8px;
+        --margin-projects-span: 48px;
+        --margin-contacts-span-address: 8px;
         --margin-contacts-address: 50px;
-        --margin-contacts-subject-form: 0;
-        --margin-contacts-form: 42px;
-        --margin-contacts-send: 76px;
+        --margin-contacts-span-form: 0;
+        --margin-contacts-form: 76px;
+        --margin-contacts-list-validate: 42px;
         --margin-contacts-item-validate: 18px;
-        --margin-contacts-subject-social: 28px;
+        --margin-contacts-span-social: 28px;
+
+        /* Особые значения */
+        --mouse-x: 0;
     }
 
     /**
@@ -381,10 +384,12 @@
         line-height: 48px;
     }
 
-    .header__button-login:hover .header__animation-login {
-        -webkit-transform: translateX(4px);
-        -ms-transform: translateX(4px);
-        transform: translateX(4px);
+    @media (hover: hover) {
+        .header__button-login:hover .header__animation-login {
+            -webkit-transform: translateX(4px);
+            -ms-transform: translateX(4px);
+            transform: translateX(4px);
+        }
     }
 
     .header__button-login:active .header__animation-login {
@@ -477,7 +482,7 @@
 
     .header__input-search {
         border-bottom-width: 2px;
-        min-width: 438px;
+        width: 438px;
         font-size: 36px;
         line-height: 50px;
     }
@@ -636,7 +641,7 @@
     .gallery__information-modal {
         padding-top: 242px;
         padding-right: 58px;
-        padding-bottom: 210px;
+        padding-bottom: 160px;
         padding-left: 98px;
     }
 
@@ -676,24 +681,26 @@
         padding-top: 8px;
     }
 
-    .catalog__step-country {
+    .catalog__style-country {
         width: 92px;
         height: 92px;
         background-size: 92px 92px;
     }
 
-    .catalog__step-country::after {
+    .catalog__radio-country + .catalog__style-country::after {
         border-width: 4px;
     }
 
-    .catalog__step-country:focus-visible:not(:active):not(:hover) {
-        -webkit-filter: drop-shadow(0px 0px 40px var(--shadow-2));
-        filter: drop-shadow(0px 0px 40px var(--shadow-2));
+    .catalog__radio-country:focus-visible:not(:active) + .catalog__style-country {
+        -webkit-filter: drop-shadow(0 0 40px var(--shadow-2));
+        filter: drop-shadow(0 0 40px var(--shadow-2));
     }
 
-    .catalog__step-country:hover:not(:active) {
-        -webkit-filter: drop-shadow(0px 0px 40px var(--shadow-2));
-        filter: drop-shadow(0px 0px 40px var(--shadow-2));
+    @media (hover: hover) {
+        .catalog__radio-country:hover:not(:active):not(:checked) + .catalog__style-country {
+            -webkit-filter: drop-shadow(0 0 40px var(--shadow-2));
+            filter: drop-shadow(0 0 40px var(--shadow-2));
+        }
     }
 
     .catalog__right {
@@ -758,14 +765,14 @@
         margin-right: 146px;
     }
 
-    .catalog__link-artist::before {
-        top: -4px;
+    .catalog__button-artist::before {
+        top: 6px;
         right: -4px;
-        bottom: -4px;
+        bottom: 4px;
         left: -4px;
     }
 
-    .catalog__link-artist::after {
+    .catalog__button-artist::after {
         right: -20px;
         bottom: -4px;
         border-bottom-width: 2px;
@@ -956,6 +963,10 @@
     /*  8. PROJECTS
         ==========================================================================  */
 
+    .projects__content {
+        padding-bottom: 156px;
+    }
+
     .projects__text {
         max-width: 2140px;
     }
@@ -974,7 +985,7 @@
     }
 
     .projects__arrow-tooltip {
-        top: -26px;
+        top: -20px;
         width: 32px;
         height: 18px;
     }
@@ -1027,6 +1038,7 @@
 
     .projects__swiper {
         margin: 0 90px;
+        padding: 2px;
     }
 
     .projects__item-swiper {
@@ -1216,7 +1228,7 @@
         --margin-preview-title: 11px;
         --margin-preview-text: 134px;
         --margin-gallery-span: 8.5px;
-        --margin-gallery-date-modal: 10px;
+        --margin-gallery-date-modal: 35px;
         --margin-catalog-country-box: 16px;
         --margin-catalog-text: 39px;
         --margin-catalog-text-null: 5px;
@@ -1234,13 +1246,16 @@
         --margin-editions-box: 19px;
         --margin-editions-subject: 3px;
         --margin-projects-text: 21px;
-        --margin-projects-subject: 24px;
-        --margin-contacts-subject-address: 4px;
+        --margin-projects-span: 24px;
+        --margin-contacts-span-address: 4px;
         --margin-contacts-address: 25px;
-        --margin-contacts-form: 21px;
-        --margin-contacts-send: 38px;
+        --margin-contacts-form: 38px;
+        --margin-contacts-list-validate: 21px;
         --margin-contacts-item-validate: 9px;
-        --margin-contacts-subject-social: 14px;
+        --margin-contacts-span-social: 14px;
+
+        /* Особые значения */
+        --mouse-x: 0;
     }
 
     /**
@@ -1525,8 +1540,10 @@
         opacity: 1;
     }
 
-    .header__burger:hover .header__line {
-        background-color: var(--hover-2);
+    @media (hover: hover) {
+        .header__burger:hover .header__line {
+            background-color: var(--hover-2);
+        }
     }
 
     .header__burger:active .header__line {
@@ -1535,15 +1552,15 @@
 
     .header__line--passive {
         -webkit-transition: top 0.2s ease-in-out 0.1s, left 0.2s ease-in-out, width 0.2s ease-in-out 0.1s,
-            -webkit-transform 0.2s ease-in-out;
+            background-color 0.15s ease-in-out, -webkit-transform 0.2s ease-in-out;
         transition: top 0.2s ease-in-out 0.1s, left 0.2s ease-in-out, width 0.2s ease-in-out 0.1s,
-            -webkit-transform 0.2s ease-in-out;
+            background-color 0.15s ease-in-out, -webkit-transform 0.2s ease-in-out;
         -o-transition: top 0.2s ease-in-out 0.1s, left 0.2s ease-in-out, transform 0.2s ease-in-out,
-            width 0.2s ease-in-out 0.1s;
+            width 0.2s ease-in-out 0.1s, background-color 0.15s ease-in-out;
         transition: top 0.2s ease-in-out 0.1s, left 0.2s ease-in-out, transform 0.2s ease-in-out,
-            width 0.2s ease-in-out 0.1s;
+            width 0.2s ease-in-out 0.1s, background-color 0.15s ease-in-out;
         transition: top 0.2s ease-in-out 0.1s, left 0.2s ease-in-out, transform 0.2s ease-in-out,
-            width 0.2s ease-in-out 0.1s, -webkit-transform 0.2s ease-in-out;
+            width 0.2s ease-in-out 0.1s, background-color 0.15s ease-in-out, -webkit-transform 0.2s ease-in-out;
     }
 
     .header__line--passive:nth-child(1) {
@@ -1585,15 +1602,15 @@
         -ms-transform-origin: center center;
         transform-origin: center center;
         -webkit-transition: top 0.2s ease-in-out, left 0.2s ease-in-out 0.1s, width 0.2s ease-in-out,
-            -webkit-transform 0.2s ease-in-out 0.1s;
+            background-color 0.15s ease-in-out, -webkit-transform 0.2s ease-in-out 0.1s;
         transition: top 0.2s ease-in-out, left 0.2s ease-in-out 0.1s, width 0.2s ease-in-out,
-            -webkit-transform 0.2s ease-in-out 0.1s;
+            background-color 0.15s ease-in-out, -webkit-transform 0.2s ease-in-out 0.1s;
         -o-transition: top 0.2s ease-in-out, left 0.2s ease-in-out 0.1s, transform 0.2s ease-in-out 0.1s,
-            width 0.2s ease-in-out;
+            width 0.2s ease-in-out, background-color 0.15s ease-in-out;
         transition: top 0.2s ease-in-out, left 0.2s ease-in-out 0.1s, transform 0.2s ease-in-out 0.1s,
-            width 0.2s ease-in-out;
+            width 0.2s ease-in-out, background-color 0.15s ease-in-out;
         transition: top 0.2s ease-in-out, left 0.2s ease-in-out 0.1s, transform 0.2s ease-in-out 0.1s,
-            width 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out 0.1s;
+            width 0.2s ease-in-out, background-color 0.15s ease-in-out, -webkit-transform 0.2s ease-in-out 0.1s;
     }
 
     .header__line--active:nth-child(1) {
@@ -1709,6 +1726,10 @@
         flex-direction: column;
     }
 
+    .header__item-anchor {
+        margin-right: auto;
+    }
+
     .header__link-anchor {
         min-height: 24px;
         font-size: 24px;
@@ -1717,9 +1738,10 @@
     }
 
     .header__link-anchor::after {
-        right: -5px;
-        bottom: -2px;
-        left: -5px;
+        top: 14px;
+        right: -2px;
+        bottom: 12px;
+        left: -2px;
     }
 
     .header__button-login {
@@ -1732,12 +1754,17 @@
         max-width: 400px;
         background-color: var(--background-button-4);
         border-radius: 100px;
+        -webkit-transition: background-color 0.15s ease-in-out;
+        -o-transition: background-color 0.15s ease-in-out;
+        transition: background-color 0.15s ease-in-out;
     }
 
-    .header__button-login::after {
-        right: -5px;
-        bottom: -2px;
-        left: -3px;
+    .header__button-login:focus-visible:not(:hover):not(:active)::after {
+        opacity: 0;
+    }
+
+    .header__button-login:focus-visible:not(:hover):not(:active) {
+        background-color: var(--focus-1);
     }
 
     .header__box-login {
@@ -1763,10 +1790,12 @@
         line-height: 24px;
     }
 
-    .header__button-login:hover .header__animation-login {
-        -webkit-transform: translateX(2px);
-        -ms-transform: translateX(2px);
-        transform: translateX(2px);
+    @media (hover: hover) {
+        .header__button-login:hover .header__animation-login {
+            -webkit-transform: translateX(2px);
+            -ms-transform: translateX(2px);
+            transform: translateX(2px);
+        }
     }
 
     .header__button-login:active .header__animation-login {
@@ -1812,8 +1841,10 @@
         opacity: 1;
     }
 
-    .header__open-search:hover .header__loop-search {
-        fill: var(--hover-2);
+    @media (hover: hover) {
+        .header__open-search:hover .header__loop-search {
+            fill: var(--hover-2);
+        }
     }
 
     .header__open-search:active .header__loop-search {
@@ -1868,7 +1899,7 @@
 
     .header__input-search {
         border-bottom-width: 1px;
-        min-width: 219px;
+        width: 219px;
         font-size: 18px;
         line-height: 25px;
     }
@@ -1940,8 +1971,10 @@
         opacity: 1;
     }
 
-    .header__close-search:hover .header__cross-search {
-        fill: var(--hover-2);
+    @media (hover: hover) {
+        .header__close-search:hover .header__cross-search {
+            fill: var(--hover-2);
+        }
     }
 
     .header__close-search:active .header__cross-search {
@@ -2099,7 +2132,7 @@
     .gallery__information-modal {
         padding-top: 122px;
         padding-right: 30px;
-        padding-bottom: 70px;
+        padding-bottom: 55px;
         padding-left: 50px;
     }
 
@@ -2143,24 +2176,26 @@
         padding-top: 18px;
     }
 
-    .catalog__step-country {
+    .catalog__style-country {
         width: 46px;
         height: 46px;
         background-size: 46px 46px;
     }
 
-    .catalog__step-country::after {
+    .catalog__radio-country + .catalog__style-country::after {
         border-width: 2px;
     }
 
-    .catalog__step-country:focus-visible:not(:active):not(:hover) {
-        -webkit-filter: drop-shadow(0px 0px 20px var(--shadow-2));
-        filter: drop-shadow(0px 0px 20px var(--shadow-2));
+    .catalog__radio-country:focus-visible:not(:active) + .catalog__style-country {
+        -webkit-filter: drop-shadow(0 0 20px var(--shadow-2));
+        filter: drop-shadow(0 0 20px var(--shadow-2));
     }
 
-    .catalog__step-country:hover:not(:active) {
-        -webkit-filter: drop-shadow(0px 0px 20px var(--shadow-2));
-        filter: drop-shadow(0px 0px 20px var(--shadow-2));
+    @media (hover: hover) {
+        .catalog__radio-country:hover:not(:active):not(:checked) + .catalog__style-country {
+            -webkit-filter: drop-shadow(0 0 20px var(--shadow-2));
+            filter: drop-shadow(0 0 20px var(--shadow-2));
+        }
     }
 
     .catalog__right {
@@ -2229,14 +2264,14 @@
         column-count: 2;
     }
 
-    .catalog__link-artist::before {
-        top: -2px;
+    .catalog__button-artist::before {
+        top: 3px;
         right: -2px;
-        bottom: -2px;
+        bottom: 2px;
         left: -2px;
     }
 
-    .catalog__link-artist::after {
+    .catalog__button-artist::after {
         right: -10px;
         bottom: -2px;
         border-bottom-width: 1px;
@@ -2408,7 +2443,7 @@
     }
 
     .editions__swiper {
-        height: 433rem;
+        height: 447rem;
     }
 
     .editions__img-swiper {
@@ -2446,6 +2481,10 @@
     /*  8. PROJECTS
         ==========================================================================  */
 
+    .projects__content {
+        padding-bottom: 78px;
+    }
+
     .projects__text {
         max-width: 1070px;
     }
@@ -2464,7 +2503,7 @@
     }
 
     .projects__arrow-tooltip {
-        top: -13px;
+        top: -10px;
         width: 16px;
         height: 9px;
     }
@@ -2477,9 +2516,9 @@
     }
 
     .projects__span-tooltip {
-        padding: 11px;
+        padding: 10px;
         padding-top: 8px;
-        width: min(100%, 264px);
+        width: min(100%, 240px);
         min-width: 100px;
         min-height: 34px;
         font-size: 12px;
@@ -2517,10 +2556,15 @@
 
     .projects__swiper {
         margin: 0 23px;
+        padding: 1px;
     }
 
     .projects__item-swiper {
         height: 126px;
+    }
+
+    .projects__link-swiper {
+        border-width: 1px;
     }
 
     /*  9. CONTACTS
@@ -2678,9 +2722,9 @@
         --margin-events-subject: 2px;
         --margin-editions-list-category: 25px;
         --margin-projects-text: 26.5px;
-        --margin-projects-subject: 28.5px;
-        --margin-contacts-form: 20px;
-        --margin-contacts-subject-social: 15px;
+        --margin-projects-span: 28.5px;
+        --margin-contacts-list-validate: 20px;
+        --margin-contacts-span-social: 15px;
     }
 
     /**
@@ -2978,6 +3022,7 @@
         -ms-flex-direction: column;
         flex-direction: column;
         padding-top: 84px;
+        padding-bottom: 66px;
     }
 
     .editions__filter {
@@ -3019,11 +3064,15 @@
     .editions__swiper {
         padding-left: 27px;
         padding-right: 27px;
+        padding-bottom: 7px;
         width: 100%;
     }
 
     /*  8. PROJECTS
         ==========================================================================  */
+    .projects__content {
+        padding-bottom: 78px;
+    }
 
     .projects__text {
         width: 99%;
@@ -3095,6 +3144,7 @@
         --margin-preview-text: 41px;
         --margin-gallery-span: 5px;
         --margin-gallery-pictures: 0;
+        --margin-gallery-date-modal: 6px;
         --margin-catalog-country-box: 20px;
         --margin-catalog-img: 21px;
         --margin-catalog-subject: 14px;
@@ -3108,15 +3158,15 @@
         --margin-editions-box: 11px;
         --margin-editions-subject: 0;
         --margin-projects-text: 10px;
-        --margin-projects-subject: 11px;
+        --margin-projects-span: 11px;
         --margin-contacts-adaptive: 18px;
-        --margin-contacts-subject-address: 2px;
+        --margin-contacts-span-address: 2px;
         --margin-contacts-address: 0;
         --margin-contacts-map: 24px;
-        --margin-contacts-send: 24px;
-        --margin-contacts-subject-form: 4px;
+        --margin-contacts-span-form: 4px;
+        --margin-contacts-form: 24px;
         --margin-contacts-item-validate: 3px;
-        --margin-contacts-subject-social: 11px;
+        --margin-contacts-span-social: 11px;
     }
 
     /**
@@ -3349,7 +3399,13 @@
         margin-top: 0;
     }
 
+    .header__link-anchor::after {
+        top: 4px;
+        bottom: 2px;
+    }
+
     .header__link-anchor {
+        min-height: 16px;
         font-size: 16px;
         line-height: 32px;
     }
@@ -3537,6 +3593,11 @@
         height: clamp(300px, 95vh, 600px);
     }
 
+    .gallery__close-modal {
+        top: 10px;
+        right: 10px;
+    }
+
     .gallery__content-modal {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -3556,6 +3617,14 @@
         padding-right: 10px;
         padding-bottom: 15px;
         padding-left: 20px;
+    }
+
+    .gallery__scroll-modal {
+        padding-right: 15px;
+    }
+
+    .gallery__subject-modal {
+        font-size: 24px;
     }
 
     /*  6. BIG-SECTION
@@ -3588,20 +3657,14 @@
         padding-top: 0;
     }
 
-    .catalog__item-country:nth-child(n + 3):not(:last-child) {
+    .catalog__label-country:nth-child(n + 3):not(:last-child) {
         padding-left: 1px;
     }
 
-    .catalog__step-country {
+    .catalog__style-country {
         width: 32px;
         height: 32px;
         background-size: 32px 32px;
-    }
-
-    .catalog__step-country--disabled {
-        -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-        transform: scale(0.95);
     }
 
     .catalog__text {
@@ -3873,6 +3936,9 @@
 
     /*  8. PROJECTS
         ==========================================================================  */
+    .projects__content {
+        padding-bottom: 48px;
+    }
 
     .projects__text {
         width: 100%;
@@ -3880,7 +3946,6 @@
 
     .projects__swiper {
         margin: 0 17px;
-        margin-right: 18px;
     }
 
     .projects__item-swiper {
@@ -3912,7 +3977,7 @@
         margin-bottom: var(--margin-contacts-adaptive);
     }
 
-    .contacts__subject {
+    .contacts__span {
         line-height: 24px;
     }
 
